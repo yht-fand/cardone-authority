@@ -1,0 +1,1 @@
+DELETE FROM t_role_permission WHERE INSTR(:ids, ID) > 0

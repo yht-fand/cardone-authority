@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+       default-lazy-init="true">
+    <!-- 用户组与用户 -->
+    <bean id="top.cardone.authority.dao.UserGroupUserDao"
+          class="top.cardone.authority.dao.impl.UserGroupUserDaoImpl">
+        <property name="configTable">
+            <map>
+                <entry key="config">
+                    <map>
+                        <entry key="sqlFileRoot" value="/cardone/authority/userGroupUser/"/>
+                        <entry key="pks" value="userGroupUserId"/>
+                        <entry key="codes" value="userGroupUserId"/>
+                    </map>
+                </entry>
+                <entry key="insert">
+                    <map>
+                        <entry key="userGroupUserId" value="getRandomUUIDFunc"/>
+                        <entry key="creator" value="getLoginUserIdFunc"/>
+                        <entry key="createDate" value="getNowDateFunc"/>
+                    </map>
+                </entry>
+                <entry key="update">
+                    <map>
+                        <entry key="modifier" value="getLoginUserIdFunc"/>
+                        <entry key="modifyDate" value="getNowDateFunc"/>
+                    </map>
+                </entry>
+            </map>
+        </property>
+    </bean>
+
+    <!-- 用户组与用户 -->
+    <bean id="top.cardone.authority.service.UserGroupUserService"
+          class="top.cardone.authority.service.impl.UserGroupUserServiceImpl">
+        <property name="dao" ref="top.cardone.authority.dao.UserGroupUserDao"/>
+    </bean>
+
+    <bean parent="messageListenerContainerParnet">
+        <property name="messageListener">
+            <bean  parent="exceptionParnet">
+                <property name="serviceInterface" value="top.cardone.authority.service.UserGroupUserService"/>
+                <property name="service" ref="top.cardone.authority.service.UserGroupUserService"/>
+            </bean>
+        </property>
+        <property name="destination">
+            <bean class="org.apache.activemq.command.ActiveMQQueue">
+                <constructor-arg value="top.cardone.authority.service.UserGroupUserService"/>
+            </bean>
+        </property>
+    </bean>
+</beans>

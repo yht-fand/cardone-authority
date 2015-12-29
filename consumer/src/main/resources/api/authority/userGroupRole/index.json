@@ -1,0 +1,34 @@
+{
+  "postHandle": {
+    "permission_add": {
+      "beanId": "authorityFunc",
+      "params": {
+        "code": "authority.userGroupRole.add"
+      }
+    },
+    "permission_modify": {
+      "beanId": "authorityFunc",
+      "params": {
+        "code": "authority.userGroupRole.modify"
+      }
+    },
+    "permission_delete": {
+      "beanId": "authorityFunc",
+      "params": {
+        "code": "authority.userGroupRole.delete"
+      }
+    },
+    "permission_impData": {
+      "beanId": "authorityFunc",
+      "params": {
+        "code": "authority.userGroupRole.impData"
+      }
+    },
+    "permission_expData": {
+      "beanId": "authorityFunc",
+      "params": {
+        "code": "authority.userGroupRole.expData"
+      }
+    }
+  }
+}
