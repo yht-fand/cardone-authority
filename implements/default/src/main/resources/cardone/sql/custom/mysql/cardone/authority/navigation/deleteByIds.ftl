@@ -1,1 +1,0 @@
-DELETE FROM t_navigation WHERE INSTR(:ids, ID) > 0

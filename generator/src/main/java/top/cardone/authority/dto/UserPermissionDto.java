@@ -12,5 +12,5 @@ public class UserPermissionDto extends UserPermission {
     /**
      * 版本号
      */
-    private static final long serialVersionUID = 601854744688636236L;
+    private static final long serialVersionUID = 542797955705599919L;
 }

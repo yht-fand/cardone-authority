@@ -2,7 +2,7 @@ package top.cardone.authority.service.impl;
 
 import top.cardone.authority.dao.UserRoleDao;
 import org.springframework.transaction.annotation.Transactional;
-import top.cardone.data.service.SimpleDefaultService;
+import top.cardone.data.service.impl.PageServiceImpl;
 
 /**
  * 用户与角色服务
@@ -10,5 +10,5 @@ import top.cardone.data.service.SimpleDefaultService;
  * @author yao hai tao
  */
 @Transactional(readOnly = true)
-public class UserRoleServiceImpl extends SimpleDefaultService<UserRoleDao> implements top.cardone.authority.service.UserRoleService {
+public class UserRoleServiceImpl extends PageServiceImpl<UserRoleDao> implements top.cardone.authority.service.UserRoleService {
 }

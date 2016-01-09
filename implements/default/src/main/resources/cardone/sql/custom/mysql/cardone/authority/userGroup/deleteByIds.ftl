@@ -1,1 +1,0 @@
-DELETE FROM t_user_group WHERE INSTR(:ids, ID) > 0

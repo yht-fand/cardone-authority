@@ -12,7 +12,7 @@ public class Navigation implements java.io.Serializable {
     /**
      * 版本号
      */
-    private static final long serialVersionUID = 267334690831036968L;
+    private static final long serialVersionUID = 339547299461961121L;
 
     /**
      * 开始时间

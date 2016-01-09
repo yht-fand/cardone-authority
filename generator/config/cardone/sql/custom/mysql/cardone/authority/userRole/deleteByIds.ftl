@@ -1,0 +1,1 @@
+DELETE FROM t_user_role WHERE INSTR(:ids, userRoleId) > 0

@@ -12,7 +12,7 @@ public class Role implements java.io.Serializable {
     /**
      * 版本号
      */
-    private static final long serialVersionUID = 762050225393895080L;
+    private static final long serialVersionUID = 630737309816385382L;
 
     /**
      * 开始时间

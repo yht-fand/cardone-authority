@@ -1,0 +1,1 @@
+DELETE FROM t_user_group_user WHERE INSTR(:ids, userGroupUserId) > 0

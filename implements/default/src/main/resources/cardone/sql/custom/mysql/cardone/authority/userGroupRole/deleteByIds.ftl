@@ -1,1 +1,0 @@
-DELETE FROM t_user_group_role WHERE INSTR(:ids, ID) > 0

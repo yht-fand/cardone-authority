@@ -1,0 +1,1 @@
+DELETE FROM t_user_permission WHERE INSTR(:ids, userPermissionId) > 0

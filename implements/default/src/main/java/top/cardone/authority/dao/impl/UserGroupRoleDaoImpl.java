@@ -1,11 +1,11 @@
 package top.cardone.authority.dao.impl;
 
-import top.cardone.data.jdbc.dao.PageJdbcDao;
+import top.cardone.data.jdbc.dao.impl.PageDaoImpl;
 
 /**
  * 用户组与角色
  *
  * @author yao hai tao
  */
-public class UserGroupRoleDaoImpl extends PageJdbcDao implements top.cardone.authority.dao.UserGroupRoleDao {
+public class UserGroupRoleDaoImpl extends PageDaoImpl implements top.cardone.authority.dao.UserGroupRoleDao {
 }

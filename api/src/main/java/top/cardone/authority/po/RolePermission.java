@@ -12,7 +12,7 @@ public class RolePermission implements java.io.Serializable {
     /**
      * 版本号
      */
-    private static final long serialVersionUID = 769405518727224380L;
+    private static final long serialVersionUID = 801430459972051049L;
 
     /**
      * 开始时间

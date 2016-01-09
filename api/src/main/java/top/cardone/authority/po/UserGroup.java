@@ -12,7 +12,7 @@ public class UserGroup implements java.io.Serializable {
     /**
      * 版本号
      */
-    private static final long serialVersionUID = 375078019188399254L;
+    private static final long serialVersionUID = 520828180351359931L;
 
     /**
      * 开始时间
