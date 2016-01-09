@@ -12,5 +12,5 @@ public class UserGroupRoleDto extends UserGroupRole {
     /**
      * 版本号
      */
-    private static final long serialVersionUID = 278897168372329311L;
+    private static final long serialVersionUID = 503391532194887733L;
 }

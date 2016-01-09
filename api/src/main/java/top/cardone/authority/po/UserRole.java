@@ -12,7 +12,7 @@ public class UserRole implements java.io.Serializable {
     /**
      * 版本号
      */
-    private static final long serialVersionUID = 540110958572829114L;
+    private static final long serialVersionUID = 720509291646790855L;
 
     /**
      * 开始时间

@@ -12,7 +12,7 @@ public class UserPermission implements java.io.Serializable {
     /**
      * 版本号
      */
-    private static final long serialVersionUID = 334676546890591952L;
+    private static final long serialVersionUID = 322743900149083009L;
 
     /**
      * 开始时间

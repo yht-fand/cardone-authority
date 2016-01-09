@@ -12,5 +12,5 @@ public class UserGroupUserDto extends UserGroupUser {
     /**
      * 版本号
      */
-    private static final long serialVersionUID = 501119382923577745L;
+    private static final long serialVersionUID = 759406822103931799L;
 }
