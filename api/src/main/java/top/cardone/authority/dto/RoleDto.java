@@ -12,5 +12,5 @@ public class RoleDto extends Role {
     /**
      * 版本号
      */
-    private static final long serialVersionUID = 340081154980096988L;
+    private static final long serialVersionUID = 322305135156296063L;
 }

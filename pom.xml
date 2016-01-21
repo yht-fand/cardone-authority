@@ -13,7 +13,7 @@
     <groupId>top.cardone.authority</groupId>
     <artifactId>cardone-authority-root</artifactId>
     <version>${project.parent.version}</version>
-    <name>cardone authority root</name>
+    <name>${project.artifactId}</name>
     <description>cardone authority root</description>
     <packaging>pom</packaging>
 

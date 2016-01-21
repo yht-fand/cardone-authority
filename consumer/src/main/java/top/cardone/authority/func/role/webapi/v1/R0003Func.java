@@ -1,11 +1,14 @@
-package top.cardone.authority.func.role.webapi.vi;
+package top.cardone.authority.func.role.webapi.v1;
 
-import org.springframework.stereotype.Component;
-import top.cardone.core.util.func.Func1;
-
-import top.cardone.authority.dto.RoleDto;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
+import org.springframework.data.domain.Page;
+import org.springframework.stereotype.Component;
+import top.cardone.authority.dto.RoleDto;
+import top.cardone.authority.service.RoleService;
+import top.cardone.context.ApplicationContextHolder;
+import top.cardone.core.util.func.Func1;
+import top.cardone.data.support.PageSupport;
 
 import java.util.List;
 import java.util.Map;
@@ -13,11 +16,13 @@ import java.util.Map;
 /**
  * 角色 - 查询分页
  */
-@Component("/web-api/v1/authority/role/r0003.json")
-public class R0003Func implements Func1<Map<String, Object>, Map<String, Object>> {
+@Component("/web-api/v1/configuration/role/r0003.json")
+public class R0003Func implements Func1<Object, Map<String, Object>> {
     @Override
-    public Map<String, Object> func(Map<String, Object> map) {
-        return null;
+    public Object func(Map<String, Object> map) {
+        Page<RoleDto> roleDtoPage = ApplicationContextHolder.getBean(RoleService.class).page(RoleDto.class, map);
+
+        return ApplicationContextHolder.func(PageSupport.class, pageSupport -> pageSupport.newMap(this.toMapList(roleDtoPage.getContent()), map, roleDtoPage.getTotalElements()));
     }
 
     private List<Map<String, Object>> toMapList(List<RoleDto> roleDtoList) {

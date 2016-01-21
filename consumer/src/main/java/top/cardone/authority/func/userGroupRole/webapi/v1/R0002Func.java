@@ -1,11 +1,12 @@
-package top.cardone.authority.func.userGroupRole.webapi.vi;
+package top.cardone.authority.func.userGroupRole.webapi.v1;
 
-import org.springframework.stereotype.Component;
-import top.cardone.core.util.func.Func1;
-
-import top.cardone.authority.dto.UserGroupRoleDto;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
+import org.springframework.stereotype.Component;
+import top.cardone.authority.dto.UserGroupRoleDto;
+import top.cardone.authority.service.UserGroupRoleService;
+import top.cardone.context.ApplicationContextHolder;
+import top.cardone.core.util.func.Func1;
 
 import java.util.List;
 import java.util.Map;
@@ -13,11 +14,13 @@ import java.util.Map;
 /**
  * 用户组与角色 - 查询列表
  */
-@Component("/web-api/v1/authority/userGroupRole/r0002.json")
-public class R0002Func implements Func1<Map<String, Object>, Map<String, Object>> {
+@Component("/web-api/v1/configuration/userGroupRole/r0002.json")
+public class R0002Func implements Func1<Object, Map<String, Object>> {
     @Override
-    public Map<String, Object> func(Map<String, Object> map) {
-        return null;
+    public Object func(Map<String, Object> map) {
+        List<UserGroupRoleDto> userGroupRoleDtoList = ApplicationContextHolder.getBean(UserGroupRoleService.class).findList(UserGroupRoleDto.class, map);
+
+        return this.toMapList(userGroupRoleDtoList);
     }
 
     private List<Map<String, Object>> toMapList(List<UserGroupRoleDto> userGroupRoleDtoList) {

@@ -12,7 +12,7 @@ public class UserGroupRole implements java.io.Serializable {
     /**
      * 版本号
      */
-    private static final long serialVersionUID = 663324480192621486L;
+    private static final long serialVersionUID = 328853673769898281L;
 
     /**
      * 开始时间

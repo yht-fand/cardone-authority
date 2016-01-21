@@ -13,7 +13,7 @@
     <groupId>top.cardone.authority</groupId>
     <artifactId>cardone-authority-implements-default</artifactId>
     <version>${project.parent.version}</version>
-    <name>cardone authority implements default</name>
+    <name>${project.artifactId}</name>
     <description>cardone authority implements default</description>
     <packaging>jar</packaging>
 

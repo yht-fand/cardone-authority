@@ -1,8 +1,8 @@
-package top.cardone.authority.func.role.webapi.vi;
+package top.cardone.authority.func.role.webapi.v1;
 
 import org.springframework.stereotype.Component;
+import top.cardone.authority.service.RoleService;
 import top.cardone.context.ApplicationContextHolder;
-import top.cardone.core.CodeException;
 import top.cardone.core.util.func.Func1;
 
 import java.util.Map;
@@ -10,10 +10,10 @@ import java.util.Map;
 /**
  * 角色 - 修改
  */
-@Component("/web-api/v1/authority/role/u0001.json")
-public class U0001Func implements Func1<Map<String, Object>, Map<String, Object>> {
+@Component("/web-api/v1/configuration/role/u0001.json")
+public class U0001Func implements Func1<Object, Map<String, Object>> {
     @Override
-    public Map<String, Object> func(Map<String, Object> map) {
-        return null;
+    public Object func(Map<String, Object> map) {
+        return ApplicationContextHolder.getBean(RoleService.class).update(map);
     }
 }

@@ -12,5 +12,5 @@ public class NavigationDto extends Navigation {
     /**
      * 版本号
      */
-    private static final long serialVersionUID = 326468120052933975L;
+    private static final long serialVersionUID = 453329922577308718L;
 }

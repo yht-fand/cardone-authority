@@ -13,7 +13,7 @@
     <groupId>top.cardone.authority</groupId>
     <artifactId>cardone-authority-api</artifactId>
     <version>${project.parent.version}</version>
-    <name>cardone authority api</name>
+    <name>${project.artifactId}</name>
     <description>cardone authority api</description>
     <packaging>jar</packaging>
 

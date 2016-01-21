@@ -1,33 +1,24 @@
-package top.cardone.authority.func.role.webapi.vi;
+package top.cardone.authority.func.role.webapi.v1;
 
+import com.google.common.collect.Maps;
 import org.springframework.stereotype.Component;
+import top.cardone.authority.dto.RoleDto;
+import top.cardone.authority.service.RoleService;
+import top.cardone.context.ApplicationContextHolder;
 import top.cardone.core.util.func.Func1;
 
-import top.cardone.authority.dto.RoleDto;
-import com.google.common.collect.Lists;
-import com.google.common.collect.Maps;
-
-import java.util.List;
 import java.util.Map;
 
 /**
  * 角色 - 查询
  */
-@Component("/web-api/v1/authority/role/r0001.json")
-public class R0001Func implements Func1<Map<String, Object>, Map<String, Object>> {
+@Component("/web-api/v1/configuration/role/r0001.json")
+public class R0001Func implements Func1<Object, Map<String, Object>> {
     @Override
-    public Map<String, Object> func(Map<String, Object> map) {
-        return null;
-    }
+    public Object func(Map<String, Object> map) {
+        RoleDto roleDto = ApplicationContextHolder.getBean(RoleService.class).findOne(RoleDto.class, map);
 
-    private List<Map<String, Object>> toMapList(List<RoleDto> roleDtoList) {
-        List<Map<String, Object>> mapList = Lists.newArrayList();
-
-        for (RoleDto roleDto : roleDtoList) {
-            mapList.add(this.toMap(roleDto));
-        }
-
-        return mapList;
+        return this.toMap(roleDto);
     }
 
     private Map<String, Object> toMap(RoleDto roleDto) {

@@ -12,5 +12,5 @@ public class RolePermissionDto extends RolePermission {
     /**
      * 版本号
      */
-    private static final long serialVersionUID = 215046748031563067L;
+    private static final long serialVersionUID = 158335479340567462L;
 }

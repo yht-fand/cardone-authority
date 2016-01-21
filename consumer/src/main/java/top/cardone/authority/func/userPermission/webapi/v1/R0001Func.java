@@ -1,33 +1,24 @@
-package top.cardone.authority.func.userPermission.webapi.vi;
+package top.cardone.authority.func.userPermission.webapi.v1;
 
+import com.google.common.collect.Maps;
 import org.springframework.stereotype.Component;
+import top.cardone.authority.dto.UserPermissionDto;
+import top.cardone.authority.service.UserPermissionService;
+import top.cardone.context.ApplicationContextHolder;
 import top.cardone.core.util.func.Func1;
 
-import top.cardone.authority.dto.UserPermissionDto;
-import com.google.common.collect.Lists;
-import com.google.common.collect.Maps;
-
-import java.util.List;
 import java.util.Map;
 
 /**
  * 用户与许可 - 查询
  */
-@Component("/web-api/v1/authority/userPermission/r0001.json")
-public class R0001Func implements Func1<Map<String, Object>, Map<String, Object>> {
+@Component("/web-api/v1/configuration/userPermission/r0001.json")
+public class R0001Func implements Func1<Object, Map<String, Object>> {
     @Override
-    public Map<String, Object> func(Map<String, Object> map) {
-        return null;
-    }
+    public Object func(Map<String, Object> map) {
+        UserPermissionDto userPermissionDto = ApplicationContextHolder.getBean(UserPermissionService.class).findOne(UserPermissionDto.class, map);
 
-    private List<Map<String, Object>> toMapList(List<UserPermissionDto> userPermissionDtoList) {
-        List<Map<String, Object>> mapList = Lists.newArrayList();
-
-        for (UserPermissionDto userPermissionDto : userPermissionDtoList) {
-            mapList.add(this.toMap(userPermissionDto));
-        }
-
-        return mapList;
+        return this.toMap(userPermissionDto);
     }
 
     private Map<String, Object> toMap(UserPermissionDto userPermissionDto) {

@@ -1,1 +1,0 @@
-UPDATE t_navigation SET END_DATE = NOW() WHERE INSTR(:ids, navigationId) > 0

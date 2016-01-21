@@ -1,33 +1,24 @@
-package top.cardone.authority.func.userGroupUser.webapi.vi;
+package top.cardone.authority.func.userGroupUser.webapi.v1;
 
+import com.google.common.collect.Maps;
 import org.springframework.stereotype.Component;
+import top.cardone.authority.dto.UserGroupUserDto;
+import top.cardone.authority.service.UserGroupUserService;
+import top.cardone.context.ApplicationContextHolder;
 import top.cardone.core.util.func.Func1;
 
-import top.cardone.authority.dto.UserGroupUserDto;
-import com.google.common.collect.Lists;
-import com.google.common.collect.Maps;
-
-import java.util.List;
 import java.util.Map;
 
 /**
  * 用户组与用户 - 查询
  */
-@Component("/web-api/v1/authority/userGroupUser/r0004.json")
-public class R0004Func implements Func1<Map<String, Object>, Map<String, Object>> {
+@Component("/web-api/v1/configuration/userGroupUser/r0004.json")
+public class R0004Func implements Func1<Object, Map<String, Object>> {
     @Override
-    public Map<String, Object> func(Map<String, Object> map) {
-        return null;
-    }
+    public Object func(Map<String, Object> map) {
+        UserGroupUserDto userGroupUserDto = ApplicationContextHolder.getBean(UserGroupUserService.class).findOne(UserGroupUserDto.class, map);
 
-    private List<Map<String, Object>> toMapList(List<UserGroupUserDto> userGroupUserDtoList) {
-        List<Map<String, Object>> mapList = Lists.newArrayList();
-
-        for (UserGroupUserDto userGroupUserDto : userGroupUserDtoList) {
-            mapList.add(this.toMap(userGroupUserDto));
-        }
-
-        return mapList;
+        return this.toMap(userGroupUserDto);
     }
 
     private Map<String, Object> toMap(UserGroupUserDto userGroupUserDto) {

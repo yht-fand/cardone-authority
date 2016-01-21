@@ -1,1 +1,0 @@
-UPDATE t_user_group_role SET END_DATE = NOW() WHERE INSTR(:ids, userGroupRoleId) > 0
