@@ -1,0 +1,1 @@
+DELETE FROM t_oauth_consumer WHERE INSTR(:ids, oauthConsumerId) > 0

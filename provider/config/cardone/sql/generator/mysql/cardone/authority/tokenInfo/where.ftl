@@ -64,6 +64,68 @@ ${prefixName} `BEGIN_DATE` like :where_or_like_beginDate_value
 <#if (prefixName!) != 'WHERE'>
 <#assign prefixName = 'AND'>
 </#if>
+<#if (where_and_eq_clientId??)>
+<#if (where_and_eq_clientId_value??)>
+${prefixName} `CLIENT_ID` = :where_and_eq_clientId_value
+<#else>
+${prefixName} `CLIENT_ID` IS NULL
+</#if>
+<#assign prefixName = ''>
+</#if>
+<#if (where_and_nq_clientId??)>
+<#if (prefixName!) != 'WHERE'>
+<#assign prefixName = 'AND'>
+</#if>
+<#if (where_and_nq_clientId_value??)>
+${prefixName} `CLIENT_ID` <> :where_and_nq_clientId_value
+<#else>
+${prefixName} `CLIENT_ID` IS NOT NULL
+</#if>
+<#assign prefixName = ''>
+</#if>
+<#if (where_and_like_clientId??)>
+<#if (prefixName!) != 'WHERE'>
+<#assign prefixName = 'AND'>
+</#if>
+<#if (where_and_like_clientId_value??)>
+${prefixName} `CLIENT_ID` <> :where_and_like_clientId_value
+</#if>
+<#assign prefixName = ''>
+</#if>
+<#if (where_or_eq_clientId??)>
+<#if (prefixName!) != 'WHERE'>
+<#assign prefixName = 'OR'>
+</#if>
+<#if (where_or_eq_clientId_value??)>
+${prefixName} `CLIENT_ID` = :where_or_eq_clientId_value
+<#else>
+${prefixName} `CLIENT_ID` IS NULL
+</#if>
+<#assign prefixName = ''>
+</#if>
+<#if (where_or_nq_clientId??)>
+<#if (prefixName!) != 'WHERE'>
+<#assign prefixName = 'OR'>
+</#if>
+<#if (where_or_nq_clientId_value??)>
+${prefixName} `CLIENT_ID` <> :where_or_nq_clientId_value
+<#else>
+${prefixName} `CLIENT_ID` IS NOT NULL
+</#if>
+<#assign prefixName = ''>
+</#if>
+<#if (where_or_like_clientId??)>
+<#if (prefixName!) != 'WHERE'>
+<#assign prefixName = 'OR'>
+</#if>
+<#if (where_or_like_clientId_value??)>
+${prefixName} `CLIENT_ID` like :where_or_like_clientId_value
+</#if>
+<#assign prefixName = ''>
+</#if>
+<#if (prefixName!) != 'WHERE'>
+<#assign prefixName = 'AND'>
+</#if>
 <#if (where_and_eq_createdByCode??)>
 <#if (where_and_eq_createdByCode_value??)>
 ${prefixName} `CREATED_BY_CODE` = :where_and_eq_createdByCode_value
@@ -684,6 +746,68 @@ ${prefixName} `ROLE_CODES` like :where_or_like_roleCodes_value
 <#if (prefixName!) != 'WHERE'>
 <#assign prefixName = 'AND'>
 </#if>
+<#if (where_and_eq_scope??)>
+<#if (where_and_eq_scope_value??)>
+${prefixName} `SCOPE` = :where_and_eq_scope_value
+<#else>
+${prefixName} `SCOPE` IS NULL
+</#if>
+<#assign prefixName = ''>
+</#if>
+<#if (where_and_nq_scope??)>
+<#if (prefixName!) != 'WHERE'>
+<#assign prefixName = 'AND'>
+</#if>
+<#if (where_and_nq_scope_value??)>
+${prefixName} `SCOPE` <> :where_and_nq_scope_value
+<#else>
+${prefixName} `SCOPE` IS NOT NULL
+</#if>
+<#assign prefixName = ''>
+</#if>
+<#if (where_and_like_scope??)>
+<#if (prefixName!) != 'WHERE'>
+<#assign prefixName = 'AND'>
+</#if>
+<#if (where_and_like_scope_value??)>
+${prefixName} `SCOPE` <> :where_and_like_scope_value
+</#if>
+<#assign prefixName = ''>
+</#if>
+<#if (where_or_eq_scope??)>
+<#if (prefixName!) != 'WHERE'>
+<#assign prefixName = 'OR'>
+</#if>
+<#if (where_or_eq_scope_value??)>
+${prefixName} `SCOPE` = :where_or_eq_scope_value
+<#else>
+${prefixName} `SCOPE` IS NULL
+</#if>
+<#assign prefixName = ''>
+</#if>
+<#if (where_or_nq_scope??)>
+<#if (prefixName!) != 'WHERE'>
+<#assign prefixName = 'OR'>
+</#if>
+<#if (where_or_nq_scope_value??)>
+${prefixName} `SCOPE` <> :where_or_nq_scope_value
+<#else>
+${prefixName} `SCOPE` IS NOT NULL
+</#if>
+<#assign prefixName = ''>
+</#if>
+<#if (where_or_like_scope??)>
+<#if (prefixName!) != 'WHERE'>
+<#assign prefixName = 'OR'>
+</#if>
+<#if (where_or_like_scope_value??)>
+${prefixName} `SCOPE` like :where_or_like_scope_value
+</#if>
+<#assign prefixName = ''>
+</#if>
+<#if (prefixName!) != 'WHERE'>
+<#assign prefixName = 'AND'>
+</#if>
 <#if (where_and_eq_siteCode??)>
 <#if (where_and_eq_siteCode_value??)>
 ${prefixName} `SITE_CODE` = :where_and_eq_siteCode_value
@@ -988,6 +1112,68 @@ ${prefixName} `TOKEN_INFO_ID` IS NOT NULL
 </#if>
 <#if (where_or_like_tokenInfoId_value??)>
 ${prefixName} `TOKEN_INFO_ID` like :where_or_like_tokenInfoId_value
+</#if>
+<#assign prefixName = ''>
+</#if>
+<#if (prefixName!) != 'WHERE'>
+<#assign prefixName = 'AND'>
+</#if>
+<#if (where_and_eq_userCode??)>
+<#if (where_and_eq_userCode_value??)>
+${prefixName} `USER_CODE` = :where_and_eq_userCode_value
+<#else>
+${prefixName} `USER_CODE` IS NULL
+</#if>
+<#assign prefixName = ''>
+</#if>
+<#if (where_and_nq_userCode??)>
+<#if (prefixName!) != 'WHERE'>
+<#assign prefixName = 'AND'>
+</#if>
+<#if (where_and_nq_userCode_value??)>
+${prefixName} `USER_CODE` <> :where_and_nq_userCode_value
+<#else>
+${prefixName} `USER_CODE` IS NOT NULL
+</#if>
+<#assign prefixName = ''>
+</#if>
+<#if (where_and_like_userCode??)>
+<#if (prefixName!) != 'WHERE'>
+<#assign prefixName = 'AND'>
+</#if>
+<#if (where_and_like_userCode_value??)>
+${prefixName} `USER_CODE` <> :where_and_like_userCode_value
+</#if>
+<#assign prefixName = ''>
+</#if>
+<#if (where_or_eq_userCode??)>
+<#if (prefixName!) != 'WHERE'>
+<#assign prefixName = 'OR'>
+</#if>
+<#if (where_or_eq_userCode_value??)>
+${prefixName} `USER_CODE` = :where_or_eq_userCode_value
+<#else>
+${prefixName} `USER_CODE` IS NULL
+</#if>
+<#assign prefixName = ''>
+</#if>
+<#if (where_or_nq_userCode??)>
+<#if (prefixName!) != 'WHERE'>
+<#assign prefixName = 'OR'>
+</#if>
+<#if (where_or_nq_userCode_value??)>
+${prefixName} `USER_CODE` <> :where_or_nq_userCode_value
+<#else>
+${prefixName} `USER_CODE` IS NOT NULL
+</#if>
+<#assign prefixName = ''>
+</#if>
+<#if (where_or_like_userCode??)>
+<#if (prefixName!) != 'WHERE'>
+<#assign prefixName = 'OR'>
+</#if>
+<#if (where_or_like_userCode_value??)>
+${prefixName} `USER_CODE` like :where_or_like_userCode_value
 </#if>
 <#assign prefixName = ''>
 </#if>

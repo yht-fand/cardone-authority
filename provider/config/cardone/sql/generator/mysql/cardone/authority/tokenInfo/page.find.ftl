@@ -4,6 +4,10 @@ SELECT
 ${prefixName} `BEGIN_DATE`
 <#assign prefixName = ','>
 </#if>
+<#if (select_clientId??)>
+${prefixName} `CLIENT_ID`
+<#assign prefixName = ','>
+</#if>
 <#if (select_createdByCode??)>
 ${prefixName} `CREATED_BY_CODE`
 <#assign prefixName = ','>
@@ -44,6 +48,10 @@ ${prefixName} `PERMISSION_CODES`
 ${prefixName} `ROLE_CODES`
 <#assign prefixName = ','>
 </#if>
+<#if (select_scope??)>
+${prefixName} `SCOPE`
+<#assign prefixName = ','>
+</#if>
 <#if (select_siteCode??)>
 ${prefixName} `SITE_CODE`
 <#assign prefixName = ','>
@@ -64,6 +72,10 @@ ${prefixName} `TOKEN_INFO_CODE`
 ${prefixName} `TOKEN_INFO_ID`
 <#assign prefixName = ','>
 </#if>
+<#if (select_userCode??)>
+${prefixName} `USER_CODE`
+<#assign prefixName = ','>
+</#if>
 <#if (select_version??)>
 ${prefixName} `VERSION_`
 <#assign prefixName = ','>
@@ -74,6 +86,7 @@ ${prefixName} `WF_ID`
 </#if>
 <#if prefixName ==  ' '>
   `BEGIN_DATE`
+, `CLIENT_ID`
 , `CREATED_BY_CODE`
 , `CREATED_DATE`
 , `DATA_STATE_CODE`
@@ -84,11 +97,13 @@ ${prefixName} `WF_ID`
 , `ORG_CODE`
 , `PERMISSION_CODES`
 , `ROLE_CODES`
+, `SCOPE`
 , `SITE_CODE`
 , `STATE_CODE`
 , `SYSTEM_INFO_CODE`
 , `TOKEN_INFO_CODE`
 , `TOKEN_INFO_ID`
+, `USER_CODE`
 , `VERSION_`
 , `WF_ID`
 </#if>
@@ -97,6 +112,10 @@ FROM t_token_info
 <#assign prefixName = 'ORDER BY'>
 <#if (order_by_beginDate??)>
 ${prefixName} `BEGIN_DATE` ${order_by_beginDate_value!}
+<#assign prefixName = ','>
+</#if>
+<#if (order_by_clientId??)>
+${prefixName} `CLIENT_ID` ${order_by_clientId_value!}
 <#assign prefixName = ','>
 </#if>
 <#if (order_by_createdByCode??)>
@@ -139,6 +158,10 @@ ${prefixName} `PERMISSION_CODES` ${order_by_permissionCodes_value!}
 ${prefixName} `ROLE_CODES` ${order_by_roleCodes_value!}
 <#assign prefixName = ','>
 </#if>
+<#if (order_by_scope??)>
+${prefixName} `SCOPE` ${order_by_scope_value!}
+<#assign prefixName = ','>
+</#if>
 <#if (order_by_siteCode??)>
 ${prefixName} `SITE_CODE` ${order_by_siteCode_value!}
 <#assign prefixName = ','>
@@ -157,6 +180,10 @@ ${prefixName} `TOKEN_INFO_CODE` ${order_by_tokenInfoCode_value!}
 </#if>
 <#if (order_by_tokenInfoId??)>
 ${prefixName} `TOKEN_INFO_ID` ${order_by_tokenInfoId_value!}
+<#assign prefixName = ','>
+</#if>
+<#if (order_by_userCode??)>
+${prefixName} `USER_CODE` ${order_by_userCode_value!}
 <#assign prefixName = ','>
 </#if>
 <#if (order_by_version??)>

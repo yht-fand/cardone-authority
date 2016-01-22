@@ -3,6 +3,9 @@ SELECT
 <#case "beginDate">
 BEGIN_DATE AS beginDate
 <#break>
+<#case "clientId">
+CLIENT_ID AS clientId
+<#break>
 <#case "createdByCode">
 CREATED_BY_CODE AS createdByCode
 <#break>
@@ -33,6 +36,9 @@ PERMISSION_CODES AS permissionCodes
 <#case "roleCodes">
 ROLE_CODES AS roleCodes
 <#break>
+<#case "scope">
+SCOPE AS scope
+<#break>
 <#case "siteCode">
 SITE_CODE AS siteCode
 <#break>
@@ -47,6 +53,9 @@ TOKEN_INFO_CODE AS tokenInfoCode
 <#break>
 <#case "tokenInfoId">
 TOKEN_INFO_ID AS tokenInfoId
+<#break>
+<#case "userCode">
+USER_CODE AS userCode
 <#break>
 <#case "version">
 VERSION_ AS version

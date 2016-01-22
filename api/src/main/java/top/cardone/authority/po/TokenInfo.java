@@ -12,7 +12,7 @@ public class TokenInfo implements java.io.Serializable {
     /**
      * 版本号
      */
-    private static final long serialVersionUID = 211408646020099658L;
+    private static final long serialVersionUID = 856600605329131812L;
 
     /**
      * 开始时间
@@ -20,6 +20,13 @@ public class TokenInfo implements java.io.Serializable {
     @lombok.Getter
     @lombok.Setter
     protected Date beginDate;
+
+    /**
+     * 客户端标识
+     */
+    @lombok.Getter
+    @lombok.Setter
+    protected String clientId;
 
     /**
      * 创建人代码
@@ -92,6 +99,13 @@ public class TokenInfo implements java.io.Serializable {
     protected String roleCodes;
 
     /**
+     * 范围
+     */
+    @lombok.Getter
+    @lombok.Setter
+    protected String scope;
+
+    /**
      * 站点代码
      */
     @lombok.Getter
@@ -125,6 +139,13 @@ public class TokenInfo implements java.io.Serializable {
     @lombok.Getter
     @lombok.Setter
     protected String tokenInfoId;
+
+    /**
+     * 用户代码
+     */
+    @lombok.Getter
+    @lombok.Setter
+    protected String userCode;
 
     /**
      * 版本

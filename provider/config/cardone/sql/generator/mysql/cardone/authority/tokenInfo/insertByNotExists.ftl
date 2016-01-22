@@ -6,6 +6,10 @@ t_token_info
 ${prefixName} `BEGIN_DATE`
 <#assign prefixName = ','>
 </#if>
+<#if (insert_clientId??) && (insert_clientId_value??)>
+${prefixName} `CLIENT_ID`
+<#assign prefixName = ','>
+</#if>
 <#if (insert_createdByCode??) && (insert_createdByCode_value??)>
 ${prefixName} `CREATED_BY_CODE`
 <#assign prefixName = ','>
@@ -46,6 +50,10 @@ ${prefixName} `PERMISSION_CODES`
 ${prefixName} `ROLE_CODES`
 <#assign prefixName = ','>
 </#if>
+<#if (insert_scope??) && (insert_scope_value??)>
+${prefixName} `SCOPE`
+<#assign prefixName = ','>
+</#if>
 <#if (insert_siteCode??) && (insert_siteCode_value??)>
 ${prefixName} `SITE_CODE`
 <#assign prefixName = ','>
@@ -66,6 +74,10 @@ ${prefixName} `TOKEN_INFO_CODE`
 ${prefixName} `TOKEN_INFO_ID`
 <#assign prefixName = ','>
 </#if>
+<#if (insert_userCode??) && (insert_userCode_value??)>
+${prefixName} `USER_CODE`
+<#assign prefixName = ','>
+</#if>
 <#if (insert_version??) && (insert_version_value??)>
 ${prefixName} `VERSION_`
 <#assign prefixName = ','>
@@ -79,6 +91,10 @@ ${prefixName} `WF_ID`
 <#assign prefixName = ' '>
 <#if (insert_beginDate??) && (insert_beginDate_value??)>
 ${prefixName} :insert_beginDate_value
+<#assign prefixName = ','>
+</#if>
+<#if (insert_clientId??) && (insert_clientId_value??)>
+${prefixName} :insert_clientId_value
 <#assign prefixName = ','>
 </#if>
 <#if (insert_createdByCode??) && (insert_createdByCode_value??)>
@@ -121,6 +137,10 @@ ${prefixName} :insert_permissionCodes_value
 ${prefixName} :insert_roleCodes_value
 <#assign prefixName = ','>
 </#if>
+<#if (insert_scope??) && (insert_scope_value??)>
+${prefixName} :insert_scope_value
+<#assign prefixName = ','>
+</#if>
 <#if (insert_siteCode??) && (insert_siteCode_value??)>
 ${prefixName} :insert_siteCode_value
 <#assign prefixName = ','>
@@ -141,6 +161,10 @@ ${prefixName} :insert_tokenInfoCode_value
 ${prefixName} :insert_tokenInfoId_value
 <#assign prefixName = ','>
 </#if>
+<#if (insert_userCode??) && (insert_userCode_value??)>
+${prefixName} :insert_userCode_value
+<#assign prefixName = ','>
+</#if>
 <#if (insert_version??) && (insert_version_value??)>
 ${prefixName} :insert_version_value
 <#assign prefixName = ','>
@@ -156,6 +180,17 @@ FROM DUAL WHERE NOT EXISTS (SELECT 1 FROM t_token_info E
 ${prefixName} E.BEGIN_DATE = :where_and_eq_beginDate_value
 <#else>
 ${prefixName} E.BEGIN_DATE IS NULL
+</#if>
+<#assign prefixName = ''>
+</#if>
+<#if (prefixName!) != 'WHERE'>
+<#assign prefixName = 'AND'>
+</#if>
+<#if (where_and_eq_clientId??)>
+<#if (where_and_eq_clientId_value??)>
+${prefixName} E.CLIENT_ID = :where_and_eq_clientId_value
+<#else>
+${prefixName} E.CLIENT_ID IS NULL
 </#if>
 <#assign prefixName = ''>
 </#if>
@@ -272,6 +307,17 @@ ${prefixName} E.ROLE_CODES IS NULL
 <#if (prefixName!) != 'WHERE'>
 <#assign prefixName = 'AND'>
 </#if>
+<#if (where_and_eq_scope??)>
+<#if (where_and_eq_scope_value??)>
+${prefixName} E.SCOPE = :where_and_eq_scope_value
+<#else>
+${prefixName} E.SCOPE IS NULL
+</#if>
+<#assign prefixName = ''>
+</#if>
+<#if (prefixName!) != 'WHERE'>
+<#assign prefixName = 'AND'>
+</#if>
 <#if (where_and_eq_siteCode??)>
 <#if (where_and_eq_siteCode_value??)>
 ${prefixName} E.SITE_CODE = :where_and_eq_siteCode_value
@@ -321,6 +367,17 @@ ${prefixName} E.TOKEN_INFO_CODE IS NULL
 ${prefixName} E.TOKEN_INFO_ID = :where_and_eq_tokenInfoId_value
 <#else>
 ${prefixName} E.TOKEN_INFO_ID IS NULL
+</#if>
+<#assign prefixName = ''>
+</#if>
+<#if (prefixName!) != 'WHERE'>
+<#assign prefixName = 'AND'>
+</#if>
+<#if (where_and_eq_userCode??)>
+<#if (where_and_eq_userCode_value??)>
+${prefixName} E.USER_CODE = :where_and_eq_userCode_value
+<#else>
+${prefixName} E.USER_CODE IS NULL
 </#if>
 <#assign prefixName = ''>
 </#if>

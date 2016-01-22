@@ -5,6 +5,10 @@ INTO t_token_info
 ${prefixName} `BEGIN_DATE`
 <#assign prefixName = ','>
 </#if>
+<#if (insert_clientId??) && (insert_clientId_value??)>
+${prefixName} `CLIENT_ID`
+<#assign prefixName = ','>
+</#if>
 <#if (insert_createdByCode??) && (insert_createdByCode_value??)>
 ${prefixName} `CREATED_BY_CODE`
 <#assign prefixName = ','>
@@ -45,6 +49,10 @@ ${prefixName} `PERMISSION_CODES`
 ${prefixName} `ROLE_CODES`
 <#assign prefixName = ','>
 </#if>
+<#if (insert_scope??) && (insert_scope_value??)>
+${prefixName} `SCOPE`
+<#assign prefixName = ','>
+</#if>
 <#if (insert_siteCode??) && (insert_siteCode_value??)>
 ${prefixName} `SITE_CODE`
 <#assign prefixName = ','>
@@ -65,6 +73,10 @@ ${prefixName} `TOKEN_INFO_CODE`
 ${prefixName} `TOKEN_INFO_ID`
 <#assign prefixName = ','>
 </#if>
+<#if (insert_userCode??) && (insert_userCode_value??)>
+${prefixName} `USER_CODE`
+<#assign prefixName = ','>
+</#if>
 <#if (insert_version??) && (insert_version_value??)>
 ${prefixName} `VERSION_`
 <#assign prefixName = ','>
@@ -78,6 +90,10 @@ VALUES
 (<#assign prefixName = ' '>
 <#if (insert_beginDate??) && (insert_beginDate_value??)>
 ${prefixName} :insert_beginDate_value
+<#assign prefixName = ','>
+</#if>
+<#if (insert_clientId??) && (insert_clientId_value??)>
+${prefixName} :insert_clientId_value
 <#assign prefixName = ','>
 </#if>
 <#if (insert_createdByCode??) && (insert_createdByCode_value??)>
@@ -120,6 +136,10 @@ ${prefixName} :insert_permissionCodes_value
 ${prefixName} :insert_roleCodes_value
 <#assign prefixName = ','>
 </#if>
+<#if (insert_scope??) && (insert_scope_value??)>
+${prefixName} :insert_scope_value
+<#assign prefixName = ','>
+</#if>
 <#if (insert_siteCode??) && (insert_siteCode_value??)>
 ${prefixName} :insert_siteCode_value
 <#assign prefixName = ','>
@@ -138,6 +158,10 @@ ${prefixName} :insert_tokenInfoCode_value
 </#if>
 <#if (insert_tokenInfoId??) && (insert_tokenInfoId_value??)>
 ${prefixName} :insert_tokenInfoId_value
+<#assign prefixName = ','>
+</#if>
+<#if (insert_userCode??) && (insert_userCode_value??)>
+${prefixName} :insert_userCode_value
 <#assign prefixName = ','>
 </#if>
 <#if (insert_version??) && (insert_version_value??)>

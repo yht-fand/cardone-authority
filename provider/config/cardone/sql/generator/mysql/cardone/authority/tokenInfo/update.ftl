@@ -6,6 +6,12 @@ ${prefixName} `BEGIN_DATE` = :update_beginDate_value
 </#if>
 <#assign prefixName = ','>
 </#if>
+<#if (update_clientId??)>
+<#if (update_clientId_value??)>
+${prefixName} `CLIENT_ID` = :update_clientId_value
+</#if>
+<#assign prefixName = ','>
+</#if>
 <#if (update_createdByCode??)>
 <#if (update_createdByCode_value??)>
 ${prefixName} `CREATED_BY_CODE` = :update_createdByCode_value
@@ -66,6 +72,12 @@ ${prefixName} `ROLE_CODES` = :update_roleCodes_value
 </#if>
 <#assign prefixName = ','>
 </#if>
+<#if (update_scope??)>
+<#if (update_scope_value??)>
+${prefixName} `SCOPE` = :update_scope_value
+</#if>
+<#assign prefixName = ','>
+</#if>
 <#if (update_siteCode??)>
 <#if (update_siteCode_value??)>
 ${prefixName} `SITE_CODE` = :update_siteCode_value
@@ -93,6 +105,12 @@ ${prefixName} `TOKEN_INFO_CODE` = :update_tokenInfoCode_value
 <#if (update_tokenInfoId??)>
 <#if (update_tokenInfoId_value??)>
 ${prefixName} `TOKEN_INFO_ID` = :update_tokenInfoId_value
+</#if>
+<#assign prefixName = ','>
+</#if>
+<#if (update_userCode??)>
+<#if (update_userCode_value??)>
+${prefixName} `USER_CODE` = :update_userCode_value
 </#if>
 <#assign prefixName = ','>
 </#if>
