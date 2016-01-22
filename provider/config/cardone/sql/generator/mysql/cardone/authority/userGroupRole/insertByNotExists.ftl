@@ -50,8 +50,16 @@ ${prefixName} `ROLE_CODE`
 ${prefixName} `ROLE_CODES`
 <#assign prefixName = ','>
 </#if>
+<#if (insert_siteCode??) && (insert_siteCode_value??)>
+${prefixName} `SITE_CODE`
+<#assign prefixName = ','>
+</#if>
 <#if (insert_stateCode??) && (insert_stateCode_value??)>
 ${prefixName} `STATE_CODE`
+<#assign prefixName = ','>
+</#if>
+<#if (insert_systemInfoCode??) && (insert_systemInfoCode_value??)>
+${prefixName} `SYSTEM_INFO_CODE`
 <#assign prefixName = ','>
 </#if>
 <#if (insert_userGroupCode??) && (insert_userGroupCode_value??)>
@@ -121,8 +129,16 @@ ${prefixName} :insert_roleCode_value
 ${prefixName} :insert_roleCodes_value
 <#assign prefixName = ','>
 </#if>
+<#if (insert_siteCode??) && (insert_siteCode_value??)>
+${prefixName} :insert_siteCode_value
+<#assign prefixName = ','>
+</#if>
 <#if (insert_stateCode??) && (insert_stateCode_value??)>
 ${prefixName} :insert_stateCode_value
+<#assign prefixName = ','>
+</#if>
+<#if (insert_systemInfoCode??) && (insert_systemInfoCode_value??)>
+${prefixName} :insert_systemInfoCode_value
 <#assign prefixName = ','>
 </#if>
 <#if (insert_userGroupCode??) && (insert_userGroupCode_value??)>
@@ -275,11 +291,33 @@ ${prefixName} E.ROLE_CODES IS NULL
 <#if (prefixName!) != 'WHERE'>
 <#assign prefixName = 'AND'>
 </#if>
+<#if (where_and_eq_siteCode??)>
+<#if (where_and_eq_siteCode_value??)>
+${prefixName} E.SITE_CODE = :where_and_eq_siteCode_value
+<#else>
+${prefixName} E.SITE_CODE IS NULL
+</#if>
+<#assign prefixName = ''>
+</#if>
+<#if (prefixName!) != 'WHERE'>
+<#assign prefixName = 'AND'>
+</#if>
 <#if (where_and_eq_stateCode??)>
 <#if (where_and_eq_stateCode_value??)>
 ${prefixName} E.STATE_CODE = :where_and_eq_stateCode_value
 <#else>
 ${prefixName} E.STATE_CODE IS NULL
+</#if>
+<#assign prefixName = ''>
+</#if>
+<#if (prefixName!) != 'WHERE'>
+<#assign prefixName = 'AND'>
+</#if>
+<#if (where_and_eq_systemInfoCode??)>
+<#if (where_and_eq_systemInfoCode_value??)>
+${prefixName} E.SYSTEM_INFO_CODE = :where_and_eq_systemInfoCode_value
+<#else>
+${prefixName} E.SYSTEM_INFO_CODE IS NULL
 </#if>
 <#assign prefixName = ''>
 </#if>

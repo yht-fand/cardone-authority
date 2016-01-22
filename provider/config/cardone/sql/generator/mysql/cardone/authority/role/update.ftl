@@ -84,9 +84,21 @@ ${prefixName} `ROLE_ID` = :update_roleId_value
 </#if>
 <#assign prefixName = ','>
 </#if>
+<#if (update_siteCode??)>
+<#if (update_siteCode_value??)>
+${prefixName} `SITE_CODE` = :update_siteCode_value
+</#if>
+<#assign prefixName = ','>
+</#if>
 <#if (update_stateCode??)>
 <#if (update_stateCode_value??)>
 ${prefixName} `STATE_CODE` = :update_stateCode_value
+</#if>
+<#assign prefixName = ','>
+</#if>
+<#if (update_systemInfoCode??)>
+<#if (update_systemInfoCode_value??)>
+${prefixName} `SYSTEM_INFO_CODE` = :update_systemInfoCode_value
 </#if>
 <#assign prefixName = ','>
 </#if>
