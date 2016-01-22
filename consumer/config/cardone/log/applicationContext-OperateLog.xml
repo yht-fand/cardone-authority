@@ -3,12 +3,12 @@
        xmlns="http://www.springframework.org/schema/beans"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
        default-lazy-init="true">
-    <!-- 角色 -->
-    <bean name="top.cardone.authority.service.RoleService" parent="consumerParent">
-        <property name="serviceInterface" value="top.cardone.authority.service.RoleService"/>
+    <!-- 操作日志 -->
+    <bean name="top.cardone.log.service.OperateLogService" parent="consumerParent">
+        <property name="serviceInterface" value="top.cardone.log.service.OperateLogService"/>
         <property name="queue">
             <bean class="org.apache.activemq.command.ActiveMQQueue">
-                <constructor-arg value="top.cardone.authority.service.RoleService"/>
+                <constructor-arg value="top.cardone.log.service.OperateLogService"/>
             </bean>
         </property>
     </bean>
