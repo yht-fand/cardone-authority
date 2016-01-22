@@ -3,16 +3,16 @@ package top.cardone.authority.po;
 import java.util.Date;
 
 /**
- * 角色
+ * 令牌信息
  *
  * @author yao hai tao
  */
 @lombok.ToString(callSuper = true)
-public class Role implements java.io.Serializable {
+public class TokenInfo implements java.io.Serializable {
     /**
      * 版本号
      */
-    private static final long serialVersionUID = 445066124079661066L;
+    private static final long serialVersionUID = 211408646020099658L;
 
     /**
      * 开始时间
@@ -71,13 +71,6 @@ public class Role implements java.io.Serializable {
     protected Date lastModifiedDate;
 
     /**
-     * 名称
-     */
-    @lombok.Getter
-    @lombok.Setter
-    protected String name;
-
-    /**
      * 组织代码
      */
     @lombok.Getter
@@ -92,25 +85,11 @@ public class Role implements java.io.Serializable {
     protected String permissionCodes;
 
     /**
-     * 角色代码
-     */
-    @lombok.Getter
-    @lombok.Setter
-    protected String roleCode;
-
-    /**
      * 角色代码集合
      */
     @lombok.Getter
     @lombok.Setter
     protected String roleCodes;
-
-    /**
-     * 角色标识
-     */
-    @lombok.Getter
-    @lombok.Setter
-    protected String roleId;
 
     /**
      * 站点代码
@@ -132,6 +111,20 @@ public class Role implements java.io.Serializable {
     @lombok.Getter
     @lombok.Setter
     protected String systemInfoCode;
+
+    /**
+     * 令牌信息代码
+     */
+    @lombok.Getter
+    @lombok.Setter
+    protected String tokenInfoCode;
+
+    /**
+     * 令牌信息标识
+     */
+    @lombok.Getter
+    @lombok.Setter
+    protected String tokenInfoId;
 
     /**
      * 版本
