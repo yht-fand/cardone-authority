@@ -37,6 +37,7 @@ public class R0002Func implements Func1<Object, Map<String, Object>> {
         Map<String, Object> map = Maps.newHashMap();
 
         map.put("beginDate", tokenInfoDto.getBeginDate());
+        map.put("clientId", tokenInfoDto.getClientId());
         map.put("createdByCode", tokenInfoDto.getCreatedByCode());
         map.put("createdDate", tokenInfoDto.getCreatedDate());
         map.put("dataStateCode", tokenInfoDto.getDataStateCode());
@@ -47,11 +48,13 @@ public class R0002Func implements Func1<Object, Map<String, Object>> {
         map.put("orgCode", tokenInfoDto.getOrgCode());
         map.put("permissionCodes", tokenInfoDto.getPermissionCodes());
         map.put("roleCodes", tokenInfoDto.getRoleCodes());
+        map.put("scope", tokenInfoDto.getScope());
         map.put("siteCode", tokenInfoDto.getSiteCode());
         map.put("stateCode", tokenInfoDto.getStateCode());
         map.put("systemInfoCode", tokenInfoDto.getSystemInfoCode());
         map.put("tokenInfoCode", tokenInfoDto.getTokenInfoCode());
         map.put("tokenInfoId", tokenInfoDto.getTokenInfoId());
+        map.put("userCode", tokenInfoDto.getUserCode());
         map.put("version", tokenInfoDto.getVersion());
         map.put("wfId", tokenInfoDto.getWfId());
 

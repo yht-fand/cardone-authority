@@ -9,8 +9,4 @@ import top.cardone.authority.po.Role;
  */
 @lombok.ToString(callSuper = true)
 public class RoleDto extends Role {
-    /**
-     * 版本号
-     */
-    private static final long serialVersionUID = 322305135156296063L;
 }

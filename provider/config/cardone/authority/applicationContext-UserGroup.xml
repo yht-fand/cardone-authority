@@ -47,7 +47,7 @@
         </property>
         <property name="destination">
             <bean class="org.apache.activemq.command.ActiveMQQueue">
-                <constructor-arg value="top.cardone.authority.service.UserGroupService"/>
+                <constructor-arg value="cardone-authority-${cardone-authority-version}:top.cardone.authority.service.UserGroupService"/>
             </bean>
         </property>
     </bean>

@@ -9,8 +9,4 @@ import top.cardone.authority.po.TokenInfo;
  */
 @lombok.ToString(callSuper = true)
 public class TokenInfoDto extends TokenInfo {
-    /**
-     * 版本号
-     */
-    private static final long serialVersionUID = 130966112498722135L;
 }

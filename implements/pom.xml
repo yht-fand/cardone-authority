@@ -14,7 +14,7 @@
     <artifactId>cardone-authority-implements</artifactId>
     <version>${project.parent.version}</version>
     <name>${project.artifactId}</name>
-    <description>cardone authority implements</description>
+    <description>top.cardone.authority cardone-authority-implements</description>
     <packaging>pom</packaging>
 
     <modules>

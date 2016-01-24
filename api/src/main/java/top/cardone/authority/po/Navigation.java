@@ -9,10 +9,6 @@ import java.util.Date;
  */
 @lombok.ToString(callSuper = true)
 public class Navigation implements java.io.Serializable {
-    /**
-     * 版本号
-     */
-    private static final long serialVersionUID = 794270227135338467L;
 
     /**
      * 开始时间

@@ -40,7 +40,9 @@ public class R0001Func implements Func1<Object, Map<String, Object>> {
         map.put("parentTreeName", userGroupDto.getParentTreeName());
         map.put("permissionCodes", userGroupDto.getPermissionCodes());
         map.put("roleCodes", userGroupDto.getRoleCodes());
+        map.put("siteCode", userGroupDto.getSiteCode());
         map.put("stateCode", userGroupDto.getStateCode());
+        map.put("systemInfoCode", userGroupDto.getSystemInfoCode());
         map.put("userGroupCode", userGroupDto.getUserGroupCode());
         map.put("userGroupId", userGroupDto.getUserGroupId());
         map.put("version", userGroupDto.getVersion());

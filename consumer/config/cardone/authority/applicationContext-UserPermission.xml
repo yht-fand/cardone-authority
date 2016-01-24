@@ -8,7 +8,7 @@
         <property name="serviceInterface" value="top.cardone.authority.service.UserPermissionService"/>
         <property name="queue">
             <bean class="org.apache.activemq.command.ActiveMQQueue">
-                <constructor-arg value="top.cardone.authority.service.UserPermissionService"/>
+                <constructor-arg value="cardone-authority-${cardone-authority-version}:top.cardone.authority.service.UserPermissionService"/>
             </bean>
         </property>
     </bean>

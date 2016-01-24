@@ -8,7 +8,7 @@
         <property name="serviceInterface" value="top.cardone.authority.service.UserGroupUserService"/>
         <property name="queue">
             <bean class="org.apache.activemq.command.ActiveMQQueue">
-                <constructor-arg value="top.cardone.authority.service.UserGroupUserService"/>
+                <constructor-arg value="cardone-authority-${cardone-authority-version}:top.cardone.authority.service.UserGroupUserService"/>
             </bean>
         </property>
     </bean>

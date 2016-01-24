@@ -9,10 +9,6 @@ import java.util.Date;
  */
 @lombok.ToString(callSuper = true)
 public class UserGroupUser implements java.io.Serializable {
-    /**
-     * 版本号
-     */
-    private static final long serialVersionUID = 896405487395682099L;
 
     /**
      * 开始时间

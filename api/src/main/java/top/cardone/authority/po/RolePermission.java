@@ -9,10 +9,6 @@ import java.util.Date;
  */
 @lombok.ToString(callSuper = true)
 public class RolePermission implements java.io.Serializable {
-    /**
-     * 版本号
-     */
-    private static final long serialVersionUID = 124069321123504444L;
 
     /**
      * 开始时间

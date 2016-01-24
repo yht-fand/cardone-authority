@@ -9,8 +9,4 @@ import top.cardone.authority.po.Navigation;
  */
 @lombok.ToString(callSuper = true)
 public class NavigationDto extends Navigation {
-    /**
-     * 版本号
-     */
-    private static final long serialVersionUID = 453329922577308718L;
 }

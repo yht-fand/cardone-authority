@@ -50,7 +50,9 @@ public class R0002Func implements Func1<Object, Map<String, Object>> {
         map.put("roleCode", rolePermissionDto.getRoleCode());
         map.put("roleCodes", rolePermissionDto.getRoleCodes());
         map.put("rolePermissionId", rolePermissionDto.getRolePermissionId());
+        map.put("siteCode", rolePermissionDto.getSiteCode());
         map.put("stateCode", rolePermissionDto.getStateCode());
+        map.put("systemInfoCode", rolePermissionDto.getSystemInfoCode());
         map.put("version", rolePermissionDto.getVersion());
         map.put("wfId", rolePermissionDto.getWfId());
 
