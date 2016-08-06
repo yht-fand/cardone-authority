@@ -9,8 +9,4 @@ import top.cardone.authority.po.UserGroup;
  */
 @lombok.ToString(callSuper = true)
 public class UserGroupDto extends UserGroup {
-    /**
-     * 版本号
-     */
-    private static final long serialVersionUID = 160348853037771707L;
 }

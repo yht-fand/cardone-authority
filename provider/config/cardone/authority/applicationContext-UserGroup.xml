@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns="http://www.springframework.org/schema/beans"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
-       default-lazy-init="true">
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
     <!-- 用户组 -->
     <bean id="top.cardone.authority.dao.UserGroupDao"
           class="top.cardone.authority.dao.impl.UserGroupDaoImpl">
@@ -17,7 +16,7 @@
                 </entry>
                 <entry key="insert">
                     <map>
-                        <entry key="userGroupId" value="getRandomUUIDFunc"/>
+                        <entry key="userGroupId" value="readRandomUUIDFunc"/>
                         <entry key="createdByCode" value="readCreatedByCodeFunc"/>
                         <entry key="createdDate" value="readCreatedDateFunc"/>
                     </map>
@@ -40,14 +39,14 @@
 
     <bean parent="messageListenerContainerParnet">
         <property name="messageListener">
-            <bean  parent="exceptionParnet">
+            <bean  parent="remoteInvocationExecutorParnet">
                 <property name="serviceInterface" value="top.cardone.authority.service.UserGroupService"/>
                 <property name="service" ref="top.cardone.authority.service.UserGroupService"/>
             </bean>
         </property>
         <property name="destination">
             <bean class="org.apache.activemq.command.ActiveMQQueue">
-                <constructor-arg value="top.cardone.authority.service.UserGroupService"/>
+                <constructor-arg value="cardone-authority-${cardone-authority-version}:top.cardone.authority.service.UserGroupService"/>
             </bean>
         </property>
     </bean>

@@ -42,8 +42,14 @@ ROLE_CODES AS roleCodes
 <#case "rolePermissionId">
 ROLE_PERMISSION_ID AS rolePermissionId
 <#break>
+<#case "siteCode">
+SITE_CODE AS siteCode
+<#break>
 <#case "stateCode">
 STATE_CODE AS stateCode
+<#break>
+<#case "systemInfoCode">
+SYSTEM_INFO_CODE AS systemInfoCode
 <#break>
 <#case "version">
 VERSION_ AS version
@@ -54,5 +60,5 @@ WF_ID AS wfId
 <#default>
 COUNT(1) AS COUNT_
 </#switch>
-FROM t_role_permission
+FROM c1_role_permission
 <#include "where.ftl">

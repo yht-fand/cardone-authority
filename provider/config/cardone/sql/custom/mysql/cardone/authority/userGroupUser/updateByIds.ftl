@@ -1,1 +1,1 @@
-UPDATE t_user_group_user SET END_DATE = NOW() WHERE INSTR(:ids, userGroupUserId) > 0
+UPDATE c1_user_group_user SET END_DATE = NOW() WHERE INSTR(:ids, userGroupUserId) > 0

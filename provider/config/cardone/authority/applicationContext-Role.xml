@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns="http://www.springframework.org/schema/beans"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
-       default-lazy-init="true">
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
     <!-- 角色 -->
     <bean id="top.cardone.authority.dao.RoleDao"
           class="top.cardone.authority.dao.impl.RoleDaoImpl">
@@ -17,7 +16,7 @@
                 </entry>
                 <entry key="insert">
                     <map>
-                        <entry key="roleId" value="getRandomUUIDFunc"/>
+                        <entry key="roleId" value="readRandomUUIDFunc"/>
                         <entry key="createdByCode" value="readCreatedByCodeFunc"/>
                         <entry key="createdDate" value="readCreatedDateFunc"/>
                     </map>
@@ -40,14 +39,14 @@
 
     <bean parent="messageListenerContainerParnet">
         <property name="messageListener">
-            <bean  parent="exceptionParnet">
+            <bean  parent="remoteInvocationExecutorParnet">
                 <property name="serviceInterface" value="top.cardone.authority.service.RoleService"/>
                 <property name="service" ref="top.cardone.authority.service.RoleService"/>
             </bean>
         </property>
         <property name="destination">
             <bean class="org.apache.activemq.command.ActiveMQQueue">
-                <constructor-arg value="top.cardone.authority.service.RoleService"/>
+                <constructor-arg value="cardone-authority-${cardone-authority-version}:top.cardone.authority.service.RoleService"/>
             </bean>
         </property>
     </bean>

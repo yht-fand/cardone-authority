@@ -6,7 +6,7 @@
     <parent>
 		<groupId>top.cardone.authority</groupId>
         <artifactId>cardone-authority-parent</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
+        <version>0.0.2-SNAPSHOT</version>
         <relativePath>parent</relativePath>
     </parent>
 
@@ -14,7 +14,7 @@
     <artifactId>cardone-authority-root</artifactId>
     <version>${project.parent.version}</version>
     <name>${project.artifactId}</name>
-    <description>cardone authority root</description>
+    <description>top.cardone.authority cardone-authority-root</description>
     <packaging>pom</packaging>
 
     <modules>

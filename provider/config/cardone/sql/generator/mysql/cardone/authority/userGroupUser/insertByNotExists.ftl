@@ -1,6 +1,6 @@
 INSERT
 INTO
-t_user_group_user
+c1_user_group_user
 (<#assign prefixName = ' '>
 <#if (insert_beginDate??) && (insert_beginDate_value??)>
 ${prefixName} `BEGIN_DATE`
@@ -46,8 +46,16 @@ ${prefixName} `PERMISSION_CODES`
 ${prefixName} `ROLE_CODES`
 <#assign prefixName = ','>
 </#if>
+<#if (insert_siteCode??) && (insert_siteCode_value??)>
+${prefixName} `SITE_CODE`
+<#assign prefixName = ','>
+</#if>
 <#if (insert_stateCode??) && (insert_stateCode_value??)>
 ${prefixName} `STATE_CODE`
+<#assign prefixName = ','>
+</#if>
+<#if (insert_systemInfoCode??) && (insert_systemInfoCode_value??)>
+${prefixName} `SYSTEM_INFO_CODE`
 <#assign prefixName = ','>
 </#if>
 <#if (insert_userCode??) && (insert_userCode_value??)>
@@ -117,8 +125,16 @@ ${prefixName} :insert_permissionCodes_value
 ${prefixName} :insert_roleCodes_value
 <#assign prefixName = ','>
 </#if>
+<#if (insert_siteCode??) && (insert_siteCode_value??)>
+${prefixName} :insert_siteCode_value
+<#assign prefixName = ','>
+</#if>
 <#if (insert_stateCode??) && (insert_stateCode_value??)>
 ${prefixName} :insert_stateCode_value
+<#assign prefixName = ','>
+</#if>
+<#if (insert_systemInfoCode??) && (insert_systemInfoCode_value??)>
+${prefixName} :insert_systemInfoCode_value
 <#assign prefixName = ','>
 </#if>
 <#if (insert_userCode??) && (insert_userCode_value??)>
@@ -141,7 +157,7 @@ ${prefixName} :insert_version_value
 ${prefixName} :insert_wfId_value
 <#assign prefixName = ','>
 </#if>
-FROM DUAL WHERE NOT EXISTS (SELECT 1 FROM t_user_group_user E
+FROM DUAL WHERE NOT EXISTS (SELECT 1 FROM c1_user_group_user E
 <#assign prefixName = 'WHERE'>
 <#if (where_and_eq_beginDate??)>
 <#if (where_and_eq_beginDate_value??)>
@@ -149,9 +165,6 @@ ${prefixName} E.BEGIN_DATE = :where_and_eq_beginDate_value
 <#else>
 ${prefixName} E.BEGIN_DATE IS NULL
 </#if>
-<#assign prefixName = ''>
-</#if>
-<#if (prefixName!) != 'WHERE'>
 <#assign prefixName = 'AND'>
 </#if>
 <#if (where_and_eq_createdByCode??)>
@@ -160,9 +173,6 @@ ${prefixName} E.CREATED_BY_CODE = :where_and_eq_createdByCode_value
 <#else>
 ${prefixName} E.CREATED_BY_CODE IS NULL
 </#if>
-<#assign prefixName = ''>
-</#if>
-<#if (prefixName!) != 'WHERE'>
 <#assign prefixName = 'AND'>
 </#if>
 <#if (where_and_eq_createdDate??)>
@@ -171,9 +181,6 @@ ${prefixName} E.CREATED_DATE = :where_and_eq_createdDate_value
 <#else>
 ${prefixName} E.CREATED_DATE IS NULL
 </#if>
-<#assign prefixName = ''>
-</#if>
-<#if (prefixName!) != 'WHERE'>
 <#assign prefixName = 'AND'>
 </#if>
 <#if (where_and_eq_dataStateCode??)>
@@ -182,9 +189,6 @@ ${prefixName} E.DATA_STATE_CODE = :where_and_eq_dataStateCode_value
 <#else>
 ${prefixName} E.DATA_STATE_CODE IS NULL
 </#if>
-<#assign prefixName = ''>
-</#if>
-<#if (prefixName!) != 'WHERE'>
 <#assign prefixName = 'AND'>
 </#if>
 <#if (where_and_eq_departmentCode??)>
@@ -193,9 +197,6 @@ ${prefixName} E.DEPARTMENT_CODE = :where_and_eq_departmentCode_value
 <#else>
 ${prefixName} E.DEPARTMENT_CODE IS NULL
 </#if>
-<#assign prefixName = ''>
-</#if>
-<#if (prefixName!) != 'WHERE'>
 <#assign prefixName = 'AND'>
 </#if>
 <#if (where_and_eq_endDate??)>
@@ -204,9 +205,6 @@ ${prefixName} E.END_DATE = :where_and_eq_endDate_value
 <#else>
 ${prefixName} E.END_DATE IS NULL
 </#if>
-<#assign prefixName = ''>
-</#if>
-<#if (prefixName!) != 'WHERE'>
 <#assign prefixName = 'AND'>
 </#if>
 <#if (where_and_eq_lastModifiedByCode??)>
@@ -215,9 +213,6 @@ ${prefixName} E.LAST_MODIFIED_BY_CODE = :where_and_eq_lastModifiedByCode_value
 <#else>
 ${prefixName} E.LAST_MODIFIED_BY_CODE IS NULL
 </#if>
-<#assign prefixName = ''>
-</#if>
-<#if (prefixName!) != 'WHERE'>
 <#assign prefixName = 'AND'>
 </#if>
 <#if (where_and_eq_lastModifiedDate??)>
@@ -226,9 +221,6 @@ ${prefixName} E.LAST_MODIFIED_DATE = :where_and_eq_lastModifiedDate_value
 <#else>
 ${prefixName} E.LAST_MODIFIED_DATE IS NULL
 </#if>
-<#assign prefixName = ''>
-</#if>
-<#if (prefixName!) != 'WHERE'>
 <#assign prefixName = 'AND'>
 </#if>
 <#if (where_and_eq_orgCode??)>
@@ -237,9 +229,6 @@ ${prefixName} E.ORG_CODE = :where_and_eq_orgCode_value
 <#else>
 ${prefixName} E.ORG_CODE IS NULL
 </#if>
-<#assign prefixName = ''>
-</#if>
-<#if (prefixName!) != 'WHERE'>
 <#assign prefixName = 'AND'>
 </#if>
 <#if (where_and_eq_permissionCodes??)>
@@ -248,9 +237,6 @@ ${prefixName} E.PERMISSION_CODES = :where_and_eq_permissionCodes_value
 <#else>
 ${prefixName} E.PERMISSION_CODES IS NULL
 </#if>
-<#assign prefixName = ''>
-</#if>
-<#if (prefixName!) != 'WHERE'>
 <#assign prefixName = 'AND'>
 </#if>
 <#if (where_and_eq_roleCodes??)>
@@ -259,9 +245,14 @@ ${prefixName} E.ROLE_CODES = :where_and_eq_roleCodes_value
 <#else>
 ${prefixName} E.ROLE_CODES IS NULL
 </#if>
-<#assign prefixName = ''>
+<#assign prefixName = 'AND'>
 </#if>
-<#if (prefixName!) != 'WHERE'>
+<#if (where_and_eq_siteCode??)>
+<#if (where_and_eq_siteCode_value??)>
+${prefixName} E.SITE_CODE = :where_and_eq_siteCode_value
+<#else>
+${prefixName} E.SITE_CODE IS NULL
+</#if>
 <#assign prefixName = 'AND'>
 </#if>
 <#if (where_and_eq_stateCode??)>
@@ -270,9 +261,14 @@ ${prefixName} E.STATE_CODE = :where_and_eq_stateCode_value
 <#else>
 ${prefixName} E.STATE_CODE IS NULL
 </#if>
-<#assign prefixName = ''>
+<#assign prefixName = 'AND'>
 </#if>
-<#if (prefixName!) != 'WHERE'>
+<#if (where_and_eq_systemInfoCode??)>
+<#if (where_and_eq_systemInfoCode_value??)>
+${prefixName} E.SYSTEM_INFO_CODE = :where_and_eq_systemInfoCode_value
+<#else>
+${prefixName} E.SYSTEM_INFO_CODE IS NULL
+</#if>
 <#assign prefixName = 'AND'>
 </#if>
 <#if (where_and_eq_userCode??)>
@@ -281,9 +277,6 @@ ${prefixName} E.USER_CODE = :where_and_eq_userCode_value
 <#else>
 ${prefixName} E.USER_CODE IS NULL
 </#if>
-<#assign prefixName = ''>
-</#if>
-<#if (prefixName!) != 'WHERE'>
 <#assign prefixName = 'AND'>
 </#if>
 <#if (where_and_eq_userGroupCode??)>
@@ -292,9 +285,6 @@ ${prefixName} E.USER_GROUP_CODE = :where_and_eq_userGroupCode_value
 <#else>
 ${prefixName} E.USER_GROUP_CODE IS NULL
 </#if>
-<#assign prefixName = ''>
-</#if>
-<#if (prefixName!) != 'WHERE'>
 <#assign prefixName = 'AND'>
 </#if>
 <#if (where_and_eq_userGroupUserId??)>
@@ -303,9 +293,6 @@ ${prefixName} E.USER_GROUP_USER_ID = :where_and_eq_userGroupUserId_value
 <#else>
 ${prefixName} E.USER_GROUP_USER_ID IS NULL
 </#if>
-<#assign prefixName = ''>
-</#if>
-<#if (prefixName!) != 'WHERE'>
 <#assign prefixName = 'AND'>
 </#if>
 <#if (where_and_eq_version??)>
@@ -314,9 +301,6 @@ ${prefixName} E.VERSION_ = :where_and_eq_version_value
 <#else>
 ${prefixName} E.VERSION_ IS NULL
 </#if>
-<#assign prefixName = ''>
-</#if>
-<#if (prefixName!) != 'WHERE'>
 <#assign prefixName = 'AND'>
 </#if>
 <#if (where_and_eq_wfId??)>
@@ -325,6 +309,6 @@ ${prefixName} E.WF_ID = :where_and_eq_wfId_value
 <#else>
 ${prefixName} E.WF_ID IS NULL
 </#if>
-<#assign prefixName = ''>
+<#assign prefixName = 'AND'>
 </#if>
 ))

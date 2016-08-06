@@ -35,7 +35,9 @@ public class R0001Func implements Func1<Object, Map<String, Object>> {
         map.put("orgCode", userGroupUserDto.getOrgCode());
         map.put("permissionCodes", userGroupUserDto.getPermissionCodes());
         map.put("roleCodes", userGroupUserDto.getRoleCodes());
+        map.put("siteCode", userGroupUserDto.getSiteCode());
         map.put("stateCode", userGroupUserDto.getStateCode());
+        map.put("systemInfoCode", userGroupUserDto.getSystemInfoCode());
         map.put("userCode", userGroupUserDto.getUserCode());
         map.put("userGroupCode", userGroupUserDto.getUserGroupCode());
         map.put("userGroupUserId", userGroupUserDto.getUserGroupUserId());

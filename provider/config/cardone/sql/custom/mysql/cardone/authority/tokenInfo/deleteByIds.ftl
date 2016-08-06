@@ -1,0 +1,1 @@
+DELETE FROM c1_token_info WHERE INSTR(:ids, tokenInfoId) > 0

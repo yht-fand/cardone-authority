@@ -1,1 +1,1 @@
-DELETE FROM t_user_group WHERE INSTR(:ids, userGroupId) > 0
+DELETE FROM c1_user_group WHERE INSTR(:ids, userGroupId) > 0

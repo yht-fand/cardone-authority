@@ -6,7 +6,7 @@
     <parent>
 		<groupId>top.cardone.authority</groupId>
         <artifactId>cardone-authority-parent</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
+        <version>0.0.2-SNAPSHOT</version>
         <relativePath>../parent</relativePath>
     </parent>
 
@@ -14,13 +14,18 @@
     <artifactId>cardone-authority-api</artifactId>
     <version>${project.parent.version}</version>
     <name>${project.artifactId}</name>
-    <description>cardone authority api</description>
+    <description>top.cardone.authority cardone-authority-api</description>
     <packaging>jar</packaging>
 
     <dependencies>
         <dependency>
             <groupId>top.cardone</groupId>
             <artifactId>cardone-data-commons-api</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>top.cardone</groupId>
+            <artifactId>cardone-cache-api</artifactId>
         </dependency>
     </dependencies>
 </project>

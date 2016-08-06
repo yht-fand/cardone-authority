@@ -48,8 +48,14 @@ PERMISSION_CODES AS permissionCodes
 <#case "roleCodes">
 ROLE_CODES AS roleCodes
 <#break>
+<#case "siteCode">
+SITE_CODE AS siteCode
+<#break>
 <#case "stateCode">
 STATE_CODE AS stateCode
+<#break>
+<#case "systemInfoCode">
+SYSTEM_INFO_CODE AS systemInfoCode
 <#break>
 <#case "userGroupCode">
 USER_GROUP_CODE AS userGroupCode
@@ -66,5 +72,5 @@ WF_ID AS wfId
 <#default>
 COUNT(1) AS COUNT_
 </#switch>
-FROM t_user_group
+FROM c1_user_group
 <#include "where.ftl">

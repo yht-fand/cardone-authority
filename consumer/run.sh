@@ -1,6 +1,9 @@
-@echo off
-echo run
+#!/bin/bash
+
 myself="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-cd jdk && set JAVA_HOME=$myself\jdk && PATH=$JAVA_HOME\bin:$PATH && cd $myself
-call java -Dfile.encoding=UTF-8 -cp $myself\*;$myself\target\* org.springframework.boot.loader.JarLauncher --app.root=$myself
-call run.sh
+if [ -e 'jdk' ]; then
+export JAVA_HOME=$myself/jdk
+export PATH=$JAVA_HOME/bin:$PATH
+fi
+java -Dfile.encoding=UTF-8 -cp $myself/*:$myself/target/* org.springframework.boot.loader.JarLauncher --app.root=file://$myself
+sh run.sh

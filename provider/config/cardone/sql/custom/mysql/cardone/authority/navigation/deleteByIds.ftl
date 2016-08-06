@@ -1,1 +1,1 @@
-DELETE FROM t_navigation WHERE INSTR(:ids, navigationId) > 0
+DELETE FROM c1_navigation WHERE INSTR(:ids, navigationId) > 0

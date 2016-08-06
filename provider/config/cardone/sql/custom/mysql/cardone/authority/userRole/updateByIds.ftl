@@ -1,1 +1,1 @@
-UPDATE t_user_role SET END_DATE = NOW() WHERE INSTR(:ids, userRoleId) > 0
+UPDATE c1_user_role SET END_DATE = NOW() WHERE INSTR(:ids, userRoleId) > 0

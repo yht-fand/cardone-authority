@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.springframework.org/schema/beans"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
     <bean id="dataSourceParent" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close"
           abstract="true">
         <property name="timeBetweenLogStatsMillis" value="300000"/>
@@ -45,6 +48,9 @@
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <property name="dataSource" ref="top.cardone.dataSource.master_1"/>
     </bean>
+
+    <!-- 使用annotation定义事务 -->
+    <tx:annotation-driven order="9999" proxy-target-class="true" transaction-manager="transactionManager"/>
 
     <bean name="org.springframework.jdbc.core.namedparam.NamedParameterJdbcOperations"
           class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate">

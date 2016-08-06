@@ -56,8 +56,16 @@ ${prefixName} `ROLE_CODES`
 ${prefixName} `ROLE_PERMISSION_ID`
 <#assign prefixName = ','>
 </#if>
+<#if (select_siteCode??)>
+${prefixName} `SITE_CODE`
+<#assign prefixName = ','>
+</#if>
 <#if (select_stateCode??)>
 ${prefixName} `STATE_CODE`
+<#assign prefixName = ','>
+</#if>
+<#if (select_systemInfoCode??)>
+${prefixName} `SYSTEM_INFO_CODE`
 <#assign prefixName = ','>
 </#if>
 <#if (select_version??)>
@@ -83,11 +91,13 @@ ${prefixName} `WF_ID`
 , `ROLE_CODE`
 , `ROLE_CODES`
 , `ROLE_PERMISSION_ID`
+, `SITE_CODE`
 , `STATE_CODE`
+, `SYSTEM_INFO_CODE`
 , `VERSION_`
 , `WF_ID`
 </#if>
-FROM t_role_permission
+FROM c1_role_permission
 <#include "where.ftl">
 <#assign prefixName = 'ORDER BY'>
 <#if (order_by_beginDate??)>
@@ -146,8 +156,16 @@ ${prefixName} `ROLE_CODES` ${order_by_roleCodes_value!}
 ${prefixName} `ROLE_PERMISSION_ID` ${order_by_rolePermissionId_value!}
 <#assign prefixName = ','>
 </#if>
+<#if (order_by_siteCode??)>
+${prefixName} `SITE_CODE` ${order_by_siteCode_value!}
+<#assign prefixName = ','>
+</#if>
 <#if (order_by_stateCode??)>
 ${prefixName} `STATE_CODE` ${order_by_stateCode_value!}
+<#assign prefixName = ','>
+</#if>
+<#if (order_by_systemInfoCode??)>
+${prefixName} `SYSTEM_INFO_CODE` ${order_by_systemInfoCode_value!}
 <#assign prefixName = ','>
 </#if>
 <#if (order_by_version??)>

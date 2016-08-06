@@ -44,7 +44,9 @@ public class R0001Func implements Func1<Object, Map<String, Object>> {
         map.put("parentTreeName", navigationDto.getParentTreeName());
         map.put("permissionCodes", navigationDto.getPermissionCodes());
         map.put("roleCodes", navigationDto.getRoleCodes());
+        map.put("siteCode", navigationDto.getSiteCode());
         map.put("stateCode", navigationDto.getStateCode());
+        map.put("systemInfoCode", navigationDto.getSystemInfoCode());
         map.put("target", navigationDto.getTarget());
         map.put("typeCode", navigationDto.getTypeCode());
         map.put("url", navigationDto.getUrl());

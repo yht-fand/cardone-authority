@@ -22,7 +22,7 @@ public class R0003Func implements Func1<Object, Map<String, Object>> {
     public Object func(Map<String, Object> map) {
         Page<UserRoleDto> userRoleDtoPage = ApplicationContextHolder.getBean(UserRoleService.class).page(UserRoleDto.class, map);
 
-        return ApplicationContextHolder.func(PageSupport.class, pageSupport -> pageSupport.newMap(this.toMapList(userRoleDtoPage.getContent()), map, userRoleDtoPage.getTotalElements()));
+        return ApplicationContextHolder.getBean(PageSupport.class).newMap(this.toMapList(userRoleDtoPage.getContent()), map, userRoleDtoPage.getTotalElements());
     }
 
     private List<Map<String, Object>> toMapList(List<UserRoleDto> userRoleDtoList) {
@@ -51,7 +51,9 @@ public class R0003Func implements Func1<Object, Map<String, Object>> {
         map.put("permissionCodes", userRoleDto.getPermissionCodes());
         map.put("roleCode", userRoleDto.getRoleCode());
         map.put("roleCodes", userRoleDto.getRoleCodes());
+        map.put("siteCode", userRoleDto.getSiteCode());
         map.put("stateCode", userRoleDto.getStateCode());
+        map.put("systemInfoCode", userRoleDto.getSystemInfoCode());
         map.put("userCode", userRoleDto.getUserCode());
         map.put("userRoleId", userRoleDto.getUserRoleId());
         map.put("version", userRoleDto.getVersion());
