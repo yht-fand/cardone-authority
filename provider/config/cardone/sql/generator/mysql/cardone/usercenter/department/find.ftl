@@ -64,16 +64,8 @@ ${prefixName} `PERMISSION_CODES`
 ${prefixName} `ROLE_CODES`
 <#assign prefixName = ','>
 </#if>
-<#if (select_siteCode??)>
-${prefixName} `SITE_CODE`
-<#assign prefixName = ','>
-</#if>
 <#if (select_stateCode??)>
 ${prefixName} `STATE_CODE`
-<#assign prefixName = ','>
-</#if>
-<#if (select_systemInfoCode??)>
-${prefixName} `SYSTEM_INFO_CODE`
 <#assign prefixName = ','>
 </#if>
 <#if (select_version??)>
@@ -101,9 +93,7 @@ ${prefixName} `WF_ID`
 , `PARENT_TREE_NAME`
 , `PERMISSION_CODES`
 , `ROLE_CODES`
-, `SITE_CODE`
 , `STATE_CODE`
-, `SYSTEM_INFO_CODE`
 , `VERSION_`
 , `WF_ID`
 </#if>
@@ -174,16 +164,8 @@ ${prefixName} `PERMISSION_CODES` ${order_by_permissionCodes_value!}
 ${prefixName} `ROLE_CODES` ${order_by_roleCodes_value!}
 <#assign prefixName = ','>
 </#if>
-<#if (order_by_siteCode??)>
-${prefixName} `SITE_CODE` ${order_by_siteCode_value!}
-<#assign prefixName = ','>
-</#if>
 <#if (order_by_stateCode??)>
 ${prefixName} `STATE_CODE` ${order_by_stateCode_value!}
-<#assign prefixName = ','>
-</#if>
-<#if (order_by_systemInfoCode??)>
-${prefixName} `SYSTEM_INFO_CODE` ${order_by_systemInfoCode_value!}
 <#assign prefixName = ','>
 </#if>
 <#if (order_by_version??)>

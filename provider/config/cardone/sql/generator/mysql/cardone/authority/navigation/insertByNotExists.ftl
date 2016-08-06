@@ -399,17 +399,6 @@ ${prefixName} E.SITE_CODE IS NULL
 </#if>
 <#assign prefixName = 'AND'>
 </#if>
-<#if (where_and_eq_siteCode??)>
-<#if (where_and_eq_siteCode_value??)>
-${prefixName} E.SITE_CODE = :where_and_eq_siteCode_value
-<#else>
-${prefixName} E.SITE_CODE IS NULL
-</#if>
-<#assign prefixName = ''>
-</#if>
-<#if (prefixName!) != 'WHERE'>
-<#assign prefixName = 'AND'>
-</#if>
 <#if (where_and_eq_stateCode??)>
 <#if (where_and_eq_stateCode_value??)>
 ${prefixName} E.STATE_CODE = :where_and_eq_stateCode_value
@@ -424,17 +413,6 @@ ${prefixName} E.SYSTEM_INFO_CODE = :where_and_eq_systemInfoCode_value
 <#else>
 ${prefixName} E.SYSTEM_INFO_CODE IS NULL
 </#if>
-<#assign prefixName = 'AND'>
-</#if>
-<#if (where_and_eq_systemInfoCode??)>
-<#if (where_and_eq_systemInfoCode_value??)>
-${prefixName} E.SYSTEM_INFO_CODE = :where_and_eq_systemInfoCode_value
-<#else>
-${prefixName} E.SYSTEM_INFO_CODE IS NULL
-</#if>
-<#assign prefixName = ''>
-</#if>
-<#if (prefixName!) != 'WHERE'>
 <#assign prefixName = 'AND'>
 </#if>
 <#if (where_and_eq_target??)>

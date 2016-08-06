@@ -119,68 +119,6 @@ ${prefixName} `SITE_CODE` IS NULL
 </#if>
 <#assign prefixName = 'AND'>
 </#if>
-<#if (where_and_eq_siteCode??)>
-<#if (where_and_eq_siteCode_value??)>
-${prefixName} `SITE_CODE` = :where_and_eq_siteCode_value
-<#else>
-${prefixName} `SITE_CODE` IS NULL
-</#if>
-<#assign prefixName = ''>
-</#if>
-<#if (where_and_nq_siteCode??)>
-<#if (prefixName!) != 'WHERE'>
-<#assign prefixName = 'AND'>
-</#if>
-<#if (where_and_nq_siteCode_value??)>
-${prefixName} `SITE_CODE` <> :where_and_nq_siteCode_value
-<#else>
-${prefixName} `SITE_CODE` IS NOT NULL
-</#if>
-<#assign prefixName = ''>
-</#if>
-<#if (where_and_like_siteCode??)>
-<#if (prefixName!) != 'WHERE'>
-<#assign prefixName = 'AND'>
-</#if>
-<#if (where_and_like_siteCode_value??)>
-${prefixName} `SITE_CODE` <> :where_and_like_siteCode_value
-</#if>
-<#assign prefixName = ''>
-</#if>
-<#if (where_or_eq_siteCode??)>
-<#if (prefixName!) != 'WHERE'>
-<#assign prefixName = 'OR'>
-</#if>
-<#if (where_or_eq_siteCode_value??)>
-${prefixName} `SITE_CODE` = :where_or_eq_siteCode_value
-<#else>
-${prefixName} `SITE_CODE` IS NULL
-</#if>
-<#assign prefixName = ''>
-</#if>
-<#if (where_or_nq_siteCode??)>
-<#if (prefixName!) != 'WHERE'>
-<#assign prefixName = 'OR'>
-</#if>
-<#if (where_or_nq_siteCode_value??)>
-${prefixName} `SITE_CODE` <> :where_or_nq_siteCode_value
-<#else>
-${prefixName} `SITE_CODE` IS NOT NULL
-</#if>
-<#assign prefixName = ''>
-</#if>
-<#if (where_or_like_siteCode??)>
-<#if (prefixName!) != 'WHERE'>
-<#assign prefixName = 'OR'>
-</#if>
-<#if (where_or_like_siteCode_value??)>
-${prefixName} `SITE_CODE` like :where_or_like_siteCode_value
-</#if>
-<#assign prefixName = ''>
-</#if>
-<#if (prefixName!) != 'WHERE'>
-<#assign prefixName = 'AND'>
-</#if>
 <#if (where_and_eq_stateCode??)>
 <#if (where_and_eq_stateCode_value??)>
 ${prefixName} `STATE_CODE` = :where_and_eq_stateCode_value
@@ -195,68 +133,6 @@ ${prefixName} `SYSTEM_INFO_CODE` = :where_and_eq_systemInfoCode_value
 <#else>
 ${prefixName} `SYSTEM_INFO_CODE` IS NULL
 </#if>
-<#assign prefixName = 'AND'>
-</#if>
-<#if (where_and_eq_systemInfoCode??)>
-<#if (where_and_eq_systemInfoCode_value??)>
-${prefixName} `SYSTEM_INFO_CODE` = :where_and_eq_systemInfoCode_value
-<#else>
-${prefixName} `SYSTEM_INFO_CODE` IS NULL
-</#if>
-<#assign prefixName = ''>
-</#if>
-<#if (where_and_nq_systemInfoCode??)>
-<#if (prefixName!) != 'WHERE'>
-<#assign prefixName = 'AND'>
-</#if>
-<#if (where_and_nq_systemInfoCode_value??)>
-${prefixName} `SYSTEM_INFO_CODE` <> :where_and_nq_systemInfoCode_value
-<#else>
-${prefixName} `SYSTEM_INFO_CODE` IS NOT NULL
-</#if>
-<#assign prefixName = ''>
-</#if>
-<#if (where_and_like_systemInfoCode??)>
-<#if (prefixName!) != 'WHERE'>
-<#assign prefixName = 'AND'>
-</#if>
-<#if (where_and_like_systemInfoCode_value??)>
-${prefixName} `SYSTEM_INFO_CODE` <> :where_and_like_systemInfoCode_value
-</#if>
-<#assign prefixName = ''>
-</#if>
-<#if (where_or_eq_systemInfoCode??)>
-<#if (prefixName!) != 'WHERE'>
-<#assign prefixName = 'OR'>
-</#if>
-<#if (where_or_eq_systemInfoCode_value??)>
-${prefixName} `SYSTEM_INFO_CODE` = :where_or_eq_systemInfoCode_value
-<#else>
-${prefixName} `SYSTEM_INFO_CODE` IS NULL
-</#if>
-<#assign prefixName = ''>
-</#if>
-<#if (where_or_nq_systemInfoCode??)>
-<#if (prefixName!) != 'WHERE'>
-<#assign prefixName = 'OR'>
-</#if>
-<#if (where_or_nq_systemInfoCode_value??)>
-${prefixName} `SYSTEM_INFO_CODE` <> :where_or_nq_systemInfoCode_value
-<#else>
-${prefixName} `SYSTEM_INFO_CODE` IS NOT NULL
-</#if>
-<#assign prefixName = ''>
-</#if>
-<#if (where_or_like_systemInfoCode??)>
-<#if (prefixName!) != 'WHERE'>
-<#assign prefixName = 'OR'>
-</#if>
-<#if (where_or_like_systemInfoCode_value??)>
-${prefixName} `SYSTEM_INFO_CODE` like :where_or_like_systemInfoCode_value
-</#if>
-<#assign prefixName = ''>
-</#if>
-<#if (prefixName!) != 'WHERE'>
 <#assign prefixName = 'AND'>
 </#if>
 <#if (where_and_eq_version??)>
