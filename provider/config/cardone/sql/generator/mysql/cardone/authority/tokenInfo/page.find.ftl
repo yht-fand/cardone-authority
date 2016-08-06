@@ -4,6 +4,10 @@ SELECT
 ${prefixName} `BEGIN_DATE`
 <#assign prefixName = ','>
 </#if>
+<#if (select_clientId??)>
+${prefixName} `CLIENT_ID`
+<#assign prefixName = ','>
+</#if>
 <#if (select_createdByCode??)>
 ${prefixName} `CREATED_BY_CODE`
 <#assign prefixName = ','>
@@ -20,10 +24,6 @@ ${prefixName} `DATA_STATE_CODE`
 ${prefixName} `DEPARTMENT_CODE`
 <#assign prefixName = ','>
 </#if>
-<#if (select_departmentId??)>
-${prefixName} `DEPARTMENT_ID`
-<#assign prefixName = ','>
-</#if>
 <#if (select_endDate??)>
 ${prefixName} `END_DATE`
 <#assign prefixName = ','>
@@ -36,24 +36,8 @@ ${prefixName} `LAST_MODIFIED_BY_CODE`
 ${prefixName} `LAST_MODIFIED_DATE`
 <#assign prefixName = ','>
 </#if>
-<#if (select_name??)>
-${prefixName} `NAME`
-<#assign prefixName = ','>
-</#if>
 <#if (select_orgCode??)>
 ${prefixName} `ORG_CODE`
-<#assign prefixName = ','>
-</#if>
-<#if (select_parentCode??)>
-${prefixName} `PARENT_CODE`
-<#assign prefixName = ','>
-</#if>
-<#if (select_parentTreeCode??)>
-${prefixName} `PARENT_TREE_CODE`
-<#assign prefixName = ','>
-</#if>
-<#if (select_parentTreeName??)>
-${prefixName} `PARENT_TREE_NAME`
 <#assign prefixName = ','>
 </#if>
 <#if (select_permissionCodes??)>
@@ -62,6 +46,10 @@ ${prefixName} `PERMISSION_CODES`
 </#if>
 <#if (select_roleCodes??)>
 ${prefixName} `ROLE_CODES`
+<#assign prefixName = ','>
+</#if>
+<#if (select_scope??)>
+${prefixName} `SCOPE`
 <#assign prefixName = ','>
 </#if>
 <#if (select_siteCode??)>
@@ -76,6 +64,18 @@ ${prefixName} `STATE_CODE`
 ${prefixName} `SYSTEM_INFO_CODE`
 <#assign prefixName = ','>
 </#if>
+<#if (select_tokenInfoCode??)>
+${prefixName} `TOKEN_INFO_CODE`
+<#assign prefixName = ','>
+</#if>
+<#if (select_tokenInfoId??)>
+${prefixName} `TOKEN_INFO_ID`
+<#assign prefixName = ','>
+</#if>
+<#if (select_userCode??)>
+${prefixName} `USER_CODE`
+<#assign prefixName = ','>
+</#if>
 <#if (select_version??)>
 ${prefixName} `VERSION_`
 <#assign prefixName = ','>
@@ -86,32 +86,36 @@ ${prefixName} `WF_ID`
 </#if>
 <#if prefixName ==  ' '>
   `BEGIN_DATE`
+, `CLIENT_ID`
 , `CREATED_BY_CODE`
 , `CREATED_DATE`
 , `DATA_STATE_CODE`
 , `DEPARTMENT_CODE`
-, `DEPARTMENT_ID`
 , `END_DATE`
 , `LAST_MODIFIED_BY_CODE`
 , `LAST_MODIFIED_DATE`
-, `NAME`
 , `ORG_CODE`
-, `PARENT_CODE`
-, `PARENT_TREE_CODE`
-, `PARENT_TREE_NAME`
 , `PERMISSION_CODES`
 , `ROLE_CODES`
+, `SCOPE`
 , `SITE_CODE`
 , `STATE_CODE`
 , `SYSTEM_INFO_CODE`
+, `TOKEN_INFO_CODE`
+, `TOKEN_INFO_ID`
+, `USER_CODE`
 , `VERSION_`
 , `WF_ID`
 </#if>
-FROM c1_department
+FROM t_token_info
 <#include "where.ftl">
 <#assign prefixName = 'ORDER BY'>
 <#if (order_by_beginDate??)>
 ${prefixName} `BEGIN_DATE` ${order_by_beginDate_value!}
+<#assign prefixName = ','>
+</#if>
+<#if (order_by_clientId??)>
+${prefixName} `CLIENT_ID` ${order_by_clientId_value!}
 <#assign prefixName = ','>
 </#if>
 <#if (order_by_createdByCode??)>
@@ -130,10 +134,6 @@ ${prefixName} `DATA_STATE_CODE` ${order_by_dataStateCode_value!}
 ${prefixName} `DEPARTMENT_CODE` ${order_by_departmentCode_value!}
 <#assign prefixName = ','>
 </#if>
-<#if (order_by_departmentId??)>
-${prefixName} `DEPARTMENT_ID` ${order_by_departmentId_value!}
-<#assign prefixName = ','>
-</#if>
 <#if (order_by_endDate??)>
 ${prefixName} `END_DATE` ${order_by_endDate_value!}
 <#assign prefixName = ','>
@@ -146,24 +146,8 @@ ${prefixName} `LAST_MODIFIED_BY_CODE` ${order_by_lastModifiedByCode_value!}
 ${prefixName} `LAST_MODIFIED_DATE` ${order_by_lastModifiedDate_value!}
 <#assign prefixName = ','>
 </#if>
-<#if (order_by_name??)>
-${prefixName} `NAME` ${order_by_name_value!}
-<#assign prefixName = ','>
-</#if>
 <#if (order_by_orgCode??)>
 ${prefixName} `ORG_CODE` ${order_by_orgCode_value!}
-<#assign prefixName = ','>
-</#if>
-<#if (order_by_parentCode??)>
-${prefixName} `PARENT_CODE` ${order_by_parentCode_value!}
-<#assign prefixName = ','>
-</#if>
-<#if (order_by_parentTreeCode??)>
-${prefixName} `PARENT_TREE_CODE` ${order_by_parentTreeCode_value!}
-<#assign prefixName = ','>
-</#if>
-<#if (order_by_parentTreeName??)>
-${prefixName} `PARENT_TREE_NAME` ${order_by_parentTreeName_value!}
 <#assign prefixName = ','>
 </#if>
 <#if (order_by_permissionCodes??)>
@@ -172,6 +156,10 @@ ${prefixName} `PERMISSION_CODES` ${order_by_permissionCodes_value!}
 </#if>
 <#if (order_by_roleCodes??)>
 ${prefixName} `ROLE_CODES` ${order_by_roleCodes_value!}
+<#assign prefixName = ','>
+</#if>
+<#if (order_by_scope??)>
+${prefixName} `SCOPE` ${order_by_scope_value!}
 <#assign prefixName = ','>
 </#if>
 <#if (order_by_siteCode??)>
@@ -186,6 +174,18 @@ ${prefixName} `STATE_CODE` ${order_by_stateCode_value!}
 ${prefixName} `SYSTEM_INFO_CODE` ${order_by_systemInfoCode_value!}
 <#assign prefixName = ','>
 </#if>
+<#if (order_by_tokenInfoCode??)>
+${prefixName} `TOKEN_INFO_CODE` ${order_by_tokenInfoCode_value!}
+<#assign prefixName = ','>
+</#if>
+<#if (order_by_tokenInfoId??)>
+${prefixName} `TOKEN_INFO_ID` ${order_by_tokenInfoId_value!}
+<#assign prefixName = ','>
+</#if>
+<#if (order_by_userCode??)>
+${prefixName} `USER_CODE` ${order_by_userCode_value!}
+<#assign prefixName = ','>
+</#if>
 <#if (order_by_version??)>
 ${prefixName} `VERSION_` ${order_by_version_value!}
 <#assign prefixName = ','>
@@ -194,3 +194,4 @@ ${prefixName} `VERSION_` ${order_by_version_value!}
 ${prefixName} `WF_ID` ${order_by_wfId_value!}
 <#assign prefixName = ','>
 </#if>
+limit <#if offset??>:offset<#else>0</#if> , <#if pageSize??>:pageSize<#else>10</#if>

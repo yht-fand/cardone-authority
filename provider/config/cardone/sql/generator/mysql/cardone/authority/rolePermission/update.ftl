@@ -60,12 +60,24 @@ ${prefixName} `ROLE_PERMISSION_ID` = :update_rolePermissionId_value
 ${prefixName} `SITE_CODE` = :update_siteCode_value
 <#assign prefixName = ','>
 </#if>
+<#if (update_siteCode??)>
+<#if (update_siteCode_value??)>
+${prefixName} `SITE_CODE` = :update_siteCode_value
+</#if>
+<#assign prefixName = ','>
+</#if>
 <#if (update_stateCode??)>
 ${prefixName} `STATE_CODE` = :update_stateCode_value
 <#assign prefixName = ','>
 </#if>
 <#if (update_systemInfoCode??)>
 ${prefixName} `SYSTEM_INFO_CODE` = :update_systemInfoCode_value
+<#assign prefixName = ','>
+</#if>
+<#if (update_systemInfoCode??)>
+<#if (update_systemInfoCode_value??)>
+${prefixName} `SYSTEM_INFO_CODE` = :update_systemInfoCode_value
+</#if>
 <#assign prefixName = ','>
 </#if>
 <#if (update_version??)>

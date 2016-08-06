@@ -4,6 +4,14 @@ SELECT
 ${prefixName} `BEGIN_DATE`
 <#assign prefixName = ','>
 </#if>
+<#if (select_clientId??)>
+${prefixName} `CLIENT_ID`
+<#assign prefixName = ','>
+</#if>
+<#if (select_clientSecret??)>
+${prefixName} `CLIENT_SECRET`
+<#assign prefixName = ','>
+</#if>
 <#if (select_createdByCode??)>
 ${prefixName} `CREATED_BY_CODE`
 <#assign prefixName = ','>
@@ -20,10 +28,6 @@ ${prefixName} `DATA_STATE_CODE`
 ${prefixName} `DEPARTMENT_CODE`
 <#assign prefixName = ','>
 </#if>
-<#if (select_departmentId??)>
-${prefixName} `DEPARTMENT_ID`
-<#assign prefixName = ','>
-</#if>
 <#if (select_endDate??)>
 ${prefixName} `END_DATE`
 <#assign prefixName = ','>
@@ -36,24 +40,12 @@ ${prefixName} `LAST_MODIFIED_BY_CODE`
 ${prefixName} `LAST_MODIFIED_DATE`
 <#assign prefixName = ','>
 </#if>
-<#if (select_name??)>
-${prefixName} `NAME`
+<#if (select_oauthConsumerId??)>
+${prefixName} `OAUTH_CONSUMER_ID`
 <#assign prefixName = ','>
 </#if>
 <#if (select_orgCode??)>
 ${prefixName} `ORG_CODE`
-<#assign prefixName = ','>
-</#if>
-<#if (select_parentCode??)>
-${prefixName} `PARENT_CODE`
-<#assign prefixName = ','>
-</#if>
-<#if (select_parentTreeCode??)>
-${prefixName} `PARENT_TREE_CODE`
-<#assign prefixName = ','>
-</#if>
-<#if (select_parentTreeName??)>
-${prefixName} `PARENT_TREE_NAME`
 <#assign prefixName = ','>
 </#if>
 <#if (select_permissionCodes??)>
@@ -86,19 +78,17 @@ ${prefixName} `WF_ID`
 </#if>
 <#if prefixName ==  ' '>
   `BEGIN_DATE`
+, `CLIENT_ID`
+, `CLIENT_SECRET`
 , `CREATED_BY_CODE`
 , `CREATED_DATE`
 , `DATA_STATE_CODE`
 , `DEPARTMENT_CODE`
-, `DEPARTMENT_ID`
 , `END_DATE`
 , `LAST_MODIFIED_BY_CODE`
 , `LAST_MODIFIED_DATE`
-, `NAME`
+, `OAUTH_CONSUMER_ID`
 , `ORG_CODE`
-, `PARENT_CODE`
-, `PARENT_TREE_CODE`
-, `PARENT_TREE_NAME`
 , `PERMISSION_CODES`
 , `ROLE_CODES`
 , `SITE_CODE`
@@ -107,11 +97,19 @@ ${prefixName} `WF_ID`
 , `VERSION_`
 , `WF_ID`
 </#if>
-FROM c1_department
+FROM t_oauth_consumer
 <#include "where.ftl">
 <#assign prefixName = 'ORDER BY'>
 <#if (order_by_beginDate??)>
 ${prefixName} `BEGIN_DATE` ${order_by_beginDate_value!}
+<#assign prefixName = ','>
+</#if>
+<#if (order_by_clientId??)>
+${prefixName} `CLIENT_ID` ${order_by_clientId_value!}
+<#assign prefixName = ','>
+</#if>
+<#if (order_by_clientSecret??)>
+${prefixName} `CLIENT_SECRET` ${order_by_clientSecret_value!}
 <#assign prefixName = ','>
 </#if>
 <#if (order_by_createdByCode??)>
@@ -130,10 +128,6 @@ ${prefixName} `DATA_STATE_CODE` ${order_by_dataStateCode_value!}
 ${prefixName} `DEPARTMENT_CODE` ${order_by_departmentCode_value!}
 <#assign prefixName = ','>
 </#if>
-<#if (order_by_departmentId??)>
-${prefixName} `DEPARTMENT_ID` ${order_by_departmentId_value!}
-<#assign prefixName = ','>
-</#if>
 <#if (order_by_endDate??)>
 ${prefixName} `END_DATE` ${order_by_endDate_value!}
 <#assign prefixName = ','>
@@ -146,24 +140,12 @@ ${prefixName} `LAST_MODIFIED_BY_CODE` ${order_by_lastModifiedByCode_value!}
 ${prefixName} `LAST_MODIFIED_DATE` ${order_by_lastModifiedDate_value!}
 <#assign prefixName = ','>
 </#if>
-<#if (order_by_name??)>
-${prefixName} `NAME` ${order_by_name_value!}
+<#if (order_by_oauthConsumerId??)>
+${prefixName} `OAUTH_CONSUMER_ID` ${order_by_oauthConsumerId_value!}
 <#assign prefixName = ','>
 </#if>
 <#if (order_by_orgCode??)>
 ${prefixName} `ORG_CODE` ${order_by_orgCode_value!}
-<#assign prefixName = ','>
-</#if>
-<#if (order_by_parentCode??)>
-${prefixName} `PARENT_CODE` ${order_by_parentCode_value!}
-<#assign prefixName = ','>
-</#if>
-<#if (order_by_parentTreeCode??)>
-${prefixName} `PARENT_TREE_CODE` ${order_by_parentTreeCode_value!}
-<#assign prefixName = ','>
-</#if>
-<#if (order_by_parentTreeName??)>
-${prefixName} `PARENT_TREE_NAME` ${order_by_parentTreeName_value!}
 <#assign prefixName = ','>
 </#if>
 <#if (order_by_permissionCodes??)>
@@ -194,3 +176,4 @@ ${prefixName} `VERSION_` ${order_by_version_value!}
 ${prefixName} `WF_ID` ${order_by_wfId_value!}
 <#assign prefixName = ','>
 </#if>
+limit <#if offset??>:offset<#else>0</#if> , <#if pageSize??>:pageSize<#else>10</#if>
