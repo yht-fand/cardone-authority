@@ -10,11 +10,11 @@
         <relativePath/>
     </parent>
 
-    <groupId>top.cardone.authority</groupId>
+    <groupId>top.cardone</groupId>
     <artifactId>cardone-authority-parent</artifactId>
-    <version>0.0.2-SNAPSHOT</version>
+    <version>0.0.1-SNAPSHOT</version>
     <name>${project.artifactId}</name>
-    <description>top.cardone.authority cardone-authority-parent</description>
+    <description>top.cardone cardone-authority-parent</description>
     <packaging>pom</packaging>
 
     <!-- 设定除中央仓库(repo1.maven.org/maven2/)外的其他仓库,按设定顺序进行查找. -->
@@ -50,27 +50,27 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>top.cardone.authority</groupId>
+                <groupId>top.cardone</groupId>
 				<artifactId>cardone-authority-api</artifactId>
-                <version>0.0.2-SNAPSHOT</version>
+                <version>0.0.1-SNAPSHOT</version>
             </dependency>
 
             <dependency>
-                <groupId>top.cardone.authority</groupId>
+                <groupId>top.cardone</groupId>
 				<artifactId>cardone-authority-implements-default</artifactId>
-                <version>0.0.2-SNAPSHOT</version>
+                <version>0.0.1-SNAPSHOT</version>
             </dependency>
 
             <dependency>
-                <groupId>top.cardone.authority</groupId>
+                <groupId>top.cardone</groupId>
 				<artifactId>cardone-authority-provider</artifactId>
-                <version>0.0.2-SNAPSHOT</version>
+                <version>0.0.1-SNAPSHOT</version>
             </dependency>
 
             <dependency>
-                <groupId>top.cardone.authority</groupId>
+                <groupId>top.cardone</groupId>
 				<artifactId>cardone-authority-consumer</artifactId>
-                <version>0.0.2-SNAPSHOT</version>
+                <version>0.0.1-SNAPSHOT</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

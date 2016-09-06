@@ -1,0 +1,74 @@
+{
+  "beginDate": {
+    "newName": "beginDate",
+    "funcBeanIds": "escapeSqlFunc"
+  },
+  "createdByCode": {
+    "newName": "createdByCode",
+    "funcBeanIds": "escapeSqlFunc"
+  },
+  "createdDate": {
+    "newName": "createdDate",
+    "funcBeanIds": "escapeSqlFunc"
+  },
+  "dataStateCode": {
+    "newName": "dataStateCode",
+    "funcBeanIds": "escapeSqlFunc"
+  },
+  "departmentCode": {
+    "newName": "departmentCode",
+    "funcBeanIds": "escapeSqlFunc"
+  },
+  "departmentRoleId": {
+    "newName": "departmentRoleId",
+    "funcBeanIds": "escapeSqlFunc"
+  },
+  "endDate": {
+    "newName": "endDate",
+    "funcBeanIds": "escapeSqlFunc"
+  },
+  "lastModifiedByCode": {
+    "newName": "lastModifiedByCode",
+    "funcBeanIds": "escapeSqlFunc"
+  },
+  "lastModifiedDate": {
+    "newName": "lastModifiedDate",
+    "funcBeanIds": "escapeSqlFunc"
+  },
+  "orgCode": {
+    "newName": "orgCode",
+    "funcBeanIds": "escapeSqlFunc"
+  },
+  "permissionCodes": {
+    "newName": "permissionCodes",
+    "funcBeanIds": "escapeSqlFunc"
+  },
+  "roleCode": {
+    "newName": "roleCode",
+    "funcBeanIds": "escapeSqlFunc"
+  },
+  "roleCodes": {
+    "newName": "roleCodes",
+    "funcBeanIds": "escapeSqlFunc"
+  },
+  "siteCode": {
+    "newName": "siteCode",
+    "funcBeanIds": "escapeSqlFunc"
+  },
+  "stateCode": {
+    "newName": "stateCode",
+    "funcBeanIds": "escapeSqlFunc"
+  },
+  "systemInfoCode": {
+    "newName": "systemInfoCode",
+    "funcBeanIds": "escapeSqlFunc"
+  },
+  "version": {
+    "newName": "version",
+    "funcBeanIds": "escapeSqlFunc"
+  },
+  "wfId": {
+    "newName": "wfId",
+    "funcBeanIds": "escapeSqlFunc"
+  }
+}

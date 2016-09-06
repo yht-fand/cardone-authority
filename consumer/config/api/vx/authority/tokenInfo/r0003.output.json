@@ -1,0 +1,65 @@
+{
+  "BEGIN_DATE": {
+    "newName": "beginDate"
+  },
+  "CLIENT_ID": {
+    "newName": "clientId"
+  },
+  "CREATED_BY_CODE": {
+    "newName": "createdByCode"
+  },
+  "CREATED_DATE": {
+    "newName": "createdDate"
+  },
+  "DATA_STATE_CODE": {
+    "newName": "dataStateCode"
+  },
+  "DEPARTMENT_CODE": {
+    "newName": "departmentCode"
+  },
+  "END_DATE": {
+    "newName": "endDate"
+  },
+  "LAST_MODIFIED_BY_CODE": {
+    "newName": "lastModifiedByCode"
+  },
+  "LAST_MODIFIED_DATE": {
+    "newName": "lastModifiedDate"
+  },
+  "ORG_CODE": {
+    "newName": "orgCode"
+  },
+  "PERMISSION_CODES": {
+    "newName": "permissionCodes"
+  },
+  "ROLE_CODES": {
+    "newName": "roleCodes"
+  },
+  "SCOPE": {
+    "newName": "scope"
+  },
+  "SITE_CODE": {
+    "newName": "siteCode"
+  },
+  "STATE_CODE": {
+    "newName": "stateCode"
+  },
+  "SYSTEM_INFO_CODE": {
+    "newName": "systemInfoCode"
+  },
+  "TOKEN_INFO_CODE": {
+    "newName": "tokenInfoCode"
+  },
+  "TOKEN_INFO_ID": {
+    "newName": "tokenInfoId"
+  },
+  "USER_CODE": {
+    "newName": "userCode"
+  },
+  "VERSION_": {
+    "newName": "version"
+  },
+  "WF_ID": {
+    "newName": "wfId"
+  }
+}

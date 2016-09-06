@@ -15,6 +15,6 @@
                 <property name="trustAllPackages" value="true"/>
             </bean>
         </property>
-        <property name="maxConnections" value="1000"/>
+        <property name="maxConnections" value="100"/>
     </bean>
 </beans>

@@ -1,0 +1,62 @@
+{
+  "BEGIN_DATE": {
+    "newName": "beginDate"
+  },
+  "CREATED_BY_CODE": {
+    "newName": "createdByCode"
+  },
+  "CREATED_DATE": {
+    "newName": "createdDate"
+  },
+  "DATA_STATE_CODE": {
+    "newName": "dataStateCode"
+  },
+  "DEPARTMENT_CODE": {
+    "newName": "departmentCode"
+  },
+  "END_DATE": {
+    "newName": "endDate"
+  },
+  "FLAG_CODE": {
+    "newName": "flagCode"
+  },
+  "LAST_MODIFIED_BY_CODE": {
+    "newName": "lastModifiedByCode"
+  },
+  "LAST_MODIFIED_DATE": {
+    "newName": "lastModifiedDate"
+  },
+  "ORG_CODE": {
+    "newName": "orgCode"
+  },
+  "PERMISSION_CODE": {
+    "newName": "permissionCode"
+  },
+  "PERMISSION_CODES": {
+    "newName": "permissionCodes"
+  },
+  "ROLE_CODES": {
+    "newName": "roleCodes"
+  },
+  "SITE_CODE": {
+    "newName": "siteCode"
+  },
+  "STATE_CODE": {
+    "newName": "stateCode"
+  },
+  "SYSTEM_INFO_CODE": {
+    "newName": "systemInfoCode"
+  },
+  "USER_CODE": {
+    "newName": "userCode"
+  },
+  "USER_PERMISSION_ID": {
+    "newName": "userPermissionId"
+  },
+  "VERSION_": {
+    "newName": "version"
+  },
+  "WF_ID": {
+    "newName": "wfId"
+  }
+}

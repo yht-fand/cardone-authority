@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+       default-lazy-init="true">
+    <!-- 用户组与角色 -->
+    <bean name="top.cardone.authority.service.UserGroupRoleService.mq" parent="invokerProxyFactoryParnet">
+        <property name="serviceInterface" value="top.cardone.authority.service.UserGroupRoleService"/>
+        <property name="queue">
+            <bean class="org.apache.activemq.command.ActiveMQQueue">
+                <constructor-arg value="cardone-authority-${cardone-authority-version}:top.cardone.authority.service.UserGroupRoleService"/>
+            </bean>
+        </property>
+    </bean>
+</beans>

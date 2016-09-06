@@ -4,17 +4,17 @@
     <modelVersion>4.0.0</modelVersion>
 	
     <parent>
-		<groupId>top.cardone.authority</groupId>
+		<groupId>top.cardone</groupId>
         <artifactId>cardone-authority-parent</artifactId>
-        <version>0.0.2-SNAPSHOT</version>
+        <version>0.0.1-SNAPSHOT</version>
         <relativePath>../parent</relativePath>
     </parent>
 
-    <groupId>top.cardone.authority</groupId>
+    <groupId>top.cardone</groupId>
     <artifactId>cardone-authority-api</artifactId>
     <version>${project.parent.version}</version>
     <name>${project.artifactId}</name>
-    <description>top.cardone.authority cardone-authority-api</description>
+    <description>top.cardone cardone-authority-api</description>
     <packaging>jar</packaging>
 
     <dependencies>

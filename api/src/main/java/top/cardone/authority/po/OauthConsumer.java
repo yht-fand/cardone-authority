@@ -8,7 +8,7 @@ import java.util.Date;
  * @author yao hai tao
  */
 @lombok.ToString(callSuper = true)
-public class OauthConsumer implements java.io.Serializable {
+public class OAuthConsumer implements java.io.Serializable {
 
     /**
      * 开始时间

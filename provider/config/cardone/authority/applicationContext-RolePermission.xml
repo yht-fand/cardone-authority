@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns="http://www.springframework.org/schema/beans"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+       default-lazy-init="true">
     <!-- 角色与许可 -->
     <bean id="top.cardone.authority.dao.RolePermissionDao"
           class="top.cardone.authority.dao.impl.RolePermissionDaoImpl">
@@ -30,24 +31,9 @@
             </map>
         </property>
     </bean>
-
-    <!-- 角色与许可 -->
+	
     <bean id="top.cardone.authority.service.RolePermissionService"
           class="top.cardone.authority.service.impl.RolePermissionServiceImpl">
-        <property name="dao" ref="top.cardone.authority.dao.RolePermissionDao"/>
-    </bean>
-
-    <bean parent="messageListenerContainerParnet">
-        <property name="messageListener">
-            <bean  parent="remoteInvocationExecutorParnet">
-                <property name="serviceInterface" value="top.cardone.authority.service.RolePermissionService"/>
-                <property name="service" ref="top.cardone.authority.service.RolePermissionService"/>
-            </bean>
-        </property>
-        <property name="destination">
-            <bean class="org.apache.activemq.command.ActiveMQQueue">
-                <constructor-arg value="cardone-authority-${cardone-authority-version}:top.cardone.authority.service.RolePermissionService"/>
-            </bean>
-        </property>
-    </bean>
+		<property name="dao" ref="top.cardone.authority.dao.RolePermissionDao"/>
+	</bean>
 </beans>

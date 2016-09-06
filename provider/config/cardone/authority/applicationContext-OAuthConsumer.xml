@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+       default-lazy-init="true">
+    <!-- 授权消费 -->
+    <bean id="top.cardone.authority.dao.OAuthConsumerDao"
+          class="top.cardone.authority.dao.impl.OAuthConsumerDaoImpl">
+        <property name="configTable">
+            <map>
+                <entry key="config">
+                    <map>
+                        <entry key="sqlFileRoot" value="/cardone/authority/oAuthConsumer/"/>
+                        <entry key="pks" value="oauthConsumerId"/>
+                        <entry key="codes" value="oauthConsumerId"/>
+                    </map>
+                </entry>
+                <entry key="insert">
+                    <map>
+                        <entry key="oauthConsumerId" value="readRandomUUIDFunc"/>
+                        <entry key="createdByCode" value="readCreatedByCodeFunc"/>
+                        <entry key="createdDate" value="readCreatedDateFunc"/>
+                    </map>
+                </entry>
+                <entry key="update">
+                    <map>
+                        <entry key="lastModifiedByCode" value="readLastModifiedByCodeFunc"/>
+                        <entry key="lastModifiedDate" value="readLastModifiedDateFunc"/>
+                    </map>
+                </entry>
+            </map>
+        </property>
+    </bean>
+	
+    <bean id="top.cardone.authority.service.OAuthConsumerService"
+          class="top.cardone.authority.service.impl.OAuthConsumerServiceImpl">
+		<property name="dao" ref="top.cardone.authority.dao.OAuthConsumerDao"/>
+	</bean>
+</beans>
