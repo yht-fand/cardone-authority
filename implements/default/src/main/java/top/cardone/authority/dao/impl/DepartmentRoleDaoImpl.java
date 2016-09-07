@@ -14,11 +14,11 @@ public class DepartmentRoleDaoImpl extends PageDaoImpl implements top.cardone.au
     @Override
     public Map<String, Object> findOneByDepartmentRoleId(Object departmentRoleId) {
         Map<String, Object> inputMap = Maps.newHashMap();
-		
+
         inputMap.put("departmentRoleId", departmentRoleId);
-		
+
         String findOneSqlFilePath = this.getSqlFilePath("page.find");
-		
+
         return this.findOne(findOneSqlFilePath, inputMap);
     }
 }

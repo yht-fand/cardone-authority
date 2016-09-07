@@ -2,8 +2,8 @@ package top.cardone.authority.service.impl;
 
 import org.springframework.data.domain.Page;
 import org.springframework.transaction.annotation.Transactional;
-import top.cardone.data.service.impl.PageServiceImpl;
 import top.cardone.authority.dao.DepartmentRoleDao;
+import top.cardone.data.service.impl.PageServiceImpl;
 
 import java.util.List;
 import java.util.Map;
@@ -136,7 +136,7 @@ public class DepartmentRoleServiceImpl extends PageServiceImpl<DepartmentRoleDao
     public int[][] saveListCache(List<Object> saveList) {
         return this.saveList(saveList);
     }
-	
+
     @Override
     public Map<String, Object> findOneByDepartmentRoleId(Object departmentRoleId) {
         return this.dao.findOneByDepartmentRoleId(departmentRoleId);

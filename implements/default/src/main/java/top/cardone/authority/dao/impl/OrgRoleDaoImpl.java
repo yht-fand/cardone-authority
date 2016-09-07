@@ -14,11 +14,11 @@ public class OrgRoleDaoImpl extends PageDaoImpl implements top.cardone.authority
     @Override
     public Map<String, Object> findOneByOrgRoleId(Object orgRoleId) {
         Map<String, Object> inputMap = Maps.newHashMap();
-		
+
         inputMap.put("orgRoleId", orgRoleId);
-		
+
         String findOneSqlFilePath = this.getSqlFilePath("page.find");
-		
+
         return this.findOne(findOneSqlFilePath, inputMap);
     }
 }

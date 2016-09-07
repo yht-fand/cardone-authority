@@ -10,8 +10,6 @@ import top.cardone.core.util.func.Func1;
 
 import java.util.Set;
 
-import static org.junit.Assert.*;
-
 /**
  * Created by cardone-home-001 on 2016/4/19.
  */
