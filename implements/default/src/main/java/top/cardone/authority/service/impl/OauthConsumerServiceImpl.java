@@ -2,8 +2,8 @@ package top.cardone.authority.service.impl;
 
 import org.springframework.data.domain.Page;
 import org.springframework.transaction.annotation.Transactional;
-import top.cardone.authority.dao.OauthConsumerDao;
 import top.cardone.data.service.impl.PageServiceImpl;
+import top.cardone.authority.dao.OAuthConsumerDao;
 
 import java.util.List;
 import java.util.Map;
@@ -14,7 +14,7 @@ import java.util.Map;
  * @author yao hai tao
  */
 @Transactional(readOnly = true)
-public class OauthConsumerServiceImpl extends PageServiceImpl<OauthConsumerDao> implements top.cardone.authority.service.OauthConsumerService {
+public class OAuthConsumerServiceImpl extends PageServiceImpl<OAuthConsumerDao> implements top.cardone.authority.service.OAuthConsumerService {
     @Override
     public Page<Map<String, Object>> pageCache(Object page) {
         return this.page(page);
@@ -129,5 +129,16 @@ public class OauthConsumerServiceImpl extends PageServiceImpl<OauthConsumerDao> 
     @Transactional
     public int[] updateListCache(List<Object> updateList) {
         return this.updateList(updateList);
+    }
+
+    @Override
+    @Transactional
+    public int[][] saveListCache(List<Object> saveList) {
+        return this.saveList(saveList);
+    }
+	
+    @Override
+    public Map<String, Object> findOneByOAuthConsumerId(Object oAuthConsumerId) {
+        return this.dao.findOneByOAuthConsumerId(oAuthConsumerId);
     }
 }

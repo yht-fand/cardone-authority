@@ -1,6 +1,6 @@
 package top.cardone.authority.dto;
 
-import top.cardone.authority.po.OauthConsumer;
+import top.cardone.authority.po.OAuthConsumer;
 
 /**
  * 授权消费
@@ -8,5 +8,5 @@ import top.cardone.authority.po.OauthConsumer;
  * @author yao hai tao
  */
 @lombok.ToString(callSuper = true)
-public class OauthConsumerDto extends OauthConsumer {
+public class OAuthConsumerDto extends OAuthConsumer {
 }
