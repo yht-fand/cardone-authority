@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+       default-lazy-init="true">
+    <bean id="top.cardone.authority.func.ReadListPermissionCodeFunc"
+          class="top.cardone.authority.func.ReadListPermissionCodeFunc"/>
+
+    <alias name="top.cardone.authority.func.ReadListPermissionCodeFunc" alias="readListPermissionCodeFunc"/>
+
+    <bean id="top.cardone.authority.func.ReadListRoleCodeFunc"
+          class="top.cardone.authority.func.ReadListRoleCodeFunc"/>
+
+    <alias name="top.cardone.authority.func.ReadListRoleCodeFunc" alias="readListRoleCodeFunc"/>
+</beans>
