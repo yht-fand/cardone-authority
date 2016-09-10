@@ -1,5 +1,9 @@
 package top.cardone.authority.service.impl;
 
+import com.google.common.collect.Lists;
+import com.google.common.collect.Maps;
+import org.apache.commons.collections.MapUtils;
+import org.apache.shiro.util.StringUtils;
 import org.springframework.data.domain.Page;
 import org.springframework.transaction.annotation.Transactional;
 import top.cardone.authority.dao.UserRoleDao;
@@ -129,5 +133,33 @@ public class UserRoleServiceImpl extends PageServiceImpl<UserRoleDao> implements
     @Transactional
     public int[] updateListCache(List<Object> updateList) {
         return this.updateList(updateList);
+    }
+
+    @Override
+    @Transactional
+    public int[] insertListByNotExistsForRolesCache(Map<String, Object> insert) {
+        return this.insertListByNotExistsForRoles(insert);
+    }
+
+    @Override
+    @Transactional
+    public int[] insertListByNotExistsForRoles(Map<String, Object> insert) {
+        String userCode = MapUtils.getString(insert, "userCode");
+        String roleCodes = MapUtils.getString(insert, "roleCodes");
+
+        String[] roleCodeList = StringUtils.split(roleCodes, ',');
+
+        List<Object> insertList = Lists.newArrayList();
+
+        for (String roleCode : roleCodeList) {
+            Map<String, Object> newInsert = Maps.newHashMap();
+
+            newInsert.put("userCode", userCode);
+            newInsert.put("roleCode", roleCode);
+
+            insertList.add(newInsert);
+        }
+
+        return this.insertListByNotExists(insertList);
     }
 }
