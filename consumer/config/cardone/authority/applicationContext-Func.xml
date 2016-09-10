@@ -12,4 +12,9 @@
           class="top.cardone.authority.func.ReadListRoleCodeFunc"/>
 
     <alias name="top.cardone.authority.func.ReadListRoleCodeFunc" alias="readListRoleCodeFunc"/>
+
+    <bean id="top.cardone.authority.func.FindListRoleForSelectFunc"
+          class="top.cardone.authority.func.FindListRoleForSelectFunc"/>
+
+    <alias name="top.cardone.authority.func.FindListRoleForSelectFunc" alias="findListRoleForSelectFunc"/>
 </beans>
