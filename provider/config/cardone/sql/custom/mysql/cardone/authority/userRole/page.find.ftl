@@ -1,3 +1,4 @@
+<#assign StringUtils = beansWrapperFn.getStaticModels()["org.apache.commons.lang3.StringUtils"]>
 SELECT t.USER_CODE,
 IFNULL(U.`NAME`, t.USER_CODE) AS USER_NAME,
 GROUP_CONCAT(IFNULL(R.`NAME`, t.ROLE_CODE)) AS ROLE_NAMES,
