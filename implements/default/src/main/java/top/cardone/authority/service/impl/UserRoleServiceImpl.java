@@ -162,4 +162,34 @@ public class UserRoleServiceImpl extends PageServiceImpl<UserRoleDao> implements
 
         return this.insertListByNotExists(insertList);
     }
+
+    @Override
+    @Transactional
+    public int[] updateListForRolesCache(Map<String, Object> update) {
+        return this.updateListForRoles(update);
+    }
+
+    @Override
+    @Transactional
+    public int[] updateListForRoles(Map<String, Object> update) {
+        Map<String, Object> delete = Maps.newHashMap();
+
+        delete.put("userCode", update.get("userCode"));
+
+        this.delete(delete);
+
+        return this.insertListByNotExistsForRoles(update);
+    }
+
+    @Override
+    @Transactional
+    public int deleteByUserCodesCache(Map<String, Object> delete) {
+        return this.deleteByUserCodes(delete);
+    }
+
+    @Override
+    @Transactional
+    public int deleteByUserCodes(Map<String, Object> delete) {
+        return this.dao.deleteByUserCodes(delete);
+    }
 }

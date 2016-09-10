@@ -142,10 +142,26 @@ public interface UserRoleService extends PageService {
     int[] updateListCache(List<Object> updateList);
 
     /**
-     * @see top.cardone.authority.service.UserRoleService#insertByNotExists
+     * @see top.cardone.authority.service.UserRoleService#insertListByNotExistsForRoles
      */
     @CacheEvict(value = "top.cardone.authority.service.UserRoleService", allEntries = true)
     int[] insertListByNotExistsForRolesCache(Map<String,Object> insert);
 
     int[] insertListByNotExistsForRoles(Map<String,Object> insert);
+
+    /**
+     * @see top.cardone.authority.service.UserRoleService#updateListForRoles
+     */
+    @CacheEvict(value = "top.cardone.authority.service.UserRoleService", allEntries = true)
+    int[] updateListForRolesCache(Map<String, Object> update);
+
+    int[] updateListForRoles(Map<String, Object> update);
+
+    /**
+     * @see top.cardone.authority.service.UserRoleService#deleteByUserCodes
+     */
+    @CacheEvict(value = "top.cardone.authority.service.UserRoleService", allEntries = true)
+    int deleteByUserCodesCache(Map<String,Object> delete);
+
+    int deleteByUserCodes(Map<String,Object> delete);
 }
