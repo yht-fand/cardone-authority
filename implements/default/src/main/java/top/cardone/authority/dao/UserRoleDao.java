@@ -11,4 +11,6 @@ import java.util.Map;
  */
 public interface UserRoleDao extends PageDao {
 	int deleteByUserCodes(Map<String,Object> delete);
+
+	Map<String, Object> findOneByUserCode(Map<String,Object> findOne);
 }

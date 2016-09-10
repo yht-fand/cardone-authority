@@ -192,4 +192,9 @@ public class UserRoleServiceImpl extends PageServiceImpl<UserRoleDao> implements
     public int deleteByUserCodes(Map<String, Object> delete) {
         return this.dao.deleteByUserCodes(delete);
     }
+
+    @Override
+    public Map<String, Object> findOneByUserCode(Map<String, Object> findOne) {
+        return this.dao.findOneByUserCode(findOne);
+    }
 }

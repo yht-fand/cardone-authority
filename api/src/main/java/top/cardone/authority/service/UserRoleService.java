@@ -164,4 +164,6 @@ public interface UserRoleService extends PageService {
     int deleteByUserCodesCache(Map<String,Object> delete);
 
     int deleteByUserCodes(Map<String,Object> delete);
+
+    Map<String, Object> findOneByUserCode(Map<String,Object> findOne);
 }

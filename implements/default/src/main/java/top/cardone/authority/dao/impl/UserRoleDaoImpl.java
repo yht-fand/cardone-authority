@@ -16,4 +16,11 @@ public class UserRoleDaoImpl extends PageDaoImpl implements top.cardone.authorit
 
 		return this.update(deleteSqlFilePath, delete);
 	}
+
+	@Override
+	public Map<String, Object> findOneByUserCode(Map<String,Object> findOne) {
+		String findOneSqlFilePath = this.getSqlFilePath("page.find");
+
+		return this.findOne(findOneSqlFilePath,findOne);
+	}
 }
