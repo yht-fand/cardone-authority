@@ -1,1 +1,1 @@
-DELETE FROM c1_user_role WHERE INSTR(:userCodes, CONCAT(',', USER_CODE, ",")) > 0
+DELETE FROM c1_user_role WHERE INSTR(CONCAT(',', :userCodes, ","), CONCAT(',', USER_CODE, ",")) > 0
