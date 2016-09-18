@@ -1,1 +1,1 @@
-DELETE FROM c1_role WHERE INSTR(:ids, roleId) > 0
+DELETE FROM c1_role WHERE INSTR(:roleIds, ROLE_ID) > 0

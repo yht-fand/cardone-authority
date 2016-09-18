@@ -1,4 +1,4 @@
 SELECT
-COUNT(1) AS COUNT_
-FROM c1_token_info
+COUNT(1)
+FROM c1_token_info t
 <#include "page.where.ftl">

@@ -1,1 +1,1 @@
-UPDATE c1_org_role SET END_DATE = NOW() WHERE INSTR(:ids, orgRoleId) > 0
+UPDATE c1_org_role SET END_DATE = NOW(), DATA_STATE_CODE = '0' WHERE INSTR(:orgRoleIds, ORG_ROLE_ID) > 0

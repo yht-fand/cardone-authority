@@ -1,1 +1,1 @@
-UPDATE c1_user_group SET END_DATE = NOW() WHERE INSTR(:ids, userGroupId) > 0
+UPDATE c1_user_group SET END_DATE = NOW(), DATA_STATE_CODE = '0' WHERE INSTR(:userGroupIds, USER_GROUP_ID) > 0

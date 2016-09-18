@@ -1,1 +1,1 @@
-DELETE FROM c1_role_permission WHERE INSTR(:ids, rolePermissionId) > 0
+DELETE FROM c1_role_permission WHERE INSTR(:rolePermissionIds, ROLE_PERMISSION_ID) > 0

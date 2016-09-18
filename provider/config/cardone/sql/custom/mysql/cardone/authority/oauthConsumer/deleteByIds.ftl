@@ -1,1 +1,1 @@
-DELETE FROM c1_oauth_consumer WHERE INSTR(:ids, oauthConsumerId) > 0
+DELETE FROM c1_oauth_consumer WHERE INSTR(:oAuthConsumerIds, OAUTH_CONSUMER_ID) > 0

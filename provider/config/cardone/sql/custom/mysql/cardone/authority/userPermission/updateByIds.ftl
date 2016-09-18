@@ -1,1 +1,1 @@
-UPDATE c1_user_permission SET END_DATE = NOW() WHERE INSTR(:ids, userPermissionId) > 0
+UPDATE c1_user_permission SET END_DATE = NOW(), DATA_STATE_CODE = '0' WHERE INSTR(:userPermissionIds, USER_PERMISSION_ID) > 0

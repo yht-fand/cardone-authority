@@ -1,4 +1,4 @@
 SELECT
-COUNT(1) AS COUNT_
-FROM c1_oauth_consumer
+COUNT(1)
+FROM c1_oauth_consumer t
 <#include "page.where.ftl">

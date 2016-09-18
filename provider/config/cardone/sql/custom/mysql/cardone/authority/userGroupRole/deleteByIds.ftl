@@ -1,1 +1,1 @@
-DELETE FROM c1_user_group_role WHERE INSTR(:ids, userGroupRoleId) > 0
+DELETE FROM c1_user_group_role WHERE INSTR(:userGroupRoleIds, USER_GROUP_ROLE_ID) > 0
