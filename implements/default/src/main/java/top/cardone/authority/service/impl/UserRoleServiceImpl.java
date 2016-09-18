@@ -2,8 +2,8 @@ package top.cardone.authority.service.impl;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
+import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.collections.MapUtils;
-import org.apache.commons.lang3.ArrayUtils;
 import org.springframework.data.domain.Page;
 import org.springframework.transaction.annotation.Transactional;
 import top.cardone.authority.dao.UserRoleDao;
@@ -148,17 +148,17 @@ public class UserRoleServiceImpl extends PageServiceImpl<UserRoleDao> implements
 
         Object roleCodes = MapUtils.getObject(insert, "roleCodes");
 
-        String[] roleCodeList;
+        List<String> roleCodeList;
 
         if (roleCodes instanceof String) {
-            roleCodeList = new String[]{(String) roleCodes};
-        } else if (roleCodes instanceof String[]) {
-            roleCodeList = (String[]) roleCodes;
+            roleCodeList = Lists.newArrayList((String) roleCodes);
+        } else if (roleCodes instanceof List) {
+            roleCodeList = (List<String>) roleCodes;
         } else {
             return new int[]{};
         }
 
-        if (ArrayUtils.isEmpty(roleCodeList)) {
+        if (CollectionUtils.isEmpty(roleCodeList)) {
             return new int[]{};
         }
 
