@@ -146,7 +146,17 @@ public class UserRoleServiceImpl extends PageServiceImpl<UserRoleDao> implements
     public int[] insertListByNotExistsForRoles(Map<String, Object> insert) {
         String userCode = MapUtils.getString(insert, "userCode");
 
-        String[] roleCodeList = (String[]) MapUtils.getObject(insert, "roleCodes");
+        Object roleCodes = MapUtils.getObject(insert, "roleCodes");
+
+        String[] roleCodeList;
+
+        if (roleCodes instanceof String) {
+            roleCodeList = new String[]{(String) roleCodes};
+        } else if (roleCodes instanceof String[]) {
+            roleCodeList = (String[]) roleCodes;
+        } else {
+            return new int[]{};
+        }
 
         if (ArrayUtils.isEmpty(roleCodeList)) {
             return new int[]{};
