@@ -1,0 +1,12 @@
+{
+  "rules": {
+    "userGroupPermissionId": {
+      "required": true
+    }
+  },
+  "messages": {
+    "userGroupPermissionId": {
+      "required": "用户组与许可标识不能为空值!"
+    }
+  }
+}

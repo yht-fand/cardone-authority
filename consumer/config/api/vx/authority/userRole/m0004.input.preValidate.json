@@ -1,0 +1,12 @@
+{
+  "rules": {
+    "userRoleId": {
+      "required": true
+    }
+  },
+  "messages": {
+    "userRoleId": {
+      "required": "用户与角色标识不能为空值!"
+    }
+  }
+}

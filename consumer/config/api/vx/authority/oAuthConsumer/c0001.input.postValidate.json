@@ -1,0 +1,12 @@
+{
+  "rules": {
+    "oAuthConsumerCode": {
+      "required": true
+    }
+  },
+  "messages": {
+    "oAuthConsumerCode": {
+      "required": "授权消费编号不能为空值!"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "rules": {
+    "tokenInfoIds": {
+      "required": true
+    }
+  },
+  "messages": {
+    "tokenInfoIds": {
+      "required": "令牌信息标识集合不能为空值!"
+    }
+  }
+}

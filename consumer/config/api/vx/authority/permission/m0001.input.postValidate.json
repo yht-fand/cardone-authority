@@ -1,0 +1,12 @@
+{
+  "rules": {
+    "permissionId": {
+      "required": true
+    }
+  },
+  "messages": {
+    "permissionId": {
+      "required": "许可标识不能为空值!"
+    }
+  }
+}

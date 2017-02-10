@@ -1,0 +1,12 @@
+{
+  "rules": {
+    "userGroupRoleCode": {
+      "required": true
+    }
+  },
+  "messages": {
+    "userGroupRoleCode": {
+      "required": "用户组与角色编号不能为空值!"
+    }
+  }
+}

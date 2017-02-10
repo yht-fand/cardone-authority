@@ -1,0 +1,12 @@
+{
+  "rules": {
+    "userGroupUserId": {
+      "required": true
+    }
+  },
+  "messages": {
+    "userGroupUserId": {
+      "required": "用户组与用户标识不能为空值!"
+    }
+  }
+}

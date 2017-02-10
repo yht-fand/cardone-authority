@@ -1,0 +1,12 @@
+{
+  "rules": {
+    "userRoleCode": {
+      "required": true
+    }
+  },
+  "messages": {
+    "userRoleCode": {
+      "required": "用户与角色编号不能为空值!"
+    }
+  }
+}

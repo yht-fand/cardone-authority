@@ -1,0 +1,12 @@
+{
+  "rules": {
+    "roleCode": {
+      "required": true
+    }
+  },
+  "messages": {
+    "roleCode": {
+      "required": "角色编号不能为空值!"
+    }
+  }
+}

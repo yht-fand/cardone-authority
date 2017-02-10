@@ -1,0 +1,12 @@
+{
+  "rules": {
+    "rolePermissionCode": {
+      "required": true
+    }
+  },
+  "messages": {
+    "rolePermissionCode": {
+      "required": "角色与许可编号不能为空值!"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "rules": {
+    "userPermissionId": {
+      "required": true
+    }
+  },
+  "messages": {
+    "userPermissionId": {
+      "required": "用户与许可标识不能为空值!"
+    }
+  }
+}
