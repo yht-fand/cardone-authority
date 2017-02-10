@@ -21,7 +21,6 @@
   "tokenInfoId": "tokenInfoId",
   "userCode": "userCode",
   "version": "version",
-  "wfId": "wfId",
   "pageSize": "pageSize",
   "pageNumber": "pageNumber"
 }

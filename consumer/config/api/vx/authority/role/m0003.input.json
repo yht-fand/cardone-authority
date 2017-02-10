@@ -22,6 +22,5 @@
   "stateCode": "stateCode",
   "systemInfoCode": "systemInfoCode",
   "typeCode": "typeCode",
-  "version": "version",
-  "wfId": "wfId"
+  "version": "version"
 }

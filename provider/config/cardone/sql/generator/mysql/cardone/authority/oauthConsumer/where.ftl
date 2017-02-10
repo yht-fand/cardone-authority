@@ -151,11 +151,3 @@ ${prefixName} `VERSION_` IS NULL
 </#if>
 <#assign prefixName = 'AND'>
 </#if>
-<#if (where_and_eq_wfId??)>
-<#if (where_and_eq_wfId_value??)>
-${prefixName} `WF_ID` = :where_and_eq_wfId_value
-<#else>
-${prefixName} `WF_ID` IS NULL
-</#if>
-<#assign prefixName = 'AND'>
-</#if>

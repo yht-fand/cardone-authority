@@ -19,7 +19,6 @@
   "userCode": "userCode",
   "userRoleId": "userRoleId",
   "version": "version",
-  "wfId": "wfId",
   "pageSize": "pageSize",
   "pageNumber": "pageNumber"
 }

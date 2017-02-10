@@ -89,10 +89,6 @@ ${prefixName} `USER_CODE`
 ${prefixName} `VERSION_`
 <#assign prefixName = ','>
 </#if>
-<#if (insert_wfId??) && (insert_wfId_value??)>
-${prefixName} `WF_ID`
-<#assign prefixName = ','>
-</#if>
 )
 VALUES
 (<#assign prefixName = ' '>
@@ -182,10 +178,6 @@ ${prefixName} :insert_userCode_value
 </#if>
 <#if (insert_version??) && (insert_version_value??)>
 ${prefixName} :insert_version_value
-<#assign prefixName = ','>
-</#if>
-<#if (insert_wfId??) && (insert_wfId_value??)>
-${prefixName} :insert_wfId_value
 <#assign prefixName = ','>
 </#if>
 )

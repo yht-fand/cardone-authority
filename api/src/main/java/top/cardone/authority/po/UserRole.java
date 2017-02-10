@@ -53,14 +53,14 @@ public class UserRole implements java.io.Serializable {
     protected Date endDate;
 
     /**
-     * 标记代码(数据字典：同步、生成、录入、审批)
+     * 标记代码(数据字典：工作流、同步、生成、录入、审批)
      */
     @lombok.Getter
     @lombok.Setter
     protected String flagCode;
 
     /**
-     * 标识对象代码(同步：批次号、生成：操作者编号、录入：操作者编号、审批：操作者编号)
+     * 标识对象代码(工作流：工作流标识、同步：批次号、生成：操作者编号、录入：操作者编号、审批：操作者编号)
      */
     @lombok.Getter
     @lombok.Setter
@@ -149,11 +149,4 @@ public class UserRole implements java.io.Serializable {
     @lombok.Getter
     @lombok.Setter
     protected Integer version;
-
-    /**
-     * 工作流标识
-     */
-    @lombok.Getter
-    @lombok.Setter
-    protected String wfId;
 }

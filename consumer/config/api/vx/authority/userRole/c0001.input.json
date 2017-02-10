@@ -18,6 +18,5 @@
   "systemInfoCode": "systemInfoCode",
   "userCode": "userCode",
   "userRoleId": "userRoleId",
-  "version": "version",
-  "wfId": "wfId"
+  "version": "version"
 }

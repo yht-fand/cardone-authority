@@ -82,10 +82,6 @@ ${prefixName} `USER_GROUP_ROLE_ID`
 ${prefixName} `VERSION_`
 <#assign prefixName = ','>
 </#if>
-<#if (insert_wfId??) && (insert_wfId_value??)>
-${prefixName} `WF_ID`
-<#assign prefixName = ','>
-</#if>
 )
 (SELECT
 <#assign prefixName = ' '>
@@ -167,10 +163,6 @@ ${prefixName} :insert_userGroupRoleId_value
 </#if>
 <#if (insert_version??) && (insert_version_value??)>
 ${prefixName} :insert_version_value
-<#assign prefixName = ','>
-</#if>
-<#if (insert_wfId??) && (insert_wfId_value??)>
-${prefixName} :insert_wfId_value
 <#assign prefixName = ','>
 </#if>
 FROM DUAL WHERE NOT EXISTS (SELECT 1 FROM c1_user_group_role E
@@ -332,14 +324,6 @@ ${prefixName} E.USER_GROUP_ROLE_ID IS NULL
 ${prefixName} E.VERSION_ = :where_and_eq_version_value
 <#else>
 ${prefixName} E.VERSION_ IS NULL
-</#if>
-<#assign prefixName = 'AND'>
-</#if>
-<#if (where_and_eq_wfId??)>
-<#if (where_and_eq_wfId_value??)>
-${prefixName} E.WF_ID = :where_and_eq_wfId_value
-<#else>
-${prefixName} E.WF_ID IS NULL
 </#if>
 <#assign prefixName = 'AND'>
 </#if>

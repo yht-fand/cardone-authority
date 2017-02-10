@@ -22,6 +22,5 @@
   "stateCode": "STATE_CODE",
   "systemInfoCode": "SYSTEM_INFO_CODE",
   "typeCode": "TYPE_CODE",
-  "version": "VERSION_",
-  "wfId": "WF_ID"
+  "version": "VERSION_"
 }

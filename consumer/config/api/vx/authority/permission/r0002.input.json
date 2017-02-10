@@ -23,7 +23,6 @@
   "systemInfoCode": "systemInfoCode",
   "typeCode": "typeCode",
   "version": "version",
-  "wfId": "wfId",
   "pageSize": "pageSize",
   "pageNumber": "pageNumber"
 }

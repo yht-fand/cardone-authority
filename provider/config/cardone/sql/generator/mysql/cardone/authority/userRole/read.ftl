@@ -60,9 +60,6 @@ USER_ROLE_ID AS userRoleId
 <#case "version">
 VERSION_ AS version
 <#break>
-<#case "wfId">
-WF_ID AS wfId
-<#break>
 <#default>
 COUNT(1) AS COUNT_
 </#switch>

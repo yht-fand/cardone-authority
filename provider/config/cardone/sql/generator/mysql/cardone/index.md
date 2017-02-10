@@ -17,8 +17,8 @@ CREATED_DATE|YES|Date(19)|创建时间
 DATA_STATE_CODE|YES|String(255)|数据状态代码(数据字典)
 DEPARTMENT_CODE|YES|String(255)|部门代码
 END_DATE|YES|Date(19)|结束时间
-FLAG_CODE|YES|String(255)|标记代码(数据字典：同步、生成、录入、审批)
-FLAG_OBJECT_CODE|YES|String(255)|标识对象代码(同步：批次号、生成：操作者编号、录入：操作者编号、审批：操作者编号)
+FLAG_CODE|YES|String(255)|标记代码(数据字典：工作流、同步、生成、录入、审批)
+FLAG_OBJECT_CODE|YES|String(255)|标识对象代码(工作流：工作流标识、同步：批次号、生成：操作者编号、录入：操作者编号、审批：操作者编号)
 JSON_DATA|YES|String()|JSON数据
 LAST_MODIFIED_BY_CODE|YES|String(255)|最后修改人代码
 LAST_MODIFIED_DATE|YES|Date(19)|最后修改时间
@@ -31,7 +31,6 @@ SYSTEM_INFO_CODE|YES|String(255)|系统信息代码
 USER_CODE|YES|String(255)|用户代码
 USER_PERMISSION_ID|NO|String(255)|用户与许可标识
 VERSION_|YES|Integer(10)|版本
-WF_ID|YES|String(255)|工作流标识
 
 ##### 用户与角色（c1_user_role）
 
@@ -43,8 +42,8 @@ CREATED_DATE|YES|Date(19)|创建时间
 DATA_STATE_CODE|YES|String(255)|数据状态代码(数据字典)
 DEPARTMENT_CODE|YES|String(255)|部门代码
 END_DATE|YES|Date(19)|结束时间
-FLAG_CODE|YES|String(255)|标记代码(数据字典：同步、生成、录入、审批)
-FLAG_OBJECT_CODE|YES|String(255)|标识对象代码(同步：批次号、生成：操作者编号、录入：操作者编号、审批：操作者编号)
+FLAG_CODE|YES|String(255)|标记代码(数据字典：工作流、同步、生成、录入、审批)
+FLAG_OBJECT_CODE|YES|String(255)|标识对象代码(工作流：工作流标识、同步：批次号、生成：操作者编号、录入：操作者编号、审批：操作者编号)
 JSON_DATA|YES|String()|JSON数据
 LAST_MODIFIED_BY_CODE|YES|String(255)|最后修改人代码
 LAST_MODIFIED_DATE|YES|Date(19)|最后修改时间
@@ -57,7 +56,6 @@ SYSTEM_INFO_CODE|YES|String(255)|系统信息代码
 USER_CODE|YES|String(255)|用户代码
 USER_ROLE_ID|NO|String(255)|用户与角色标识
 VERSION_|YES|Integer(10)|版本
-WF_ID|YES|String(255)|工作流标识
 
 ##### 许可（c1_permission）
 
@@ -69,8 +67,8 @@ CREATED_DATE|YES|Date(19)|创建时间
 DATA_STATE_CODE|YES|String(255)|数据状态代码(数据字典)
 DEPARTMENT_CODE|YES|String(255)|部门代码
 END_DATE|YES|Date(19)|结束时间
-FLAG_CODE|YES|String(255)|标记代码(数据字典：同步、生成、录入、审批)
-FLAG_OBJECT_CODE|YES|String(255)|标识对象代码(同步：批次号、生成：操作者编号、录入：操作者编号、审批：操作者编号)
+FLAG_CODE|YES|String(255)|标记代码(数据字典：工作流、同步、生成、录入、审批)
+FLAG_OBJECT_CODE|YES|String(255)|标识对象代码(工作流：工作流标识、同步：批次号、生成：操作者编号、录入：操作者编号、审批：操作者编号)
 JSON_DATA|YES|String()|JSON数据
 LAST_MODIFIED_BY_CODE|YES|String(255)|最后修改人代码
 LAST_MODIFIED_DATE|YES|Date(19)|最后修改时间
@@ -87,7 +85,6 @@ STATE_CODE|YES|String(255)|状态代码(数据字典)
 SYSTEM_INFO_CODE|YES|String(255)|系统信息代码
 TYPE_CODE|YES|String(255)|类别代码(数据字典)
 VERSION_|YES|Integer(10)|版本
-WF_ID|YES|String(255)|工作流标识
 
 ##### 角色（c1_role）
 
@@ -99,8 +96,8 @@ CREATED_DATE|YES|Date(19)|创建时间
 DATA_STATE_CODE|YES|String(255)|数据状态代码(数据字典)
 DEPARTMENT_CODE|YES|String(255)|部门代码
 END_DATE|YES|Date(19)|结束时间
-FLAG_CODE|YES|String(255)|标记代码(数据字典：同步、生成、录入、审批)
-FLAG_OBJECT_CODE|YES|String(255)|标识对象代码(同步：批次号、生成：操作者编号、录入：操作者编号、审批：操作者编号)
+FLAG_CODE|YES|String(255)|标记代码(数据字典：工作流、同步、生成、录入、审批)
+FLAG_OBJECT_CODE|YES|String(255)|标识对象代码(工作流：工作流标识、同步：批次号、生成：操作者编号、录入：操作者编号、审批：操作者编号)
 JSON_DATA|YES|String()|JSON数据
 LAST_MODIFIED_BY_CODE|YES|String(255)|最后修改人代码
 LAST_MODIFIED_DATE|YES|Date(19)|最后修改时间
@@ -117,7 +114,6 @@ STATE_CODE|YES|String(255)|状态代码(数据字典)
 SYSTEM_INFO_CODE|YES|String(255)|系统信息代码
 TYPE_CODE|YES|String(255)|类别代码(数据字典)
 VERSION_|YES|Integer(10)|版本
-WF_ID|YES|String(255)|工作流标识
 
 ##### 角色与许可（c1_role_permission）
 
@@ -129,8 +125,8 @@ CREATED_DATE|YES|Date(19)|创建时间
 DATA_STATE_CODE|YES|String(255)|数据状态代码(数据字典)
 DEPARTMENT_CODE|YES|String(255)|部门代码
 END_DATE|YES|Date(19)|结束时间
-FLAG_CODE|YES|String(255)|标记代码(数据字典：同步、生成、录入、审批)
-FLAG_OBJECT_CODE|YES|String(255)|标识对象代码(同步：批次号、生成：操作者编号、录入：操作者编号、审批：操作者编号)
+FLAG_CODE|YES|String(255)|标记代码(数据字典：工作流、同步、生成、录入、审批)
+FLAG_OBJECT_CODE|YES|String(255)|标识对象代码(工作流：工作流标识、同步：批次号、生成：操作者编号、录入：操作者编号、审批：操作者编号)
 JSON_DATA|YES|String()|JSON数据
 LAST_MODIFIED_BY_CODE|YES|String(255)|最后修改人代码
 LAST_MODIFIED_DATE|YES|Date(19)|最后修改时间
@@ -143,7 +139,6 @@ SITE_CODE|YES|String(255)|站点代码
 STATE_CODE|YES|String(255)|状态代码(数据字典)
 SYSTEM_INFO_CODE|YES|String(255)|系统信息代码
 VERSION_|YES|Integer(10)|版本
-WF_ID|YES|String(255)|工作流标识
 
 ##### 用户组（c1_user_group）
 
@@ -155,8 +150,8 @@ CREATED_DATE|YES|Date(19)|创建时间
 DATA_STATE_CODE|YES|String(255)|数据状态代码(数据字典)
 DEPARTMENT_CODE|YES|String(255)|部门代码
 END_DATE|YES|Date(19)|结束时间
-FLAG_CODE|YES|String(255)|标记代码(数据字典：同步、生成、录入、审批)
-FLAG_OBJECT_CODE|YES|String(255)|标识对象代码(同步：批次号、生成：操作者编号、录入：操作者编号、审批：操作者编号)
+FLAG_CODE|YES|String(255)|标记代码(数据字典：工作流、同步、生成、录入、审批)
+FLAG_OBJECT_CODE|YES|String(255)|标识对象代码(工作流：工作流标识、同步：批次号、生成：操作者编号、录入：操作者编号、审批：操作者编号)
 JSON_DATA|YES|String()|JSON数据
 LAST_MODIFIED_BY_CODE|YES|String(255)|最后修改人代码
 LAST_MODIFIED_DATE|YES|Date(19)|最后修改时间
@@ -173,7 +168,6 @@ TYPE_CODE|YES|String(255)|类别代码(数据字典)
 USER_GROUP_CODE|NO|String(255)|用户组代码
 USER_GROUP_ID|NO|String(255)|用户组标识
 VERSION_|YES|Integer(10)|版本
-WF_ID|YES|String(255)|工作流标识
 
 ##### 用户组与许可（c1_user_group_permission）
 
@@ -185,8 +179,8 @@ CREATED_DATE|YES|Date(19)|创建时间
 DATA_STATE_CODE|YES|String(255)|数据状态代码(数据字典)
 DEPARTMENT_CODE|YES|String(255)|部门代码
 END_DATE|YES|Date(19)|结束时间
-FLAG_CODE|YES|String(255)|标记代码(数据字典：同步、生成、录入、审批)
-FLAG_OBJECT_CODE|YES|String(255)|标识对象代码(同步：批次号、生成：操作者编号、录入：操作者编号、审批：操作者编号)
+FLAG_CODE|YES|String(255)|标记代码(数据字典：工作流、同步、生成、录入、审批)
+FLAG_OBJECT_CODE|YES|String(255)|标识对象代码(工作流：工作流标识、同步：批次号、生成：操作者编号、录入：操作者编号、审批：操作者编号)
 JSON_DATA|YES|String()|JSON数据
 LAST_MODIFIED_BY_CODE|YES|String(255)|最后修改人代码
 LAST_MODIFIED_DATE|YES|Date(19)|最后修改时间
@@ -199,7 +193,6 @@ SYSTEM_INFO_CODE|YES|String(255)|系统信息代码
 USER_GROUP_CODE|YES|String(255)|用户组代码
 USER_GROUP_PERMISSION_ID|NO|String(255)|用户组与许可标识
 VERSION_|YES|Integer(10)|版本
-WF_ID|YES|String(255)|工作流标识
 
 ##### 用户组与角色（c1_user_group_role）
 
@@ -211,8 +204,8 @@ CREATED_DATE|YES|Date(19)|创建时间
 DATA_STATE_CODE|YES|String(255)|数据状态代码(数据字典)
 DEPARTMENT_CODE|YES|String(255)|部门代码
 END_DATE|YES|Date(19)|结束时间
-FLAG_CODE|YES|String(255)|标记代码(数据字典：同步、生成、录入、审批)
-FLAG_OBJECT_CODE|YES|String(255)|标识对象代码(同步：批次号、生成：操作者编号、录入：操作者编号、审批：操作者编号)
+FLAG_CODE|YES|String(255)|标记代码(数据字典：工作流、同步、生成、录入、审批)
+FLAG_OBJECT_CODE|YES|String(255)|标识对象代码(工作流：工作流标识、同步：批次号、生成：操作者编号、录入：操作者编号、审批：操作者编号)
 JSON_DATA|YES|String()|JSON数据
 LAST_MODIFIED_BY_CODE|YES|String(255)|最后修改人代码
 LAST_MODIFIED_DATE|YES|Date(19)|最后修改时间
@@ -225,7 +218,6 @@ SYSTEM_INFO_CODE|YES|String(255)|系统信息代码
 USER_GROUP_CODE|YES|String(255)|用户组代码
 USER_GROUP_ROLE_ID|NO|String(255)|用户组与角色标识
 VERSION_|YES|Integer(10)|版本
-WF_ID|YES|String(255)|工作流标识
 
 ##### 用户组与用户（c1_user_group_user）
 
@@ -237,8 +229,8 @@ CREATED_DATE|YES|Date(19)|创建时间
 DATA_STATE_CODE|YES|String(255)|数据状态代码(数据字典)
 DEPARTMENT_CODE|YES|String(255)|部门代码
 END_DATE|YES|Date(19)|结束时间
-FLAG_CODE|YES|String(255)|标记代码(数据字典：同步、生成、录入、审批)
-FLAG_OBJECT_CODE|YES|String(255)|标识对象代码(同步：批次号、生成：操作者编号、录入：操作者编号、审批：操作者编号)
+FLAG_CODE|YES|String(255)|标记代码(数据字典：工作流、同步、生成、录入、审批)
+FLAG_OBJECT_CODE|YES|String(255)|标识对象代码(工作流：工作流标识、同步：批次号、生成：操作者编号、录入：操作者编号、审批：操作者编号)
 JSON_DATA|YES|String()|JSON数据
 LAST_MODIFIED_BY_CODE|YES|String(255)|最后修改人代码
 LAST_MODIFIED_DATE|YES|Date(19)|最后修改时间
@@ -251,7 +243,6 @@ USER_CODE|YES|String(255)|用户代码
 USER_GROUP_CODE|YES|String(255)|用户组代码
 USER_GROUP_USER_ID|NO|String(255)|用户组与用户标识
 VERSION_|YES|Integer(10)|版本
-WF_ID|YES|String(255)|工作流标识
 
 ##### 授权消费（c1_oauth_consumer）
 
@@ -264,8 +255,8 @@ CREATED_DATE|YES|Date(19)|创建时间
 DATA_STATE_CODE|YES|String(255)|数据状态代码(数据字典)
 DEPARTMENT_CODE|YES|String(255)|部门代码
 END_DATE|YES|Date(19)|结束时间
-FLAG_CODE|YES|String(255)|标记代码(数据字典：同步、生成、录入、审批)
-FLAG_OBJECT_CODE|YES|String(255)|标识对象代码(同步：批次号、生成：操作者编号、录入：操作者编号、审批：操作者编号)
+FLAG_CODE|YES|String(255)|标记代码(数据字典：工作流、同步、生成、录入、审批)
+FLAG_OBJECT_CODE|YES|String(255)|标识对象代码(工作流：工作流标识、同步：批次号、生成：操作者编号、录入：操作者编号、审批：操作者编号)
 JSON_DATA|YES|String()|JSON数据
 LAST_MODIFIED_BY_CODE|YES|String(255)|最后修改人代码
 LAST_MODIFIED_DATE|YES|Date(19)|最后修改时间
@@ -276,7 +267,6 @@ SITE_CODE|YES|String(255)|站点代码
 STATE_CODE|YES|String(255)|状态代码(数据字典)
 SYSTEM_INFO_CODE|YES|String(255)|系统信息代码
 VERSION_|YES|Integer(10)|版本
-WF_ID|YES|String(255)|工作流标识
 
 ##### 令牌信息（c1_token_info）
 
@@ -289,8 +279,8 @@ CREATED_DATE|YES|Date(19)|创建时间
 DATA_STATE_CODE|YES|String(255)|数据状态代码(数据字典)
 DEPARTMENT_CODE|YES|String(255)|部门代码
 END_DATE|YES|Date(19)|结束时间
-FLAG_CODE|YES|String(255)|标记代码(数据字典：同步、生成、录入、审批)
-FLAG_OBJECT_CODE|YES|String(255)|标识对象代码(同步：批次号、生成：操作者编号、录入：操作者编号、审批：操作者编号)
+FLAG_CODE|YES|String(255)|标记代码(数据字典：工作流、同步、生成、录入、审批)
+FLAG_OBJECT_CODE|YES|String(255)|标识对象代码(工作流：工作流标识、同步：批次号、生成：操作者编号、录入：操作者编号、审批：操作者编号)
 JSON_DATA|YES|String()|JSON数据
 LAST_MODIFIED_BY_CODE|YES|String(255)|最后修改人代码
 LAST_MODIFIED_DATE|YES|Date(19)|最后修改时间
@@ -304,4 +294,3 @@ TOKEN_INFO_CODE|NO|String(255)|令牌信息代码
 TOKEN_INFO_ID|NO|String(255)|令牌信息标识
 USER_CODE|YES|String(255)|用户代码
 VERSION_|YES|Integer(10)|版本
-WF_ID|YES|String(255)|工作流标识

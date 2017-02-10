@@ -76,10 +76,6 @@ ${prefixName} `SYSTEM_INFO_CODE`
 ${prefixName} `VERSION_`
 <#assign prefixName = ','>
 </#if>
-<#if (select_wfId??)>
-${prefixName} `WF_ID`
-<#assign prefixName = ','>
-</#if>
 <#if prefixName ==  ' '>
 *
 </#if>
@@ -160,9 +156,5 @@ ${prefixName} `SYSTEM_INFO_CODE` ${order_by_systemInfoCode_value!}
 </#if>
 <#if (order_by_version??)>
 ${prefixName} `VERSION_` ${order_by_version_value!}
-<#assign prefixName = ','>
-</#if>
-<#if (order_by_wfId??)>
-${prefixName} `WF_ID` ${order_by_wfId_value!}
 <#assign prefixName = ','>
 </#if>

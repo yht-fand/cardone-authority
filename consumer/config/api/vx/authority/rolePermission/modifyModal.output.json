@@ -18,6 +18,5 @@
   "siteCode": "SITE_CODE",
   "stateCode": "STATE_CODE",
   "systemInfoCode": "SYSTEM_INFO_CODE",
-  "version": "VERSION_",
-  "wfId": "WF_ID"
+  "version": "VERSION_"
 }

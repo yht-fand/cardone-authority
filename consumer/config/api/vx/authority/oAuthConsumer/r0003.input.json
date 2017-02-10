@@ -18,7 +18,6 @@
   "stateCode": "stateCode",
   "systemInfoCode": "systemInfoCode",
   "version": "version",
-  "wfId": "wfId",
   "pageSize": "pageSize",
   "pageNumber": "pageNumber"
 }

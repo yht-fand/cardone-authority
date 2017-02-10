@@ -19,7 +19,6 @@
   "userGroupCode": "userGroupCode",
   "userGroupUserId": "userGroupUserId",
   "version": "version",
-  "wfId": "wfId",
   "pageSize": "pageSize",
   "pageNumber": "pageNumber"
 }

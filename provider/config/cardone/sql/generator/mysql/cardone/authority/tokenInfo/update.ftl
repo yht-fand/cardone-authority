@@ -88,8 +88,4 @@ ${prefixName} `USER_CODE` = :update_userCode_value
 ${prefixName} `VERSION_` = :update_version_value
 <#assign prefixName = ','>
 </#if>
-<#if (update_wfId??)>
-${prefixName} `WF_ID` = :update_wfId_value
-<#assign prefixName = ','>
-</#if>
 <#include "where.ftl">
