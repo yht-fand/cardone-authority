@@ -1,59 +1,23 @@
 {
-  "BEGIN_DATE": {
-    "newName": "beginDate"
-  },
-  "CREATED_BY_CODE": {
-    "newName": "createdByCode"
-  },
-  "CREATED_DATE": {
-    "newName": "createdDate"
-  },
-  "DATA_STATE_CODE": {
-    "newName": "dataStateCode"
-  },
-  "DEPARTMENT_CODE": {
-    "newName": "departmentCode"
-  },
-  "END_DATE": {
-    "newName": "endDate"
-  },
-  "LAST_MODIFIED_BY_CODE": {
-    "newName": "lastModifiedByCode"
-  },
-  "LAST_MODIFIED_DATE": {
-    "newName": "lastModifiedDate"
-  },
-  "ORG_CODE": {
-    "newName": "orgCode"
-  },
-  "PERMISSION_CODE": {
-    "newName": "permissionCode"
-  },
-  "PERMISSION_CODES": {
-    "newName": "permissionCodes"
-  },
-  "ROLE_CODE": {
-    "newName": "roleCode"
-  },
-  "ROLE_CODES": {
-    "newName": "roleCodes"
-  },
-  "ROLE_PERMISSION_ID": {
-    "newName": "rolePermissionId"
-  },
-  "SITE_CODE": {
-    "newName": "siteCode"
-  },
-  "STATE_CODE": {
-    "newName": "stateCode"
-  },
-  "SYSTEM_INFO_CODE": {
-    "newName": "systemInfoCode"
-  },
-  "VERSION_": {
-    "newName": "version"
-  },
-  "WF_ID": {
-    "newName": "wfId"
-  }
+  "beginDate": "BEGIN_DATE",
+  "createdByCode": "CREATED_BY_CODE",
+  "createdDate": "CREATED_DATE",
+  "dataStateCode": "DATA_STATE_CODE",
+  "departmentCode": "DEPARTMENT_CODE",
+  "endDate": "END_DATE",
+  "flagCode": "FLAG_CODE",
+  "flagObjectCode": "FLAG_OBJECT_CODE",
+  "jsonData": "JSON_DATA",
+  "lastModifiedByCode": "LAST_MODIFIED_BY_CODE",
+  "lastModifiedDate": "LAST_MODIFIED_DATE",
+  "order": "ORDER_",
+  "orgCode": "ORG_CODE",
+  "permissionCode": "PERMISSION_CODE",
+  "roleCode": "ROLE_CODE",
+  "rolePermissionId": "ROLE_PERMISSION_ID",
+  "siteCode": "SITE_CODE",
+  "stateCode": "STATE_CODE",
+  "systemInfoCode": "SYSTEM_INFO_CODE",
+  "version": "VERSION_",
+  "wfId": "WF_ID"
 }

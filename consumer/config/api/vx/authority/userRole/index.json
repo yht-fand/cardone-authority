@@ -3,31 +3,31 @@
     "permission_add": {
       "beanId": "authorityFunc",
       "params": {
-        "code": "authority.userRole.add"
+        "code": "authority:userRole:add"
       }
     },
     "permission_modify": {
       "beanId": "authorityFunc",
       "params": {
-        "code": "authority.userRole.modify"
+        "code": "authority:userRole:modify"
       }
     },
     "permission_delete": {
       "beanId": "authorityFunc",
       "params": {
-        "code": "authority.userRole.delete"
+        "code": "authority:userRole:delete"
       }
     },
     "permission_impData": {
       "beanId": "authorityFunc",
       "params": {
-        "code": "authority.userRole.impData"
+        "code": "authority:userRole:impData"
       }
     },
     "permission_expData": {
       "beanId": "authorityFunc",
       "params": {
-        "code": "authority.userRole.expData"
+        "code": "authority:userRole:expData"
       }
     }
   }

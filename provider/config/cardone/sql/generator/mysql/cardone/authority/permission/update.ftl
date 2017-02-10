@@ -24,12 +24,32 @@ ${prefixName} `DEPARTMENT_CODE` = :update_departmentCode_value
 ${prefixName} `END_DATE` = :update_endDate_value
 <#assign prefixName = ','>
 </#if>
+<#if (update_flagCode??)>
+${prefixName} `FLAG_CODE` = :update_flagCode_value
+<#assign prefixName = ','>
+</#if>
+<#if (update_flagObjectCode??)>
+${prefixName} `FLAG_OBJECT_CODE` = :update_flagObjectCode_value
+<#assign prefixName = ','>
+</#if>
+<#if (update_jsonData??)>
+${prefixName} `JSON_DATA` = :update_jsonData_value
+<#assign prefixName = ','>
+</#if>
 <#if (update_lastModifiedByCode??)>
 ${prefixName} `LAST_MODIFIED_BY_CODE` = :update_lastModifiedByCode_value
 <#assign prefixName = ','>
 </#if>
 <#if (update_lastModifiedDate??)>
 ${prefixName} `LAST_MODIFIED_DATE` = :update_lastModifiedDate_value
+<#assign prefixName = ','>
+</#if>
+<#if (update_name??)>
+${prefixName} `NAME` = :update_name_value
+<#assign prefixName = ','>
+</#if>
+<#if (update_order??)>
+${prefixName} `ORDER_` = :update_order_value
 <#assign prefixName = ','>
 </#if>
 <#if (update_orgCode??)>
@@ -52,16 +72,8 @@ ${prefixName} `PARENT_TREE_NAME` = :update_parentTreeName_value
 ${prefixName} `PERMISSION_CODE` = :update_permissionCode_value
 <#assign prefixName = ','>
 </#if>
-<#if (update_permissionCodes??)>
-${prefixName} `PERMISSION_CODES` = :update_permissionCodes_value
-<#assign prefixName = ','>
-</#if>
 <#if (update_permissionId??)>
 ${prefixName} `PERMISSION_ID` = :update_permissionId_value
-<#assign prefixName = ','>
-</#if>
-<#if (update_roleCodes??)>
-${prefixName} `ROLE_CODES` = :update_roleCodes_value
 <#assign prefixName = ','>
 </#if>
 <#if (update_siteCode??)>
@@ -74,6 +86,10 @@ ${prefixName} `STATE_CODE` = :update_stateCode_value
 </#if>
 <#if (update_systemInfoCode??)>
 ${prefixName} `SYSTEM_INFO_CODE` = :update_systemInfoCode_value
+<#assign prefixName = ','>
+</#if>
+<#if (update_typeCode??)>
+${prefixName} `TYPE_CODE` = :update_typeCode_value
 <#assign prefixName = ','>
 </#if>
 <#if (update_version??)>

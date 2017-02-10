@@ -1,1 +1,0 @@
-DELETE FROM c1_navigation WHERE INSTR(:navigationIds, NAVIGATION_ID) > 0

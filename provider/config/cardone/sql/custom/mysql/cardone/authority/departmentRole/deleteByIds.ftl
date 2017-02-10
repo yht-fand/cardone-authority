@@ -1,1 +1,0 @@
-DELETE FROM c1_department_role WHERE INSTR(:departmentRoleIds, DEPARTMENT_ROLE_ID) > 0

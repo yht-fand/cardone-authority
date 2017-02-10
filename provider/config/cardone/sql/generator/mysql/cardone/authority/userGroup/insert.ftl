@@ -25,6 +25,18 @@ ${prefixName} `DEPARTMENT_CODE`
 ${prefixName} `END_DATE`
 <#assign prefixName = ','>
 </#if>
+<#if (insert_flagCode??) && (insert_flagCode_value??)>
+${prefixName} `FLAG_CODE`
+<#assign prefixName = ','>
+</#if>
+<#if (insert_flagObjectCode??) && (insert_flagObjectCode_value??)>
+${prefixName} `FLAG_OBJECT_CODE`
+<#assign prefixName = ','>
+</#if>
+<#if (insert_jsonData??) && (insert_jsonData_value??)>
+${prefixName} `JSON_DATA`
+<#assign prefixName = ','>
+</#if>
 <#if (insert_lastModifiedByCode??) && (insert_lastModifiedByCode_value??)>
 ${prefixName} `LAST_MODIFIED_BY_CODE`
 <#assign prefixName = ','>
@@ -57,14 +69,6 @@ ${prefixName} `PARENT_TREE_CODE`
 ${prefixName} `PARENT_TREE_NAME`
 <#assign prefixName = ','>
 </#if>
-<#if (insert_permissionCodes??) && (insert_permissionCodes_value??)>
-${prefixName} `PERMISSION_CODES`
-<#assign prefixName = ','>
-</#if>
-<#if (insert_roleCodes??) && (insert_roleCodes_value??)>
-${prefixName} `ROLE_CODES`
-<#assign prefixName = ','>
-</#if>
 <#if (insert_siteCode??) && (insert_siteCode_value??)>
 ${prefixName} `SITE_CODE`
 <#assign prefixName = ','>
@@ -75,6 +79,10 @@ ${prefixName} `STATE_CODE`
 </#if>
 <#if (insert_systemInfoCode??) && (insert_systemInfoCode_value??)>
 ${prefixName} `SYSTEM_INFO_CODE`
+<#assign prefixName = ','>
+</#if>
+<#if (insert_typeCode??) && (insert_typeCode_value??)>
+${prefixName} `TYPE_CODE`
 <#assign prefixName = ','>
 </#if>
 <#if (insert_userGroupCode??) && (insert_userGroupCode_value??)>
@@ -120,6 +128,18 @@ ${prefixName} :insert_departmentCode_value
 ${prefixName} :insert_endDate_value
 <#assign prefixName = ','>
 </#if>
+<#if (insert_flagCode??) && (insert_flagCode_value??)>
+${prefixName} :insert_flagCode_value
+<#assign prefixName = ','>
+</#if>
+<#if (insert_flagObjectCode??) && (insert_flagObjectCode_value??)>
+${prefixName} :insert_flagObjectCode_value
+<#assign prefixName = ','>
+</#if>
+<#if (insert_jsonData??) && (insert_jsonData_value??)>
+${prefixName} :insert_jsonData_value
+<#assign prefixName = ','>
+</#if>
 <#if (insert_lastModifiedByCode??) && (insert_lastModifiedByCode_value??)>
 ${prefixName} :insert_lastModifiedByCode_value
 <#assign prefixName = ','>
@@ -152,14 +172,6 @@ ${prefixName} :insert_parentTreeCode_value
 ${prefixName} :insert_parentTreeName_value
 <#assign prefixName = ','>
 </#if>
-<#if (insert_permissionCodes??) && (insert_permissionCodes_value??)>
-${prefixName} :insert_permissionCodes_value
-<#assign prefixName = ','>
-</#if>
-<#if (insert_roleCodes??) && (insert_roleCodes_value??)>
-${prefixName} :insert_roleCodes_value
-<#assign prefixName = ','>
-</#if>
 <#if (insert_siteCode??) && (insert_siteCode_value??)>
 ${prefixName} :insert_siteCode_value
 <#assign prefixName = ','>
@@ -170,6 +182,10 @@ ${prefixName} :insert_stateCode_value
 </#if>
 <#if (insert_systemInfoCode??) && (insert_systemInfoCode_value??)>
 ${prefixName} :insert_systemInfoCode_value
+<#assign prefixName = ','>
+</#if>
+<#if (insert_typeCode??) && (insert_typeCode_value??)>
+${prefixName} :insert_typeCode_value
 <#assign prefixName = ','>
 </#if>
 <#if (insert_userGroupCode??) && (insert_userGroupCode_value??)>

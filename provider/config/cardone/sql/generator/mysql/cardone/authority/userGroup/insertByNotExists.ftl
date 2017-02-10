@@ -26,6 +26,18 @@ ${prefixName} `DEPARTMENT_CODE`
 ${prefixName} `END_DATE`
 <#assign prefixName = ','>
 </#if>
+<#if (insert_flagCode??) && (insert_flagCode_value??)>
+${prefixName} `FLAG_CODE`
+<#assign prefixName = ','>
+</#if>
+<#if (insert_flagObjectCode??) && (insert_flagObjectCode_value??)>
+${prefixName} `FLAG_OBJECT_CODE`
+<#assign prefixName = ','>
+</#if>
+<#if (insert_jsonData??) && (insert_jsonData_value??)>
+${prefixName} `JSON_DATA`
+<#assign prefixName = ','>
+</#if>
 <#if (insert_lastModifiedByCode??) && (insert_lastModifiedByCode_value??)>
 ${prefixName} `LAST_MODIFIED_BY_CODE`
 <#assign prefixName = ','>
@@ -58,14 +70,6 @@ ${prefixName} `PARENT_TREE_CODE`
 ${prefixName} `PARENT_TREE_NAME`
 <#assign prefixName = ','>
 </#if>
-<#if (insert_permissionCodes??) && (insert_permissionCodes_value??)>
-${prefixName} `PERMISSION_CODES`
-<#assign prefixName = ','>
-</#if>
-<#if (insert_roleCodes??) && (insert_roleCodes_value??)>
-${prefixName} `ROLE_CODES`
-<#assign prefixName = ','>
-</#if>
 <#if (insert_siteCode??) && (insert_siteCode_value??)>
 ${prefixName} `SITE_CODE`
 <#assign prefixName = ','>
@@ -76,6 +80,10 @@ ${prefixName} `STATE_CODE`
 </#if>
 <#if (insert_systemInfoCode??) && (insert_systemInfoCode_value??)>
 ${prefixName} `SYSTEM_INFO_CODE`
+<#assign prefixName = ','>
+</#if>
+<#if (insert_typeCode??) && (insert_typeCode_value??)>
+${prefixName} `TYPE_CODE`
 <#assign prefixName = ','>
 </#if>
 <#if (insert_userGroupCode??) && (insert_userGroupCode_value??)>
@@ -121,6 +129,18 @@ ${prefixName} :insert_departmentCode_value
 ${prefixName} :insert_endDate_value
 <#assign prefixName = ','>
 </#if>
+<#if (insert_flagCode??) && (insert_flagCode_value??)>
+${prefixName} :insert_flagCode_value
+<#assign prefixName = ','>
+</#if>
+<#if (insert_flagObjectCode??) && (insert_flagObjectCode_value??)>
+${prefixName} :insert_flagObjectCode_value
+<#assign prefixName = ','>
+</#if>
+<#if (insert_jsonData??) && (insert_jsonData_value??)>
+${prefixName} :insert_jsonData_value
+<#assign prefixName = ','>
+</#if>
 <#if (insert_lastModifiedByCode??) && (insert_lastModifiedByCode_value??)>
 ${prefixName} :insert_lastModifiedByCode_value
 <#assign prefixName = ','>
@@ -153,14 +173,6 @@ ${prefixName} :insert_parentTreeCode_value
 ${prefixName} :insert_parentTreeName_value
 <#assign prefixName = ','>
 </#if>
-<#if (insert_permissionCodes??) && (insert_permissionCodes_value??)>
-${prefixName} :insert_permissionCodes_value
-<#assign prefixName = ','>
-</#if>
-<#if (insert_roleCodes??) && (insert_roleCodes_value??)>
-${prefixName} :insert_roleCodes_value
-<#assign prefixName = ','>
-</#if>
 <#if (insert_siteCode??) && (insert_siteCode_value??)>
 ${prefixName} :insert_siteCode_value
 <#assign prefixName = ','>
@@ -171,6 +183,10 @@ ${prefixName} :insert_stateCode_value
 </#if>
 <#if (insert_systemInfoCode??) && (insert_systemInfoCode_value??)>
 ${prefixName} :insert_systemInfoCode_value
+<#assign prefixName = ','>
+</#if>
+<#if (insert_typeCode??) && (insert_typeCode_value??)>
+${prefixName} :insert_typeCode_value
 <#assign prefixName = ','>
 </#if>
 <#if (insert_userGroupCode??) && (insert_userGroupCode_value??)>
@@ -239,6 +255,30 @@ ${prefixName} E.END_DATE IS NULL
 </#if>
 <#assign prefixName = 'AND'>
 </#if>
+<#if (where_and_eq_flagCode??)>
+<#if (where_and_eq_flagCode_value??)>
+${prefixName} E.FLAG_CODE = :where_and_eq_flagCode_value
+<#else>
+${prefixName} E.FLAG_CODE IS NULL
+</#if>
+<#assign prefixName = 'AND'>
+</#if>
+<#if (where_and_eq_flagObjectCode??)>
+<#if (where_and_eq_flagObjectCode_value??)>
+${prefixName} E.FLAG_OBJECT_CODE = :where_and_eq_flagObjectCode_value
+<#else>
+${prefixName} E.FLAG_OBJECT_CODE IS NULL
+</#if>
+<#assign prefixName = 'AND'>
+</#if>
+<#if (where_and_eq_jsonData??)>
+<#if (where_and_eq_jsonData_value??)>
+${prefixName} E.JSON_DATA = :where_and_eq_jsonData_value
+<#else>
+${prefixName} E.JSON_DATA IS NULL
+</#if>
+<#assign prefixName = 'AND'>
+</#if>
 <#if (where_and_eq_lastModifiedByCode??)>
 <#if (where_and_eq_lastModifiedByCode_value??)>
 ${prefixName} E.LAST_MODIFIED_BY_CODE = :where_and_eq_lastModifiedByCode_value
@@ -303,22 +343,6 @@ ${prefixName} E.PARENT_TREE_NAME IS NULL
 </#if>
 <#assign prefixName = 'AND'>
 </#if>
-<#if (where_and_eq_permissionCodes??)>
-<#if (where_and_eq_permissionCodes_value??)>
-${prefixName} E.PERMISSION_CODES = :where_and_eq_permissionCodes_value
-<#else>
-${prefixName} E.PERMISSION_CODES IS NULL
-</#if>
-<#assign prefixName = 'AND'>
-</#if>
-<#if (where_and_eq_roleCodes??)>
-<#if (where_and_eq_roleCodes_value??)>
-${prefixName} E.ROLE_CODES = :where_and_eq_roleCodes_value
-<#else>
-${prefixName} E.ROLE_CODES IS NULL
-</#if>
-<#assign prefixName = 'AND'>
-</#if>
 <#if (where_and_eq_siteCode??)>
 <#if (where_and_eq_siteCode_value??)>
 ${prefixName} E.SITE_CODE = :where_and_eq_siteCode_value
@@ -340,6 +364,14 @@ ${prefixName} E.STATE_CODE IS NULL
 ${prefixName} E.SYSTEM_INFO_CODE = :where_and_eq_systemInfoCode_value
 <#else>
 ${prefixName} E.SYSTEM_INFO_CODE IS NULL
+</#if>
+<#assign prefixName = 'AND'>
+</#if>
+<#if (where_and_eq_typeCode??)>
+<#if (where_and_eq_typeCode_value??)>
+${prefixName} E.TYPE_CODE = :where_and_eq_typeCode_value
+<#else>
+${prefixName} E.TYPE_CODE IS NULL
 </#if>
 <#assign prefixName = 'AND'>
 </#if>

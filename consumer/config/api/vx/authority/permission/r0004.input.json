@@ -1,92 +1,29 @@
 {
-  "beginDate": {
-    "newName": "beginDate",
-    "funcBeanIds": "escapeSqlFunc"
-  },
-  "createdByCode": {
-    "newName": "createdByCode",
-    "funcBeanIds": "escapeSqlFunc"
-  },
-  "createdDate": {
-    "newName": "createdDate",
-    "funcBeanIds": "escapeSqlFunc"
-  },
-  "dataStateCode": {
-    "newName": "dataStateCode",
-    "funcBeanIds": "escapeSqlFunc"
-  },
-  "departmentCode": {
-    "newName": "departmentCode",
-    "funcBeanIds": "escapeSqlFunc"
-  },
-  "endDate": {
-    "newName": "endDate",
-    "funcBeanIds": "escapeSqlFunc"
-  },
-  "lastModifiedByCode": {
-    "newName": "lastModifiedByCode",
-    "funcBeanIds": "escapeSqlFunc"
-  },
-  "lastModifiedDate": {
-    "newName": "lastModifiedDate",
-    "funcBeanIds": "escapeSqlFunc"
-  },
-  "orgCode": {
-    "newName": "orgCode",
-    "funcBeanIds": "escapeSqlFunc"
-  },
-  "parentCode": {
-    "newName": "parentCode",
-    "funcBeanIds": "escapeSqlFunc"
-  },
-  "parentTreeCode": {
-    "newName": "parentTreeCode",
-    "funcBeanIds": "escapeSqlFunc"
-  },
-  "parentTreeName": {
-    "newName": "parentTreeName",
-    "funcBeanIds": "escapeSqlFunc"
-  },
-  "permissionCode": {
-    "newName": "permissionCode",
-    "funcBeanIds": "escapeSqlFunc"
-  },
-  "permissionCodes": {
-    "newName": "permissionCodes",
-    "funcBeanIds": "escapeSqlFunc"
-  },
-  "permissionId": {
-    "newName": "permissionId",
-    "funcBeanIds": "escapeSqlFunc"
-  },
-  "roleCodes": {
-    "newName": "roleCodes",
-    "funcBeanIds": "escapeSqlFunc"
-  },
-  "siteCode": {
-    "newName": "siteCode",
-    "funcBeanIds": "escapeSqlFunc"
-  },
-  "stateCode": {
-    "newName": "stateCode",
-    "funcBeanIds": "escapeSqlFunc"
-  },
-  "systemInfoCode": {
-    "newName": "systemInfoCode",
-    "funcBeanIds": "escapeSqlFunc"
-  },
-  "version": {
-    "newName": "version",
-    "funcBeanIds": "escapeSqlFunc"
-  },
-  "wfId": {
-    "newName": "wfId",
-    "funcBeanIds": "escapeSqlFunc"
-  },
-  "pageSize": {
-    "newName": "pageSize"
-  },
-  "pageNumber": {
-    "newName": "pageNumber"
-  }
+  "beginDate": "beginDate",
+  "createdByCode": "createdByCode",
+  "createdDate": "createdDate",
+  "dataStateCode": "dataStateCode",
+  "departmentCode": "departmentCode",
+  "endDate": "endDate",
+  "flagCode": "flagCode",
+  "flagObjectCode": "flagObjectCode",
+  "jsonData": "jsonData",
+  "lastModifiedByCode": "lastModifiedByCode",
+  "lastModifiedDate": "lastModifiedDate",
+  "name": "name",
+  "order": "order",
+  "orgCode": "orgCode",
+  "parentCode": "parentCode",
+  "parentTreeCode": "parentTreeCode",
+  "parentTreeName": "parentTreeName",
+  "permissionCode": "permissionCode",
+  "permissionId": "permissionId",
+  "siteCode": "siteCode",
+  "stateCode": "stateCode",
+  "systemInfoCode": "systemInfoCode",
+  "typeCode": "typeCode",
+  "version": "version",
+  "wfId": "wfId",
+  "pageSize": "pageSize",
+  "pageNumber": "pageNumber"
 }

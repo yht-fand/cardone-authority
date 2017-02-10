@@ -26,12 +26,28 @@ ${prefixName} `DEPARTMENT_CODE`
 ${prefixName} `END_DATE`
 <#assign prefixName = ','>
 </#if>
+<#if (insert_flagCode??) && (insert_flagCode_value??)>
+${prefixName} `FLAG_CODE`
+<#assign prefixName = ','>
+</#if>
+<#if (insert_flagObjectCode??) && (insert_flagObjectCode_value??)>
+${prefixName} `FLAG_OBJECT_CODE`
+<#assign prefixName = ','>
+</#if>
+<#if (insert_jsonData??) && (insert_jsonData_value??)>
+${prefixName} `JSON_DATA`
+<#assign prefixName = ','>
+</#if>
 <#if (insert_lastModifiedByCode??) && (insert_lastModifiedByCode_value??)>
 ${prefixName} `LAST_MODIFIED_BY_CODE`
 <#assign prefixName = ','>
 </#if>
 <#if (insert_lastModifiedDate??) && (insert_lastModifiedDate_value??)>
 ${prefixName} `LAST_MODIFIED_DATE`
+<#assign prefixName = ','>
+</#if>
+<#if (insert_order??) && (insert_order_value??)>
+${prefixName} `ORDER_`
 <#assign prefixName = ','>
 </#if>
 <#if (insert_orgCode??) && (insert_orgCode_value??)>
@@ -42,16 +58,8 @@ ${prefixName} `ORG_CODE`
 ${prefixName} `PERMISSION_CODE`
 <#assign prefixName = ','>
 </#if>
-<#if (insert_permissionCodes??) && (insert_permissionCodes_value??)>
-${prefixName} `PERMISSION_CODES`
-<#assign prefixName = ','>
-</#if>
 <#if (insert_roleCode??) && (insert_roleCode_value??)>
 ${prefixName} `ROLE_CODE`
-<#assign prefixName = ','>
-</#if>
-<#if (insert_roleCodes??) && (insert_roleCodes_value??)>
-${prefixName} `ROLE_CODES`
 <#assign prefixName = ','>
 </#if>
 <#if (insert_rolePermissionId??) && (insert_rolePermissionId_value??)>
@@ -105,12 +113,28 @@ ${prefixName} :insert_departmentCode_value
 ${prefixName} :insert_endDate_value
 <#assign prefixName = ','>
 </#if>
+<#if (insert_flagCode??) && (insert_flagCode_value??)>
+${prefixName} :insert_flagCode_value
+<#assign prefixName = ','>
+</#if>
+<#if (insert_flagObjectCode??) && (insert_flagObjectCode_value??)>
+${prefixName} :insert_flagObjectCode_value
+<#assign prefixName = ','>
+</#if>
+<#if (insert_jsonData??) && (insert_jsonData_value??)>
+${prefixName} :insert_jsonData_value
+<#assign prefixName = ','>
+</#if>
 <#if (insert_lastModifiedByCode??) && (insert_lastModifiedByCode_value??)>
 ${prefixName} :insert_lastModifiedByCode_value
 <#assign prefixName = ','>
 </#if>
 <#if (insert_lastModifiedDate??) && (insert_lastModifiedDate_value??)>
 ${prefixName} :insert_lastModifiedDate_value
+<#assign prefixName = ','>
+</#if>
+<#if (insert_order??) && (insert_order_value??)>
+${prefixName} :insert_order_value
 <#assign prefixName = ','>
 </#if>
 <#if (insert_orgCode??) && (insert_orgCode_value??)>
@@ -121,16 +145,8 @@ ${prefixName} :insert_orgCode_value
 ${prefixName} :insert_permissionCode_value
 <#assign prefixName = ','>
 </#if>
-<#if (insert_permissionCodes??) && (insert_permissionCodes_value??)>
-${prefixName} :insert_permissionCodes_value
-<#assign prefixName = ','>
-</#if>
 <#if (insert_roleCode??) && (insert_roleCode_value??)>
 ${prefixName} :insert_roleCode_value
-<#assign prefixName = ','>
-</#if>
-<#if (insert_roleCodes??) && (insert_roleCodes_value??)>
-${prefixName} :insert_roleCodes_value
 <#assign prefixName = ','>
 </#if>
 <#if (insert_rolePermissionId??) && (insert_rolePermissionId_value??)>
@@ -207,6 +223,30 @@ ${prefixName} E.END_DATE IS NULL
 </#if>
 <#assign prefixName = 'AND'>
 </#if>
+<#if (where_and_eq_flagCode??)>
+<#if (where_and_eq_flagCode_value??)>
+${prefixName} E.FLAG_CODE = :where_and_eq_flagCode_value
+<#else>
+${prefixName} E.FLAG_CODE IS NULL
+</#if>
+<#assign prefixName = 'AND'>
+</#if>
+<#if (where_and_eq_flagObjectCode??)>
+<#if (where_and_eq_flagObjectCode_value??)>
+${prefixName} E.FLAG_OBJECT_CODE = :where_and_eq_flagObjectCode_value
+<#else>
+${prefixName} E.FLAG_OBJECT_CODE IS NULL
+</#if>
+<#assign prefixName = 'AND'>
+</#if>
+<#if (where_and_eq_jsonData??)>
+<#if (where_and_eq_jsonData_value??)>
+${prefixName} E.JSON_DATA = :where_and_eq_jsonData_value
+<#else>
+${prefixName} E.JSON_DATA IS NULL
+</#if>
+<#assign prefixName = 'AND'>
+</#if>
 <#if (where_and_eq_lastModifiedByCode??)>
 <#if (where_and_eq_lastModifiedByCode_value??)>
 ${prefixName} E.LAST_MODIFIED_BY_CODE = :where_and_eq_lastModifiedByCode_value
@@ -220,6 +260,14 @@ ${prefixName} E.LAST_MODIFIED_BY_CODE IS NULL
 ${prefixName} E.LAST_MODIFIED_DATE = :where_and_eq_lastModifiedDate_value
 <#else>
 ${prefixName} E.LAST_MODIFIED_DATE IS NULL
+</#if>
+<#assign prefixName = 'AND'>
+</#if>
+<#if (where_and_eq_order??)>
+<#if (where_and_eq_order_value??)>
+${prefixName} E.ORDER_ = :where_and_eq_order_value
+<#else>
+${prefixName} E.ORDER_ IS NULL
 </#if>
 <#assign prefixName = 'AND'>
 </#if>
@@ -239,27 +287,11 @@ ${prefixName} E.PERMISSION_CODE IS NULL
 </#if>
 <#assign prefixName = 'AND'>
 </#if>
-<#if (where_and_eq_permissionCodes??)>
-<#if (where_and_eq_permissionCodes_value??)>
-${prefixName} E.PERMISSION_CODES = :where_and_eq_permissionCodes_value
-<#else>
-${prefixName} E.PERMISSION_CODES IS NULL
-</#if>
-<#assign prefixName = 'AND'>
-</#if>
 <#if (where_and_eq_roleCode??)>
 <#if (where_and_eq_roleCode_value??)>
 ${prefixName} E.ROLE_CODE = :where_and_eq_roleCode_value
 <#else>
 ${prefixName} E.ROLE_CODE IS NULL
-</#if>
-<#assign prefixName = 'AND'>
-</#if>
-<#if (where_and_eq_roleCodes??)>
-<#if (where_and_eq_roleCodes_value??)>
-${prefixName} E.ROLE_CODES = :where_and_eq_roleCodes_value
-<#else>
-${prefixName} E.ROLE_CODES IS NULL
 </#if>
 <#assign prefixName = 'AND'>
 </#if>

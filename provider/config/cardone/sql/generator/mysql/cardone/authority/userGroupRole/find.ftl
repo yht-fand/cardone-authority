@@ -24,6 +24,18 @@ ${prefixName} `DEPARTMENT_CODE`
 ${prefixName} `END_DATE`
 <#assign prefixName = ','>
 </#if>
+<#if (select_flagCode??)>
+${prefixName} `FLAG_CODE`
+<#assign prefixName = ','>
+</#if>
+<#if (select_flagObjectCode??)>
+${prefixName} `FLAG_OBJECT_CODE`
+<#assign prefixName = ','>
+</#if>
+<#if (select_jsonData??)>
+${prefixName} `JSON_DATA`
+<#assign prefixName = ','>
+</#if>
 <#if (select_lastModifiedByCode??)>
 ${prefixName} `LAST_MODIFIED_BY_CODE`
 <#assign prefixName = ','>
@@ -32,20 +44,16 @@ ${prefixName} `LAST_MODIFIED_BY_CODE`
 ${prefixName} `LAST_MODIFIED_DATE`
 <#assign prefixName = ','>
 </#if>
+<#if (select_order??)>
+${prefixName} `ORDER_`
+<#assign prefixName = ','>
+</#if>
 <#if (select_orgCode??)>
 ${prefixName} `ORG_CODE`
 <#assign prefixName = ','>
 </#if>
-<#if (select_permissionCodes??)>
-${prefixName} `PERMISSION_CODES`
-<#assign prefixName = ','>
-</#if>
 <#if (select_roleCode??)>
 ${prefixName} `ROLE_CODE`
-<#assign prefixName = ','>
-</#if>
-<#if (select_roleCodes??)>
-${prefixName} `ROLE_CODES`
 <#assign prefixName = ','>
 </#if>
 <#if (select_siteCode??)>
@@ -77,25 +85,7 @@ ${prefixName} `WF_ID`
 <#assign prefixName = ','>
 </#if>
 <#if prefixName ==  ' '>
-  `BEGIN_DATE`
-, `CREATED_BY_CODE`
-, `CREATED_DATE`
-, `DATA_STATE_CODE`
-, `DEPARTMENT_CODE`
-, `END_DATE`
-, `LAST_MODIFIED_BY_CODE`
-, `LAST_MODIFIED_DATE`
-, `ORG_CODE`
-, `PERMISSION_CODES`
-, `ROLE_CODE`
-, `ROLE_CODES`
-, `SITE_CODE`
-, `STATE_CODE`
-, `SYSTEM_INFO_CODE`
-, `USER_GROUP_CODE`
-, `USER_GROUP_ROLE_ID`
-, `VERSION_`
-, `WF_ID`
+*
 </#if>
 FROM c1_user_group_role
 <#include "where.ftl">
@@ -124,6 +114,18 @@ ${prefixName} `DEPARTMENT_CODE` ${order_by_departmentCode_value!}
 ${prefixName} `END_DATE` ${order_by_endDate_value!}
 <#assign prefixName = ','>
 </#if>
+<#if (order_by_flagCode??)>
+${prefixName} `FLAG_CODE` ${order_by_flagCode_value!}
+<#assign prefixName = ','>
+</#if>
+<#if (order_by_flagObjectCode??)>
+${prefixName} `FLAG_OBJECT_CODE` ${order_by_flagObjectCode_value!}
+<#assign prefixName = ','>
+</#if>
+<#if (order_by_jsonData??)>
+${prefixName} `JSON_DATA` ${order_by_jsonData_value!}
+<#assign prefixName = ','>
+</#if>
 <#if (order_by_lastModifiedByCode??)>
 ${prefixName} `LAST_MODIFIED_BY_CODE` ${order_by_lastModifiedByCode_value!}
 <#assign prefixName = ','>
@@ -132,20 +134,16 @@ ${prefixName} `LAST_MODIFIED_BY_CODE` ${order_by_lastModifiedByCode_value!}
 ${prefixName} `LAST_MODIFIED_DATE` ${order_by_lastModifiedDate_value!}
 <#assign prefixName = ','>
 </#if>
+<#if (order_by_order??)>
+${prefixName} `ORDER_` ${order_by_order_value!}
+<#assign prefixName = ','>
+</#if>
 <#if (order_by_orgCode??)>
 ${prefixName} `ORG_CODE` ${order_by_orgCode_value!}
 <#assign prefixName = ','>
 </#if>
-<#if (order_by_permissionCodes??)>
-${prefixName} `PERMISSION_CODES` ${order_by_permissionCodes_value!}
-<#assign prefixName = ','>
-</#if>
 <#if (order_by_roleCode??)>
 ${prefixName} `ROLE_CODE` ${order_by_roleCode_value!}
-<#assign prefixName = ','>
-</#if>
-<#if (order_by_roleCodes??)>
-${prefixName} `ROLE_CODES` ${order_by_roleCodes_value!}
 <#assign prefixName = ','>
 </#if>
 <#if (order_by_siteCode??)>

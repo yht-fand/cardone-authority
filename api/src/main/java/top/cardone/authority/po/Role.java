@@ -32,7 +32,7 @@ public class Role implements java.io.Serializable {
     protected Date createdDate;
 
     /**
-     * 数据状态代码
+     * 数据状态代码(数据字典)
      */
     @lombok.Getter
     @lombok.Setter
@@ -51,6 +51,27 @@ public class Role implements java.io.Serializable {
     @lombok.Getter
     @lombok.Setter
     protected Date endDate;
+
+    /**
+     * 标记代码(数据字典：同步、生成、录入、审批)
+     */
+    @lombok.Getter
+    @lombok.Setter
+    protected String flagCode;
+
+    /**
+     * 标识对象代码(同步：批次号、生成：操作者编号、录入：操作者编号、审批：操作者编号)
+     */
+    @lombok.Getter
+    @lombok.Setter
+    protected String flagObjectCode;
+
+    /**
+     * JSON数据
+     */
+    @lombok.Getter
+    @lombok.Setter
+    protected String jsonData;
 
     /**
      * 最后修改人代码
@@ -74,6 +95,13 @@ public class Role implements java.io.Serializable {
     protected String name;
 
     /**
+     * 排序
+     */
+    @lombok.Getter
+    @lombok.Setter
+    protected Long order;
+
+    /**
      * 组织代码
      */
     @lombok.Getter
@@ -81,11 +109,25 @@ public class Role implements java.io.Serializable {
     protected String orgCode;
 
     /**
-     * 许可代码集合
+     * 父级代码
      */
     @lombok.Getter
     @lombok.Setter
-    protected String permissionCodes;
+    protected String parentCode;
+
+    /**
+     * 父级树代码
+     */
+    @lombok.Getter
+    @lombok.Setter
+    protected String parentTreeCode;
+
+    /**
+     * 父级树名称
+     */
+    @lombok.Getter
+    @lombok.Setter
+    protected String parentTreeName;
 
     /**
      * 角色代码
@@ -93,13 +135,6 @@ public class Role implements java.io.Serializable {
     @lombok.Getter
     @lombok.Setter
     protected String roleCode;
-
-    /**
-     * 角色代码集合
-     */
-    @lombok.Getter
-    @lombok.Setter
-    protected String roleCodes;
 
     /**
      * 角色标识
@@ -116,7 +151,7 @@ public class Role implements java.io.Serializable {
     protected String siteCode;
 
     /**
-     * 状态代码
+     * 状态代码(数据字典)
      */
     @lombok.Getter
     @lombok.Setter
@@ -130,11 +165,18 @@ public class Role implements java.io.Serializable {
     protected String systemInfoCode;
 
     /**
+     * 类别代码(数据字典)
+     */
+    @lombok.Getter
+    @lombok.Setter
+    protected String typeCode;
+
+    /**
      * 版本
      */
     @lombok.Getter
     @lombok.Setter
-    protected Long version;
+    protected Integer version;
 
     /**
      * 工作流标识

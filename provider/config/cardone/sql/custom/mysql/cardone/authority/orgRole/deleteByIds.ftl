@@ -1,1 +1,0 @@
-DELETE FROM c1_org_role WHERE INSTR(:orgRoleIds, ORG_ROLE_ID) > 0

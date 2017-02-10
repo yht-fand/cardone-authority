@@ -1,92 +1,27 @@
 {
-  "beginDate": {
-    "newName": "beginDate",
-    "funcBeanIds": "escapeSqlFunc"
-  },
-  "clientId": {
-    "newName": "clientId",
-    "funcBeanIds": "escapeSqlFunc"
-  },
-  "createdByCode": {
-    "newName": "createdByCode",
-    "funcBeanIds": "escapeSqlFunc"
-  },
-  "createdDate": {
-    "newName": "createdDate",
-    "funcBeanIds": "escapeSqlFunc"
-  },
-  "dataStateCode": {
-    "newName": "dataStateCode",
-    "funcBeanIds": "escapeSqlFunc"
-  },
-  "departmentCode": {
-    "newName": "departmentCode",
-    "funcBeanIds": "escapeSqlFunc"
-  },
-  "endDate": {
-    "newName": "endDate",
-    "funcBeanIds": "escapeSqlFunc"
-  },
-  "lastModifiedByCode": {
-    "newName": "lastModifiedByCode",
-    "funcBeanIds": "escapeSqlFunc"
-  },
-  "lastModifiedDate": {
-    "newName": "lastModifiedDate",
-    "funcBeanIds": "escapeSqlFunc"
-  },
-  "orgCode": {
-    "newName": "orgCode",
-    "funcBeanIds": "escapeSqlFunc"
-  },
-  "permissionCodes": {
-    "newName": "permissionCodes",
-    "funcBeanIds": "escapeSqlFunc"
-  },
-  "roleCodes": {
-    "newName": "roleCodes",
-    "funcBeanIds": "escapeSqlFunc"
-  },
-  "scope": {
-    "newName": "scope",
-    "funcBeanIds": "escapeSqlFunc"
-  },
-  "siteCode": {
-    "newName": "siteCode",
-    "funcBeanIds": "escapeSqlFunc"
-  },
-  "stateCode": {
-    "newName": "stateCode",
-    "funcBeanIds": "escapeSqlFunc"
-  },
-  "systemInfoCode": {
-    "newName": "systemInfoCode",
-    "funcBeanIds": "escapeSqlFunc"
-  },
-  "tokenInfoCode": {
-    "newName": "tokenInfoCode",
-    "funcBeanIds": "escapeSqlFunc"
-  },
-  "tokenInfoId": {
-    "newName": "tokenInfoId",
-    "funcBeanIds": "escapeSqlFunc"
-  },
-  "userCode": {
-    "newName": "userCode",
-    "funcBeanIds": "escapeSqlFunc"
-  },
-  "version": {
-    "newName": "version",
-    "funcBeanIds": "escapeSqlFunc"
-  },
-  "wfId": {
-    "newName": "wfId",
-    "funcBeanIds": "escapeSqlFunc"
-  },
-  "pageSize": {
-    "newName": "pageSize"
-  },
-  "pageNumber": {
-    "newName": "pageNumber"
-  }
+  "beginDate": "beginDate",
+  "clientId": "clientId",
+  "createdByCode": "createdByCode",
+  "createdDate": "createdDate",
+  "dataStateCode": "dataStateCode",
+  "departmentCode": "departmentCode",
+  "endDate": "endDate",
+  "flagCode": "flagCode",
+  "flagObjectCode": "flagObjectCode",
+  "jsonData": "jsonData",
+  "lastModifiedByCode": "lastModifiedByCode",
+  "lastModifiedDate": "lastModifiedDate",
+  "order": "order",
+  "orgCode": "orgCode",
+  "scope": "scope",
+  "siteCode": "siteCode",
+  "stateCode": "stateCode",
+  "systemInfoCode": "systemInfoCode",
+  "tokenInfoCode": "tokenInfoCode",
+  "tokenInfoId": "tokenInfoId",
+  "userCode": "userCode",
+  "version": "version",
+  "wfId": "wfId",
+  "pageSize": "pageSize",
+  "pageNumber": "pageNumber"
 }

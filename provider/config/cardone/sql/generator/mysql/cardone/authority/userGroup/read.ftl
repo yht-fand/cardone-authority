@@ -18,6 +18,15 @@ DEPARTMENT_CODE AS departmentCode
 <#case "endDate">
 END_DATE AS endDate
 <#break>
+<#case "flagCode">
+FLAG_CODE AS flagCode
+<#break>
+<#case "flagObjectCode">
+FLAG_OBJECT_CODE AS flagObjectCode
+<#break>
+<#case "jsonData">
+JSON_DATA AS jsonData
+<#break>
 <#case "lastModifiedByCode">
 LAST_MODIFIED_BY_CODE AS lastModifiedByCode
 <#break>
@@ -42,12 +51,6 @@ PARENT_TREE_CODE AS parentTreeCode
 <#case "parentTreeName">
 PARENT_TREE_NAME AS parentTreeName
 <#break>
-<#case "permissionCodes">
-PERMISSION_CODES AS permissionCodes
-<#break>
-<#case "roleCodes">
-ROLE_CODES AS roleCodes
-<#break>
 <#case "siteCode">
 SITE_CODE AS siteCode
 <#break>
@@ -56,6 +59,9 @@ STATE_CODE AS stateCode
 <#break>
 <#case "systemInfoCode">
 SYSTEM_INFO_CODE AS systemInfoCode
+<#break>
+<#case "typeCode">
+TYPE_CODE AS typeCode
 <#break>
 <#case "userGroupCode">
 USER_GROUP_CODE AS userGroupCode

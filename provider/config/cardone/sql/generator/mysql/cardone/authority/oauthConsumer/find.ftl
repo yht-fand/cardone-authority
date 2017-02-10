@@ -4,10 +4,6 @@ SELECT
 ${prefixName} `BEGIN_DATE`
 <#assign prefixName = ','>
 </#if>
-<#if (select_clientId??)>
-${prefixName} `CLIENT_ID`
-<#assign prefixName = ','>
-</#if>
 <#if (select_clientSecret??)>
 ${prefixName} `CLIENT_SECRET`
 <#assign prefixName = ','>
@@ -32,6 +28,18 @@ ${prefixName} `DEPARTMENT_CODE`
 ${prefixName} `END_DATE`
 <#assign prefixName = ','>
 </#if>
+<#if (select_flagCode??)>
+${prefixName} `FLAG_CODE`
+<#assign prefixName = ','>
+</#if>
+<#if (select_flagObjectCode??)>
+${prefixName} `FLAG_OBJECT_CODE`
+<#assign prefixName = ','>
+</#if>
+<#if (select_jsonData??)>
+${prefixName} `JSON_DATA`
+<#assign prefixName = ','>
+</#if>
 <#if (select_lastModifiedByCode??)>
 ${prefixName} `LAST_MODIFIED_BY_CODE`
 <#assign prefixName = ','>
@@ -44,16 +52,12 @@ ${prefixName} `LAST_MODIFIED_DATE`
 ${prefixName} `OAUTH_CONSUMER_ID`
 <#assign prefixName = ','>
 </#if>
+<#if (select_order??)>
+${prefixName} `ORDER_`
+<#assign prefixName = ','>
+</#if>
 <#if (select_orgCode??)>
 ${prefixName} `ORG_CODE`
-<#assign prefixName = ','>
-</#if>
-<#if (select_permissionCodes??)>
-${prefixName} `PERMISSION_CODES`
-<#assign prefixName = ','>
-</#if>
-<#if (select_roleCodes??)>
-${prefixName} `ROLE_CODES`
 <#assign prefixName = ','>
 </#if>
 <#if (select_siteCode??)>
@@ -77,35 +81,13 @@ ${prefixName} `WF_ID`
 <#assign prefixName = ','>
 </#if>
 <#if prefixName ==  ' '>
-  `BEGIN_DATE`
-, `CLIENT_ID`
-, `CLIENT_SECRET`
-, `CREATED_BY_CODE`
-, `CREATED_DATE`
-, `DATA_STATE_CODE`
-, `DEPARTMENT_CODE`
-, `END_DATE`
-, `LAST_MODIFIED_BY_CODE`
-, `LAST_MODIFIED_DATE`
-, `OAUTH_CONSUMER_ID`
-, `ORG_CODE`
-, `PERMISSION_CODES`
-, `ROLE_CODES`
-, `SITE_CODE`
-, `STATE_CODE`
-, `SYSTEM_INFO_CODE`
-, `VERSION_`
-, `WF_ID`
+*
 </#if>
 FROM c1_oauth_consumer
 <#include "where.ftl">
 <#assign prefixName = 'ORDER BY'>
 <#if (order_by_beginDate??)>
 ${prefixName} `BEGIN_DATE` ${order_by_beginDate_value!}
-<#assign prefixName = ','>
-</#if>
-<#if (order_by_clientId??)>
-${prefixName} `CLIENT_ID` ${order_by_clientId_value!}
 <#assign prefixName = ','>
 </#if>
 <#if (order_by_clientSecret??)>
@@ -132,6 +114,18 @@ ${prefixName} `DEPARTMENT_CODE` ${order_by_departmentCode_value!}
 ${prefixName} `END_DATE` ${order_by_endDate_value!}
 <#assign prefixName = ','>
 </#if>
+<#if (order_by_flagCode??)>
+${prefixName} `FLAG_CODE` ${order_by_flagCode_value!}
+<#assign prefixName = ','>
+</#if>
+<#if (order_by_flagObjectCode??)>
+${prefixName} `FLAG_OBJECT_CODE` ${order_by_flagObjectCode_value!}
+<#assign prefixName = ','>
+</#if>
+<#if (order_by_jsonData??)>
+${prefixName} `JSON_DATA` ${order_by_jsonData_value!}
+<#assign prefixName = ','>
+</#if>
 <#if (order_by_lastModifiedByCode??)>
 ${prefixName} `LAST_MODIFIED_BY_CODE` ${order_by_lastModifiedByCode_value!}
 <#assign prefixName = ','>
@@ -144,16 +138,12 @@ ${prefixName} `LAST_MODIFIED_DATE` ${order_by_lastModifiedDate_value!}
 ${prefixName} `OAUTH_CONSUMER_ID` ${order_by_oauthConsumerId_value!}
 <#assign prefixName = ','>
 </#if>
+<#if (order_by_order??)>
+${prefixName} `ORDER_` ${order_by_order_value!}
+<#assign prefixName = ','>
+</#if>
 <#if (order_by_orgCode??)>
 ${prefixName} `ORG_CODE` ${order_by_orgCode_value!}
-<#assign prefixName = ','>
-</#if>
-<#if (order_by_permissionCodes??)>
-${prefixName} `PERMISSION_CODES` ${order_by_permissionCodes_value!}
-<#assign prefixName = ','>
-</#if>
-<#if (order_by_roleCodes??)>
-${prefixName} `ROLE_CODES` ${order_by_roleCodes_value!}
 <#assign prefixName = ','>
 </#if>
 <#if (order_by_siteCode??)>

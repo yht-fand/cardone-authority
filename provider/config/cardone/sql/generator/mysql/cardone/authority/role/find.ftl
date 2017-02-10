@@ -24,6 +24,18 @@ ${prefixName} `DEPARTMENT_CODE`
 ${prefixName} `END_DATE`
 <#assign prefixName = ','>
 </#if>
+<#if (select_flagCode??)>
+${prefixName} `FLAG_CODE`
+<#assign prefixName = ','>
+</#if>
+<#if (select_flagObjectCode??)>
+${prefixName} `FLAG_OBJECT_CODE`
+<#assign prefixName = ','>
+</#if>
+<#if (select_jsonData??)>
+${prefixName} `JSON_DATA`
+<#assign prefixName = ','>
+</#if>
 <#if (select_lastModifiedByCode??)>
 ${prefixName} `LAST_MODIFIED_BY_CODE`
 <#assign prefixName = ','>
@@ -36,20 +48,28 @@ ${prefixName} `LAST_MODIFIED_DATE`
 ${prefixName} `NAME`
 <#assign prefixName = ','>
 </#if>
+<#if (select_order??)>
+${prefixName} `ORDER_`
+<#assign prefixName = ','>
+</#if>
 <#if (select_orgCode??)>
 ${prefixName} `ORG_CODE`
 <#assign prefixName = ','>
 </#if>
-<#if (select_permissionCodes??)>
-${prefixName} `PERMISSION_CODES`
+<#if (select_parentCode??)>
+${prefixName} `PARENT_CODE`
+<#assign prefixName = ','>
+</#if>
+<#if (select_parentTreeCode??)>
+${prefixName} `PARENT_TREE_CODE`
+<#assign prefixName = ','>
+</#if>
+<#if (select_parentTreeName??)>
+${prefixName} `PARENT_TREE_NAME`
 <#assign prefixName = ','>
 </#if>
 <#if (select_roleCode??)>
 ${prefixName} `ROLE_CODE`
-<#assign prefixName = ','>
-</#if>
-<#if (select_roleCodes??)>
-${prefixName} `ROLE_CODES`
 <#assign prefixName = ','>
 </#if>
 <#if (select_roleId??)>
@@ -68,6 +88,10 @@ ${prefixName} `STATE_CODE`
 ${prefixName} `SYSTEM_INFO_CODE`
 <#assign prefixName = ','>
 </#if>
+<#if (select_typeCode??)>
+${prefixName} `TYPE_CODE`
+<#assign prefixName = ','>
+</#if>
 <#if (select_version??)>
 ${prefixName} `VERSION_`
 <#assign prefixName = ','>
@@ -77,25 +101,7 @@ ${prefixName} `WF_ID`
 <#assign prefixName = ','>
 </#if>
 <#if prefixName ==  ' '>
-  `BEGIN_DATE`
-, `CREATED_BY_CODE`
-, `CREATED_DATE`
-, `DATA_STATE_CODE`
-, `DEPARTMENT_CODE`
-, `END_DATE`
-, `LAST_MODIFIED_BY_CODE`
-, `LAST_MODIFIED_DATE`
-, `NAME`
-, `ORG_CODE`
-, `PERMISSION_CODES`
-, `ROLE_CODE`
-, `ROLE_CODES`
-, `ROLE_ID`
-, `SITE_CODE`
-, `STATE_CODE`
-, `SYSTEM_INFO_CODE`
-, `VERSION_`
-, `WF_ID`
+*
 </#if>
 FROM c1_role
 <#include "where.ftl">
@@ -124,6 +130,18 @@ ${prefixName} `DEPARTMENT_CODE` ${order_by_departmentCode_value!}
 ${prefixName} `END_DATE` ${order_by_endDate_value!}
 <#assign prefixName = ','>
 </#if>
+<#if (order_by_flagCode??)>
+${prefixName} `FLAG_CODE` ${order_by_flagCode_value!}
+<#assign prefixName = ','>
+</#if>
+<#if (order_by_flagObjectCode??)>
+${prefixName} `FLAG_OBJECT_CODE` ${order_by_flagObjectCode_value!}
+<#assign prefixName = ','>
+</#if>
+<#if (order_by_jsonData??)>
+${prefixName} `JSON_DATA` ${order_by_jsonData_value!}
+<#assign prefixName = ','>
+</#if>
 <#if (order_by_lastModifiedByCode??)>
 ${prefixName} `LAST_MODIFIED_BY_CODE` ${order_by_lastModifiedByCode_value!}
 <#assign prefixName = ','>
@@ -136,20 +154,28 @@ ${prefixName} `LAST_MODIFIED_DATE` ${order_by_lastModifiedDate_value!}
 ${prefixName} `NAME` ${order_by_name_value!}
 <#assign prefixName = ','>
 </#if>
+<#if (order_by_order??)>
+${prefixName} `ORDER_` ${order_by_order_value!}
+<#assign prefixName = ','>
+</#if>
 <#if (order_by_orgCode??)>
 ${prefixName} `ORG_CODE` ${order_by_orgCode_value!}
 <#assign prefixName = ','>
 </#if>
-<#if (order_by_permissionCodes??)>
-${prefixName} `PERMISSION_CODES` ${order_by_permissionCodes_value!}
+<#if (order_by_parentCode??)>
+${prefixName} `PARENT_CODE` ${order_by_parentCode_value!}
+<#assign prefixName = ','>
+</#if>
+<#if (order_by_parentTreeCode??)>
+${prefixName} `PARENT_TREE_CODE` ${order_by_parentTreeCode_value!}
+<#assign prefixName = ','>
+</#if>
+<#if (order_by_parentTreeName??)>
+${prefixName} `PARENT_TREE_NAME` ${order_by_parentTreeName_value!}
 <#assign prefixName = ','>
 </#if>
 <#if (order_by_roleCode??)>
 ${prefixName} `ROLE_CODE` ${order_by_roleCode_value!}
-<#assign prefixName = ','>
-</#if>
-<#if (order_by_roleCodes??)>
-${prefixName} `ROLE_CODES` ${order_by_roleCodes_value!}
 <#assign prefixName = ','>
 </#if>
 <#if (order_by_roleId??)>
@@ -166,6 +192,10 @@ ${prefixName} `STATE_CODE` ${order_by_stateCode_value!}
 </#if>
 <#if (order_by_systemInfoCode??)>
 ${prefixName} `SYSTEM_INFO_CODE` ${order_by_systemInfoCode_value!}
+<#assign prefixName = ','>
+</#if>
+<#if (order_by_typeCode??)>
+${prefixName} `TYPE_CODE` ${order_by_typeCode_value!}
 <#assign prefixName = ','>
 </#if>
 <#if (order_by_version??)>

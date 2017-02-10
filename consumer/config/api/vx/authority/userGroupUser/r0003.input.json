@@ -1,1 +1,25 @@
-{}
+{
+  "beginDate": "beginDate",
+  "createdByCode": "createdByCode",
+  "createdDate": "createdDate",
+  "dataStateCode": "dataStateCode",
+  "departmentCode": "departmentCode",
+  "endDate": "endDate",
+  "flagCode": "flagCode",
+  "flagObjectCode": "flagObjectCode",
+  "jsonData": "jsonData",
+  "lastModifiedByCode": "lastModifiedByCode",
+  "lastModifiedDate": "lastModifiedDate",
+  "order": "order",
+  "orgCode": "orgCode",
+  "siteCode": "siteCode",
+  "stateCode": "stateCode",
+  "systemInfoCode": "systemInfoCode",
+  "userCode": "userCode",
+  "userGroupCode": "userGroupCode",
+  "userGroupUserId": "userGroupUserId",
+  "version": "version",
+  "wfId": "wfId",
+  "pageSize": "pageSize",
+  "pageNumber": "pageNumber"
+}

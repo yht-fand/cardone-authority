@@ -6,10 +6,6 @@ c1_oauth_consumer
 ${prefixName} `BEGIN_DATE`
 <#assign prefixName = ','>
 </#if>
-<#if (insert_clientId??) && (insert_clientId_value??)>
-${prefixName} `CLIENT_ID`
-<#assign prefixName = ','>
-</#if>
 <#if (insert_clientSecret??) && (insert_clientSecret_value??)>
 ${prefixName} `CLIENT_SECRET`
 <#assign prefixName = ','>
@@ -34,6 +30,18 @@ ${prefixName} `DEPARTMENT_CODE`
 ${prefixName} `END_DATE`
 <#assign prefixName = ','>
 </#if>
+<#if (insert_flagCode??) && (insert_flagCode_value??)>
+${prefixName} `FLAG_CODE`
+<#assign prefixName = ','>
+</#if>
+<#if (insert_flagObjectCode??) && (insert_flagObjectCode_value??)>
+${prefixName} `FLAG_OBJECT_CODE`
+<#assign prefixName = ','>
+</#if>
+<#if (insert_jsonData??) && (insert_jsonData_value??)>
+${prefixName} `JSON_DATA`
+<#assign prefixName = ','>
+</#if>
 <#if (insert_lastModifiedByCode??) && (insert_lastModifiedByCode_value??)>
 ${prefixName} `LAST_MODIFIED_BY_CODE`
 <#assign prefixName = ','>
@@ -46,16 +54,12 @@ ${prefixName} `LAST_MODIFIED_DATE`
 ${prefixName} `OAUTH_CONSUMER_ID`
 <#assign prefixName = ','>
 </#if>
+<#if (insert_order??) && (insert_order_value??)>
+${prefixName} `ORDER_`
+<#assign prefixName = ','>
+</#if>
 <#if (insert_orgCode??) && (insert_orgCode_value??)>
 ${prefixName} `ORG_CODE`
-<#assign prefixName = ','>
-</#if>
-<#if (insert_permissionCodes??) && (insert_permissionCodes_value??)>
-${prefixName} `PERMISSION_CODES`
-<#assign prefixName = ','>
-</#if>
-<#if (insert_roleCodes??) && (insert_roleCodes_value??)>
-${prefixName} `ROLE_CODES`
 <#assign prefixName = ','>
 </#if>
 <#if (insert_siteCode??) && (insert_siteCode_value??)>
@@ -85,10 +89,6 @@ ${prefixName} `WF_ID`
 ${prefixName} :insert_beginDate_value
 <#assign prefixName = ','>
 </#if>
-<#if (insert_clientId??) && (insert_clientId_value??)>
-${prefixName} :insert_clientId_value
-<#assign prefixName = ','>
-</#if>
 <#if (insert_clientSecret??) && (insert_clientSecret_value??)>
 ${prefixName} :insert_clientSecret_value
 <#assign prefixName = ','>
@@ -113,6 +113,18 @@ ${prefixName} :insert_departmentCode_value
 ${prefixName} :insert_endDate_value
 <#assign prefixName = ','>
 </#if>
+<#if (insert_flagCode??) && (insert_flagCode_value??)>
+${prefixName} :insert_flagCode_value
+<#assign prefixName = ','>
+</#if>
+<#if (insert_flagObjectCode??) && (insert_flagObjectCode_value??)>
+${prefixName} :insert_flagObjectCode_value
+<#assign prefixName = ','>
+</#if>
+<#if (insert_jsonData??) && (insert_jsonData_value??)>
+${prefixName} :insert_jsonData_value
+<#assign prefixName = ','>
+</#if>
 <#if (insert_lastModifiedByCode??) && (insert_lastModifiedByCode_value??)>
 ${prefixName} :insert_lastModifiedByCode_value
 <#assign prefixName = ','>
@@ -125,16 +137,12 @@ ${prefixName} :insert_lastModifiedDate_value
 ${prefixName} :insert_oauthConsumerId_value
 <#assign prefixName = ','>
 </#if>
+<#if (insert_order??) && (insert_order_value??)>
+${prefixName} :insert_order_value
+<#assign prefixName = ','>
+</#if>
 <#if (insert_orgCode??) && (insert_orgCode_value??)>
 ${prefixName} :insert_orgCode_value
-<#assign prefixName = ','>
-</#if>
-<#if (insert_permissionCodes??) && (insert_permissionCodes_value??)>
-${prefixName} :insert_permissionCodes_value
-<#assign prefixName = ','>
-</#if>
-<#if (insert_roleCodes??) && (insert_roleCodes_value??)>
-${prefixName} :insert_roleCodes_value
 <#assign prefixName = ','>
 </#if>
 <#if (insert_siteCode??) && (insert_siteCode_value??)>
@@ -164,14 +172,6 @@ FROM DUAL WHERE NOT EXISTS (SELECT 1 FROM c1_oauth_consumer E
 ${prefixName} E.BEGIN_DATE = :where_and_eq_beginDate_value
 <#else>
 ${prefixName} E.BEGIN_DATE IS NULL
-</#if>
-<#assign prefixName = 'AND'>
-</#if>
-<#if (where_and_eq_clientId??)>
-<#if (where_and_eq_clientId_value??)>
-${prefixName} E.CLIENT_ID = :where_and_eq_clientId_value
-<#else>
-${prefixName} E.CLIENT_ID IS NULL
 </#if>
 <#assign prefixName = 'AND'>
 </#if>
@@ -223,6 +223,30 @@ ${prefixName} E.END_DATE IS NULL
 </#if>
 <#assign prefixName = 'AND'>
 </#if>
+<#if (where_and_eq_flagCode??)>
+<#if (where_and_eq_flagCode_value??)>
+${prefixName} E.FLAG_CODE = :where_and_eq_flagCode_value
+<#else>
+${prefixName} E.FLAG_CODE IS NULL
+</#if>
+<#assign prefixName = 'AND'>
+</#if>
+<#if (where_and_eq_flagObjectCode??)>
+<#if (where_and_eq_flagObjectCode_value??)>
+${prefixName} E.FLAG_OBJECT_CODE = :where_and_eq_flagObjectCode_value
+<#else>
+${prefixName} E.FLAG_OBJECT_CODE IS NULL
+</#if>
+<#assign prefixName = 'AND'>
+</#if>
+<#if (where_and_eq_jsonData??)>
+<#if (where_and_eq_jsonData_value??)>
+${prefixName} E.JSON_DATA = :where_and_eq_jsonData_value
+<#else>
+${prefixName} E.JSON_DATA IS NULL
+</#if>
+<#assign prefixName = 'AND'>
+</#if>
 <#if (where_and_eq_lastModifiedByCode??)>
 <#if (where_and_eq_lastModifiedByCode_value??)>
 ${prefixName} E.LAST_MODIFIED_BY_CODE = :where_and_eq_lastModifiedByCode_value
@@ -247,27 +271,19 @@ ${prefixName} E.OAUTH_CONSUMER_ID IS NULL
 </#if>
 <#assign prefixName = 'AND'>
 </#if>
+<#if (where_and_eq_order??)>
+<#if (where_and_eq_order_value??)>
+${prefixName} E.ORDER_ = :where_and_eq_order_value
+<#else>
+${prefixName} E.ORDER_ IS NULL
+</#if>
+<#assign prefixName = 'AND'>
+</#if>
 <#if (where_and_eq_orgCode??)>
 <#if (where_and_eq_orgCode_value??)>
 ${prefixName} E.ORG_CODE = :where_and_eq_orgCode_value
 <#else>
 ${prefixName} E.ORG_CODE IS NULL
-</#if>
-<#assign prefixName = 'AND'>
-</#if>
-<#if (where_and_eq_permissionCodes??)>
-<#if (where_and_eq_permissionCodes_value??)>
-${prefixName} E.PERMISSION_CODES = :where_and_eq_permissionCodes_value
-<#else>
-${prefixName} E.PERMISSION_CODES IS NULL
-</#if>
-<#assign prefixName = 'AND'>
-</#if>
-<#if (where_and_eq_roleCodes??)>
-<#if (where_and_eq_roleCodes_value??)>
-${prefixName} E.ROLE_CODES = :where_and_eq_roleCodes_value
-<#else>
-${prefixName} E.ROLE_CODES IS NULL
 </#if>
 <#assign prefixName = 'AND'>
 </#if>

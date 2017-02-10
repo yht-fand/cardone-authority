@@ -47,6 +47,30 @@ ${prefixName} `END_DATE` IS NULL
 </#if>
 <#assign prefixName = 'AND'>
 </#if>
+<#if (where_and_eq_flagCode??)>
+<#if (where_and_eq_flagCode_value??)>
+${prefixName} `FLAG_CODE` = :where_and_eq_flagCode_value
+<#else>
+${prefixName} `FLAG_CODE` IS NULL
+</#if>
+<#assign prefixName = 'AND'>
+</#if>
+<#if (where_and_eq_flagObjectCode??)>
+<#if (where_and_eq_flagObjectCode_value??)>
+${prefixName} `FLAG_OBJECT_CODE` = :where_and_eq_flagObjectCode_value
+<#else>
+${prefixName} `FLAG_OBJECT_CODE` IS NULL
+</#if>
+<#assign prefixName = 'AND'>
+</#if>
+<#if (where_and_eq_jsonData??)>
+<#if (where_and_eq_jsonData_value??)>
+${prefixName} `JSON_DATA` = :where_and_eq_jsonData_value
+<#else>
+${prefixName} `JSON_DATA` IS NULL
+</#if>
+<#assign prefixName = 'AND'>
+</#if>
 <#if (where_and_eq_lastModifiedByCode??)>
 <#if (where_and_eq_lastModifiedByCode_value??)>
 ${prefixName} `LAST_MODIFIED_BY_CODE` = :where_and_eq_lastModifiedByCode_value
@@ -60,6 +84,22 @@ ${prefixName} `LAST_MODIFIED_BY_CODE` IS NULL
 ${prefixName} `LAST_MODIFIED_DATE` = :where_and_eq_lastModifiedDate_value
 <#else>
 ${prefixName} `LAST_MODIFIED_DATE` IS NULL
+</#if>
+<#assign prefixName = 'AND'>
+</#if>
+<#if (where_and_eq_name??)>
+<#if (where_and_eq_name_value??)>
+${prefixName} `NAME` = :where_and_eq_name_value
+<#else>
+${prefixName} `NAME` IS NULL
+</#if>
+<#assign prefixName = 'AND'>
+</#if>
+<#if (where_and_eq_order??)>
+<#if (where_and_eq_order_value??)>
+${prefixName} `ORDER_` = :where_and_eq_order_value
+<#else>
+${prefixName} `ORDER_` IS NULL
 </#if>
 <#assign prefixName = 'AND'>
 </#if>
@@ -103,27 +143,11 @@ ${prefixName} `PERMISSION_CODE` IS NULL
 </#if>
 <#assign prefixName = 'AND'>
 </#if>
-<#if (where_and_eq_permissionCodes??)>
-<#if (where_and_eq_permissionCodes_value??)>
-${prefixName} `PERMISSION_CODES` = :where_and_eq_permissionCodes_value
-<#else>
-${prefixName} `PERMISSION_CODES` IS NULL
-</#if>
-<#assign prefixName = 'AND'>
-</#if>
 <#if (where_and_eq_permissionId??)>
 <#if (where_and_eq_permissionId_value??)>
 ${prefixName} `PERMISSION_ID` = :where_and_eq_permissionId_value
 <#else>
 ${prefixName} `PERMISSION_ID` IS NULL
-</#if>
-<#assign prefixName = 'AND'>
-</#if>
-<#if (where_and_eq_roleCodes??)>
-<#if (where_and_eq_roleCodes_value??)>
-${prefixName} `ROLE_CODES` = :where_and_eq_roleCodes_value
-<#else>
-${prefixName} `ROLE_CODES` IS NULL
 </#if>
 <#assign prefixName = 'AND'>
 </#if>
@@ -148,6 +172,14 @@ ${prefixName} `STATE_CODE` IS NULL
 ${prefixName} `SYSTEM_INFO_CODE` = :where_and_eq_systemInfoCode_value
 <#else>
 ${prefixName} `SYSTEM_INFO_CODE` IS NULL
+</#if>
+<#assign prefixName = 'AND'>
+</#if>
+<#if (where_and_eq_typeCode??)>
+<#if (where_and_eq_typeCode_value??)>
+${prefixName} `TYPE_CODE` = :where_and_eq_typeCode_value
+<#else>
+${prefixName} `TYPE_CODE` IS NULL
 </#if>
 <#assign prefixName = 'AND'>
 </#if>

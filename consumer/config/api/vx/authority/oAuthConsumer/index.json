@@ -3,31 +3,31 @@
     "permission_add": {
       "beanId": "authorityFunc",
       "params": {
-        "code": "authority.oAuthConsumer.add"
+        "code": "authority:oAuthConsumer:add"
       }
     },
     "permission_modify": {
       "beanId": "authorityFunc",
       "params": {
-        "code": "authority.oAuthConsumer.modify"
+        "code": "authority:oAuthConsumer:modify"
       }
     },
     "permission_delete": {
       "beanId": "authorityFunc",
       "params": {
-        "code": "authority.oAuthConsumer.delete"
+        "code": "authority:oAuthConsumer:delete"
       }
     },
     "permission_impData": {
       "beanId": "authorityFunc",
       "params": {
-        "code": "authority.oAuthConsumer.impData"
+        "code": "authority:oAuthConsumer:impData"
       }
     },
     "permission_expData": {
       "beanId": "authorityFunc",
       "params": {
-        "code": "authority.oAuthConsumer.expData"
+        "code": "authority:oAuthConsumer:expData"
       }
     }
   }

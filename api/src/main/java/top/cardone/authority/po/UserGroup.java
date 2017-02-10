@@ -32,7 +32,7 @@ public class UserGroup implements java.io.Serializable {
     protected Date createdDate;
 
     /**
-     * 数据状态代码
+     * 数据状态代码(数据字典)
      */
     @lombok.Getter
     @lombok.Setter
@@ -51,6 +51,27 @@ public class UserGroup implements java.io.Serializable {
     @lombok.Getter
     @lombok.Setter
     protected Date endDate;
+
+    /**
+     * 标记代码(数据字典：同步、生成、录入、审批)
+     */
+    @lombok.Getter
+    @lombok.Setter
+    protected String flagCode;
+
+    /**
+     * 标识对象代码(同步：批次号、生成：操作者编号、录入：操作者编号、审批：操作者编号)
+     */
+    @lombok.Getter
+    @lombok.Setter
+    protected String flagObjectCode;
+
+    /**
+     * JSON数据
+     */
+    @lombok.Getter
+    @lombok.Setter
+    protected String jsonData;
 
     /**
      * 最后修改人代码
@@ -109,20 +130,6 @@ public class UserGroup implements java.io.Serializable {
     protected String parentTreeName;
 
     /**
-     * 许可代码集合
-     */
-    @lombok.Getter
-    @lombok.Setter
-    protected String permissionCodes;
-
-    /**
-     * 角色代码集合
-     */
-    @lombok.Getter
-    @lombok.Setter
-    protected String roleCodes;
-
-    /**
      * 站点代码
      */
     @lombok.Getter
@@ -130,7 +137,7 @@ public class UserGroup implements java.io.Serializable {
     protected String siteCode;
 
     /**
-     * 状态代码
+     * 状态代码(数据字典)
      */
     @lombok.Getter
     @lombok.Setter
@@ -142,6 +149,13 @@ public class UserGroup implements java.io.Serializable {
     @lombok.Getter
     @lombok.Setter
     protected String systemInfoCode;
+
+    /**
+     * 类别代码(数据字典)
+     */
+    @lombok.Getter
+    @lombok.Setter
+    protected String typeCode;
 
     /**
      * 用户组代码
@@ -162,7 +176,7 @@ public class UserGroup implements java.io.Serializable {
      */
     @lombok.Getter
     @lombok.Setter
-    protected Long version;
+    protected Integer version;
 
     /**
      * 工作流标识

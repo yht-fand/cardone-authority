@@ -28,6 +28,14 @@ ${prefixName} `END_DATE` = :update_endDate_value
 ${prefixName} `FLAG_CODE` = :update_flagCode_value
 <#assign prefixName = ','>
 </#if>
+<#if (update_flagObjectCode??)>
+${prefixName} `FLAG_OBJECT_CODE` = :update_flagObjectCode_value
+<#assign prefixName = ','>
+</#if>
+<#if (update_jsonData??)>
+${prefixName} `JSON_DATA` = :update_jsonData_value
+<#assign prefixName = ','>
+</#if>
 <#if (update_lastModifiedByCode??)>
 ${prefixName} `LAST_MODIFIED_BY_CODE` = :update_lastModifiedByCode_value
 <#assign prefixName = ','>
@@ -36,20 +44,16 @@ ${prefixName} `LAST_MODIFIED_BY_CODE` = :update_lastModifiedByCode_value
 ${prefixName} `LAST_MODIFIED_DATE` = :update_lastModifiedDate_value
 <#assign prefixName = ','>
 </#if>
+<#if (update_order??)>
+${prefixName} `ORDER_` = :update_order_value
+<#assign prefixName = ','>
+</#if>
 <#if (update_orgCode??)>
 ${prefixName} `ORG_CODE` = :update_orgCode_value
 <#assign prefixName = ','>
 </#if>
 <#if (update_permissionCode??)>
 ${prefixName} `PERMISSION_CODE` = :update_permissionCode_value
-<#assign prefixName = ','>
-</#if>
-<#if (update_permissionCodes??)>
-${prefixName} `PERMISSION_CODES` = :update_permissionCodes_value
-<#assign prefixName = ','>
-</#if>
-<#if (update_roleCodes??)>
-${prefixName} `ROLE_CODES` = :update_roleCodes_value
 <#assign prefixName = ','>
 </#if>
 <#if (update_siteCode??)>
