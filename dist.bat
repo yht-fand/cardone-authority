@@ -1,9 +1,9 @@
 IF EXIST parent (
 cd parent
-call mvn clean package
+call mvn clean -Dmaven.test.skip=true package
 cd ..
 )
-call mvn clean package
+call mvn clean -Dmaven.test.skip=true package
 rd /s/q dist\%1
 mkdir dist\%1\provider
 xcopy provider\config dist\%1\provider\config /Y/E/C/R/I
