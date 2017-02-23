@@ -1,1 +1,17 @@
-{}
+{
+  "input": {
+    "userGroupRoleIds": "userGroupRoleIds"
+  },
+  "validation": {
+    "rules": {
+      "userGroupRoleIds": {
+        "required": true
+      }
+    },
+    "messages": {
+      "userGroupRoleIds": {
+        "required": "用户组与角色标识集合不能为空值!"
+      }
+    }
+  }
+}

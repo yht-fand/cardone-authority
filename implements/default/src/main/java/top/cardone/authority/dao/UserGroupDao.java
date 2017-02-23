@@ -2,10 +2,36 @@ package top.cardone.authority.dao;
 
 import top.cardone.data.dao.PageDao;
 
+import java.util.List;
+import java.util.Map;
+
 /**
  * 用户组
  *
  * @author yao hai tao
  */
 public interface UserGroupDao extends PageDao {
+    /**
+     * 查询用户组对象
+     *
+     * @param findOne 用户组标识
+     * @return 用户组对象
+     */
+    Map<String, Object> findOneByUserGroupId(Map<String, Object> findOne);
+	
+    /**
+     * 查询用户组下拉列表
+     *
+     * @param findList 关键字
+     * @return 用户组下拉列表
+     */
+    List<Map<String, Object>> findListByKeyword(Map<String, Object> findList);
+
+    /**
+     * 查询树
+     *
+     * @param findList 关键字
+     * @return
+     */
+    List<Map<String, Object>> findListForTree(Map<String, Object> findList);
 }

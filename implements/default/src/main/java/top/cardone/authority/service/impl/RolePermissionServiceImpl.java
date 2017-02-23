@@ -2,8 +2,8 @@ package top.cardone.authority.service.impl;
 
 import org.springframework.data.domain.Page;
 import org.springframework.transaction.annotation.Transactional;
-import top.cardone.authority.dao.RolePermissionDao;
 import top.cardone.data.service.impl.PageServiceImpl;
+import top.cardone.authority.dao.RolePermissionDao;
 
 import java.util.List;
 import java.util.Map;
@@ -129,5 +129,21 @@ public class RolePermissionServiceImpl extends PageServiceImpl<RolePermissionDao
     @Transactional
     public int[] updateListCache(List<Object> updateList) {
         return this.updateList(updateList);
+    }
+
+    @Override
+    @Transactional
+    public int[][] saveListCache(List<Object> saveList) {
+        return this.saveList(saveList);
+    }
+	
+    @Override
+    public Map<String, Object> findOneByRolePermissionId(Map<String, Object> findOne) {
+        return this.dao.findOneByRolePermissionId(findOne);
+    }
+
+    @Override
+    public List<Map<String, Object>> findListByKeyword(Map<String, Object> findList) {
+        return this.dao.findListByKeyword(findList);
     }
 }

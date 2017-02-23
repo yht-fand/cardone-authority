@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * UserGroupPermission服务
+ * 用户组与许可服务
  *
  * @author yao hai tao
  */
@@ -148,10 +148,18 @@ public interface UserGroupPermissionService extends PageService {
     int[][] saveListCache(List<Object> saveList);
 	
     /**
-     * 查询UserGroupPermission对象
+     * 查询用户组与许可对象
      *
-     * @param findOne UserGroupPermission标识
-     * @return UserGroupPermission对象
+     * @param findOne 用户组与许可标识
+     * @return 用户组与许可对象
      */
     Map<String, Object> findOneByUserGroupPermissionId(Map<String, Object> findOne);
+	
+    /**
+     * 查询用户组与许可下拉列表
+     *
+     * @param findList 关键字
+     * @return 用户组与许可下拉列表
+     */
+    List<Map<String, Object>> findListByKeyword(Map<String, Object> findList);
 }

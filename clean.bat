@@ -1,4 +1,4 @@
-call mvn clean
+call mvnw clean
 del /s/q *.log
 rd /s/q logs
 rd /s/q consumer\logs

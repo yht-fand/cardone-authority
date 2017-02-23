@@ -1,1 +1,17 @@
-{}
+{
+  "input": {
+    "userGroupIds": "userGroupIds"
+  },
+  "validation": {
+    "rules": {
+      "userGroupIds": {
+        "required": true
+      }
+    },
+    "messages": {
+      "userGroupIds": {
+        "required": "用户组标识集合不能为空值!"
+      }
+    }
+  }
+}

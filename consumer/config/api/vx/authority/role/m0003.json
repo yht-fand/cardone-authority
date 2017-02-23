@@ -1,1 +1,80 @@
-{}
+{
+  "input": {
+    "beginDate": "beginDate",
+    "createdByCode": "createdByCode",
+    "createdDate": "createdDate",
+    "dataStateCode": "dataStateCode",
+    "departmentCode": "departmentCode",
+    "endDate": "endDate",
+    "flagCode": "flagCode",
+    "flagObjectCode": "flagObjectCode",
+    "jsonData": "jsonData",
+    "lastModifiedByCode": "lastModifiedByCode",
+    "lastModifiedDate": "lastModifiedDate",
+    "name": "name",
+    "order": "order",
+    "orgCode": "orgCode",
+    "parentCode": "parentCode",
+    "parentTreeCode": "parentTreeCode",
+    "parentTreeName": "parentTreeName",
+    "roleCode": "roleCode",
+    "roleId": "roleId",
+    "siteCode": "siteCode",
+    "stateCode": "stateCode",
+    "systemInfoCode": "systemInfoCode",
+    "typeCode": "typeCode",
+    "version": "version"
+  },
+  "validation": {
+    "rules": {
+      "roleCode": {
+        "required": true,
+        "minlength": 4,
+        "maxlength": 255
+      },
+      "name": {
+        "required": true,
+        "minlength": 4,
+        "maxlength": 255
+      }
+    },
+    "messages": {
+      "roleCode": {
+        "required": "必填",
+        "minlength": "需3个字符以上",
+        "maxlength": "需小于255个字符"
+      },
+      "name": {
+        "required": "名称不能为空值!",
+        "minlength": "需3个字符以上",
+        "maxlength": "需小于255个字符"
+      }
+    }
+  },
+  "output": {
+    "beginDate": "BEGIN_DATE",
+    "createdByCode": "CREATED_BY_CODE",
+    "createdDate": "CREATED_DATE",
+    "dataStateCode": "DATA_STATE_CODE",
+    "departmentCode": "DEPARTMENT_CODE",
+    "endDate": "END_DATE",
+    "flagCode": "FLAG_CODE",
+    "flagObjectCode": "FLAG_OBJECT_CODE",
+    "jsonData": "JSON_DATA",
+    "lastModifiedByCode": "LAST_MODIFIED_BY_CODE",
+    "lastModifiedDate": "LAST_MODIFIED_DATE",
+    "name": "NAME",
+    "order": "ORDER_",
+    "orgCode": "ORG_CODE",
+    "parentCode": "PARENT_CODE",
+    "parentTreeCode": "PARENT_TREE_CODE",
+    "parentTreeName": "PARENT_TREE_NAME",
+    "roleCode": "ROLE_CODE",
+    "roleId": "ROLE_ID",
+    "siteCode": "SITE_CODE",
+    "stateCode": "STATE_CODE",
+    "systemInfoCode": "SYSTEM_INFO_CODE",
+    "typeCode": "TYPE_CODE",
+    "version": "VERSION_"
+  }
+}

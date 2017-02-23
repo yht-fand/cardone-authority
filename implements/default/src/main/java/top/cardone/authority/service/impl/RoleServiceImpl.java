@@ -135,4 +135,19 @@ public class RoleServiceImpl extends PageServiceImpl<RoleDao> implements top.car
     public List<String> readListRoleCodeByUserCode(String userCode) {
         return this.dao.readListRoleCodeByUserCode(userCode);
     }
+
+    @Override
+    public Map<String, Object> findOneByRoleId(Map<String, Object> findOne) {
+        return this.dao.findOneByRoleId(findOne);
+    }
+
+    @Override
+    public List<Map<String, Object>> findListByKeyword(Map<String, Object> findList) {
+        return this.dao.findListByKeyword(findList);
+    }
+
+    @Override
+    public List<Map<String, Object>> findListForTree(Map<String, Object> findList) {
+        return this.dao.findListForTree(findList);
+    }
 }

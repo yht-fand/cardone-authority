@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * UserGroupPermission服务
+ * 用户组与许可服务
  *
  * @author yao hai tao
  */
@@ -140,5 +140,10 @@ public class UserGroupPermissionServiceImpl extends PageServiceImpl<UserGroupPer
     @Override
     public Map<String, Object> findOneByUserGroupPermissionId(Map<String, Object> findOne) {
         return this.dao.findOneByUserGroupPermissionId(findOne);
+    }
+
+    @Override
+    public List<Map<String, Object>> findListByKeyword(Map<String, Object> findList) {
+        return this.dao.findListByKeyword(findList);
     }
 }

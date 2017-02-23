@@ -2,6 +2,7 @@ package top.cardone.authority.dao;
 
 import top.cardone.data.dao.PageDao;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -13,8 +14,16 @@ public interface OAuthConsumerDao extends PageDao {
     /**
      * 查询授权消费对象
      *
-     * @param oAuthConsumerId 授权消费标识
+     * @param findOne 授权消费标识
      * @return 授权消费对象
      */
-    Map<String, Object> findOneByOAuthConsumerId(Object oAuthConsumerId);
+    Map<String, Object> findOneByOAuthConsumerId(Map<String, Object> findOne);
+	
+    /**
+     * 查询授权消费下拉列表
+     *
+     * @param findList 关键字
+     * @return 授权消费下拉列表
+     */
+    List<Map<String, Object>> findListByKeyword(Map<String, Object> findList);
 }

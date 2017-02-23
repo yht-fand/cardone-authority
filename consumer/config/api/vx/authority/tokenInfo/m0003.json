@@ -1,1 +1,76 @@
-{}
+{
+  "input": {
+    "beginDate": "beginDate",
+    "clientId": "clientId",
+    "createdByCode": "createdByCode",
+    "createdDate": "createdDate",
+    "dataStateCode": "dataStateCode",
+    "departmentCode": "departmentCode",
+    "endDate": "endDate",
+    "flagCode": "flagCode",
+    "flagObjectCode": "flagObjectCode",
+    "jsonData": "jsonData",
+    "lastModifiedByCode": "lastModifiedByCode",
+    "lastModifiedDate": "lastModifiedDate",
+    "order": "order",
+    "orgCode": "orgCode",
+    "scope": "scope",
+    "siteCode": "siteCode",
+    "stateCode": "stateCode",
+    "systemInfoCode": "systemInfoCode",
+    "tokenInfoCode": "tokenInfoCode",
+    "tokenInfoId": "tokenInfoId",
+    "userCode": "userCode",
+    "version": "version"
+  },
+  "validation": {
+    "rules": {
+      "tokenInfoCode": {
+        "required": true,
+        "minlength": 4,
+        "maxlength": 255
+      },
+      "name": {
+        "required": true,
+        "minlength": 4,
+        "maxlength": 255
+      }
+    },
+    "messages": {
+      "tokenInfoCode": {
+        "required": "必填",
+        "minlength": "需3个字符以上",
+        "maxlength": "需小于255个字符"
+      },
+      "name": {
+        "required": "名称不能为空值!",
+        "minlength": "需3个字符以上",
+        "maxlength": "需小于255个字符"
+      }
+    }
+  },
+  "output": {
+    "beginDate": "BEGIN_DATE",
+    "clientId": "CLIENT_ID",
+    "createdByCode": "CREATED_BY_CODE",
+    "createdDate": "CREATED_DATE",
+    "dataStateCode": "DATA_STATE_CODE",
+    "departmentCode": "DEPARTMENT_CODE",
+    "endDate": "END_DATE",
+    "flagCode": "FLAG_CODE",
+    "flagObjectCode": "FLAG_OBJECT_CODE",
+    "jsonData": "JSON_DATA",
+    "lastModifiedByCode": "LAST_MODIFIED_BY_CODE",
+    "lastModifiedDate": "LAST_MODIFIED_DATE",
+    "order": "ORDER_",
+    "orgCode": "ORG_CODE",
+    "scope": "SCOPE",
+    "siteCode": "SITE_CODE",
+    "stateCode": "STATE_CODE",
+    "systemInfoCode": "SYSTEM_INFO_CODE",
+    "tokenInfoCode": "TOKEN_INFO_CODE",
+    "tokenInfoId": "TOKEN_INFO_ID",
+    "userCode": "USER_CODE",
+    "version": "VERSION_"
+  }
+}

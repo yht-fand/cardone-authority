@@ -1,1 +1,76 @@
-{}
+{
+  "input-temp:特殊情况再用": {
+    "beginDate": "beginDate",
+    "createdByCode": "createdByCode",
+    "createdDate": "createdDate",
+    "dataStateCode": "dataStateCode",
+    "departmentCode": "departmentCode",
+    "endDate": "endDate",
+    "flagCode": "flagCode",
+    "flagObjectCode": "flagObjectCode",
+    "jsonData": "jsonData",
+    "lastModifiedByCode": "lastModifiedByCode",
+    "lastModifiedDate": "lastModifiedDate",
+    "order": "order",
+    "orgCode": "orgCode",
+    "permissionCode": "permissionCode",
+    "roleCode": "roleCode",
+    "rolePermissionId": "rolePermissionId",
+    "siteCode": "siteCode",
+    "stateCode": "stateCode",
+    "systemInfoCode": "systemInfoCode",
+    "version": "version",
+    "pageSize": "pageSize",
+    "pageNumber": "pageNumber"
+  },
+  "output": {
+    "datas": {
+      "newArrayListFunc": {
+        "output": {
+          "beginDate": "BEGIN_DATE",
+          "createdByCode": "CREATED_BY_CODE",
+          "createdDate": "CREATED_DATE",
+          "dataStateCode": "DATA_STATE_CODE",
+          "departmentCode": "DEPARTMENT_CODE",
+          "endDate": "END_DATE",
+          "flagCode": "FLAG_CODE",
+          "flagObjectCode": "FLAG_OBJECT_CODE",
+          "jsonData": "JSON_DATA",
+          "lastModifiedByCode": "LAST_MODIFIED_BY_CODE",
+          "lastModifiedDate": "LAST_MODIFIED_DATE",
+          "order": "ORDER_",
+          "orgCode": "ORG_CODE",
+          "permissionCode": "PERMISSION_CODE",
+          "roleCode": "ROLE_CODE",
+          "rolePermissionId": "ROLE_PERMISSION_ID",
+          "siteCode": "SITE_CODE",
+          "stateCode": "STATE_CODE",
+          "systemInfoCode": "SYSTEM_INFO_CODE",
+          "version": "VERSION_"
+        }
+      }
+    },
+    "totalElements": "total",
+    "totalPages": {
+      "readTotalPagesForPageFunc": null
+    },
+    "hasPrevious": {
+      "readHasPreviousForPageFunc": null
+    },
+    "previous": {
+      "readPreviousForPageFunc": null
+    },
+    "hasNext": {
+      "readHasNextForPageFunc": null
+    },
+    "next": {
+      "readNextForPageFunc": null
+    },
+    "pages": {
+      "caclPagesForPageFunc": null
+    },
+    "page": {
+      "readPageForPageFunc": null
+    }
+  }
+}

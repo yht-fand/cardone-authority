@@ -1,1 +1,17 @@
-{}
+{
+  "input": {
+    "roleIds": "roleIds"
+  },
+  "validation": {
+    "rules": {
+      "roleIds": {
+        "required": true
+      }
+    },
+    "messages": {
+      "roleIds": {
+        "required": "角色标识集合不能为空值!"
+      }
+    }
+  }
+}

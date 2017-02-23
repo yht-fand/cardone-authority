@@ -210,4 +210,14 @@ public class UserRoleServiceImpl extends PageServiceImpl<UserRoleDao> implements
     public Map<String, Object> findOneByUserCode(Map<String, Object> findOne) {
         return this.dao.findOneByUserCode(findOne);
     }
+
+    @Override
+    public Map<String, Object> findOneByUserRoleId(Map<String, Object> findOne) {
+        return this.findOneByUserRoleId(findOne);
+    }
+
+    @Override
+    public List<Map<String, Object>> findListByKeyword(Map<String, Object> findList) {
+        return this.findListByKeyword(findList);
+    }
 }

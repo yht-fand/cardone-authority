@@ -2,8 +2,8 @@ package top.cardone.authority.service.impl;
 
 import org.springframework.data.domain.Page;
 import org.springframework.transaction.annotation.Transactional;
-import top.cardone.authority.dao.UserGroupDao;
 import top.cardone.data.service.impl.PageServiceImpl;
+import top.cardone.authority.dao.UserGroupDao;
 
 import java.util.List;
 import java.util.Map;
@@ -129,5 +129,26 @@ public class UserGroupServiceImpl extends PageServiceImpl<UserGroupDao> implemen
     @Transactional
     public int[] updateListCache(List<Object> updateList) {
         return this.updateList(updateList);
+    }
+
+    @Override
+    @Transactional
+    public int[][] saveListCache(List<Object> saveList) {
+        return this.saveList(saveList);
+    }
+	
+    @Override
+    public Map<String, Object> findOneByUserGroupId(Map<String, Object> findOne) {
+        return this.dao.findOneByUserGroupId(findOne);
+    }
+
+    @Override
+    public List<Map<String, Object>> findListByKeyword(Map<String, Object> findList) {
+        return this.dao.findListByKeyword(findList);
+    }
+
+    @Override
+    public List<Map<String, Object>> findListForTree(Map<String, Object> findList) {
+        return this.dao.findListForTree(findList);
     }
 }

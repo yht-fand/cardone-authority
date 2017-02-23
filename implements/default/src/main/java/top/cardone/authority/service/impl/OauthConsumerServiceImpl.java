@@ -138,7 +138,12 @@ public class OAuthConsumerServiceImpl extends PageServiceImpl<OAuthConsumerDao> 
     }
 	
     @Override
-    public Map<String, Object> findOneByOAuthConsumerId(Object oAuthConsumerId) {
-        return this.dao.findOneByOAuthConsumerId(oAuthConsumerId);
+    public Map<String, Object> findOneByOAuthConsumerId(Map<String, Object> findOne) {
+        return this.dao.findOneByOAuthConsumerId(findOne);
+    }
+
+    @Override
+    public List<Map<String, Object>> findListByKeyword(Map<String, Object> findList) {
+        return this.dao.findListByKeyword(findList);
     }
 }

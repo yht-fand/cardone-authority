@@ -135,4 +135,19 @@ public class PermissionServiceImpl extends PageServiceImpl<PermissionDao> implem
     public List<String> readListPermissionCodeByUserCode(String userCode) {
         return this.dao.readListPermissionCodeByUserCode(userCode);
     }
+
+    @Override
+    public Map<String, Object> findOneByPermissionId(Map<String, Object> findOne) {
+        return this.dao.findOneByPermissionId(findOne);
+    }
+
+    @Override
+    public List<Map<String, Object>> findListByKeyword(Map<String, Object> findList) {
+        return this.dao.findListByKeyword(findList);
+    }
+
+    @Override
+    public List<Map<String, Object>> findListForTree(Map<String, Object> findList) {
+        return this.dao.findListForTree(findList);
+    }
 }
