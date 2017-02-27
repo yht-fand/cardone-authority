@@ -145,9 +145,9 @@ public interface UserRoleService extends PageService {
      * @see top.cardone.authority.service.UserRoleService#insertListByNotExistsForRoles
      */
     @CacheEvict(value = "top.cardone.authority.service.UserRoleService", allEntries = true)
-    int[] insertListByNotExistsForRolesCache(Map<String,Object> insert);
+    int[] insertListByNotExistsForRolesCache(Map<String, Object> insert);
 
-    int[] insertListByNotExistsForRoles(Map<String,Object> insert);
+    int[] insertListByNotExistsForRoles(Map<String, Object> insert);
 
     /**
      * @see top.cardone.authority.service.UserRoleService#updateListForRoles
@@ -161,11 +161,11 @@ public interface UserRoleService extends PageService {
      * @see top.cardone.authority.service.UserRoleService#deleteByUserCodes
      */
     @CacheEvict(value = "top.cardone.authority.service.UserRoleService", allEntries = true)
-    int deleteByUserCodesCache(Map<String,Object> delete);
+    int deleteByUserCodesCache(Map<String, Object> delete);
 
-    int deleteByUserCodes(Map<String,Object> delete);
+    int deleteByUserCodes(Map<String, Object> delete);
 
-    Map<String, Object> findOneByUserCode(Map<String,Object> findOne);
+    Map<String, Object> findOneByUserCode(Map<String, Object> findOne);
 
     /**
      * 查询用户与角色对象

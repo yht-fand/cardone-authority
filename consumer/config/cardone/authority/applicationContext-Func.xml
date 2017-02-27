@@ -13,8 +13,30 @@
 
     <alias name="top.cardone.authority.func.ReadListRoleCodeFunc" alias="readListRoleCodeFunc"/>
 
-    <bean id="top.cardone.authority.func.FindListRoleForSelectFunc"
-          class="top.cardone.authority.func.FindListRoleForSelectFunc"/>
+    <bean id="generateUserGroupTreeFunc"
+          class="top.cardone.data.func.GenerateTreeFunc">
+        <property name="codePutKey" value="userGroupCode"/>
+        <property name="codeGetKey" value="USER_GROUP_CODE"/>
+        <property name="pkPutKey" value="userGroupId"/>
+        <property name="pkGetKey" value="USER_GROUP_ID"/>
+        <property name="service" ref="top.cardone.authority.service.UserGroupService"/>
+    </bean>
 
-    <alias name="top.cardone.authority.func.FindListRoleForSelectFunc" alias="findListRoleForSelectFunc"/>
+    <bean id="generateRoleTreeFunc"
+          class="top.cardone.data.func.GenerateTreeFunc">
+        <property name="codePutKey" value="roleCode"/>
+        <property name="codeGetKey" value="ROLE_CODE"/>
+        <property name="pkPutKey" value="roleId"/>
+        <property name="pkGetKey" value="ROLE_ID"/>
+        <property name="service" ref="top.cardone.authority.service.RoleService"/>
+    </bean>
+
+    <bean id="generatePermissionTreeFunc"
+          class="top.cardone.data.func.GenerateTreeFunc">
+        <property name="codePutKey" value="permissionCode"/>
+        <property name="codeGetKey" value="PERMISSION_CODE"/>
+        <property name="pkPutKey" value="permissionId"/>
+        <property name="pkGetKey" value="PERMISSION_ID"/>
+        <property name="service" ref="top.cardone.authority.service.PermissionService"/>
+    </bean>
 </beans>
