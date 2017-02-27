@@ -2,11 +2,15 @@ package top.cardone.authority.service.impl;
 
 import org.springframework.data.domain.Page;
 import org.springframework.transaction.annotation.Transactional;
-import top.cardone.data.service.impl.PageServiceImpl;
 import top.cardone.authority.dao.UserGroupUserDao;
+import top.cardone.authority.service.UserPermissionService;
+import top.cardone.authority.service.UserRoleService;
+import top.cardone.context.ApplicationContextHolder;
+import top.cardone.data.service.impl.PageServiceImpl;
 
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 
 /**
  * 用户组与用户服务
@@ -136,7 +140,7 @@ public class UserGroupUserServiceImpl extends PageServiceImpl<UserGroupUserDao> 
     public int[][] saveListCache(List<Object> saveList) {
         return this.saveList(saveList);
     }
-	
+
     @Override
     public Map<String, Object> findOneByUserGroupUserId(Map<String, Object> findOne) {
         return this.dao.findOneByUserGroupUserId(findOne);
@@ -145,5 +149,25 @@ public class UserGroupUserServiceImpl extends PageServiceImpl<UserGroupUserDao> 
     @Override
     public List<Map<String, Object>> findListByKeyword(Map<String, Object> findList) {
         return this.dao.findListByKeyword(findList);
+    }
+
+    @Override
+    @Transactional
+    public int generateData() {
+        String flagObjectCode = UUID.randomUUID().toString();
+
+        return this.generateData(flagObjectCode);
+    }
+
+    @Override
+    @Transactional
+    public int generateData(String flagObjectCode) {
+        int count = this.dao.generateData(flagObjectCode);
+
+        count += ApplicationContextHolder.getBean(UserRoleService.class).generateData(flagObjectCode);
+
+        count += ApplicationContextHolder.getBean(UserPermissionService.class).generateData(flagObjectCode);
+
+        return count;
     }
 }

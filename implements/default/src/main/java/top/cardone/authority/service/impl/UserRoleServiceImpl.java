@@ -11,6 +11,7 @@ import top.cardone.data.service.impl.PageServiceImpl;
 
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 
 /**
  * 用户与角色服务
@@ -219,5 +220,19 @@ public class UserRoleServiceImpl extends PageServiceImpl<UserRoleDao> implements
     @Override
     public List<Map<String, Object>> findListByKeyword(Map<String, Object> findList) {
         return this.findListByKeyword(findList);
+    }
+
+    @Override
+    @Transactional
+    public int generateData() {
+        String flagObjectCode = UUID.randomUUID().toString();
+
+        return this.generateData(flagObjectCode);
+    }
+
+    @Override
+    @Transactional
+    public int generateData(String flagObjectCode) {
+        return this.dao.generateData(flagObjectCode);
     }
 }

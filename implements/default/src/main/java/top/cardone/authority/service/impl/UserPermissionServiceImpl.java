@@ -7,6 +7,7 @@ import top.cardone.authority.dao.UserPermissionDao;
 
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 
 /**
  * 用户与许可服务
@@ -145,5 +146,19 @@ public class UserPermissionServiceImpl extends PageServiceImpl<UserPermissionDao
     @Override
     public List<Map<String, Object>> findListByKeyword(Map<String, Object> findList) {
         return this.dao.findListByKeyword(findList);
+    }
+
+    @Override
+    @Transactional
+    public int generateData() {
+        String flagObjectCode = UUID.randomUUID().toString();
+
+        return this.generateData(flagObjectCode);
+    }
+
+    @Override
+    @Transactional
+    public int generateData(String flagObjectCode) {
+        return this.dao.generateData(flagObjectCode);
     }
 }

@@ -36,4 +36,12 @@ public interface RoleDao extends PageDao {
      * @return
      */
     List<Map<String, Object>> findListForTree(Map<String, Object> findList);
+
+    /**
+     * 生成
+     *
+     * @param flagObjectCode 标识对象编号
+     * @return
+     */
+    int generateData(String flagObjectCode);
 }

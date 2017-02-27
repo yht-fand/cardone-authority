@@ -182,4 +182,19 @@ public interface UserRoleService extends PageService {
      * @return 用户与角色下拉列表
      */
     List<Map<String, Object>> findListByKeyword(Map<String, Object> findList);
+
+    /**
+     * 生成
+     *
+     * @return
+     */
+    int generateData();
+
+    /**
+     * 生成
+     *
+     * @param flagObjectCode 标识对象编号
+     * @return
+     */
+    int generateData(String flagObjectCode);
 }

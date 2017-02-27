@@ -7,6 +7,7 @@ import top.cardone.data.service.impl.PageServiceImpl;
 
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 
 /**
  * 许可服务
@@ -149,5 +150,19 @@ public class PermissionServiceImpl extends PageServiceImpl<PermissionDao> implem
     @Override
     public List<Map<String, Object>> findListForTree(Map<String, Object> findList) {
         return this.dao.findListForTree(findList);
+    }
+
+    @Override
+    @Transactional
+    public int generateData() {
+        String flagObjectCode = UUID.randomUUID().toString();
+
+        return this.generateData(flagObjectCode);
+    }
+
+    @Override
+    @Transactional
+    public int generateData(String flagObjectCode) {
+        return this.dao.generateData(flagObjectCode);
     }
 }

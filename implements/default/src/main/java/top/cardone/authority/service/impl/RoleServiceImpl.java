@@ -3,10 +3,14 @@ package top.cardone.authority.service.impl;
 import org.springframework.data.domain.Page;
 import org.springframework.transaction.annotation.Transactional;
 import top.cardone.authority.dao.RoleDao;
+import top.cardone.authority.service.RolePermissionService;
+import top.cardone.authority.service.RoleService;
+import top.cardone.context.ApplicationContextHolder;
 import top.cardone.data.service.impl.PageServiceImpl;
 
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 
 /**
  * 角色服务
@@ -149,5 +153,23 @@ public class RoleServiceImpl extends PageServiceImpl<RoleDao> implements top.car
     @Override
     public List<Map<String, Object>> findListForTree(Map<String, Object> findList) {
         return this.dao.findListForTree(findList);
+    }
+
+    @Override
+    @Transactional
+    public int generateData() {
+        String flagObjectCode = UUID.randomUUID().toString();
+
+        return this.generateData(flagObjectCode);
+    }
+
+    @Override
+    @Transactional
+    public int generateData(String flagObjectCode) {
+        int count = ApplicationContextHolder.getBean(RolePermissionService.class).generateData(flagObjectCode);
+
+        count += this.dao.generateData(flagObjectCode);
+
+        return count;
     }
 }

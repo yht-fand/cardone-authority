@@ -2,11 +2,15 @@ package top.cardone.authority.service.impl;
 
 import org.springframework.data.domain.Page;
 import org.springframework.transaction.annotation.Transactional;
+import top.cardone.authority.service.PermissionService;
+import top.cardone.authority.service.RolePermissionService;
+import top.cardone.context.ApplicationContextHolder;
 import top.cardone.data.service.impl.PageServiceImpl;
 import top.cardone.authority.dao.RolePermissionDao;
 
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 
 /**
  * 角色与许可服务
@@ -145,5 +149,23 @@ public class RolePermissionServiceImpl extends PageServiceImpl<RolePermissionDao
     @Override
     public List<Map<String, Object>> findListByKeyword(Map<String, Object> findList) {
         return this.dao.findListByKeyword(findList);
+    }
+
+    @Override
+    @Transactional
+    public int generateData() {
+        String flagObjectCode = UUID.randomUUID().toString();
+
+        return this.generateData(flagObjectCode);
+    }
+
+    @Override
+    @Transactional
+    public int generateData(String flagObjectCode) {
+        int count = ApplicationContextHolder.getBean(PermissionService.class).generateData(flagObjectCode);
+
+        count += this.dao.generateData(flagObjectCode);
+
+        return count;
     }
 }
