@@ -5,6 +5,7 @@ import org.springframework.transaction.annotation.Transactional;
 import top.cardone.authority.dao.UserGroupPermissionDao;
 import top.cardone.authority.service.*;
 import top.cardone.context.ApplicationContextHolder;
+import top.cardone.data.action.InitDataAction;
 import top.cardone.data.service.impl.PageServiceImpl;
 
 import java.util.List;
@@ -161,6 +162,8 @@ public class UserGroupPermissionServiceImpl extends PageServiceImpl<UserGroupPer
     @Override
     @Transactional
     public int generateData(String flagObjectCode) {
+        ApplicationContextHolder.action(InitDataAction.class, action -> action.action(), "top.cardone.authority.service.UserGroupPermissionService.init");
+
         int count = ApplicationContextHolder.getBean(PermissionService.class).generateData(flagObjectCode);
 
         count += this.dao.generateData(flagObjectCode);

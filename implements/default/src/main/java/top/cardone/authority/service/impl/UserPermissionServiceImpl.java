@@ -2,6 +2,8 @@ package top.cardone.authority.service.impl;
 
 import org.springframework.data.domain.Page;
 import org.springframework.transaction.annotation.Transactional;
+import top.cardone.context.ApplicationContextHolder;
+import top.cardone.data.action.InitDataAction;
 import top.cardone.data.service.impl.PageServiceImpl;
 import top.cardone.authority.dao.UserPermissionDao;
 
@@ -159,6 +161,8 @@ public class UserPermissionServiceImpl extends PageServiceImpl<UserPermissionDao
     @Override
     @Transactional
     public int generateData(String flagObjectCode) {
+        ApplicationContextHolder.action(InitDataAction.class, action -> action.action(), "top.cardone.authority.service.UserPermissionService.init");
+
         return this.dao.generateData(flagObjectCode);
     }
 }

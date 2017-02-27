@@ -1,0 +1,14 @@
+[
+  {
+    "roleCode": "administrators",
+    "name": "管理员"
+  },
+  {
+    "roleCode": "operator",
+    "name": "操作员"
+  },
+  {
+    "roleCode": "electrician",
+    "name": "电工"
+  }
+]

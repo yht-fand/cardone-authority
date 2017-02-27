@@ -5,6 +5,7 @@ import org.springframework.transaction.annotation.Transactional;
 import top.cardone.authority.dao.UserGroupRoleDao;
 import top.cardone.authority.service.RoleService;
 import top.cardone.context.ApplicationContextHolder;
+import top.cardone.data.action.InitDataAction;
 import top.cardone.data.service.impl.PageServiceImpl;
 
 import java.util.List;
@@ -161,6 +162,8 @@ public class UserGroupRoleServiceImpl extends PageServiceImpl<UserGroupRoleDao> 
     @Override
     @Transactional
     public int generateData(String flagObjectCode) {
+        ApplicationContextHolder.action(InitDataAction.class, action -> action.action(), "top.cardone.authority.service.UserGroupRoleService.init");
+
         int count = ApplicationContextHolder.getBean(RoleService.class).generateData(flagObjectCode);
 
         count += this.dao.generateData(flagObjectCode);

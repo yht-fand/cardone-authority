@@ -6,6 +6,7 @@ import top.cardone.authority.dao.UserGroupUserDao;
 import top.cardone.authority.service.UserPermissionService;
 import top.cardone.authority.service.UserRoleService;
 import top.cardone.context.ApplicationContextHolder;
+import top.cardone.data.action.InitDataAction;
 import top.cardone.data.service.impl.PageServiceImpl;
 
 import java.util.List;
@@ -162,6 +163,8 @@ public class UserGroupUserServiceImpl extends PageServiceImpl<UserGroupUserDao> 
     @Override
     @Transactional
     public int generateData(String flagObjectCode) {
+        ApplicationContextHolder.action(InitDataAction.class, action -> action.action(), "top.cardone.authority.service.UserGroupUserService.init");
+
         int count = this.dao.generateData(flagObjectCode);
 
         count += ApplicationContextHolder.getBean(UserRoleService.class).generateData(flagObjectCode);

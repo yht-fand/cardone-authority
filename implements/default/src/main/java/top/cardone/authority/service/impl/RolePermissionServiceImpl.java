@@ -5,6 +5,7 @@ import org.springframework.transaction.annotation.Transactional;
 import top.cardone.authority.service.PermissionService;
 import top.cardone.authority.service.RolePermissionService;
 import top.cardone.context.ApplicationContextHolder;
+import top.cardone.data.action.InitDataAction;
 import top.cardone.data.service.impl.PageServiceImpl;
 import top.cardone.authority.dao.RolePermissionDao;
 
@@ -162,6 +163,8 @@ public class RolePermissionServiceImpl extends PageServiceImpl<RolePermissionDao
     @Override
     @Transactional
     public int generateData(String flagObjectCode) {
+        ApplicationContextHolder.action(InitDataAction.class, action -> action.action(), "top.cardone.authority.service.RolePermissionService.init");
+
         int count = ApplicationContextHolder.getBean(PermissionService.class).generateData(flagObjectCode);
 
         count += this.dao.generateData(flagObjectCode);

@@ -4,8 +4,8 @@ import org.springframework.data.domain.Page;
 import org.springframework.transaction.annotation.Transactional;
 import top.cardone.authority.dao.RoleDao;
 import top.cardone.authority.service.RolePermissionService;
-import top.cardone.authority.service.RoleService;
 import top.cardone.context.ApplicationContextHolder;
+import top.cardone.data.action.InitDataAction;
 import top.cardone.data.service.impl.PageServiceImpl;
 
 import java.util.List;
@@ -166,6 +166,8 @@ public class RoleServiceImpl extends PageServiceImpl<RoleDao> implements top.car
     @Override
     @Transactional
     public int generateData(String flagObjectCode) {
+        ApplicationContextHolder.action(InitDataAction.class, action -> action.action(), "top.cardone.authority.service.RoleService.init");
+
         int count = ApplicationContextHolder.getBean(RolePermissionService.class).generateData(flagObjectCode);
 
         count += this.dao.generateData(flagObjectCode);
