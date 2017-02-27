@@ -1,0 +1,12 @@
+[
+  {
+    "typeCode": "default",
+    "userGroupCode": "administrator",
+    "name": "管理员组"
+  },
+  {
+    "typeCode": "default",
+    "userGroupCode": "general",
+    "name": "普通组"
+  }
+]
