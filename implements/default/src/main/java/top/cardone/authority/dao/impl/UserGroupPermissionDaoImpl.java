@@ -28,26 +28,26 @@ public class UserGroupPermissionDaoImpl extends PageDaoImpl implements top.cardo
 
     @Override
     public int generateData(String flagObjectCode) {
-//        String findListForDepartmentSqlFilePath = this.getSqlFilePath("findListForDepartment");
-//
-//        List<Map<String, Object>> forDepartmentList = this.findList(findListForDepartmentSqlFilePath);
-//
-//        Map<String, Object> putAll = Maps.newHashMap();
-//
-//        putAll.put("flagCode", "generateForDepartment");
-//        putAll.put("flagObjectCode", flagObjectCode);
+        String findListForRolePermissionSqlFilePath = this.getSqlFilePath("findListForRolePermission");
+
+        List<Map<String, Object>> forRolePermissionList = this.findList(findListForRolePermissionSqlFilePath);
+
+        Map<String, Object> putAll = Maps.newHashMap();
+
+        putAll.put("flagCode", "generate");
+        putAll.put("flagObjectCode", flagObjectCode);
 
         int count = 0;
-//
-//        for (Map<String, Object> forDepartment : forDepartmentList) {
-//            forDepartment.putAll(putAll);
-//
-//            count += this.insertByNotExists(forDepartment);
-//        }
-//
-//        String deleteOtherByFlagObjectCodeSqlFilePath = this.getSqlFilePath("deleteOtherByFlagObjectCode");
-//
-//        count += this.update(deleteOtherByFlagObjectCodeSqlFilePath, putAll);
+
+        for (Map<String, Object> forRolePermission : forRolePermissionList) {
+            forRolePermission.putAll(putAll);
+
+            count += this.insertByNotExists(forRolePermission);
+        }
+
+        String deleteOtherByFlagObjectCodeSqlFilePath = this.getSqlFilePath("deleteOtherByFlagObjectCode");
+
+        count += this.update(deleteOtherByFlagObjectCodeSqlFilePath, putAll);
 
         return count;
     }
