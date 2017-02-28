@@ -1,270 +1,270 @@
 [
   {
-    "roleCode": "operator",
-    "permissionCode": "navigation:information"
+    "roleCode": "general",
+    "permissionCode": "navigation:view:information"
   },
   {
-    "roleCode": "operator",
-    "permissionCode": "navigation:information/personnel/index"
+    "roleCode": "general",
+    "permissionCode": "navigation:view:information/personnel/index"
   },
   {
-    "roleCode": "operator",
-    "permissionCode": "navigation:information/meter/index"
+    "roleCode": "general",
+    "permissionCode": "navigation:view:information/meter/index"
   },
   {
-    "roleCode": "operator",
-    "permissionCode": "navigation:usercenter/concentrator/index"
+    "roleCode": "general",
+    "permissionCode": "navigation:view:usercenter/concentrator/index"
   },
   {
-    "roleCode": "operator",
-    "permissionCode": "navigation:usercenter/region/index"
+    "roleCode": "general",
+    "permissionCode": "navigation:view:usercenter/region/index"
   },
   {
-    "roleCode": "operator",
-    "permissionCode": "navigation:usercenter/org/index"
+    "roleCode": "general",
+    "permissionCode": "navigation:view:usercenter/org/index"
   },
   {
-    "roleCode": "operator",
-    "permissionCode": "navigation:account"
+    "roleCode": "general",
+    "permissionCode": "navigation:view:account"
   },
   {
-    "roleCode": "operator",
-    "permissionCode": "navigation:account/register/index"
+    "roleCode": "general",
+    "permissionCode": "navigation:view:account/register/index"
   },
   {
-    "roleCode": "operator",
-    "permissionCode": "navigation:account/logoff/index"
+    "roleCode": "general",
+    "permissionCode": "navigation:view:account/logoff/index"
   },
   {
-    "roleCode": "operator",
-    "permissionCode": "navigation:account/change/index"
+    "roleCode": "general",
+    "permissionCode": "navigation:view:account/change/index"
   },
   {
-    "roleCode": "operator",
-    "permissionCode": "navigation:ICCard"
+    "roleCode": "general",
+    "permissionCode": "navigation:view:ICCard"
   },
   {
-    "roleCode": "operator",
-    "permissionCode": "navigation:ICCard/register/index"
+    "roleCode": "general",
+    "permissionCode": "navigation:view:ICCard/register/index"
   },
   {
-    "roleCode": "operator",
-    "permissionCode": "navigation:payment/cardPayment/index"
+    "roleCode": "general",
+    "permissionCode": "navigation:view:payment/cardPayment/index"
   },
   {
-    "roleCode": "operator",
-    "permissionCode": "navigation:ICCard/change/index"
+    "roleCode": "general",
+    "permissionCode": "navigation:view:ICCard/change/index"
   },
   {
-    "roleCode": "operator",
-    "permissionCode": "navigation:ICCard/Fill/index"
+    "roleCode": "general",
+    "permissionCode": "navigation:view:ICCard/Fill/index"
   },
   {
-    "roleCode": "operator",
-    "permissionCode": "navigation:ICCard/function/index"
+    "roleCode": "general",
+    "permissionCode": "navigation:view:ICCard/function/index"
   },
   {
-    "roleCode": "operator",
-    "permissionCode": "navigation:remoteMeter"
+    "roleCode": "general",
+    "permissionCode": "navigation:view:remoteMeter"
   },
   {
-    "roleCode": "operator",
-    "permissionCode": "navigation:remoteMeter/meterConfig/index"
+    "roleCode": "general",
+    "permissionCode": "navigation:view:remoteMeter/meterConfig/index"
   },
   {
-    "roleCode": "operator",
-    "permissionCode": "navigation:remoteMeter/register/index"
+    "roleCode": "general",
+    "permissionCode": "navigation:view:remoteMeter/register/index"
   },
   {
-    "roleCode": "operator",
-    "permissionCode": "navigation:payment/remotePayment/index"
+    "roleCode": "general",
+    "permissionCode": "navigation:view:payment/remotePayment/index"
   },
   {
-    "roleCode": "operator",
-    "permissionCode": "navigation:remoteMeter/query/index"
+    "roleCode": "general",
+    "permissionCode": "navigation:view:remoteMeter/query/index"
   },
   {
-    "roleCode": "operator",
-    "permissionCode": "navigation:remoteMeter/control/index"
+    "roleCode": "general",
+    "permissionCode": "navigation:view:remoteMeter/control/index"
   },
   {
-    "roleCode": "operator",
-    "permissionCode": "navigation:run"
+    "roleCode": "general",
+    "permissionCode": "navigation:view:run"
   },
   {
-    "roleCode": "operator",
-    "permissionCode": "navigation:payment/priceManager/index"
+    "roleCode": "general",
+    "permissionCode": "navigation:view:payment/priceManager/index"
   },
   {
-    "roleCode": "operator",
-    "permissionCode": "navigation:run/meterParamer/index"
+    "roleCode": "general",
+    "permissionCode": "navigation:view:run/meterParamer/index"
   },
   {
-    "roleCode": "operator",
-    "permissionCode": "navigation:run/taskRun/index"
+    "roleCode": "general",
+    "permissionCode": "navigation:view:run/taskRun/index"
   },
   {
-    "roleCode": "operator",
-    "permissionCode": "navigation:run/warningManage/index"
+    "roleCode": "general",
+    "permissionCode": "navigation:view:run/warningManage/index"
   },
   {
-    "roleCode": "operator",
-    "permissionCode": "navigation:finance"
+    "roleCode": "general",
+    "permissionCode": "navigation:view:finance"
   },
   {
-    "roleCode": "operator",
-    "permissionCode": "navigation:finance/balance/index"
+    "roleCode": "general",
+    "permissionCode": "navigation:view:finance/balance/index"
   },
   {
-    "roleCode": "operator",
-    "permissionCode": "navigation:finance/userInfo/index"
+    "roleCode": "general",
+    "permissionCode": "navigation:view:finance/userInfo/index"
   },
   {
-    "roleCode": "operator",
-    "permissionCode": "navigation:finance/tatsudo/index"
+    "roleCode": "general",
+    "permissionCode": "navigation:view:finance/tatsudo/index"
   },
   {
-    "roleCode": "operator",
-    "permissionCode": "navigation:finance/chargeDetail/index"
+    "roleCode": "general",
+    "permissionCode": "navigation:view:finance/chargeDetail/index"
   },
   {
-    "roleCode": "operator",
-    "permissionCode": "navigation:finance/chargeStatistics/inde"
+    "roleCode": "general",
+    "permissionCode": "navigation:view:finance/chargeStatistics/inde"
   },
   {
-    "roleCode": "operator",
-    "permissionCode": "navigation:sys"
+    "roleCode": "general",
+    "permissionCode": "navigation:view:sys"
   },
   {
-    "roleCode": "operator",
-    "permissionCode": "navigation:sys/runParam/index"
-  },
-  {
-    "roleCode": "electrician",
-    "permissionCode": "navigation:information"
+    "roleCode": "general",
+    "permissionCode": "navigation:view:sys/runParam/index"
   },
   {
     "roleCode": "electrician",
-    "permissionCode": "navigation:information/personnel/index"
+    "permissionCode": "navigation:view:information"
   },
   {
     "roleCode": "electrician",
-    "permissionCode": "navigation:information/meter/index"
+    "permissionCode": "navigation:view:information/personnel/index"
   },
   {
     "roleCode": "electrician",
-    "permissionCode": "navigation:usercenter/concentrator/index"
+    "permissionCode": "navigation:view:information/meter/index"
   },
   {
     "roleCode": "electrician",
-    "permissionCode": "navigation:usercenter/region/index"
+    "permissionCode": "navigation:view:usercenter/concentrator/index"
   },
   {
     "roleCode": "electrician",
-    "permissionCode": "navigation:usercenter/org/index"
+    "permissionCode": "navigation:view:usercenter/region/index"
   },
   {
     "roleCode": "electrician",
-    "permissionCode": "navigation:account"
+    "permissionCode": "navigation:view:usercenter/org/index"
   },
   {
     "roleCode": "electrician",
-    "permissionCode": "navigation:account/register/index"
+    "permissionCode": "navigation:view:account"
   },
   {
     "roleCode": "electrician",
-    "permissionCode": "navigation:account/logoff/index"
+    "permissionCode": "navigation:view:account/register/index"
   },
   {
     "roleCode": "electrician",
-    "permissionCode": "navigation:account/change/index"
+    "permissionCode": "navigation:view:account/logoff/index"
   },
   {
     "roleCode": "electrician",
-    "permissionCode": "navigation:ICCard"
+    "permissionCode": "navigation:view:account/change/index"
   },
   {
     "roleCode": "electrician",
-    "permissionCode": "navigation:ICCard/register/index"
+    "permissionCode": "navigation:view:ICCard"
   },
   {
     "roleCode": "electrician",
-    "permissionCode": "navigation:payment/cardPayment/index"
+    "permissionCode": "navigation:view:ICCard/register/index"
   },
   {
     "roleCode": "electrician",
-    "permissionCode": "navigation:ICCard/change/index"
+    "permissionCode": "navigation:view:payment/cardPayment/index"
   },
   {
     "roleCode": "electrician",
-    "permissionCode": "navigation:ICCard/Fill/index"
+    "permissionCode": "navigation:view:ICCard/change/index"
   },
   {
     "roleCode": "electrician",
-    "permissionCode": "navigation:ICCard/function/index"
+    "permissionCode": "navigation:view:ICCard/Fill/index"
   },
   {
     "roleCode": "electrician",
-    "permissionCode": "navigation:remoteMeter"
+    "permissionCode": "navigation:view:ICCard/function/index"
   },
   {
     "roleCode": "electrician",
-    "permissionCode": "navigation:remoteMeter/meterConfig/index"
+    "permissionCode": "navigation:view:remoteMeter"
   },
   {
     "roleCode": "electrician",
-    "permissionCode": "navigation:remoteMeter/register/index"
+    "permissionCode": "navigation:view:remoteMeter/meterConfig/index"
   },
   {
     "roleCode": "electrician",
-    "permissionCode": "navigation:payment/remotePayment/index"
+    "permissionCode": "navigation:view:remoteMeter/register/index"
   },
   {
     "roleCode": "electrician",
-    "permissionCode": "navigation:remoteMeter/query/index"
+    "permissionCode": "navigation:view:payment/remotePayment/index"
   },
   {
     "roleCode": "electrician",
-    "permissionCode": "navigation:remoteMeter/control/index"
+    "permissionCode": "navigation:view:remoteMeter/query/index"
   },
   {
     "roleCode": "electrician",
-    "permissionCode": "navigation:run"
+    "permissionCode": "navigation:view:remoteMeter/control/index"
   },
   {
     "roleCode": "electrician",
-    "permissionCode": "navigation:payment/priceManager/index"
+    "permissionCode": "navigation:view:run"
   },
   {
     "roleCode": "electrician",
-    "permissionCode": "navigation:run/meterParamer/index"
+    "permissionCode": "navigation:view:payment/priceManager/index"
   },
   {
     "roleCode": "electrician",
-    "permissionCode": "navigation:run/taskRun/index"
+    "permissionCode": "navigation:view:run/meterParamer/index"
   },
   {
     "roleCode": "electrician",
-    "permissionCode": "navigation:run/warningManage/index"
+    "permissionCode": "navigation:view:run/taskRun/index"
   },
   {
     "roleCode": "electrician",
-    "permissionCode": "navigation:finance"
+    "permissionCode": "navigation:view:run/warningManage/index"
   },
   {
     "roleCode": "electrician",
-    "permissionCode": "navigation:finance/userInfo/index"
+    "permissionCode": "navigation:view:finance"
   },
   {
     "roleCode": "electrician",
-    "permissionCode": "navigation:finance/tatsudo/index"
+    "permissionCode": "navigation:view:finance/userInfo/index"
   },
   {
     "roleCode": "electrician",
-    "permissionCode": "navigation:sys"
+    "permissionCode": "navigation:view:finance/tatsudo/index"
   },
   {
     "roleCode": "electrician",
-    "permissionCode": "navigation:sys/runParam/index"
+    "permissionCode": "navigation:view:sys"
+  },
+  {
+    "roleCode": "electrician",
+    "permissionCode": "navigation:view:sys/runParam/index"
   }
 ]

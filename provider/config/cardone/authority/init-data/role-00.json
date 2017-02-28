@@ -13,5 +13,10 @@
     "typeCode": "init",
     "roleCode": "electrician",
     "name": "电工"
+  },
+  {
+    "typeCode": "init",
+    "roleCode": "general",
+    "name": "普通角色"
   }
 ]
