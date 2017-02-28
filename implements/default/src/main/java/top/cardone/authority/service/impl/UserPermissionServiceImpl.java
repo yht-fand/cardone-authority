@@ -156,7 +156,8 @@ public class UserPermissionServiceImpl extends PageServiceImpl<UserPermissionDao
     public int generateData() {
         String flagObjectCode = UUID.randomUUID().toString();
 
-        int count = 0;
+        //用户组
+        int count = ApplicationContextHolder.getBean(UserGroupService.class).generateData(flagObjectCode);
 
         //用户组与用户
         count += ApplicationContextHolder.getBean(UserGroupUserService.class).generateData(flagObjectCode);
