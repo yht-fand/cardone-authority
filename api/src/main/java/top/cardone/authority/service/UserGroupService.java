@@ -189,6 +189,8 @@ public interface UserGroupService extends PageService {
      *
      * @return
      */
+    @CacheEvict(value = "top.cardone.authority.service.UserGroupService", allEntries = true)
+    @Func(beanId = "funcAnnotationFunc", value = "{\"afterBeanIds\": \"generateUserGroupTreeFunc\"}")
     int generateData();
 
     /**
@@ -197,5 +199,7 @@ public interface UserGroupService extends PageService {
      * @param flagObjectCode 标识对象编号
      * @return
      */
+    @CacheEvict(value = "top.cardone.authority.service.UserGroupService", allEntries = true)
+    @Func(beanId = "funcAnnotationFunc", value = "{\"afterBeanIds\": \"generateUserGroupTreeFunc\"}")
     int generateData(String flagObjectCode);
 }

@@ -49,7 +49,7 @@ public class UserGroupDaoImpl extends PageDaoImpl implements top.cardone.authori
         for (Map<String, Object> forDepartment : forDepartmentList) {
             forDepartment.putAll(putAll);
 
-            count += this.insert(forDepartment);
+            count += this.insertByNotExists(forDepartment);
         }
 
         String deleteOtherByFlagObjectCodeSqlFilePath = this.getSqlFilePath("deleteOtherByFlagObjectCode");

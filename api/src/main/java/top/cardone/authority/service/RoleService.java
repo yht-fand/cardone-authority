@@ -184,6 +184,8 @@ public interface RoleService extends PageService {
      *
      * @return
      */
+    @CacheEvict(value = "top.cardone.authority.service.RoleService", allEntries = true)
+    @Func(beanId = "funcAnnotationFunc", value = "{\"afterBeanIds\": \"generateRoleTreeFunc\"}")
     int generateData();
 
     /**
@@ -192,5 +194,7 @@ public interface RoleService extends PageService {
      * @param flagObjectCode 标识对象编号
      * @return
      */
+    @CacheEvict(value = "top.cardone.authority.service.RoleService", allEntries = true)
+    @Func(beanId = "funcAnnotationFunc", value = "{\"afterBeanIds\": \"generateRoleTreeFunc\"}")
     int generateData(String flagObjectCode);
 }

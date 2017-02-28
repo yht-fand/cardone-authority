@@ -12,7 +12,7 @@
                     <map>
                         <entry key="sqlFileRoot" value="/cardone/authority/userGroupRole/"/>
                         <entry key="pks" value="userGroupRoleId"/>
-                        <entry key="codes" value="userGroupRoleId"/>
+                        <entry key="codes" value="userGroupCode,roleCode"/>
                     </map>
                 </entry>
                 <entry key="insert">

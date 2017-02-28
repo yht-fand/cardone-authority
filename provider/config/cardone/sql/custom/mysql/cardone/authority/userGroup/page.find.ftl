@@ -23,8 +23,7 @@ IFNULL((SELECT s.`NAME`  FROM `c1_dictionary` s WHERE s.DICTIONARY_TYPE_CODE = '
 t.STATE_CODE,
 IFNULL((SELECT s.`NAME` FROM `c1_dictionary` s WHERE s.DICTIONARY_TYPE_CODE = 'userGroupDataState' AND s.DICTIONARY_CODE = t.DATA_STATE_CODE LIMIT 1), (SELECT s.`NAME` FROM `c1_dictionary` s WHERE s.DICTIONARY_TYPE_CODE = 'dataState' AND s.DICTIONARY_CODE = t.DATA_STATE_CODE LIMIT 1)) AS DATA_STATE_NAME,
 t.DATA_STATE_CODE
-FROM
-`c1_user_group` t
+FROM `c1_user_group` t
 left join `c1_user_group` p on (p.`USER_GROUP_CODE` = t.`PARENT_CODE`)
 <#if StringUtils.isNotBlank(userGroupId)>
 WHERE t.user_group_id = :userGroupId

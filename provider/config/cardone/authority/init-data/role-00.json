@@ -1,16 +1,16 @@
 [
   {
-    "typeCode": "default",
+    "typeCode": "init",
     "roleCode": "administrators",
     "name": "管理员"
   },
   {
-    "typeCode": "default",
+    "typeCode": "init",
     "roleCode": "operator",
     "name": "操作员"
   },
   {
-    "typeCode": "default",
+    "typeCode": "init",
     "roleCode": "electrician",
     "name": "电工"
   }

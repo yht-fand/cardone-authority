@@ -1,11 +1,11 @@
 [
   {
-    "typeCode": "default",
+    "typeCode": "init",
     "userGroupCode": "administrator",
     "name": "管理员组"
   },
   {
-    "typeCode": "default",
+    "typeCode": "init",
     "userGroupCode": "general",
     "name": "普通组"
   }

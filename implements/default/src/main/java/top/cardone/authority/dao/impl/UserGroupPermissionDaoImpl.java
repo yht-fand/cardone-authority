@@ -42,7 +42,7 @@ public class UserGroupPermissionDaoImpl extends PageDaoImpl implements top.cardo
 //        for (Map<String, Object> forDepartment : forDepartmentList) {
 //            forDepartment.putAll(putAll);
 //
-//            count += this.insert(forDepartment);
+//            count += this.insertByNotExists(forDepartment);
 //        }
 //
 //        String deleteOtherByFlagObjectCodeSqlFilePath = this.getSqlFilePath("deleteOtherByFlagObjectCode");

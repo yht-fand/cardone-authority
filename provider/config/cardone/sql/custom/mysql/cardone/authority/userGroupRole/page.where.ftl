@@ -5,10 +5,10 @@ AND t.`USER_GROUP_CODE` = :userGroupCode
 <#elseif  StringUtils.isNotBlank(userGroupTreeName)>
 AND (LOCATE(:userGroupTreeName, ug.`PARENT_CODE`) OR LOCATE(:userGroupTreeName, ug.`PARENT_TREE_CODE`) OR LOCATE(:userGroupTreeName, ug.`PARENT_TREE_NAME`) OR LOCATE(:userGroupTreeName, t.`USER_GROUP_CODE`) OR LOCATE(:userGroupTreeName, ug.`NAME`))
 </#if>
-<#if StringUtils.isNotBlank(permissionCode)>
-AND t.`ROLE_CODE` = :permissionCode
-<#elseif  StringUtils.isNotBlank(permissionTreeName)>
-AND (LOCATE(:permissionTreeName, r.`PARENT_CODE`) OR LOCATE(:permissionTreeName, r.`PARENT_TREE_CODE`) OR LOCATE(:permissionTreeName, r.`PARENT_TREE_NAME`) OR LOCATE(:permissionTreeName, t.`ROLE_CODE`) OR LOCATE(:permissionTreeName, r.`NAME`))
+<#if StringUtils.isNotBlank(roleCode)>
+AND t.`ROLE_CODE` = :roleCode
+<#elseif  StringUtils.isNotBlank(roleTreeName)>
+AND (LOCATE(:roleTreeName, r.`PARENT_CODE`) OR LOCATE(:roleTreeName, r.`PARENT_TREE_CODE`) OR LOCATE(:roleTreeName, r.`PARENT_TREE_NAME`) OR LOCATE(:roleTreeName, t.`ROLE_CODE`) OR LOCATE(:roleTreeName, r.`NAME`))
 </#if>
 <#if StringUtils.isNotBlank(startTime)>
 AND ((t.`BEGIN_DATE` is null OR t.`BEGIN_DATE` >= :startTime) OR (t.`END_DATE` is null OR t.`END_DATE` >= :startTime))

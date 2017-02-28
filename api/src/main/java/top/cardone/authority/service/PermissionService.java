@@ -184,6 +184,8 @@ public interface PermissionService extends PageService {
      *
      * @return
      */
+    @CacheEvict(value = "top.cardone.authority.service.PermissionService", allEntries = true)
+    @Func(beanId = "funcAnnotationFunc", value = "{\"afterBeanIds\": \"generatePermissionTreeFunc\"}")
     int generateData();
 
     /**
@@ -192,5 +194,7 @@ public interface PermissionService extends PageService {
      * @param flagObjectCode 标识对象编号
      * @return
      */
+    @CacheEvict(value = "top.cardone.authority.service.PermissionService", allEntries = true)
+    @Func(beanId = "funcAnnotationFunc", value = "{\"afterBeanIds\": \"generatePermissionTreeFunc\"}")
     int generateData(String flagObjectCode);
 }

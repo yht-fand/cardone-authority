@@ -5,6 +5,7 @@ import top.cardone.data.jdbc.dao.impl.PageDaoImpl;
 
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 
 /**
  * 用户组与用户
@@ -15,7 +16,7 @@ public class UserGroupUserDaoImpl extends PageDaoImpl implements top.cardone.aut
     @Override
     public Map<String, Object> findOneByUserGroupUserId(Map<String, Object> findOne) {
         String findOneSqlFilePath = this.getSqlFilePath("page.find");
-		
+
         return this.findOne(findOneSqlFilePath, findOne);
     }
 
@@ -28,26 +29,31 @@ public class UserGroupUserDaoImpl extends PageDaoImpl implements top.cardone.aut
 
     @Override
     public int generateData(String flagObjectCode) {
-//        String findListForDepartmentSqlFilePath = this.getSqlFilePath("findListForDepartment");
-//
-//        List<Map<String, Object>> forDepartmentList = this.findList(findListForDepartmentSqlFilePath);
-//
-//        Map<String, Object> putAll = Maps.newHashMap();
-//
-//        putAll.put("flagCode", "generateForDepartment");
-//        putAll.put("flagObjectCode", flagObjectCode);
+        String findListForUserSqlFilePath = this.getSqlFilePath("findListForUser");
+
+        List<Map<String, Object>> forUserList = this.findList(findListForUserSqlFilePath);
+
+        Map<String, Object> putAll = Maps.newHashMap();
+
+        putAll.put("flagCode", "generate");
+        putAll.put("flagObjectCode", flagObjectCode);
 
         int count = 0;
-//
-//        for (Map<String, Object> forDepartment : forDepartmentList) {
-//            forDepartment.putAll(putAll);
-//
-//            count += this.insert(forDepartment);
-//        }
-//
-//        String deleteOtherByFlagObjectCodeSqlFilePath = this.getSqlFilePath("deleteOtherByFlagObjectCode");
-//
-//        count += this.update(deleteOtherByFlagObjectCodeSqlFilePath, putAll);
+
+        for (Map<String, Object> forUser : forUserList) {
+            forUser.putAll(putAll);
+
+            count += this.insertByNotExists(forUser);
+
+            forUser.put("userGroupCode", "general");
+            forUser.put("userGroupUserId", UUID.randomUUID().toString());
+
+            count += this.insertByNotExists(forUser);
+        }
+
+        String deleteOtherByFlagObjectCodeSqlFilePath = this.getSqlFilePath("deleteOtherByFlagObjectCode");
+
+        count += this.update(deleteOtherByFlagObjectCodeSqlFilePath, putAll);
 
         return count;
     }
