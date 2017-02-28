@@ -156,7 +156,12 @@ public class UserGroupPermissionServiceImpl extends PageServiceImpl<UserGroupPer
     public int generateData() {
         String flagObjectCode = UUID.randomUUID().toString();
 
-        return this.generateData(flagObjectCode);
+        int count = this.generateData(flagObjectCode);
+
+        //用户与授权
+        count += ApplicationContextHolder.getBean(UserPermissionService.class).generateData(flagObjectCode);
+
+        return count;
     }
 
     @Override
@@ -164,10 +169,6 @@ public class UserGroupPermissionServiceImpl extends PageServiceImpl<UserGroupPer
     public int generateData(String flagObjectCode) {
         ApplicationContextHolder.action(InitDataAction.class, action -> action.action(), "top.cardone.authority.service.UserGroupPermissionService.init");
 
-        int count = ApplicationContextHolder.getBean(PermissionService.class).generateData(flagObjectCode);
-
-        count += this.dao.generateData(flagObjectCode);
-
-        return count;
+        return this.dao.generateData(flagObjectCode);
     }
 }

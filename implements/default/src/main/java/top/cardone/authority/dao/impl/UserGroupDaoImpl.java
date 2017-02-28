@@ -41,7 +41,7 @@ public class UserGroupDaoImpl extends PageDaoImpl implements top.cardone.authori
 
         Map<String, Object> putAll = Maps.newHashMap();
 
-        putAll.put("flagCode", "generateForDepartment");
+        putAll.put("flagCode", "generate");
         putAll.put("flagObjectCode", flagObjectCode);
 
         int count = 0;

@@ -3,6 +3,7 @@ package top.cardone.authority.service.impl;
 import org.springframework.data.domain.Page;
 import org.springframework.transaction.annotation.Transactional;
 import top.cardone.authority.dao.PermissionDao;
+import top.cardone.authority.service.*;
 import top.cardone.context.ApplicationContextHolder;
 import top.cardone.data.action.InitDataAction;
 import top.cardone.data.service.impl.PageServiceImpl;
@@ -157,9 +158,7 @@ public class PermissionServiceImpl extends PageServiceImpl<PermissionDao> implem
     @Override
     @Transactional
     public int generateData() {
-        String flagObjectCode = UUID.randomUUID().toString();
-
-        return this.generateData(flagObjectCode);
+        return this.generateData(UUID.randomUUID().toString());
     }
 
     @Override

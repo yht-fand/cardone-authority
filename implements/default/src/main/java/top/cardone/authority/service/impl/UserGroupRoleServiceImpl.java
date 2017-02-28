@@ -3,7 +3,7 @@ package top.cardone.authority.service.impl;
 import org.springframework.data.domain.Page;
 import org.springframework.transaction.annotation.Transactional;
 import top.cardone.authority.dao.UserGroupRoleDao;
-import top.cardone.authority.service.RoleService;
+import top.cardone.authority.service.*;
 import top.cardone.context.ApplicationContextHolder;
 import top.cardone.data.action.InitDataAction;
 import top.cardone.data.service.impl.PageServiceImpl;
@@ -156,7 +156,15 @@ public class UserGroupRoleServiceImpl extends PageServiceImpl<UserGroupRoleDao> 
     public int generateData() {
         String flagObjectCode = UUID.randomUUID().toString();
 
-        return this.generateData(flagObjectCode);
+        int count = this.generateData(flagObjectCode);
+
+        //用户与角色
+        count += ApplicationContextHolder.getBean(UserRoleService.class).generateData(flagObjectCode);
+
+        //用户与授权
+        count += ApplicationContextHolder.getBean(UserPermissionService.class).generateData(flagObjectCode);
+
+        return count;
     }
 
     @Override
@@ -164,10 +172,6 @@ public class UserGroupRoleServiceImpl extends PageServiceImpl<UserGroupRoleDao> 
     public int generateData(String flagObjectCode) {
         ApplicationContextHolder.action(InitDataAction.class, action -> action.action(), "top.cardone.authority.service.UserGroupRoleService.init");
 
-        int count = ApplicationContextHolder.getBean(RoleService.class).generateData(flagObjectCode);
-
-        count += this.dao.generateData(flagObjectCode);
-
-        return count;
+        return this.dao.generateData(flagObjectCode);
     }
 }
