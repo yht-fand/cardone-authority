@@ -4,31 +4,31 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
     <bean name="top.cardone.authority.service.PermissionService.init" class="top.cardone.data.action.InitDataAction">
         <property name="serviceBeanId" value="top.cardone.authority.service.PermissionService"/>
-        <property name="jsonFiles" value="${app.root}/config/cardone/authority/init-data/permission-*.json"/>
+        <property name="jsonFiles" value="${app.root}/config/*/authority/init-data/permission-*.json"/>
     </bean>
 
     <bean name="top.cardone.authority.service.RoleService.init" class="top.cardone.data.action.InitDataAction">
         <property name="serviceBeanId" value="top.cardone.authority.service.RoleService"/>
-        <property name="jsonFiles" value="${app.root}/config/cardone/authority/init-data/role-*.json"/>
+        <property name="jsonFiles" value="${app.root}/config/*/authority/init-data/role-*.json"/>
     </bean>
 
     <bean name="top.cardone.authority.service.UserRoleService.init" class="top.cardone.data.action.InitDataAction">
         <property name="serviceBeanId" value="top.cardone.authority.service.UserRoleService"/>
-        <property name="jsonFiles" value="${app.root}/config/cardone/authority/init-data/userRole-*.json"/>
+        <property name="jsonFiles" value="${app.root}/config/*/authority/init-data/userRole-*.json"/>
     </bean>
 
     <bean name="top.cardone.authority.service.RolePermissionService.init"
           class="top.cardone.data.action.InitDataAction">
         <property name="serviceBeanId" value="top.cardone.authority.service.RolePermissionService"/>
         <property name="jsonFiles"
-                  value="${app.root}/config/cardone/authority/init-data/rolePermission-*.json"/>
+                  value="${app.root}/config/*/authority/init-data/rolePermission-*.json"/>
     </bean>
 
     <bean name="top.cardone.authority.service.UserGroupService.init"
           class="top.cardone.data.action.InitDataAction">
         <property name="serviceBeanId" value="top.cardone.authority.service.UserGroupService"/>
         <property name="jsonFiles"
-                  value="${app.root}/config/cardone/authority/init-data/userGroup-*.json"/>
+                  value="${app.root}/config/*/authority/init-data/userGroup-*.json"/>
     </bean>
 
     <bean class="top.cardone.context.action.Actions" init-method="action">

@@ -1,0 +1,19 @@
+[
+  {
+    "typeCode": "default",
+    "permissionCode": "index",
+    "name": "首页"
+  },
+  {
+    "typeCode": "default",
+    "permissionCode": "index:todo",
+    "name": "首页:待办",
+    "parentCode": "index"
+  },
+  {
+    "typeCode": "default",
+    "permissionCode": "index:reportForm",
+    "name": "首页:报表",
+    "parentCode": "index"
+  }
+]

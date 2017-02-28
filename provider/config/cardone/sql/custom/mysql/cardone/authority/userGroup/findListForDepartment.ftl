@@ -1,4 +1,5 @@
 SELECT t.`DEPARTMENT_CODE` AS 'userGroupCode',
+t.`NAME` AS 'name',
 t.`PARENT_CODE` AS 'parentCode',
 t.`PARENT_TREE_CODE` AS 'parentTreeCode',
 t.`PARENT_TREE_NAME` AS 'parentTreeName',
