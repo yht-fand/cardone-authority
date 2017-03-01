@@ -6,5 +6,8 @@ WHERE up.`USER_CODE` = :userCode AND up.`PERMISSION_CODE` LIKE CONCAT(:functionC
 AND ((up.`BEGIN_DATE` IS NULL OR NOW() >= up.`BEGIN_DATE`) AND (up.`END_DATE` IS NULL OR NOW() <= up.`END_DATE`))), UUID()) AS cardone_department,
 IFNULL((SELECT GROUP_CONCAT(REPLACE(up.`PERMISSION_CODE`, CONCAT(:functionCode, ':view-user:'), '')) FROM `c1_user_permission` up
 WHERE up.`USER_CODE` = :userCode AND up.`PERMISSION_CODE` LIKE CONCAT(:functionCode, ':view-user:', '%')
-AND ((up.`BEGIN_DATE` IS NULL OR NOW() >= up.`BEGIN_DATE`) AND (up.`END_DATE` IS NULL OR NOW() <= up.`END_DATE`))), UUID()) AS cardone_user
+AND ((up.`BEGIN_DATE` IS NULL OR NOW() >= up.`BEGIN_DATE`) AND (up.`END_DATE` IS NULL OR NOW() <= up.`END_DATE`))), UUID()) AS cardone_user,
+IFNULL((SELECT GROUP_CONCAT(REPLACE(up.`PERMISSION_CODE`, CONCAT(:functionCode, ':view:'), '')) FROM `c1_user_permission` up
+WHERE up.`USER_CODE` = :userCode AND up.`PERMISSION_CODE` LIKE CONCAT(:functionCode, ':view:', '%')
+AND ((up.`BEGIN_DATE` IS NULL OR NOW() >= up.`BEGIN_DATE`) AND (up.`END_DATE` IS NULL OR NOW() <= up.`END_DATE`))), UUID()) AS cardone_object
 FROM DUAL
