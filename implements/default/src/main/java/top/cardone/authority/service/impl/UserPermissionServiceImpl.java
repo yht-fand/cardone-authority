@@ -154,36 +154,7 @@ public class UserPermissionServiceImpl extends PageServiceImpl<UserPermissionDao
     @Override
     @Transactional
     public int generateData() {
-        String flagObjectCode = UUID.randomUUID().toString();
-
-        //用户组
-        int count = ApplicationContextHolder.getBean(UserGroupService.class).generateData(flagObjectCode);
-
-        //用户组与用户
-        count += ApplicationContextHolder.getBean(UserGroupUserService.class).generateData(flagObjectCode);
-
-        //角色
-        count += ApplicationContextHolder.getBean(RoleService.class).generateData(flagObjectCode);
-
-        //用户组与角色
-        count += ApplicationContextHolder.getBean(UserGroupRoleService.class).generateData(flagObjectCode);
-
-        //用户与角色
-        count += ApplicationContextHolder.getBean(UserRoleService.class).generateData(flagObjectCode);
-
-        //授权
-        count += ApplicationContextHolder.getBean(PermissionService.class).generateData(flagObjectCode);
-
-        //角色与授权
-        count += ApplicationContextHolder.getBean(RolePermissionService.class).generateData(flagObjectCode);
-
-        //用户组与授权
-        count += ApplicationContextHolder.getBean(UserGroupPermissionService.class).generateData(flagObjectCode);
-
-        //用户与授权
-        count += this.generateData(flagObjectCode);
-
-        return count;
+        return ApplicationContextHolder.getBean(UserGroupService.class).generateData();
     }
 
     @Override
@@ -192,5 +163,10 @@ public class UserPermissionServiceImpl extends PageServiceImpl<UserPermissionDao
         ApplicationContextHolder.action(InitDataAction.class, action -> action.action(), "top.cardone.authority.service.UserPermissionService.init");
 
         return this.dao.generateData(flagObjectCode);
+    }
+
+    @Override
+    public List<String> readListPermissionCodeByUserCode(String userCode) {
+        return this.dao.readListPermissionCodeByUserCode(userCode);
     }
 }

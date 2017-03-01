@@ -217,7 +217,7 @@ public class UserRoleServiceImpl extends PageServiceImpl<UserRoleDao> implements
 
     @Override
     public Map<String, Object> findOneByUserRoleId(Map<String, Object> findOne) {
-        return this.findOneByUserRoleId(findOne);
+        return this.dao.findOneByUserRoleId(findOne);
     }
 
     @Override
@@ -228,35 +228,7 @@ public class UserRoleServiceImpl extends PageServiceImpl<UserRoleDao> implements
     @Override
     @Transactional
     public int generateData() {
-        String flagObjectCode = UUID.randomUUID().toString();
-
-        int count = 0;
-
-        //用户组与用户
-        count += ApplicationContextHolder.getBean(UserGroupUserService.class).generateData(flagObjectCode);
-
-        //角色
-        count += ApplicationContextHolder.getBean(RoleService.class).generateData(flagObjectCode);
-
-        //用户组与角色
-        count += ApplicationContextHolder.getBean(UserGroupRoleService.class).generateData(flagObjectCode);
-
-        //用户与角色
-        count += this.generateData(flagObjectCode);
-
-        //授权
-        count += ApplicationContextHolder.getBean(PermissionService.class).generateData(flagObjectCode);
-
-        //角色与授权
-        count += ApplicationContextHolder.getBean(RolePermissionService.class).generateData(flagObjectCode);
-
-        //用户组与授权
-        count += ApplicationContextHolder.getBean(UserGroupPermissionService.class).generateData(flagObjectCode);
-
-        //用户与授权
-        count += ApplicationContextHolder.getBean(UserPermissionService.class).generateData(flagObjectCode);
-
-        return count;
+        return ApplicationContextHolder.getBean(UserGroupService.class).generateData();
     }
 
     @Override
@@ -265,5 +237,10 @@ public class UserRoleServiceImpl extends PageServiceImpl<UserRoleDao> implements
         ApplicationContextHolder.action(InitDataAction.class, action -> action.action(), "top.cardone.authority.service.UserRoleService.init");
 
         return this.dao.generateData(flagObjectCode);
+    }
+
+    @Override
+    public List<String> readListRoleCodeByUserCode(String userCode) {
+        return this.dao.readListRoleCodeByUserCode(userCode);
     }
 }

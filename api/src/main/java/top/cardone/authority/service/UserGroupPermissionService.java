@@ -168,6 +168,7 @@ public interface UserGroupPermissionService extends PageService {
      *
      * @return
      */
+    @CacheEvict(value = "top.cardone.authority.service.UserGroupPermissionService", allEntries = true)
     int generateData();
 
     /**
@@ -176,5 +177,6 @@ public interface UserGroupPermissionService extends PageService {
      * @param flagObjectCode 标识对象编号
      * @return
      */
+    @CacheEvict(value = "top.cardone.authority.service.UserGroupPermissionService", allEntries = true)
     int generateData(String flagObjectCode);
 }

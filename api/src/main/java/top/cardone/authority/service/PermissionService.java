@@ -153,8 +153,6 @@ public interface PermissionService extends PageService {
     @Func(beanId = "funcAnnotationFunc", value = "{\"afterBeanIds\": \"generatePermissionTreeFunc\"}")
     int[] updateListCache(List<Object> updateList);
 
-    List<String> readListPermissionCodeByUserCode(String userCode);
-
     /**
      * 查询许可对象
      *

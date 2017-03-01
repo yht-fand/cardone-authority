@@ -11,8 +11,6 @@ import java.util.Map;
  * @author yao hai tao
  */
 public interface RoleDao extends PageDao {
-    List<String> readListRoleCodeByUserCode(String userCode);
-
     /**
      * 查询角色对象
      *

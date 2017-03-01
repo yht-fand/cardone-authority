@@ -38,4 +38,12 @@ public interface UserRoleDao extends PageDao {
 	 * @return
 	 */
 	int generateData(String flagObjectCode);
+
+	/**
+	 * 读取角色集合
+	 *
+	 * @param userCode 用户编号
+	 * @return
+	 */
+	List<String> readListRoleCodeByUserCode(String userCode);
 }

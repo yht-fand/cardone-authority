@@ -154,14 +154,7 @@ public class UserGroupPermissionServiceImpl extends PageServiceImpl<UserGroupPer
     @Override
     @Transactional
     public int generateData() {
-        String flagObjectCode = UUID.randomUUID().toString();
-
-        int count = this.generateData(flagObjectCode);
-
-        //用户与授权
-        count += ApplicationContextHolder.getBean(UserPermissionService.class).generateData(flagObjectCode);
-
-        return count;
+        return ApplicationContextHolder.getBean(UserGroupService.class).generateData();
     }
 
     @Override

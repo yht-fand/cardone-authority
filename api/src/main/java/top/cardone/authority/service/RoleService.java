@@ -153,8 +153,6 @@ public interface RoleService extends PageService {
     @Func(beanId = "funcAnnotationFunc", value = "{\"afterBeanIds\": \"generateRoleTreeFunc\"}")
     int[] updateListCache(List<Object> updateList);
 
-    List<String> readListRoleCodeByUserCode(String userCode);
-
     /**
      * 查询角色对象
      *

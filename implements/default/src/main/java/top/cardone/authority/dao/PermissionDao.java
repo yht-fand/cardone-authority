@@ -11,9 +11,6 @@ import java.util.Map;
  * @author yao hai tao
  */
 public interface PermissionDao extends PageDao {
-    List<String> readListPermissionCodeByUserCode(String userCode);
-
-
     /**
      * 查询许可对象
      *

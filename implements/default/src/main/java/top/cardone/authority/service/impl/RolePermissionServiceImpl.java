@@ -154,26 +154,7 @@ public class RolePermissionServiceImpl extends PageServiceImpl<RolePermissionDao
     @Override
     @Transactional
     public int generateData() {
-        String flagObjectCode = UUID.randomUUID().toString();
-
-        int count = 0;
-
-        //角色
-        count += ApplicationContextHolder.getBean(RoleService.class).generateData(flagObjectCode);
-
-        //授权
-        count += ApplicationContextHolder.getBean(PermissionService.class).generateData(flagObjectCode);
-
-        //角色与授权
-        count += this.generateData(flagObjectCode);
-
-        //用户组与授权
-        count += ApplicationContextHolder.getBean(UserGroupPermissionService.class).generateData(flagObjectCode);
-
-        //用户与授权
-        count += ApplicationContextHolder.getBean(UserPermissionService.class).generateData(flagObjectCode);
-
-        return count;
+        return ApplicationContextHolder.getBean(UserGroupService.class).generateData();
     }
 
     @Override

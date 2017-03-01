@@ -136,11 +136,6 @@ public class RoleServiceImpl extends PageServiceImpl<RoleDao> implements top.car
     }
 
     @Override
-    public List<String> readListRoleCodeByUserCode(String userCode) {
-        return this.dao.readListRoleCodeByUserCode(userCode);
-    }
-
-    @Override
     public Map<String, Object> findOneByRoleId(Map<String, Object> findOne) {
         return this.dao.findOneByRoleId(findOne);
     }
@@ -158,20 +153,7 @@ public class RoleServiceImpl extends PageServiceImpl<RoleDao> implements top.car
     @Override
     @Transactional
     public int generateData() {
-        String flagObjectCode = UUID.randomUUID().toString();
-
-        int count = this.generateData(flagObjectCode);
-
-        //用户组与角色
-        count += ApplicationContextHolder.getBean(UserGroupRoleService.class).generateData(flagObjectCode);
-
-        //用户与角色
-        count += ApplicationContextHolder.getBean(UserRoleService.class).generateData(flagObjectCode);
-
-        //用户与授权
-        count += ApplicationContextHolder.getBean(UserPermissionService.class).generateData(flagObjectCode);
-
-        return count;
+        return ApplicationContextHolder.getBean(UserGroupService.class).generateData();
     }
 
     @Override

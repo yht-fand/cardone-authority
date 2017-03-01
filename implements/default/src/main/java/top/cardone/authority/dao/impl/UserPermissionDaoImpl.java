@@ -28,27 +28,38 @@ public class UserPermissionDaoImpl extends PageDaoImpl implements top.cardone.au
 
     @Override
     public int generateData(String flagObjectCode) {
-//        String findListForDepartmentSqlFilePath = this.getSqlFilePath("findListForDepartment");
-//
-//        List<Map<String, Object>> forDepartmentList = this.findList(findListForDepartmentSqlFilePath);
-//
-//        Map<String, Object> putAll = Maps.newHashMap();
-//
-//        putAll.put("flagCode", "generateForDepartment");
-//        putAll.put("flagObjectCode", flagObjectCode);
+        String findListForUserGroupPermissionSqlFilePath = this.getSqlFilePath("findListForUserGroupPermission");
+
+        List<Map<String, Object>> forUserGroupPermissionList = this.findList(findListForUserGroupPermissionSqlFilePath);
+
+        Map<String, Object> putAll = Maps.newHashMap();
+
+        putAll.put("flagCode", "generate");
+        putAll.put("flagObjectCode", flagObjectCode);
 
         int count = 0;
-//
-//        for (Map<String, Object> forDepartment : forDepartmentList) {
-//            forDepartment.putAll(putAll);
-//
-//            count += this.insert(forDepartment);
-//        }
-//
-//        String deleteOtherByFlagObjectCodeSqlFilePath = this.getSqlFilePath("deleteOtherByFlagObjectCode");
-//
-//        count += this.update(deleteOtherByFlagObjectCodeSqlFilePath, putAll);
+
+        for (Map<String, Object> forUserGroupPermission : forUserGroupPermissionList) {
+            forUserGroupPermission.putAll(putAll);
+
+            count += this.insert(forUserGroupPermission);
+        }
+
+        String deleteOtherByFlagObjectCodeSqlFilePath = this.getSqlFilePath("deleteOtherByFlagObjectCode");
+
+        count += this.update(deleteOtherByFlagObjectCodeSqlFilePath, putAll);
 
         return count;
+    }
+
+    @Override
+    public List<String> readListPermissionCodeByUserCode(String userCode) {
+        String sqlFilePath = this.getSqlFilePath("readListPermissionCodeByUserCode");
+
+        Map<String, Object> readList = Maps.newHashMap();
+
+        readList.put("userCode", userCode);
+
+        return this.readList(String.class, sqlFilePath, readList);
     }
 }

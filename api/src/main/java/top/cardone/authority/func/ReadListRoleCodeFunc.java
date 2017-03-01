@@ -1,7 +1,7 @@
 package top.cardone.authority.func;
 
 import com.google.common.collect.Sets;
-import top.cardone.authority.service.RoleService;
+import top.cardone.authority.service.UserRoleService;
 import top.cardone.context.ApplicationContextHolder;
 import top.cardone.core.util.func.Func1;
 
@@ -14,7 +14,7 @@ import java.util.Set;
 public class ReadListRoleCodeFunc implements Func1<Set<String>, String> {
     @Override
     public Set<String> func(String userCode) {
-        List<String> roleCodeList = ApplicationContextHolder.getBean(RoleService.class).readListRoleCodeByUserCode(userCode);
+        List<String> roleCodeList = ApplicationContextHolder.getBean(UserRoleService.class).readListRoleCodeByUserCode(userCode);
 
         return Sets.newHashSet(roleCodeList);
     }

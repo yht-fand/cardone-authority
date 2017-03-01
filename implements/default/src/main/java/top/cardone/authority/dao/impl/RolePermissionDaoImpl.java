@@ -32,10 +32,10 @@ public class RolePermissionDaoImpl extends PageDaoImpl implements top.cardone.au
 //
 //        List<Map<String, Object>> forDepartmentList = this.findList(findListForDepartmentSqlFilePath);
 //
-//        Map<String, Object> putAll = Maps.newHashMap();
-//
-//        putAll.put("flagCode", "generateForDepartment");
-//        putAll.put("flagObjectCode", flagObjectCode);
+        Map<String, Object> putAll = Maps.newHashMap();
+
+        putAll.put("flagCode", "generate");
+        putAll.put("flagObjectCode", flagObjectCode);
 
         int count = 0;
 //
@@ -45,9 +45,9 @@ public class RolePermissionDaoImpl extends PageDaoImpl implements top.cardone.au
 //            count += this.insert(forDepartment);
 //        }
 //
-//        String deleteOtherByFlagObjectCodeSqlFilePath = this.getSqlFilePath("deleteOtherByFlagObjectCode");
-//
-//        count += this.update(deleteOtherByFlagObjectCodeSqlFilePath, putAll);
+        String deleteOtherByFlagObjectCodeSqlFilePath = this.getSqlFilePath("deleteOtherByFlagObjectCode");
+
+        count += this.update(deleteOtherByFlagObjectCodeSqlFilePath, putAll);
 
         return count;
     }

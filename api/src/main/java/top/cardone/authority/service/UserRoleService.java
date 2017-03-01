@@ -188,6 +188,7 @@ public interface UserRoleService extends PageService {
      *
      * @return
      */
+    @CacheEvict(value = "top.cardone.authority.service.UserRoleService", allEntries = true)
     int generateData();
 
     /**
@@ -196,5 +197,14 @@ public interface UserRoleService extends PageService {
      * @param flagObjectCode 标识对象编号
      * @return
      */
+    @CacheEvict(value = "top.cardone.authority.service.UserRoleService", allEntries = true)
     int generateData(String flagObjectCode);
+
+    /**
+     * 读取角色集合
+     *
+     * @param userCode 用户编号
+     * @return
+     */
+    List<String> readListRoleCodeByUserCode(String userCode);
 }
