@@ -187,4 +187,15 @@ public interface UserPermissionService extends PageService {
      * @return
      */
     List<String> readListPermissionCodeByUserCode(String userCode);
+
+
+    @Cacheable(value = "cn.com.superstring.rdmp.authority.service.UserPermissionService", key = Caches.KEY_2)
+    Map<String, Object> findOneByFunctionCodeCache(String userCode, String functionCode);
+
+    @Cacheable(value = "cn.com.superstring.rdmp.authority.service.UserPermissionService", key = Caches.KEY_1)
+    Map<String, Object> findOneByFunctionCodeCache(String functionCode);
+
+    Map<String, Object> findOneByFunctionCode(String userCode, String functionCode);
+
+    Map<String, Object> findOneByFunctionCode(String functionCode);
 }

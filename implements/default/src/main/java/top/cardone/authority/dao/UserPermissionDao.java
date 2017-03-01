@@ -42,4 +42,6 @@ public interface UserPermissionDao extends PageDao {
      * @return
      */
     List<String> readListPermissionCodeByUserCode(String userCode);
+
+    Map<String, Object> findOneByFunctionCode(String userCode, String functionCode);
 }

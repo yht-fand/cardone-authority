@@ -62,4 +62,16 @@ public class UserPermissionDaoImpl extends PageDaoImpl implements top.cardone.au
 
         return this.readList(String.class, sqlFilePath, readList);
     }
+
+    @Override
+    public Map<String, Object> findOneByFunctionCode(String userCode, String functionCode) {
+        String findOneSqlFilePath = this.getSqlFilePath("findOneByFunctionCode");
+
+        Map<String, Object> findOne = Maps.newHashMap();
+
+        findOne.put("userCode", userCode);
+        findOne.put("functionCode", functionCode);
+
+        return this.findOne(findOneSqlFilePath, findOne);
+    }
 }

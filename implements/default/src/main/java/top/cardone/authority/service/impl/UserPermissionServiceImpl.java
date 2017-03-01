@@ -1,10 +1,12 @@
 package top.cardone.authority.service.impl;
 
+import org.apache.shiro.SecurityUtils;
 import org.springframework.data.domain.Page;
 import org.springframework.transaction.annotation.Transactional;
 import top.cardone.authority.dao.UserPermissionDao;
 import top.cardone.authority.service.*;
 import top.cardone.context.ApplicationContextHolder;
+import top.cardone.context.util.StringUtils;
 import top.cardone.data.action.InitDataAction;
 import top.cardone.data.service.impl.PageServiceImpl;
 
@@ -168,5 +170,29 @@ public class UserPermissionServiceImpl extends PageServiceImpl<UserPermissionDao
     @Override
     public List<String> readListPermissionCodeByUserCode(String userCode) {
         return this.dao.readListPermissionCodeByUserCode(userCode);
+    }
+
+    @Override
+    public Map<String, Object> findOneByFunctionCode(String userCode, String functionCode) {
+        if (StringUtils.isBlank(userCode)) {
+            userCode = (String) SecurityUtils.getSubject().getPrincipal();
+        }
+
+        return this.dao.findOneByFunctionCode(userCode, functionCode);
+    }
+
+    @Override
+    public Map<String, Object> findOneByFunctionCode(String functionCode) {
+        return this.findOneByFunctionCode(null, functionCode);
+    }
+
+    @Override
+    public Map<String, Object> findOneByFunctionCodeCache(String userCode, String functionCode) {
+        return this.findOneByFunctionCode(userCode, functionCode);
+    }
+
+    @Override
+    public Map<String, Object> findOneByFunctionCodeCache(String functionCode) {
+        return this.findOneByFunctionCode(functionCode);
     }
 }
