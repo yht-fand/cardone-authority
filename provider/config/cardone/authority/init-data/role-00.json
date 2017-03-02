@@ -3,24 +3,24 @@
     "typeCode": "init",
     "roleCode": "administrators",
     "name": "管理员",
-    "flagCode": "generate"
+    "flagCode": "init"
   },
   {
     "typeCode": "init",
     "roleCode": "operator",
     "name": "操作员",
-    "flagCode": "generate"
+    "flagCode": "init"
   },
   {
     "typeCode": "init",
     "roleCode": "electrician",
     "name": "电工",
-    "flagCode": "generate"
+    "flagCode": "init"
   },
   {
     "typeCode": "init",
     "roleCode": "general",
     "name": "普通角色",
-    "flagCode": "generate"
+    "flagCode": "init"
   }
 ]

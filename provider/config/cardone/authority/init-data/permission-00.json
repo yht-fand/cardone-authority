@@ -3,20 +3,20 @@
     "typeCode": "init",
     "permissionCode": "index",
     "name": "首页",
-    "flagCode": "generate"
+    "flagCode": "init"
   },
   {
     "typeCode": "init",
     "permissionCode": "index:todo",
     "name": "首页:待办",
     "parentCode": "index",
-    "flagCode": "generate"
+    "flagCode": "init"
   },
   {
     "typeCode": "init",
     "permissionCode": "index:reportForm",
     "name": "首页:报表",
     "parentCode": "index",
-    "flagCode": "generate"
+    "flagCode": "init"
   }
 ]

@@ -3,12 +3,12 @@
     "typeCode": "init",
     "userGroupCode": "administrator",
     "name": "管理员组",
-    "flagCode": "generate"
+    "flagCode": "init"
   },
   {
     "typeCode": "init",
     "userGroupCode": "general",
     "name": "普通组",
-    "flagCode": "generate"
+    "flagCode": "init"
   }
 ]

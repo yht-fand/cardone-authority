@@ -2,6 +2,6 @@
   {
     "roleCode": "administrators",
     "userCode": "admin",
-    "flagCode": "generate"
+    "flagCode": "init"
   }
 ]
