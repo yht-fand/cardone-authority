@@ -2,18 +2,21 @@
   {
     "typeCode": "init",
     "permissionCode": "index",
-    "name": "首页"
+    "name": "首页",
+    "flagCode": "generate"
   },
   {
     "typeCode": "init",
     "permissionCode": "index:todo",
     "name": "首页:待办",
-    "parentCode": "index"
+    "parentCode": "index",
+    "flagCode": "generate"
   },
   {
     "typeCode": "init",
     "permissionCode": "index:reportForm",
     "name": "首页:报表",
-    "parentCode": "index"
+    "parentCode": "index",
+    "flagCode": "generate"
   }
 ]

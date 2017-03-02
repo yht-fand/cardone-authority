@@ -1,6 +1,7 @@
 [
   {
     "roleCode": "general",
-    "userGroupCode": "general"
+    "userGroupCode": "general",
+    "flagCode": "generate"
   }
 ]

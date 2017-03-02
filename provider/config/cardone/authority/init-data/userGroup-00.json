@@ -2,11 +2,13 @@
   {
     "typeCode": "init",
     "userGroupCode": "administrator",
-    "name": "管理员组"
+    "name": "管理员组",
+    "flagCode": "generate"
   },
   {
     "typeCode": "init",
     "userGroupCode": "general",
-    "name": "普通组"
+    "name": "普通组",
+    "flagCode": "generate"
   }
 ]

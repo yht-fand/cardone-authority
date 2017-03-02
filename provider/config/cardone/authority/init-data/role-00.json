@@ -2,21 +2,25 @@
   {
     "typeCode": "init",
     "roleCode": "administrators",
-    "name": "管理员"
+    "name": "管理员",
+    "flagCode": "generate"
   },
   {
     "typeCode": "init",
     "roleCode": "operator",
-    "name": "操作员"
+    "name": "操作员",
+    "flagCode": "generate"
   },
   {
     "typeCode": "init",
     "roleCode": "electrician",
-    "name": "电工"
+    "name": "电工",
+    "flagCode": "generate"
   },
   {
     "typeCode": "init",
     "roleCode": "general",
-    "name": "普通角色"
+    "name": "普通角色",
+    "flagCode": "generate"
   }
 ]
