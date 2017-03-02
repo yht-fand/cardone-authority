@@ -12,7 +12,7 @@
                     <map>
                         <entry key="sqlFileRoot" value="/cardone/authority/oAuthConsumer/"/>
                         <entry key="pks" value="oauthConsumerId"/>
-                        <entry key="codes" value="oauthConsumerId"/>
+                        <entry key="codes" value="oauthConsumerCode"/>
                     </map>
                 </entry>
                 <entry key="insert">
