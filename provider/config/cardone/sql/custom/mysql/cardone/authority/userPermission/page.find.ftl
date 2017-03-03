@@ -1,4 +1,3 @@
-<#assign StringUtils = beansWrapperFn.getStaticModels()["org.apache.commons.lang3.StringUtils"]>
 SELECT
 t.`USER_PERMISSION_ID`,
 t.`USER_CODE`,
@@ -24,7 +23,7 @@ t.DATA_STATE_CODE
 FROM `c1_user_permission` t
 LEFT JOIN `c1_user` r ON(r.`USER_CODE` = t.`USER_CODE`)
 LEFT JOIN `c1_permission` p ON(p.`PERMISSION_CODE` = t.`PERMISSION_CODE`)
-<#if StringUtils.isNotBlank(userPermissionId)>
+<#if cardone.StringUtils.isNotBlank(userPermissionId)>
 WHERE t.USER_PERMISSION_ID = :userPermissionId
 <#else>
     <#include "page.where.ftl">

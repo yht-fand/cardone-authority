@@ -1,4 +1,3 @@
-<#assign StringUtils = beansWrapperFn.getStaticModels()["org.apache.commons.lang3.StringUtils"]>
 SELECT
 t.TYPE_CODE,
 (SELECT s.`NAME`  FROM `c1_dictionary` s WHERE s.DICTIONARY_TYPE_CODE = 'userGroupType' AND s.DICTIONARY_CODE = t.TYPE_CODE LIMIT 1) AS TYPE_NAME,
@@ -25,7 +24,7 @@ IFNULL((SELECT s.`NAME` FROM `c1_dictionary` s WHERE s.DICTIONARY_TYPE_CODE = 'u
 t.DATA_STATE_CODE
 FROM `c1_user_group` t
 left join `c1_user_group` p on (p.`USER_GROUP_CODE` = t.`PARENT_CODE`)
-<#if StringUtils.isNotBlank(userGroupId)>
+<#if cardone.StringUtils.isNotBlank(userGroupId)>
 WHERE t.user_group_id = :userGroupId
 <#else>
     <#include "page.where.ftl">

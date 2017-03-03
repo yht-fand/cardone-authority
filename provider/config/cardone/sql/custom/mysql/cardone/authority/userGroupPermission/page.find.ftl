@@ -1,4 +1,3 @@
-<#assign StringUtils = beansWrapperFn.getStaticModels()["org.apache.commons.lang3.StringUtils"]>
 SELECT
 t.`USER_GROUP_PERMISSION_ID`,
 REPLACE((CASE WHEN (ug.PARENT_TREE_NAME IS NULL OR LENGTH(ug.PARENT_TREE_NAME) < 1) THEN ug.NAME ELSE CONCAT(ug.PARENT_TREE_NAME, ',', ug.NAME) END),',', '/') AS USER_GROUP_TREE_NAME,
@@ -26,7 +25,7 @@ t.DATA_STATE_CODE
 FROM `c1_user_group_permission` t
 LEFT JOIN `c1_user_group` ug ON(ug.`USER_GROUP_CODE` = t.`USER_GROUP_CODE`)
 LEFT JOIN `c1_permission` p ON(p.`PERMISSION_CODE` = t.`PERMISSION_CODE`)
-<#if StringUtils.isNotBlank(userGroupPermissionId)>
+<#if cardone.StringUtils.isNotBlank(userGroupPermissionId)>
 WHERE t.USER_GROUP_PERMISSION_ID = :userGroupPermissionId
 <#else>
     <#include "page.where.ftl">

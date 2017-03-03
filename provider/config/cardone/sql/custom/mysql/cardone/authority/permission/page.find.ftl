@@ -1,4 +1,3 @@
-<#assign StringUtils = beansWrapperFn.getStaticModels()["org.apache.commons.lang3.StringUtils"]>
 SELECT
 t.TYPE_CODE,
 (SELECT s.`NAME`  FROM `c1_dictionary` s WHERE s.DICTIONARY_TYPE_CODE = 'permissionType' AND s.DICTIONARY_CODE = t.TYPE_CODE LIMIT 1) AS TYPE_NAME,
@@ -26,7 +25,7 @@ t.DATA_STATE_CODE
 FROM
 `c1_permission` t
 left join `c1_permission` p on (p.`PERMISSION_CODE` = t.`PARENT_CODE`)
-<#if StringUtils.isNotBlank(permissionId)>
+<#if cardone.StringUtils.isNotBlank(permissionId)>
 WHERE t.permission_id = :permissionId
 <#else>
     <#include "page.where.ftl">

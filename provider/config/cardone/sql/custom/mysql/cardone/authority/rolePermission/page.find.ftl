@@ -1,4 +1,3 @@
-<#assign StringUtils = beansWrapperFn.getStaticModels()["org.apache.commons.lang3.StringUtils"]>
 SELECT
 t.`ROLE_PERMISSION_ID`,
 REPLACE((CASE WHEN (r.PARENT_TREE_NAME IS NULL OR LENGTH(r.PARENT_TREE_NAME) < 1) THEN r.NAME ELSE CONCAT(r.PARENT_TREE_NAME, ',', r.NAME) END),',', '/') AS ROLE_TREE_NAME,
@@ -26,7 +25,7 @@ t.DATA_STATE_CODE
 FROM `c1_role_permission` t
 LEFT JOIN `c1_role` r ON(r.`ROLE_CODE` = t.`ROLE_CODE`)
 LEFT JOIN `c1_permission` p ON(p.`PERMISSION_CODE` = t.`PERMISSION_CODE`)
-<#if StringUtils.isNotBlank(rolePermissionId)>
+<#if cardone.StringUtils.isNotBlank(rolePermissionId)>
 WHERE t.ROLE_PERMISSION_ID = :rolePermissionId
 <#else>
     <#include "page.where.ftl">
