@@ -1,4 +1,9 @@
 WHERE 1 = 1
+<#if cardone.StringUtils.isNotBlank(typeCode)>
+AND t.`TYPE_CODE` = :typeCode
+<#elseif cardone.StringUtils.isNotBlank(typeName)>
+AND EXISTS(SELECT s.* FROM `c1_dictionary` s WHERE s.`DICTIONARY_TYPE_CODE` = 'userGroupType' AND LOCATE(:typeName, s.`NAME`))
+</#if>
 <#if cardone.StringUtils.isNotBlank(parentCode)>
 AND (t.`PARENT_CODE` = :parentCode OR LOCATE(:parentCode, t.`PARENT_TREE_CODE`))
 <#elseif cardone.StringUtils.isNotBlank(parentTreeName)>

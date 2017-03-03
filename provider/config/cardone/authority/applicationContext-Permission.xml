@@ -28,6 +28,13 @@
                         <entry key="lastModifiedDate" value="readOneDateFunc"/>
                     </map>
                 </entry>
+                <entry key="generateSql">
+                    <map>
+                        <entry key="navigation" value="findListForGenerateNavigation"/>
+                        <entry key="department" value="findListForGenerateDepartment"/>
+                        <entry key="user" value="findListForGenerateUser"/>
+                    </map>
+                </entry>
             </map>
         </property>
     </bean>
