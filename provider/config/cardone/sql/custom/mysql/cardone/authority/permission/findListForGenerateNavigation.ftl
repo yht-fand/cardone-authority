@@ -3,7 +3,7 @@ SELECT
 NULL AS 'parentCode',
 NULL AS 'parentTreeCode',
 NULL AS 'parentTreeName',
-'department' AS 'typeCode',
+'navigation' AS 'typeCode',
 'generate' AS 'flagCode',
 '导航所有数据权限' AS 'name',
 NULL AS 'beginDate',

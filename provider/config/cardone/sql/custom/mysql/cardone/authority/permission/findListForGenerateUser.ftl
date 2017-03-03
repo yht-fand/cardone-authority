@@ -1,9 +1,6 @@
 SELECT
 'user:view:*' AS 'permissionCode',
-NULL AS 'parentCode',
-NULL AS 'parentTreeCode',
-NULL AS 'parentTreeName',
-'department' AS 'typeCode',
+'user' AS 'typeCode',
 'generate' AS 'flagCode',
 '用户所有数据权限' AS 'name',
 NULL AS 'beginDate',
