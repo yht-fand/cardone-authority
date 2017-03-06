@@ -4,7 +4,7 @@ import org.apache.shiro.SecurityUtils;
 import org.springframework.data.domain.Page;
 import org.springframework.transaction.annotation.Transactional;
 import top.cardone.authority.dao.UserPermissionDao;
-import top.cardone.authority.service.*;
+import top.cardone.authority.service.UserGroupService;
 import top.cardone.context.ApplicationContextHolder;
 import top.cardone.context.util.StringUtils;
 import top.cardone.data.action.InitDataAction;
@@ -12,7 +12,6 @@ import top.cardone.data.service.impl.PageServiceImpl;
 
 import java.util.List;
 import java.util.Map;
-import java.util.UUID;
 
 /**
  * 用户与许可服务
@@ -188,7 +187,15 @@ public class UserPermissionServiceImpl extends PageServiceImpl<UserPermissionDao
 
     @Override
     public Map<String, Object> findOneByFunctionCodeCache(String userCode, String functionCode) {
-        return this.findOneByFunctionCode(userCode, functionCode);
+        Map<String, Object> map = this.findOneByFunctionCode(userCode, functionCode);
+
+        for (Map.Entry<String, Object> mapEntry : map.entrySet()) {
+            if (StringUtils.contains((String) mapEntry.getValue(), "*")) {
+                map.remove(mapEntry.getKey());
+            }
+        }
+
+        return map;
     }
 
     @Override
