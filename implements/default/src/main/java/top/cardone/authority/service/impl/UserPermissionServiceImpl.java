@@ -1,10 +1,12 @@
 package top.cardone.authority.service.impl;
 
 import org.apache.shiro.SecurityUtils;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
 import org.springframework.transaction.annotation.Transactional;
 import top.cardone.authority.dao.UserPermissionDao;
 import top.cardone.authority.service.UserGroupService;
+import top.cardone.cache.Caches;
 import top.cardone.context.ApplicationContextHolder;
 import top.cardone.context.util.StringUtils;
 import top.cardone.data.action.InitDataAction;
@@ -186,12 +188,13 @@ public class UserPermissionServiceImpl extends PageServiceImpl<UserPermissionDao
     }
 
     @Override
+    @Cacheable(value = "top.cardone.authority.service.UserPermissionService", key = Caches.KEY_2)
     public Map<String, Object> findOneByFunctionCodeCache(String userCode, String functionCode) {
         Map<String, Object> map = this.findOneByFunctionCode(userCode, functionCode);
 
         for (Map.Entry<String, Object> mapEntry : map.entrySet()) {
             if (StringUtils.contains((String) mapEntry.getValue(), "*")) {
-                map.remove(mapEntry.getKey());
+                mapEntry.setValue(StringUtils.EMPTY);
             }
         }
 
@@ -199,6 +202,7 @@ public class UserPermissionServiceImpl extends PageServiceImpl<UserPermissionDao
     }
 
     @Override
+    @Cacheable(value = "top.cardone.authority.service.UserPermissionService", key = Caches.KEY_1)
     public Map<String, Object> findOneByFunctionCodeCache(String functionCode) {
         return this.findOneByFunctionCode(functionCode);
     }
