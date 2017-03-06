@@ -1,7 +1,7 @@
 [
   {
     "typeCode": "init",
-    "roleCode": "administrators",
+    "roleCode": "administrator",
     "name": "管理员",
     "flagCode": "init"
   },
@@ -9,12 +9,6 @@
     "typeCode": "init",
     "roleCode": "operator",
     "name": "操作员",
-    "flagCode": "init"
-  },
-  {
-    "typeCode": "init",
-    "roleCode": "electrician",
-    "name": "电工",
     "flagCode": "init"
   },
   {
