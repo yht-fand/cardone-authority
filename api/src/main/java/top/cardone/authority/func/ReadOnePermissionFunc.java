@@ -4,6 +4,7 @@ import lombok.Setter;
 import org.apache.commons.collections.MapUtils;
 import top.cardone.authority.service.UserPermissionService;
 import top.cardone.context.ApplicationContextHolder;
+import top.cardone.context.util.StringUtils;
 import top.cardone.core.util.func.Func1;
 
 import java.util.Map;
@@ -22,6 +23,6 @@ public class ReadOnePermissionFunc implements Func1<String, Object> {
     public String func(Object obj) {
         Map<String, Object> permissionMap = ApplicationContextHolder.getBean(UserPermissionService.class).findOneByFunctionCodeCache(this.functionCode);
 
-        return MapUtils.getString(permissionMap, this.key);
+        return MapUtils.getString(permissionMap, this.key, StringUtils.EMPTY);
     }
 }

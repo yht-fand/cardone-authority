@@ -3,7 +3,6 @@ package top.cardone.authority.dao.impl;
 import com.google.common.collect.Maps;
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.collections.MapUtils;
-import org.apache.shiro.util.StringUtils;
 import top.cardone.data.jdbc.dao.impl.PageDaoImpl;
 
 import java.util.List;
@@ -38,7 +37,7 @@ public class PermissionDaoImpl extends PageDaoImpl implements top.cardone.author
 
     @Override
     public int generateData(String flagObjectCode) {
-        Map<String, String> generateSqlMap = this.configTable.row("generateSql");
+        Map<String, Object> generateSqlMap = this.configTable.row("generateSql");
 
         if (MapUtils.isEmpty(generateSqlMap)) {
             return 0;
@@ -51,10 +50,10 @@ public class PermissionDaoImpl extends PageDaoImpl implements top.cardone.author
 
         int count = 0;
 
-        for (Map.Entry<String, String> generateSqlEntry : generateSqlMap.entrySet()) {
+        for (Map.Entry<String, Object> generateSqlEntry : generateSqlMap.entrySet()) {
             Map<String, Object> findList = Maps.newHashMap();
 
-            String findListForGenerateSqlFilePath = this.getSqlFilePath(generateSqlEntry.getValue());
+            String findListForGenerateSqlFilePath = this.getSqlFilePath((String) generateSqlEntry.getValue());
 
             List<Map<String, Object>> generateList = this.findList(findListForGenerateSqlFilePath, findList);
 
