@@ -14,6 +14,7 @@ import top.cardone.data.service.impl.PageServiceImpl;
 
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 
 /**
  * 用户与许可服务
@@ -193,6 +194,12 @@ public class UserPermissionServiceImpl extends PageServiceImpl<UserPermissionDao
         Map<String, Object> map = this.findOneByFunctionCode(userCode, functionCode);
 
         for (Map.Entry<String, Object> mapEntry : map.entrySet()) {
+            if (mapEntry.getValue() == null) {
+                mapEntry.setValue(UUID.randomUUID().toString());
+
+                continue;
+            }
+
             if (StringUtils.contains((String) mapEntry.getValue(), "*")) {
                 mapEntry.setValue(StringUtils.EMPTY);
             }

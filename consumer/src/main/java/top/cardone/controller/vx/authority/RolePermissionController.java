@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import top.cardone.context.ApplicationContextHolder;
 import top.cardone.context.util.MapUtils;
+import top.cardone.context.util.StringUtils;
 import top.cardone.core.CodeException;
 import top.cardone.core.util.func.Func1;
 import top.cardone.authority.service.RolePermissionService;
@@ -128,7 +129,7 @@ public class RolePermissionController {
 
     /**
      * /m0001.json begin
-     **/
+     **xx/
     @RequestMapping("/m0001.json")
     @ResponseBody
     public Object m0001Json(HttpServletRequest request) {
@@ -160,12 +161,12 @@ public class RolePermissionController {
     /** /m0003.json end **/
 	
 
-    @Value("${app.root}/upload")
-    private String uploadPath;
+    //@Value("${app.root}/upload")
+    //private String uploadPath;
 
     /**
      * /m0004.json begin
-     **/
+     **xx/
     @RequestMapping("/m0004.json")
     @ResponseBody
     public Object m0004Json(HttpServletRequest request, HttpServletResponse response) throws Exception {
@@ -225,7 +226,24 @@ public class RolePermissionController {
     @ResponseBody
     public Object u0001Json(HttpServletRequest request) {
         return ApplicationContextHolder.getBean(WebSupport.class).func(request,
-                (Func1<Object, Map<String, Object>>) input -> ApplicationContextHolder.getBean(RolePermissionService.class).updateCache(input));
+                (Func1<Object, Map<String, Object>>) input -> {
+                    Map<String, Object> readOne = Maps.newHashMap();
+
+                    readOne.put("rolePermissionCode", MapUtils.getString(input, "rolePermissionCode"));
+                    readOne.put("object_id", "rolePermissionId");
+
+                    String dbRolePermissionId = ApplicationContextHolder.getBean(RolePermissionService.class).readOne(String.class, readOne);
+
+                    if (dbRolePermissionId != null) {
+                        String rolePermissionId = MapUtils.getString(input, "rolePermissionId");
+
+                        if (!StringUtils.equals(dbRolePermissionId, rolePermissionId)) {
+                            throw new CodeException("该角色与许可编号已经存在");
+                        }
+                    }
+
+                    return ApplicationContextHolder.getBean(RolePermissionService.class).updateCache(input);
+                });
     }
     /** /u0001.json end **/
 

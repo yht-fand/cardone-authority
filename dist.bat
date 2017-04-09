@@ -1,9 +1,9 @@
 IF EXIST parent (
 cd parent
-call mvnw clean -Dmaven.test.skip=true package
+call mvn clean -Dmaven.test.skip=true package
 cd ..
 )
-call mvnw clean -Dmaven.test.skip=true package
+call mvn clean -Dmaven.test.skip=true package
 rd /s/q dist\%1
 mkdir dist\%1\cardone-authority\provider
 xcopy provider\config dist\%1\cardone-authority\provider\config /Y/E/C/R/I

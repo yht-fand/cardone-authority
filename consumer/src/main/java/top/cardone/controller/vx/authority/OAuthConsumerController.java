@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import top.cardone.context.ApplicationContextHolder;
 import top.cardone.context.util.MapUtils;
+import top.cardone.context.util.StringUtils;
 import top.cardone.core.CodeException;
 import top.cardone.core.util.func.Func1;
 import top.cardone.authority.service.OAuthConsumerService;
@@ -128,7 +129,7 @@ public class OAuthConsumerController {
 
     /**
      * /m0001.json begin
-     **/
+     **xx/
     @RequestMapping("/m0001.json")
     @ResponseBody
     public Object m0001Json(HttpServletRequest request) {
@@ -160,12 +161,12 @@ public class OAuthConsumerController {
     /** /m0003.json end **/
 	
 
-    @Value("${app.root}/upload")
-    private String uploadPath;
+    //@Value("${app.root}/upload")
+    //private String uploadPath;
 
     /**
      * /m0004.json begin
-     **/
+     **xx/
     @RequestMapping("/m0004.json")
     @ResponseBody
     public Object m0004Json(HttpServletRequest request, HttpServletResponse response) throws Exception {
@@ -225,7 +226,24 @@ public class OAuthConsumerController {
     @ResponseBody
     public Object u0001Json(HttpServletRequest request) {
         return ApplicationContextHolder.getBean(WebSupport.class).func(request,
-                (Func1<Object, Map<String, Object>>) input -> ApplicationContextHolder.getBean(OAuthConsumerService.class).updateCache(input));
+                (Func1<Object, Map<String, Object>>) input -> {
+                    Map<String, Object> readOne = Maps.newHashMap();
+
+                    readOne.put("oAuthConsumerCode", MapUtils.getString(input, "oAuthConsumerCode"));
+                    readOne.put("object_id", "oAuthConsumerId");
+
+                    String dbOAuthConsumerId = ApplicationContextHolder.getBean(OAuthConsumerService.class).readOne(String.class, readOne);
+
+                    if (dbOAuthConsumerId != null) {
+                        String oAuthConsumerId = MapUtils.getString(input, "oAuthConsumerId");
+
+                        if (!StringUtils.equals(dbOAuthConsumerId, oAuthConsumerId)) {
+                            throw new CodeException("该授权消费编号已经存在");
+                        }
+                    }
+
+                    return ApplicationContextHolder.getBean(OAuthConsumerService.class).updateCache(input);
+                });
     }
     /** /u0001.json end **/
 

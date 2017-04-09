@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import top.cardone.context.ApplicationContextHolder;
 import top.cardone.context.util.MapUtils;
+import top.cardone.context.util.StringUtils;
 import top.cardone.core.CodeException;
 import top.cardone.core.util.func.Func1;
 import top.cardone.authority.service.UserGroupService;
@@ -128,7 +129,7 @@ public class UserGroupController {
 
     /**
      * /m0001.json begin
-     **/
+     **xx/
     @RequestMapping("/m0001.json")
     @ResponseBody
     public Object m0001Json(HttpServletRequest request) {
@@ -160,12 +161,12 @@ public class UserGroupController {
     /** /m0003.json end **/
 	
 
-    @Value("${app.root}/upload")
-    private String uploadPath;
+    //@Value("${app.root}/upload")
+    //private String uploadPath;
 
     /**
      * /m0004.json begin
-     **/
+     **xx/
     @RequestMapping("/m0004.json")
     @ResponseBody
     public Object m0004Json(HttpServletRequest request, HttpServletResponse response) throws Exception {
@@ -225,7 +226,24 @@ public class UserGroupController {
     @ResponseBody
     public Object u0001Json(HttpServletRequest request) {
         return ApplicationContextHolder.getBean(WebSupport.class).func(request,
-                (Func1<Object, Map<String, Object>>) input -> ApplicationContextHolder.getBean(UserGroupService.class).updateCache(input));
+                (Func1<Object, Map<String, Object>>) input -> {
+                    Map<String, Object> readOne = Maps.newHashMap();
+
+                    readOne.put("userGroupCode", MapUtils.getString(input, "userGroupCode"));
+                    readOne.put("object_id", "userGroupId");
+
+                    String dbUserGroupId = ApplicationContextHolder.getBean(UserGroupService.class).readOne(String.class, readOne);
+
+                    if (dbUserGroupId != null) {
+                        String userGroupId = MapUtils.getString(input, "userGroupId");
+
+                        if (!StringUtils.equals(dbUserGroupId, userGroupId)) {
+                            throw new CodeException("该用户组编号已经存在");
+                        }
+                    }
+
+                    return ApplicationContextHolder.getBean(UserGroupService.class).updateCache(input);
+                });
     }
     /** /u0001.json end **/
 
