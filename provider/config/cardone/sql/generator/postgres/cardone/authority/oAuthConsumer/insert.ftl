@@ -1,6 +1,10 @@
 INSERT
 INTO c1_oauth_consumer
 (<#assign prefixName = ' '>
+<#if (insert_batchNo??) && (insert_batchNo_value??)>
+${prefixName} batch_no
+<#assign prefixName = ','>
+</#if>
 <#if (insert_beginDate??) && (insert_beginDate_value??)>
 ${prefixName} begin_date
 <#assign prefixName = ','>
@@ -53,12 +57,16 @@ ${prefixName} last_modified_date
 ${prefixName} oauth_consumer_id
 <#assign prefixName = ','>
 </#if>
-<#if (insert_order??) && (insert_order_value??)>
-${prefixName} order_
+<#if (insert_orderBy??) && (insert_orderBy_value??)>
+${prefixName} order_by_
 <#assign prefixName = ','>
 </#if>
 <#if (insert_orgCode??) && (insert_orgCode_value??)>
 ${prefixName} org_code
+<#assign prefixName = ','>
+</#if>
+<#if (insert_personalCode??) && (insert_personalCode_value??)>
+${prefixName} personal_code
 <#assign prefixName = ','>
 </#if>
 <#if (insert_siteCode??) && (insert_siteCode_value??)>
@@ -80,6 +88,10 @@ ${prefixName} version_
 )
 VALUES
 (<#assign prefixName = ' '>
+<#if (insert_batchNo??) && (insert_batchNo_value??)>
+${prefixName} :insert_batchNo_value
+<#assign prefixName = ','>
+</#if>
 <#if (insert_beginDate??) && (insert_beginDate_value??)>
 ${prefixName} :insert_beginDate_value
 <#assign prefixName = ','>
@@ -132,12 +144,16 @@ ${prefixName} :insert_lastModifiedDate_value
 ${prefixName} :insert_oauthConsumerId_value
 <#assign prefixName = ','>
 </#if>
-<#if (insert_order??) && (insert_order_value??)>
-${prefixName} :insert_order_value
+<#if (insert_orderBy??) && (insert_orderBy_value??)>
+${prefixName} :insert_orderBy_value
 <#assign prefixName = ','>
 </#if>
 <#if (insert_orgCode??) && (insert_orgCode_value??)>
 ${prefixName} :insert_orgCode_value
+<#assign prefixName = ','>
+</#if>
+<#if (insert_personalCode??) && (insert_personalCode_value??)>
+${prefixName} :insert_personalCode_value
 <#assign prefixName = ','>
 </#if>
 <#if (insert_siteCode??) && (insert_siteCode_value??)>

@@ -1,5 +1,8 @@
 SELECT
 <#switch (object_id!)>
+<#case "batchNo">
+batch_no AS batchNo
+<#break>
 <#case "beginDate">
 begin_date AS beginDate
 <#break>
@@ -36,8 +39,8 @@ last_modified_date AS lastModifiedDate
 <#case "name">
 name AS name
 <#break>
-<#case "order">
-order_ AS order
+<#case "orderBy">
+order_by_ AS orderBy
 <#break>
 <#case "orgCode">
 org_code AS orgCode
@@ -57,6 +60,9 @@ permission_code AS permissionCode
 <#case "permissionId">
 permission_id AS permissionId
 <#break>
+<#case "personalCode">
+personal_code AS personalCode
+<#break>
 <#case "siteCode">
 site_code AS siteCode
 <#break>
@@ -73,7 +79,7 @@ type_code AS typeCode
 version_ AS version
 <#break>
 <#default>
-COUNT(1) AS COUNT_
+COUNT(*) AS COUNT_
 </#switch>
 FROM c1_permission
 <#include "where.ftl">

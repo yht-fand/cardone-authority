@@ -1,5 +1,6 @@
 {
   "input": {
+    "batchNo": "batchNo",
     "beginDate": "beginDate",
     "createdByCode": "createdByCode",
     "createdDate": "createdDate",
@@ -11,9 +12,10 @@
     "jsonData": "jsonData",
     "lastModifiedByCode": "lastModifiedByCode",
     "lastModifiedDate": "lastModifiedDate",
-    "order": "order",
+    "orderBy": "orderBy",
     "orgCode": "orgCode",
     "permissionCode": "permissionCode",
+    "personalCode": "personalCode",
     "roleCode": "roleCode",
     "rolePermissionId": "rolePermissionId",
     "siteCode": "siteCode",
@@ -48,6 +50,7 @@
     }
   },
   "output": {
+    "batchNo": "batch_no",
     "beginDate": "begin_date",
     "createdByCode": "created_by_code",
     "createdDate": "created_date",
@@ -59,9 +62,10 @@
     "jsonData": "json_data",
     "lastModifiedByCode": "last_modified_by_code",
     "lastModifiedDate": "last_modified_date",
-    "order": "order_",
+    "orderBy": "order_by_",
     "orgCode": "org_code",
     "permissionCode": "permission_code",
+    "personalCode": "personal_code",
     "roleCode": "role_code",
     "rolePermissionId": "role_permission_id",
     "siteCode": "site_code",

@@ -1,5 +1,6 @@
 {
   "input": {
+    "batchNo": "batchNo",
     "beginDate": "beginDate",
     "clientId": "clientId",
     "createdByCode": "createdByCode",
@@ -12,8 +13,9 @@
     "jsonData": "jsonData",
     "lastModifiedByCode": "lastModifiedByCode",
     "lastModifiedDate": "lastModifiedDate",
-    "order": "order",
+    "orderBy": "orderBy",
     "orgCode": "orgCode",
+    "personalCode": "personalCode",
     "scope": "scope",
     "siteCode": "siteCode",
     "stateCode": "stateCode",
@@ -50,6 +52,7 @@
     }
   },
   "output": {
+    "batchNo": "batch_no",
     "beginDate": "begin_date",
     "clientId": "client_id",
     "createdByCode": "created_by_code",
@@ -62,8 +65,9 @@
     "jsonData": "json_data",
     "lastModifiedByCode": "last_modified_by_code",
     "lastModifiedDate": "last_modified_date",
-    "order": "order_",
+    "orderBy": "order_by_",
     "orgCode": "org_code",
+    "personalCode": "personal_code",
     "scope": "scope",
     "siteCode": "site_code",
     "stateCode": "state_code",

@@ -2,6 +2,10 @@ INSERT
 INTO
 c1_oauth_consumer
 (<#assign prefixName = ' '>
+<#if (insert_batchNo??) && (insert_batchNo_value??)>
+${prefixName} batch_no
+<#assign prefixName = ','>
+</#if>
 <#if (insert_beginDate??) && (insert_beginDate_value??)>
 ${prefixName} begin_date
 <#assign prefixName = ','>
@@ -54,12 +58,16 @@ ${prefixName} last_modified_date
 ${prefixName} oauth_consumer_id
 <#assign prefixName = ','>
 </#if>
-<#if (insert_order??) && (insert_order_value??)>
-${prefixName} order_
+<#if (insert_orderBy??) && (insert_orderBy_value??)>
+${prefixName} order_by_
 <#assign prefixName = ','>
 </#if>
 <#if (insert_orgCode??) && (insert_orgCode_value??)>
 ${prefixName} org_code
+<#assign prefixName = ','>
+</#if>
+<#if (insert_personalCode??) && (insert_personalCode_value??)>
+${prefixName} personal_code
 <#assign prefixName = ','>
 </#if>
 <#if (insert_siteCode??) && (insert_siteCode_value??)>
@@ -81,6 +89,10 @@ ${prefixName} version_
 )
 (SELECT
 <#assign prefixName = ' '>
+<#if (insert_batchNo??) && (insert_batchNo_value??)>
+${prefixName} :insert_batchNo_value
+<#assign prefixName = ','>
+</#if>
 <#if (insert_beginDate??) && (insert_beginDate_value??)>
 ${prefixName} :insert_beginDate_value
 <#assign prefixName = ','>
@@ -133,12 +145,16 @@ ${prefixName} :insert_lastModifiedDate_value
 ${prefixName} :insert_oauthConsumerId_value
 <#assign prefixName = ','>
 </#if>
-<#if (insert_order??) && (insert_order_value??)>
-${prefixName} :insert_order_value
+<#if (insert_orderBy??) && (insert_orderBy_value??)>
+${prefixName} :insert_orderBy_value
 <#assign prefixName = ','>
 </#if>
 <#if (insert_orgCode??) && (insert_orgCode_value??)>
 ${prefixName} :insert_orgCode_value
+<#assign prefixName = ','>
+</#if>
+<#if (insert_personalCode??) && (insert_personalCode_value??)>
+${prefixName} :insert_personalCode_value
 <#assign prefixName = ','>
 </#if>
 <#if (insert_siteCode??) && (insert_siteCode_value??)>
@@ -159,6 +175,14 @@ ${prefixName} :insert_version_value
 </#if>
 WHERE NOT EXISTS (SELECT 1 FROM c1_oauth_consumer E
 <#assign prefixName = 'WHERE'>
+<#if (where_and_eq_batchNo??)>
+<#if (where_and_eq_batchNo_value??)>
+${prefixName} E.batch_no = :where_and_eq_batchNo_value
+<#else>
+${prefixName} E.batch_no IS NULL
+</#if>
+<#assign prefixName = 'AND'>
+</#if>
 <#if (where_and_eq_beginDate??)>
 <#if (where_and_eq_beginDate_value??)>
 ${prefixName} E.begin_date = :where_and_eq_beginDate_value
@@ -263,11 +287,11 @@ ${prefixName} E.oauth_consumer_id IS NULL
 </#if>
 <#assign prefixName = 'AND'>
 </#if>
-<#if (where_and_eq_order??)>
-<#if (where_and_eq_order_value??)>
-${prefixName} E.order_ = :where_and_eq_order_value
+<#if (where_and_eq_orderBy??)>
+<#if (where_and_eq_orderBy_value??)>
+${prefixName} E.order_by_ = :where_and_eq_orderBy_value
 <#else>
-${prefixName} E.order_ IS NULL
+${prefixName} E.order_by_ IS NULL
 </#if>
 <#assign prefixName = 'AND'>
 </#if>
@@ -276,6 +300,14 @@ ${prefixName} E.order_ IS NULL
 ${prefixName} E.org_code = :where_and_eq_orgCode_value
 <#else>
 ${prefixName} E.org_code IS NULL
+</#if>
+<#assign prefixName = 'AND'>
+</#if>
+<#if (where_and_eq_personalCode??)>
+<#if (where_and_eq_personalCode_value??)>
+${prefixName} E.personal_code = :where_and_eq_personalCode_value
+<#else>
+${prefixName} E.personal_code IS NULL
 </#if>
 <#assign prefixName = 'AND'>
 </#if>

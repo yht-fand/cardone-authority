@@ -11,6 +11,13 @@ import java.util.Date;
 public class UserGroupPermission implements java.io.Serializable {
 
     /**
+     * 批次编号
+     */
+    @lombok.Getter
+    @lombok.Setter
+    protected String batchNo;
+
+    /**
      * 开始时间
      */
     @lombok.Getter
@@ -92,7 +99,7 @@ public class UserGroupPermission implements java.io.Serializable {
      */
     @lombok.Getter
     @lombok.Setter
-    protected Long order;
+    protected Long orderBy;
 
     /**
      * 组织代码
@@ -107,6 +114,13 @@ public class UserGroupPermission implements java.io.Serializable {
     @lombok.Getter
     @lombok.Setter
     protected String permissionCode;
+
+    /**
+     * 个人代码
+     */
+    @lombok.Getter
+    @lombok.Setter
+    protected String personalCode;
 
     /**
      * 站点代码

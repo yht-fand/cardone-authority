@@ -39,7 +39,7 @@ LAST_MODIFIED_DATE AS lastModifiedDate
 <#case "oauthConsumerId">
 OAUTH_CONSUMER_ID AS oauthConsumerId
 <#break>
-<#case "order">
+<#case "orderBy">
 ORDER_ AS order
 <#break>
 <#case "orgCode">

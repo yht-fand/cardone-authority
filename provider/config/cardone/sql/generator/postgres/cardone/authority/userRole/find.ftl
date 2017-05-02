@@ -1,5 +1,9 @@
 SELECT
 <#assign prefixName = ' '>
+<#if (select_batchNo??)>
+${prefixName} batch_no
+<#assign prefixName = ','>
+</#if>
 <#if (select_beginDate??)>
 ${prefixName} begin_date
 <#assign prefixName = ','>
@@ -44,12 +48,16 @@ ${prefixName} last_modified_by_code
 ${prefixName} last_modified_date
 <#assign prefixName = ','>
 </#if>
-<#if (select_order??)>
-${prefixName} order_
+<#if (select_orderBy??)>
+${prefixName} order_by_
 <#assign prefixName = ','>
 </#if>
 <#if (select_orgCode??)>
 ${prefixName} org_code
+<#assign prefixName = ','>
+</#if>
+<#if (select_personalCode??)>
+${prefixName} personal_code
 <#assign prefixName = ','>
 </#if>
 <#if (select_roleCode??)>
@@ -86,6 +94,10 @@ ${prefixName} version_
 FROM c1_user_role
 <#include "where.ftl">
 <#assign prefixName = 'ORDER BY'>
+<#if (order_by_batchNo??)>
+${prefixName} batch_no ${order_by_batchNo_value!}
+<#assign prefixName = ','>
+</#if>
 <#if (order_by_beginDate??)>
 ${prefixName} begin_date ${order_by_beginDate_value!}
 <#assign prefixName = ','>
@@ -130,12 +142,16 @@ ${prefixName} last_modified_by_code ${order_by_lastModifiedByCode_value!}
 ${prefixName} last_modified_date ${order_by_lastModifiedDate_value!}
 <#assign prefixName = ','>
 </#if>
-<#if (order_by_order??)>
-${prefixName} order_ ${order_by_order_value!}
+<#if (order_by_orderBy??)>
+${prefixName} order_by_ ${order_by_orderBy_value!}
 <#assign prefixName = ','>
 </#if>
 <#if (order_by_orgCode??)>
 ${prefixName} org_code ${order_by_orgCode_value!}
+<#assign prefixName = ','>
+</#if>
+<#if (order_by_personalCode??)>
+${prefixName} personal_code ${order_by_personalCode_value!}
 <#assign prefixName = ','>
 </#if>
 <#if (order_by_roleCode??)>

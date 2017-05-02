@@ -1,5 +1,6 @@
 {
   "input": {
+    "batchNo": "batchNo",
     "beginDate": "beginDate",
     "clientSecret": "clientSecret",
     "createdByCode": "createdByCode",
@@ -13,8 +14,9 @@
     "lastModifiedByCode": "lastModifiedByCode",
     "lastModifiedDate": "lastModifiedDate",
     "oauthConsumerId": "oauthConsumerId",
-    "order": "order",
+    "orderBy": "orderBy",
     "orgCode": "orgCode",
+    "personalCode": "personalCode",
     "siteCode": "siteCode",
     "stateCode": "stateCode",
     "systemInfoCode": "systemInfoCode",

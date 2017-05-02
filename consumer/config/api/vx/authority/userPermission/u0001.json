@@ -1,5 +1,6 @@
 {
   "input": {
+    "batchNo": "batchNo",
     "beginDate": "beginDate",
     "createdByCode": "createdByCode",
     "createdDate": "createdDate",
@@ -11,9 +12,10 @@
     "jsonData": "jsonData",
     "lastModifiedByCode": "lastModifiedByCode",
     "lastModifiedDate": "lastModifiedDate",
-    "order": "order",
+    "orderBy": "orderBy",
     "orgCode": "orgCode",
     "permissionCode": "permissionCode",
+    "personalCode": "personalCode",
     "siteCode": "siteCode",
     "stateCode": "stateCode",
     "systemInfoCode": "systemInfoCode",

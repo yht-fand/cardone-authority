@@ -1,5 +1,9 @@
 UPDATE c1_oauth_consumer
 <#assign prefixName = 'SET'>
+<#if (update_batchNo??)>
+${prefixName} batch_no = :update_batchNo_value
+<#assign prefixName = ','>
+</#if>
 <#if (update_beginDate??)>
 ${prefixName} begin_date = :update_beginDate_value
 <#assign prefixName = ','>
@@ -52,12 +56,16 @@ ${prefixName} last_modified_date = :update_lastModifiedDate_value
 ${prefixName} oauth_consumer_id = :update_oauthConsumerId_value
 <#assign prefixName = ','>
 </#if>
-<#if (update_order??)>
-${prefixName} order_ = :update_order_value
+<#if (update_orderBy??)>
+${prefixName} order_by_ = :update_orderBy_value
 <#assign prefixName = ','>
 </#if>
 <#if (update_orgCode??)>
 ${prefixName} org_code = :update_orgCode_value
+<#assign prefixName = ','>
+</#if>
+<#if (update_personalCode??)>
+${prefixName} personal_code = :update_personalCode_value
 <#assign prefixName = ','>
 </#if>
 <#if (update_siteCode??)>

@@ -1,5 +1,8 @@
 SELECT
 <#switch (object_id!)>
+<#case "batchNo">
+batch_no AS batchNo
+<#break>
 <#case "beginDate">
 begin_date AS beginDate
 <#break>
@@ -33,11 +36,14 @@ last_modified_by_code AS lastModifiedByCode
 <#case "lastModifiedDate">
 last_modified_date AS lastModifiedDate
 <#break>
-<#case "order">
-order_ AS order
+<#case "orderBy">
+order_by_ AS orderBy
 <#break>
 <#case "orgCode">
 org_code AS orgCode
+<#break>
+<#case "personalCode">
+personal_code AS personalCode
 <#break>
 <#case "roleCode">
 role_code AS roleCode
@@ -61,7 +67,7 @@ user_role_id AS userRoleId
 version_ AS version
 <#break>
 <#default>
-COUNT(1) AS COUNT_
+COUNT(*) AS COUNT_
 </#switch>
 FROM c1_user_role
 <#include "where.ftl">

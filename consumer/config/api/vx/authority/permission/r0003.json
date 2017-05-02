@@ -1,5 +1,6 @@
 {
   "input-temp:特殊情况再用": {
+    "batchNo": "batchNo",
     "beginDate": "beginDate",
     "createdByCode": "createdByCode",
     "createdDate": "createdDate",
@@ -12,13 +13,14 @@
     "lastModifiedByCode": "lastModifiedByCode",
     "lastModifiedDate": "lastModifiedDate",
     "name": "name",
-    "order": "order",
+    "orderBy": "orderBy",
     "orgCode": "orgCode",
     "parentCode": "parentCode",
     "parentTreeCode": "parentTreeCode",
     "parentTreeName": "parentTreeName",
     "permissionCode": "permissionCode",
     "permissionId": "permissionId",
+    "personalCode": "personalCode",
     "siteCode": "siteCode",
     "stateCode": "stateCode",
     "systemInfoCode": "systemInfoCode",
@@ -31,6 +33,7 @@
     "datas": {
       "newArrayListFunc": {
         "output": {
+          "batchNo": "batch_no",
           "beginDate": "begin_date",
           "createdByCode": "created_by_code",
           "createdDate": "created_date",
@@ -43,13 +46,14 @@
           "lastModifiedByCode": "last_modified_by_code",
           "lastModifiedDate": "last_modified_date",
           "name": "name",
-          "order": "order_",
+          "orderBy": "order_by_",
           "orgCode": "org_code",
           "parentCode": "parent_code",
           "parentTreeCode": "parent_tree_code",
           "parentTreeName": "parent_tree_name",
           "permissionCode": "permission_code",
           "permissionId": "permission_id",
+          "personalCode": "personal_code",
           "siteCode": "site_code",
           "stateCode": "state_code",
           "systemInfoCode": "system_info_code",
