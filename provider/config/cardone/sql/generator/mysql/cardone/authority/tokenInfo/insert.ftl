@@ -49,8 +49,8 @@ ${prefixName} `LAST_MODIFIED_BY_CODE`
 ${prefixName} `LAST_MODIFIED_DATE`
 <#assign prefixName = ','>
 </#if>
-<#if (insert_order??) && (insert_order_value??)>
-${prefixName} `ORDER_`
+<#if (insert_order??) && (insert_order_by_value??)>
+${prefixName} `ORDER_BY_`
 <#assign prefixName = ','>
 </#if>
 <#if (insert_orgCode??) && (insert_orgCode_value??)>
@@ -140,8 +140,8 @@ ${prefixName} :insert_lastModifiedByCode_value
 ${prefixName} :insert_lastModifiedDate_value
 <#assign prefixName = ','>
 </#if>
-<#if (insert_order??) && (insert_order_value??)>
-${prefixName} :insert_order_value
+<#if (insert_order??) && (insert_order_by_value??)>
+${prefixName} :insert_order_by_value
 <#assign prefixName = ','>
 </#if>
 <#if (insert_orgCode??) && (insert_orgCode_value??)>

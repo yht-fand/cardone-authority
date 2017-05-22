@@ -22,7 +22,7 @@ FLAG_OBJECT_CODE|YES|String(255)|标识对象代码(工作流：工作流标识�
 JSON_DATA|YES|String()|JSON数据
 LAST_MODIFIED_BY_CODE|YES|String(255)|最后修改人代码
 LAST_MODIFIED_DATE|YES|Date(19)|最后修改时间
-ORDER_|YES|Long(19)|排序
+ORDER_BY_|YES|Long(19)|排序
 ORG_CODE|YES|String(255)|组织代码
 PERMISSION_CODE|YES|String(255)|许可代码
 SITE_CODE|YES|String(255)|站点代码
@@ -47,7 +47,7 @@ FLAG_OBJECT_CODE|YES|String(255)|标识对象代码(工作流：工作流标识�
 JSON_DATA|YES|String()|JSON数据
 LAST_MODIFIED_BY_CODE|YES|String(255)|最后修改人代码
 LAST_MODIFIED_DATE|YES|Date(19)|最后修改时间
-ORDER_|YES|Long(19)|排序
+ORDER_BY_|YES|Long(19)|排序
 ORG_CODE|YES|String(255)|组织代码
 ROLE_CODE|YES|String(255)|角色代码
 SITE_CODE|YES|String(255)|站点代码
@@ -73,7 +73,7 @@ JSON_DATA|YES|String()|JSON数据
 LAST_MODIFIED_BY_CODE|YES|String(255)|最后修改人代码
 LAST_MODIFIED_DATE|YES|Date(19)|最后修改时间
 NAME|YES|String(255)|名称
-ORDER_|YES|Long(19)|排序
+ORDER_BY_|YES|Long(19)|排序
 ORG_CODE|YES|String(255)|组织代码
 PARENT_CODE|YES|String(255)|父级代码
 PARENT_TREE_CODE|YES|String(1023)|父级树代码
@@ -102,7 +102,7 @@ JSON_DATA|YES|String()|JSON数据
 LAST_MODIFIED_BY_CODE|YES|String(255)|最后修改人代码
 LAST_MODIFIED_DATE|YES|Date(19)|最后修改时间
 NAME|YES|String(255)|名称
-ORDER_|YES|Long(19)|排序
+ORDER_BY_|YES|Long(19)|排序
 ORG_CODE|YES|String(255)|组织代码
 PARENT_CODE|YES|String(255)|父级代码
 PARENT_TREE_CODE|YES|String(1023)|父级树代码
@@ -130,7 +130,7 @@ FLAG_OBJECT_CODE|YES|String(255)|标识对象代码(工作流：工作流标识�
 JSON_DATA|YES|String()|JSON数据
 LAST_MODIFIED_BY_CODE|YES|String(255)|最后修改人代码
 LAST_MODIFIED_DATE|YES|Date(19)|最后修改时间
-ORDER_|YES|Long(19)|排序
+ORDER_BY_|YES|Long(19)|排序
 ORG_CODE|YES|String(255)|组织代码
 PERMISSION_CODE|YES|String(255)|许可代码
 ROLE_CODE|YES|String(255)|角色代码
@@ -156,7 +156,7 @@ JSON_DATA|YES|String()|JSON数据
 LAST_MODIFIED_BY_CODE|YES|String(255)|最后修改人代码
 LAST_MODIFIED_DATE|YES|Date(19)|最后修改时间
 NAME|YES|String(255)|名称
-ORDER_|YES|Long(19)|排序
+ORDER_BY_|YES|Long(19)|排序
 ORG_CODE|YES|String(255)|组织代码
 PARENT_CODE|YES|String(255)|父级代码
 PARENT_TREE_CODE|YES|String(1023)|父级树代码
@@ -184,7 +184,7 @@ FLAG_OBJECT_CODE|YES|String(255)|标识对象代码(工作流：工作流标识�
 JSON_DATA|YES|String()|JSON数据
 LAST_MODIFIED_BY_CODE|YES|String(255)|最后修改人代码
 LAST_MODIFIED_DATE|YES|Date(19)|最后修改时间
-ORDER_|YES|Long(19)|排序
+ORDER_BY_|YES|Long(19)|排序
 ORG_CODE|YES|String(255)|组织代码
 PERMISSION_CODE|YES|String(255)|许可代码
 SITE_CODE|YES|String(255)|站点代码
@@ -209,7 +209,7 @@ FLAG_OBJECT_CODE|YES|String(255)|标识对象代码(工作流：工作流标识�
 JSON_DATA|YES|String()|JSON数据
 LAST_MODIFIED_BY_CODE|YES|String(255)|最后修改人代码
 LAST_MODIFIED_DATE|YES|Date(19)|最后修改时间
-ORDER_|YES|Long(19)|排序
+ORDER_BY_|YES|Long(19)|排序
 ORG_CODE|YES|String(255)|组织代码
 ROLE_CODE|YES|String(255)|角色代码
 SITE_CODE|YES|String(255)|站点代码
@@ -234,7 +234,7 @@ FLAG_OBJECT_CODE|YES|String(255)|标识对象代码(工作流：工作流标识�
 JSON_DATA|YES|String()|JSON数据
 LAST_MODIFIED_BY_CODE|YES|String(255)|最后修改人代码
 LAST_MODIFIED_DATE|YES|Date(19)|最后修改时间
-ORDER_|YES|Long(19)|排序
+ORDER_BY_|YES|Long(19)|排序
 ORG_CODE|YES|String(255)|组织代码
 SITE_CODE|YES|String(255)|站点代码
 STATE_CODE|YES|String(255)|状态代码(数据字典)
@@ -261,7 +261,7 @@ JSON_DATA|YES|String()|JSON数据
 LAST_MODIFIED_BY_CODE|YES|String(255)|最后修改人代码
 LAST_MODIFIED_DATE|YES|Date(19)|最后修改时间
 OAUTH_CONSUMER_ID|NO|String(255)|授权消费标识
-ORDER_|YES|Long(19)|排序
+ORDER_BY_|YES|Long(19)|排序
 ORG_CODE|YES|String(255)|组织代码
 SITE_CODE|YES|String(255)|站点代码
 STATE_CODE|YES|String(255)|状态代码(数据字典)
@@ -284,7 +284,7 @@ FLAG_OBJECT_CODE|YES|String(255)|标识对象代码(工作流：工作流标识�
 JSON_DATA|YES|String()|JSON数据
 LAST_MODIFIED_BY_CODE|YES|String(255)|最后修改人代码
 LAST_MODIFIED_DATE|YES|Date(19)|最后修改时间
-ORDER_|YES|Long(19)|排序
+ORDER_BY_|YES|Long(19)|排序
 ORG_CODE|YES|String(255)|组织代码
 SCOPE|YES|String(511)|范围
 SITE_CODE|YES|String(255)|站点代码

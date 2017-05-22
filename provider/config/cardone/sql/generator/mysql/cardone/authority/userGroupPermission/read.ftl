@@ -34,7 +34,7 @@ LAST_MODIFIED_BY_CODE AS lastModifiedByCode
 LAST_MODIFIED_DATE AS lastModifiedDate
 <#break>
 <#case "orderBy">
-ORDER_ AS order
+ORDER_BY_ AS order
 <#break>
 <#case "orgCode">
 ORG_CODE AS orgCode
