@@ -1,4 +1,4 @@
-SELECT
-COUNT(1)
-FROM c1_role t
+select
+count(1)
+from c1_role t
 <#include "page.where.ftl">

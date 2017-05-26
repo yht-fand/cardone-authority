@@ -1,4 +1,4 @@
-SELECT
-COUNT(1)
-FROM c1_permission t
+select
+count(1)
+from c1_permission t
 <#include "page.where.ftl">

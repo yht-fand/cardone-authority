@@ -1,4 +1,28 @@
-SELECT T.*
-FROM c1_role t
-<#include "page.where.ftl">
+SELECT
+t.role_id,
+t.role_code,
+t.name,
+t.type_code,
+t.parent_code,
+t.parent_tree_name,
+t.parent_tree_code,
+t.created_by_code,
+t.created_date,
+t.last_modified_by_code,
+t.last_modified_date,
+t.begin_date,
+t.end_date,
+t.flag_code,
+t.state_code,
+t.data_state_code
+FROM
+c1_role t
+<#if cardone.StringUtils.isNotBlank(roleId)>
+WHERE t.role_id = :roleId
+<#else>
+    <#include "page.where.ftl">
+ORDER BY t.PARENT_code,
+t.role_code,
+t.CREATED_date
 limit <#if pageSize??>:pageSize<#else>10</#if> OFFSET <#if offset??>:offset<#else>0</#if>
+</#if>
