@@ -27,7 +27,6 @@
   "output": {
     "datas": {
       "newArrayListFunc": {
-        "output": {
           "batchNo": "batch_no",
           "beginDate": "begin_date",
           "clientSecret": "client_secret",
@@ -49,7 +48,6 @@
           "stateCode": "state_code",
           "systemInfoCode": "system_info_code",
           "version": "version_"
-        }
       }
     },
     "totalElements": "total",
