@@ -1,4 +1,4 @@
-SELECT
+select
 t.role_id,
 t.role_code,
 t.name,
@@ -15,14 +15,13 @@ t.end_date,
 t.flag_code,
 t.state_code,
 t.data_state_code
-FROM
-c1_role t
+from c1_role t
 <#if cardone.StringUtils.isNotBlank(roleId)>
 WHERE t.role_id = :roleId
 <#else>
     <#include "page.where.ftl">
-ORDER BY t.PARENT_code,
+order by t.parent_code,
 t.role_code,
-t.CREATED_date
+t.created_date
 limit <#if pageSize??>:pageSize<#else>10</#if> OFFSET <#if offset??>:offset<#else>0</#if>
 </#if>

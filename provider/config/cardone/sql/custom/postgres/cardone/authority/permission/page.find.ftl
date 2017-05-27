@@ -1,4 +1,4 @@
-SELECT
+select
 t.permission_id,
 t.permission_code,
 t.name,
@@ -15,10 +15,10 @@ t.end_date,
 t.flag_code,
 t.state_code,
 t.data_state_code
-FROM
+from
 c1_permission t
 <#if cardone.StringUtils.isNotBlank(permissionId)>
-WHERE t.permission_id = :permissionId
+where t.permission_id = :permissionId
 <#else>
     <#include "page.where.ftl">
 ORDER BY t.PARENT_code,
