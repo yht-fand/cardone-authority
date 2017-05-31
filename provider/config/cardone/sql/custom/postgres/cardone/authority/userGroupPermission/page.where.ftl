@@ -18,7 +18,7 @@ ${prefixName?string('WHERE ', 'AND ')}((ug.begin_date is null OR ug.begin_date >
     <#assign prefixName = false>
 </#if>
 <#if cardone.ObjectUtils.anyNotNull(endTime)>
-${prefixName?string('WHERE ', 'AND ')}((ug.begin_date is null OR ug.begin_date <= :endTime) OR (ug.end_date is null OR ug.end_date <= :endTime))
+${prefixName?string('WHERE ', 'AND ')}((ug.begin_date is null OR ug.begin_date < :endTime) OR (ug.end_date is null OR ug.end_date < :endTime))
     <#assign prefixName = false>
 </#if>
 <#if cardone.StringUtils.isNotBlank(flagCode)>
