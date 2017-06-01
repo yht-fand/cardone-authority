@@ -10,7 +10,10 @@
     },
     "messages": {
       "rolePermissionIds": {
-        "required": "角色与许可标识集合不能为空值!"
+        "required": {
+          "code": "rolePermissionIds required",
+          "defaultMessage": "角色与许可标识集合必填"
+        }
       }
     }
   }

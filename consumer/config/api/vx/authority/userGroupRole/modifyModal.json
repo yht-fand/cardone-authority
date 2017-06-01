@@ -1,0 +1,44 @@
+{
+  "input": {
+    "userGroupRoleId": "userGroupRoleId"
+  },
+  "validation": {
+    "rules": {
+      "userGroupRoleId": {
+        "required": true
+      }
+    },
+    "messages": {
+      "userGroupRoleId": {
+        "required": {
+          "code": "userGroupRoleId required",
+          "defaultMessage": "用户组与角色标识必填"
+        }
+      }
+    }
+  },
+  "output": {
+    "batchNo": "batch_no",
+    "beginDate": "begin_date",
+    "createdByCode": "created_by_code",
+    "createdDate": "created_date",
+    "dataStateCode": "data_state_code",
+    "departmentCode": "department_code",
+    "endDate": "end_date",
+    "flagCode": "flag_code",
+    "flagObjectCode": "flag_object_code",
+    "jsonData": "json_data",
+    "lastModifiedByCode": "last_modified_by_code",
+    "lastModifiedDate": "last_modified_date",
+    "orderBy": "order_by_",
+    "orgCode": "org_code",
+    "personalCode": "personal_code",
+    "roleCode": "role_code",
+    "siteCode": "site_code",
+    "stateCode": "state_code",
+    "systemInfoCode": "system_info_code",
+    "userGroupCode": "user_group_code",
+    "userGroupRoleId": "user_group_role_id",
+    "version": "version_"
+  }
+}

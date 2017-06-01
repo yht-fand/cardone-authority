@@ -10,7 +10,10 @@
     },
     "messages": {
       "userPermissionIds": {
-        "required": "用户与许可标识集合不能为空值!"
+        "required": {
+          "code": "userPermissionIds required",
+          "defaultMessage": "用户与许可标识集合必填"
+        }
       }
     }
   }

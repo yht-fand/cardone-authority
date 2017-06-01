@@ -38,14 +38,32 @@
     },
     "messages": {
       "userRoleCode": {
-        "required": "必填",
-        "minlength": "需3个字符以上",
-        "maxlength": "需小于255个字符"
+        "required": {
+          "code": "userRoleCode required",
+          "defaultMessage": "用户与角色编号必填"
+        },
+        "minlength": {
+          "code": "userRoleCode minlength",
+          "defaultMessage": "用户与角色编号需{0}个字符以上"
+        },
+        "maxlength": {
+          "code": "userRoleCode maxlength",
+          "defaultMessage": "用户与角色编号需小于{0}个字符"
+        }
       },
       "name": {
-        "required": "名称不能为空值!",
-        "minlength": "需3个字符以上",
-        "maxlength": "需小于255个字符"
+        "required": {
+          "code": "name required",
+          "defaultMessage": "用户与角色名称必填"
+        },
+        "minlength": {
+          "code": "name minlength",
+          "defaultMessage": "用户与角色名称需{0}个字符以上"
+        },
+        "maxlength": {
+          "code": "name maxlength",
+          "defaultMessage": "用户与角色名称需小于{0}个字符"
+        }
       }
     }
   }

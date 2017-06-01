@@ -1,0 +1,42 @@
+{
+  "output": {
+    "permission_add": {
+      "authorityFunc": {
+        "code": "authority:userRole:add"
+      }
+    },
+    "permission_modify": {
+      "authorityFunc": {
+        "code": "authority:userRole:modify"
+      }
+    },
+    "permission_delete": {
+      "authorityFunc": {
+        "code": "authority:userRole:delete"
+      }
+    },
+    "permission_impData": {
+      "authorityFunc": {
+        "code": "authority:userRole:impData"
+      }
+    },
+    "permission_expData": {
+      "authorityFunc": {
+        "code": "authority:userRole:expData"
+      }
+    },
+    "startTime": {
+      "dateFormatFunc": {
+        "plusDays": -6,
+		"format": "yyyy-MM-dd",
+		"isNotNull": true
+      }
+    },
+    "endTime": {
+      "dateFormatFunc": {
+		"format": "yyyy-MM-dd",
+		"isNotNull": true
+      }
+    }
+  }
+}

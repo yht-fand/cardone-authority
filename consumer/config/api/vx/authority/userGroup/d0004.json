@@ -10,7 +10,10 @@
     },
     "messages": {
       "userGroupIds": {
-        "required": "用户组标识集合不能为空值!"
+        "required": {
+          "code": "userGroupIds required",
+          "defaultMessage": "用户组标识集合必填"
+        }
       }
     }
   }

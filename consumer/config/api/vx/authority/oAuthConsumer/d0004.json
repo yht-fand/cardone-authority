@@ -10,7 +10,10 @@
     },
     "messages": {
       "oAuthConsumerIds": {
-        "required": "授权消费标识集合不能为空值!"
+        "required": {
+          "code": "oAuthConsumerIds required",
+          "defaultMessage": "授权消费标识集合必填"
+        }
       }
     }
   }

@@ -10,7 +10,10 @@
     },
     "messages": {
       "tokenInfoIds": {
-        "required": "令牌信息标识集合不能为空值!"
+        "required": {
+          "code": "tokenInfoIds required",
+          "defaultMessage": "令牌信息标识集合必填"
+        }
       }
     }
   }

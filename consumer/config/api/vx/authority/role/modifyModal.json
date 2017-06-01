@@ -1,0 +1,48 @@
+{
+  "input": {
+    "roleId": "roleId"
+  },
+  "validation": {
+    "rules": {
+      "roleId": {
+        "required": true
+      }
+    },
+    "messages": {
+      "roleId": {
+        "required": {
+          "code": "roleId required",
+          "defaultMessage": "角色标识必填"
+        }
+      }
+    }
+  },
+  "output": {
+    "batchNo": "batch_no",
+    "beginDate": "begin_date",
+    "createdByCode": "created_by_code",
+    "createdDate": "created_date",
+    "dataStateCode": "data_state_code",
+    "departmentCode": "department_code",
+    "endDate": "end_date",
+    "flagCode": "flag_code",
+    "flagObjectCode": "flag_object_code",
+    "jsonData": "json_data",
+    "lastModifiedByCode": "last_modified_by_code",
+    "lastModifiedDate": "last_modified_date",
+    "name": "name",
+    "orderBy": "order_by_",
+    "orgCode": "org_code",
+    "parentCode": "parent_code",
+    "parentTreeCode": "parent_tree_code",
+    "parentTreeName": "parent_tree_name",
+    "personalCode": "personal_code",
+    "roleCode": "role_code",
+    "roleId": "role_id",
+    "siteCode": "site_code",
+    "stateCode": "state_code",
+    "systemInfoCode": "system_info_code",
+    "typeCode": "type_code",
+    "version": "version_"
+  }
+}

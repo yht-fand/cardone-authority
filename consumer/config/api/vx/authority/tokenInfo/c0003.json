@@ -40,14 +40,32 @@
     },
     "messages": {
       "tokenInfoCode": {
-        "required": "必填",
-        "minlength": "需3个字符以上",
-        "maxlength": "需小于255个字符"
+        "required": {
+          "code": "tokenInfoCode required",
+          "defaultMessage": "令牌信息编号必填"
+        },
+        "minlength": {
+          "code": "tokenInfoCode minlength",
+          "defaultMessage": "令牌信息编号需{0}个字符以上"
+        },
+        "maxlength": {
+          "code": "tokenInfoCode maxlength",
+          "defaultMessage": "令牌信息编号需小于{0}个字符"
+        }
       },
       "name": {
-        "required": "名称不能为空值!",
-        "minlength": "需3个字符以上",
-        "maxlength": "需小于255个字符"
+        "required": {
+          "code": "name required",
+          "defaultMessage": "令牌信息名称必填"
+        },
+        "minlength": {
+          "code": "name minlength",
+          "defaultMessage": "令牌信息名称需{0}个字符以上"
+        },
+        "maxlength": {
+          "code": "name maxlength",
+          "defaultMessage": "令牌信息名称需小于{0}个字符"
+        }
       }
     }
   }

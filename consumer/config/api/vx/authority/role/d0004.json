@@ -10,7 +10,10 @@
     },
     "messages": {
       "roleIds": {
-        "required": "角色标识集合不能为空值!"
+        "required": {
+          "code": "roleIds required",
+          "defaultMessage": "角色标识集合必填"
+        }
       }
     }
   }
