@@ -10,10 +10,7 @@
     },
     "messages": {
       "userRoleId": {
-        "required": {
-          "code": "userRoleId required",
-          "defaultMessage": "用户与角色标识必填"
-        }
+        "required": "用户与角色标识必填"
       }
     }
   },

@@ -10,10 +10,7 @@
     },
     "messages": {
       "rolePermissionId": {
-        "required": {
-          "code": "rolePermissionId required",
-          "defaultMessage": "角色与许可标识必填"
-        }
+        "required": "角色与许可标识必填"
       }
     }
   },

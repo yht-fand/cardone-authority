@@ -38,32 +38,14 @@
     },
     "messages": {
       "userGroupRoleCode": {
-        "required": {
-          "code": "userGroupRoleCode required",
-          "defaultMessage": "用户组与角色编号必填"
-        },
-        "minlength": {
-          "code": "userGroupRoleCode minlength",
-          "defaultMessage": "用户组与角色编号需{0}个字符以上"
-        },
-        "maxlength": {
-          "code": "userGroupRoleCode maxlength",
-          "defaultMessage": "用户组与角色编号需小于{0}个字符"
-        }
+        "required": "用户组与角色编号必填",
+        "minlength": "用户组与角色编号需{0}个字符以上",
+        "maxlength": "用户组与角色编号需小于{0}个字符"
       },
       "name": {
-        "required": {
-          "code": "name required",
-          "defaultMessage": "用户组与角色名称必填"
-        },
-        "minlength": {
-          "code": "name minlength",
-          "defaultMessage": "用户组与角色名称需{0}个字符以上"
-        },
-        "maxlength": {
-          "code": "name maxlength",
-          "defaultMessage": "用户组与角色名称需小于{0}个字符"
-        }
+        "required": "用户组与角色名称必填",
+        "minlength": "用户组与角色名称需{0}个字符以上",
+        "maxlength": "用户组与角色名称需小于{0}个字符"
       }
     }
   }

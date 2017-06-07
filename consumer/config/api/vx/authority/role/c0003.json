@@ -42,32 +42,14 @@
     },
     "messages": {
       "roleCode": {
-        "required": {
-          "code": "roleCode required",
-          "defaultMessage": "角色编号必填"
-        },
-        "minlength": {
-          "code": "roleCode minlength",
-          "defaultMessage": "角色编号需{0}个字符以上"
-        },
-        "maxlength": {
-          "code": "roleCode maxlength",
-          "defaultMessage": "角色编号需小于{0}个字符"
-        }
+        "required": "角色编号必填",
+        "minlength": "角色编号需{0}个字符以上",
+        "maxlength": "角色编号需小于{0}个字符"
       },
       "name": {
-        "required": {
-          "code": "name required",
-          "defaultMessage": "角色名称必填"
-        },
-        "minlength": {
-          "code": "name minlength",
-          "defaultMessage": "角色名称需{0}个字符以上"
-        },
-        "maxlength": {
-          "code": "name maxlength",
-          "defaultMessage": "角色名称需小于{0}个字符"
-        }
+        "required": "角色名称必填",
+        "minlength": "角色名称需{0}个字符以上",
+        "maxlength": "角色名称需小于{0}个字符"
       }
     }
   }

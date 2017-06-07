@@ -1,6 +1,10 @@
 {
   "input": {
-    "userGroupPermissionIds": "userGroupPermissionIds"
+    "userGroupPermissionIds": {
+      "stringToListFunc": {
+        "idName": "userGroupPermissionId"
+      }
+    }
   },
   "validation": {
     "rules": {
@@ -10,10 +14,7 @@
     },
     "messages": {
       "userGroupPermissionIds": {
-        "required": {
-          "code": "userGroupPermissionIds required",
-          "defaultMessage": "用户组与许可标识集合必填"
-        }
+        "required": "用户组与许可标识集合必填"
       }
     }
   }

@@ -10,10 +10,7 @@
     },
     "messages": {
       "tokenInfoId": {
-        "required": {
-          "code": "tokenInfoId required",
-          "defaultMessage": "令牌信息标识必填"
-        }
+        "required": "令牌信息标识必填"
       }
     }
   },

@@ -1,6 +1,10 @@
 {
   "input": {
-    "userGroupRoleIds": "userGroupRoleIds"
+    "userGroupRoleIds": {
+      "stringToListFunc": {
+        "idName": "userGroupRoleId"
+      }
+    }
   },
   "validation": {
     "rules": {
@@ -10,10 +14,7 @@
     },
     "messages": {
       "userGroupRoleIds": {
-        "required": {
-          "code": "userGroupRoleIds required",
-          "defaultMessage": "用户组与角色标识集合必填"
-        }
+        "required": "用户组与角色标识集合必填"
       }
     }
   }

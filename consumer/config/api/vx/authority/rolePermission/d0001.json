@@ -1,6 +1,13 @@
 {
   "input": {
-    "rolePermissionIds": "rolePermissionIds"
+    "rolePermissionIds": {
+      "stringToListFunc": {
+        "idName": "rolePermissionId",
+        "map": {
+          "dataStateCode": "0"
+        }
+      }
+    }
   },
   "validation": {
     "rules": {
@@ -10,10 +17,7 @@
     },
     "messages": {
       "rolePermissionIds": {
-        "required": {
-          "code": "rolePermissionIds required",
-          "defaultMessage": "角色与许可标识集合必填"
-        }
+        "required": "角色与许可标识集合必填"
       }
     }
   }

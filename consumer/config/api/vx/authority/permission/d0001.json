@@ -1,6 +1,13 @@
 {
   "input": {
-    "permissionIds": "permissionIds"
+    "permissionIds": {
+      "stringToListFunc": {
+        "idName": "permissionId",
+        "map": {
+          "dataStateCode": "0"
+        }
+      }
+    }
   },
   "validation": {
     "rules": {
@@ -10,10 +17,7 @@
     },
     "messages": {
       "permissionIds": {
-        "required": {
-          "code": "permissionIds required",
-          "defaultMessage": "许可标识集合必填"
-        }
+        "required": "许可标识集合必填"
       }
     }
   }

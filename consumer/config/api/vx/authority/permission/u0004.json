@@ -40,24 +40,12 @@
     },
     "messages": {
       "permissionId": {
-        "required": {
-          "code": "permissionId required",
-          "defaultMessage": "许可标识必填",
-        }
+        "required": "许可标识必填"
       },
       "name": {
-        "required": {
-          "code": "name required",
-          "defaultMessage": "许可名称必填",
-        },
-        "minlength": {
-          "code": "name minlength",
-          "defaultMessage": "许可名称需{0}个字符以上",
-        },
-        "maxlength": {
-          "code": "name maxlength",
-          "defaultMessage": "许可名称需小于{0}个字符"
-        }
+        "required": "许可名称必填",
+        "minlength": "许可名称需{0}个字符以上",
+        "maxlength": "许可名称需小于{0}个字符"
       }
     }
   }

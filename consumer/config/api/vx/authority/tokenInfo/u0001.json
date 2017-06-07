@@ -38,24 +38,12 @@
     },
     "messages": {
       "tokenInfoId": {
-        "required": {
-          "code": "tokenInfoId required",
-          "defaultMessage": "令牌信息标识必填"
-        }
+        "required": "令牌信息标识必填"
       },
       "name": {
-        "required": {
-          "code": "name required",
-          "defaultMessage": "令牌信息名称必填"
-        },
-        "minlength": {
-          "code": "name minlength",
-          "defaultMessage": "令牌信息名称需{0}个字符以上"
-        },
-        "maxlength": {
-          "code": "name maxlength",
-          "defaultMessage": "令牌信息名称需小于{0}个字符"
-        }
+        "required": "令牌信息名称必填",
+        "minlength": "令牌信息名称需{0}个字符以上",
+        "maxlength": "令牌信息名称需小于{0}个字符"
       }
     }
   }

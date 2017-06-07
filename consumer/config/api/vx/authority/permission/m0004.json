@@ -42,32 +42,14 @@
     },
     "messages": {
       "permissionCode": {
-        "required": {
-          "code": "permissionCode required",
-          "defaultMessage": "许可编号必填"
-        },
-        "minlength": {
-          "code": "permissionCode minlength",
-          "defaultMessage": "许可编号需{0}个字符以上"
-        },
-        "maxlength": {
-          "code": "permissionCode maxlength",
-          "defaultMessage": "许可编号需小于{0}个字符"
-        }
+        "required": "许可编号必填",
+        "minlength": "许可编号需{0}个字符以上",
+        "maxlength": "许可编号需小于{0}个字符"
       },
       "name": {
-        "required": {
-          "code": "name required",
-          "defaultMessage": "许可名称必填"
-        },
-        "minlength": {
-          "code": "name minlength",
-          "defaultMessage": "许可名称需{0}个字符以上"
-        },
-        "maxlength": {
-          "code": "name maxlength",
-          "defaultMessage": "许可名称需小于{0}个字符"
-        }
+        "required": "许可名称必填",
+        "minlength": "许可名称需{0}个字符以上",
+        "maxlength": "许可名称需小于{0}个字符"
       }
     }
   },

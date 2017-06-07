@@ -10,10 +10,7 @@
     },
     "messages": {
       "permissionId": {
-        "required": {
-          "code": "permissionId required",
-          "defaultMessage": "许可标识必填"
-        }
+        "required": "许可标识必填"
       }
     }
   },

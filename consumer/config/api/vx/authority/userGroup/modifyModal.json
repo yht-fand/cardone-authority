@@ -10,10 +10,7 @@
     },
     "messages": {
       "userGroupId": {
-        "required": {
-          "code": "userGroupId required",
-          "defaultMessage": "用户组标识必填"
-        }
+        "required": "用户组标识必填"
       }
     }
   },

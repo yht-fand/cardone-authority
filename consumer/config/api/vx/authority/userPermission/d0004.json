@@ -1,6 +1,13 @@
 {
   "input": {
-    "userPermissionIds": "userPermissionIds"
+    "userPermissionIds": {
+      "stringToListFunc": {
+        "idName": "userPermissionId",
+        "map": {
+          "dataStateCode": "0"
+        }
+      }
+    }
   },
   "validation": {
     "rules": {
@@ -10,10 +17,7 @@
     },
     "messages": {
       "userPermissionIds": {
-        "required": {
-          "code": "userPermissionIds required",
-          "defaultMessage": "用户与许可标识集合必填"
-        }
+        "required": "用户与许可标识集合必填"
       }
     }
   }

@@ -10,10 +10,7 @@
     },
     "messages": {
       "oAuthConsumerId": {
-        "required": {
-          "code": "oAuthConsumerId required",
-          "defaultMessage": "授权消费标识必填"
-        }
+        "required": "授权消费标识必填"
       }
     }
   },

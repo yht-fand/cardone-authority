@@ -35,24 +35,12 @@
     },
     "messages": {
       "oAuthConsumerId": {
-        "required": {
-          "code": "oAuthConsumerId required",
-          "defaultMessage": "授权消费标识必填"
-        }
+        "required": "授权消费标识必填"
       },
       "name": {
-        "required": {
-          "code": "name required",
-          "defaultMessage": "授权消费名称必填"
-        },
-        "minlength": {
-          "code": "name minlength",
-          "defaultMessage": "授权消费名称需{0}个字符以上"
-        },
-        "maxlength": {
-          "code": "name maxlength",
-          "defaultMessage": "授权消费名称需小于{0}个字符"
-        }
+        "required": "授权消费名称必填",
+        "minlength": "授权消费名称需{0}个字符以上",
+        "maxlength": "授权消费名称需小于{0}个字符"
       }
     }
   }

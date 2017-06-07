@@ -36,24 +36,12 @@
     },
     "messages": {
       "userGroupPermissionId": {
-        "required": {
-          "code": "userGroupPermissionId required",
-          "defaultMessage": "用户组与许可标识必填"
-        }
+        "required": "用户组与许可标识必填"
       },
       "name": {
-        "required": {
-          "code": "name required",
-          "defaultMessage": "用户组与许可名称必填"
-        },
-        "minlength": {
-          "code": "name minlength",
-          "defaultMessage": "用户组与许可名称需{0}个字符以上"
-        },
-        "maxlength": {
-          "code": "name maxlength",
-          "defaultMessage": "用户组与许可名称需小于{0}个字符"
-        }
+        "required": "用户组与许可名称必填",
+        "minlength": "用户组与许可名称需{0}个字符以上",
+        "maxlength": "用户组与许可名称需小于{0}个字符"
       }
     }
   }

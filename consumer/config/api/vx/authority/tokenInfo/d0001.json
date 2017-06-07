@@ -1,6 +1,13 @@
 {
   "input": {
-    "tokenInfoIds": "tokenInfoIds"
+    "tokenInfoIds": {
+      "stringToListFunc": {
+        "idName": "tokenInfoId",
+        "map": {
+          "dataStateCode": "0"
+        }
+      }
+    }
   },
   "validation": {
     "rules": {
@@ -10,10 +17,7 @@
     },
     "messages": {
       "tokenInfoIds": {
-        "required": {
-          "code": "tokenInfoIds required",
-          "defaultMessage": "令牌信息标识集合必填"
-        }
+        "required": "令牌信息标识集合必填"
       }
     }
   }

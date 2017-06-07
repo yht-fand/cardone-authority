@@ -1,6 +1,13 @@
 {
   "input": {
-    "userGroupUserIds": "userGroupUserIds"
+    "userGroupUserIds": {
+      "stringToListFunc": {
+        "idName": "userGroupUserId",
+        "map": {
+          "dataStateCode": "0"
+        }
+      }
+    }
   },
   "validation": {
     "rules": {
@@ -10,10 +17,7 @@
     },
     "messages": {
       "userGroupUserIds": {
-        "required": {
-          "code": "userGroupUserIds required",
-          "defaultMessage": "用户组与用户标识集合必填"
-        }
+        "required": "用户组与用户标识集合必填"
       }
     }
   }

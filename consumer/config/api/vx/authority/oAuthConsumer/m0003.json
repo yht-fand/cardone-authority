@@ -37,32 +37,14 @@
     },
     "messages": {
       "oAuthConsumerCode": {
-        "required": {
-          "code": "oAuthConsumerCode required",
-          "defaultMessage": "授权消费编号必填"
-        },
-        "minlength": {
-          "code": "oAuthConsumerCode minlength",
-          "defaultMessage": "授权消费编号需{0}个字符以上"
-        },
-        "maxlength": {
-          "code": "oAuthConsumerCode maxlength",
-          "defaultMessage": "授权消费编号需小于{0}个字符"
-        }
+        "required": "授权消费编号必填",
+        "minlength": "授权消费编号需{0}个字符以上",
+        "maxlength": "授权消费编号需小于{0}个字符"
       },
       "name": {
-        "required": {
-          "code": "name required",
-          "defaultMessage": "授权消费名称必填"
-        },
-        "minlength": {
-          "code": "name minlength",
-          "defaultMessage": "授权消费名称需{0}个字符以上"
-        },
-        "maxlength": {
-          "code": "name maxlength",
-          "defaultMessage": "授权消费名称需小于{0}个字符"
-        }
+        "required": "授权消费名称必填",
+        "minlength": "授权消费名称需{0}个字符以上",
+        "maxlength": "授权消费名称需小于{0}个字符"
       }
     }
   },

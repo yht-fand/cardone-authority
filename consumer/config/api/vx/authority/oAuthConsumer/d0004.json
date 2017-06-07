@@ -1,6 +1,13 @@
 {
   "input": {
-    "oAuthConsumerIds": "oAuthConsumerIds"
+    "oAuthConsumerIds": {
+      "stringToListFunc": {
+        "idName": "oAuthConsumerId",
+        "map": {
+          "dataStateCode": "0"
+        }
+      }
+    }
   },
   "validation": {
     "rules": {
@@ -10,10 +17,7 @@
     },
     "messages": {
       "oAuthConsumerIds": {
-        "required": {
-          "code": "oAuthConsumerIds required",
-          "defaultMessage": "授权消费标识集合必填"
-        }
+        "required": "授权消费标识集合必填"
       }
     }
   }

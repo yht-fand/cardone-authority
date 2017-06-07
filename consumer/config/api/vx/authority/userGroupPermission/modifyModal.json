@@ -10,10 +10,7 @@
     },
     "messages": {
       "userGroupPermissionId": {
-        "required": {
-          "code": "userGroupPermissionId required",
-          "defaultMessage": "用户组与许可标识必填"
-        }
+        "required": "用户组与许可标识必填"
       }
     }
   },

@@ -1,6 +1,13 @@
 {
   "input": {
-    "userRoleIds": "userRoleIds"
+    "userRoleIds": {
+      "stringToListFunc": {
+        "idName": "userRoleId",
+        "map": {
+          "dataStateCode": "0"
+        }
+      }
+    }
   },
   "validation": {
     "rules": {
@@ -10,10 +17,7 @@
     },
     "messages": {
       "userRoleIds": {
-        "required": {
-          "code": "userRoleIds required",
-          "defaultMessage": "用户与角色标识集合必填"
-        }
+        "required": "用户与角色标识集合必填"
       }
     }
   }
