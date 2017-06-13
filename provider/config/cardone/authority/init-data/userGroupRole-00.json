@@ -1,7 +1,17 @@
 [
   {
+    "userGroupCode": "administrator-group",
+    "roleCode": "administrator",
+    "flagCode": "init"
+  },
+  {
+    "userGroupCode": "department-administrator-group",
+    "roleCode": "department-administrator",
+    "flagCode": "init"
+  },
+  {
+    "userGroupCode": "general-group",
     "roleCode": "general",
-    "userGroupCode": "general",
     "flagCode": "init"
   }
 ]

@@ -1,13 +1,19 @@
 [
   {
     "typeCode": "init",
-    "userGroupCode": "administrator",
+    "userGroupCode": "administrator-group",
     "name": "管理员组",
     "flagCode": "init"
   },
   {
     "typeCode": "init",
-    "userGroupCode": "general",
+    "userGroupCode": "department-administrator-group",
+    "name": "部门管理组",
+    "flagCode": "init"
+  },
+  {
+    "typeCode": "init",
+    "userGroupCode": "general-group",
     "name": "普通组",
     "flagCode": "init"
   }

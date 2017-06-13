@@ -7,14 +7,14 @@
   },
   {
     "typeCode": "init",
-    "roleCode": "operator",
-    "name": "操作员",
+    "roleCode": "department-administrator",
+    "name": "部门管理",
     "flagCode": "init"
   },
   {
     "typeCode": "init",
     "roleCode": "general",
-    "name": "普通角色",
+    "name": "普通",
     "flagCode": "init"
   }
 ]
