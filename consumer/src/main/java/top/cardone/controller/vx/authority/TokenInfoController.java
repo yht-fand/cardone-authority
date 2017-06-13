@@ -29,7 +29,7 @@ import java.util.Map;
 public class TokenInfoController {
     /**
      * /c0001.json begin
-     **/
+     **xx/
     @RequestMapping("/c0001.json")
     @ResponseBody
     public Object c0001Json(HttpServletRequest request) {
@@ -85,7 +85,7 @@ public class TokenInfoController {
 
     /**
      * /d0001.json begin
-     **/
+     **xx/
     @RequestMapping("/d0001.json")
     @ResponseBody
     public Object d0001Json(HttpServletRequest request) {
@@ -177,7 +177,7 @@ public class TokenInfoController {
 
     /**
      * /r0001.json begin
-     **/
+     **xx/
     @RequestMapping("/r0001.json")
     @ResponseBody
     public Object r0001Json(HttpServletRequest request) {
@@ -188,7 +188,7 @@ public class TokenInfoController {
 
     /**
      * /r0002.json begin
-     **/
+     **xx/
     @RequestMapping("/r0002.json")
     @ResponseBody
     public Object r0002Json(HttpServletRequest request) {
@@ -221,7 +221,7 @@ public class TokenInfoController {
 
     /**
      * /u0001.json begin
-     **/
+     **xx/
     @RequestMapping("/u0001.json")
     @ResponseBody
     public Object u0001Json(HttpServletRequest request) {
@@ -293,7 +293,7 @@ public class TokenInfoController {
 
     /**
      * /modifyModal.json begin
-     **/
+     **xx/
     @RequestMapping("/modifyModal.json")
     @ResponseBody
     public Object modifyModalJson(HttpServletRequest request) {
