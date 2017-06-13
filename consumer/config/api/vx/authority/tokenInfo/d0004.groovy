@@ -26,7 +26,7 @@ class d0001 {
     }
 
     def func(input) {
-        ['data': ApplicationContextHolder.getBean(TokenInfoService.class).updateListCache(input?.tokenInfoIds)]
+        ['deleteCounts': ApplicationContextHolder.getBean(TokenInfoService.class).updateListCache(input?.tokenInfoIds)]
     }
 
     def output(output) {

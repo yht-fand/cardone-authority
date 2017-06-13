@@ -26,7 +26,7 @@ class d0001 {
     }
 
     def func(input) {
-        ['data': ApplicationContextHolder.getBean(RoleService.class).deleteListCache(input?.roleIds)]
+        ['deleteCounts': ApplicationContextHolder.getBean(RoleService.class).deleteListCache(input?.roleIds)]
     }
 
     def output(output) {

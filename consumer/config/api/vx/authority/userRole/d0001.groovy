@@ -26,7 +26,7 @@ class d0001 {
     }
 
     def func(input) {
-        ['data': ApplicationContextHolder.getBean(UserRoleService.class).updateListCache(input?.userRoleIds)]
+        ['deleteCounts': ApplicationContextHolder.getBean(UserRoleService.class).updateListCache(input?.userRoleIds)]
     }
 
     def output(output) {

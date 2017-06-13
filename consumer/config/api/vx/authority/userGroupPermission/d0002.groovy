@@ -26,7 +26,7 @@ class d0001 {
     }
 
     def func(input) {
-        ['data': ApplicationContextHolder.getBean(UserGroupPermissionService.class).deleteListCache(input?.userGroupPermissionIds)]
+        ['deleteCounts': ApplicationContextHolder.getBean(UserGroupPermissionService.class).deleteListCache(input?.userGroupPermissionIds)]
     }
 
     def output(output) {

@@ -26,7 +26,7 @@ class d0001 {
     }
 
     def func(input) {
-        ['data': ApplicationContextHolder.getBean(OAuthConsumerService.class).updateListCache(input?.oAuthConsumerIds)]
+        ['deleteCounts': ApplicationContextHolder.getBean(OAuthConsumerService.class).updateListCache(input?.oAuthConsumerIds)]
     }
 
     def output(output) {
