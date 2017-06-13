@@ -1,15 +1,30 @@
 [
   {
+    "typeCode": "init",
     "userGroupCode": "administrator-group",
     "roleCode": "administrator",
     "flagCode": "init"
   },
   {
-    "userGroupCode": "department-administrator-group",
-    "roleCode": "department-administrator",
+    "typeCode": "init",
+    "userGroupCode": "all-data-administrator-group",
+    "roleCode": "all-data-administrator",
     "flagCode": "init"
   },
   {
+    "typeCode": "init",
+    "userGroupCode": "department-tree-data-administrator-group",
+    "roleCode": "department-tree-data-administrator",
+    "flagCode": "init"
+  },
+  {
+    "typeCode": "init",
+    "userGroupCode": "department-data-administrator-group",
+    "roleCode": "department-data-administrator",
+    "flagCode": "init"
+  },
+  {
+    "typeCode": "init",
     "userGroupCode": "general-group",
     "roleCode": "general",
     "flagCode": "init"

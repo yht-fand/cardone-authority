@@ -1,0 +1,14 @@
+[
+  {
+    "typeCode": "init",
+    "userGroupCode": "administrator-group",
+    "userCode": "admin",
+    "flagCode": "init"
+  },
+  {
+    "typeCode": "init",
+    "userGroupCode": "administrator-group",
+    "userCode": "administrator",
+    "flagCode": "init"
+  }
+]

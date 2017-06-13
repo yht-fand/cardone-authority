@@ -26,6 +26,13 @@
                   value="${app.root}/config/*/authority/init-data/userGroupRole-*.json"/>
     </bean>
 
+    <bean name="top.cardone.authority.service.UserGroupUserService.init"
+          class="top.cardone.data.action.InitDataAction">
+        <property name="serviceBeanId" value="top.cardone.authority.service.UserGroupUserService"/>
+        <property name="jsonFiles"
+                  value="${app.root}/config/*/authority/init-data/userGroupUser-*.json"/>
+    </bean>
+
     <bean name="top.cardone.authority.service.UserRoleService.init" class="top.cardone.data.action.InitDataAction">
         <property name="serviceBeanId" value="top.cardone.authority.service.UserRoleService"/>
         <property name="jsonFiles" value="${app.root}/config/*/authority/init-data/userRole-*.json"/>
@@ -45,6 +52,7 @@
                 <ref bean="top.cardone.authority.service.RoleService.init"/>
                 <ref bean="top.cardone.authority.service.PermissionService.init"/>
                 <ref bean="top.cardone.authority.service.UserGroupRoleService.init"/>
+                <ref bean="top.cardone.authority.service.UserGroupUserService.init"/>
                 <ref bean="top.cardone.authority.service.RolePermissionService.init"/>
                 <ref bean="top.cardone.authority.service.UserRoleService.init"/>
             </list>

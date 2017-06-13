@@ -2,13 +2,25 @@
   {
     "typeCode": "init",
     "roleCode": "administrator",
-    "name": "管理员",
+    "name": "管理",
     "flagCode": "init"
   },
   {
     "typeCode": "init",
-    "roleCode": "department-administrator",
-    "name": "部门管理",
+    "roleCode": "all-data-administrator",
+    "name": "所有数据管理",
+    "flagCode": "init"
+  },
+  {
+    "typeCode": "init",
+    "roleCode": "department-tree-data-administrator",
+    "name": "部门树数据管理",
+    "flagCode": "init"
+  },
+  {
+    "typeCode": "init",
+    "roleCode": "department-data-administrator",
+    "name": "部门数据管理",
     "flagCode": "init"
   },
   {

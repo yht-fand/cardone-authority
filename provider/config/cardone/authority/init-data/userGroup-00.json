@@ -7,14 +7,26 @@
   },
   {
     "typeCode": "init",
-    "userGroupCode": "department-administrator-group",
-    "name": "部门管理组",
+    "userGroupCode": "all-data-administrator-group",
+    "name": "所有数据管理组",
+    "flagCode": "init"
+  },
+  {
+    "typeCode": "init",
+    "userGroupCode": "department-tree-data-administrator-group",
+    "name": "部门树数据管理组(所属部门及以下所有子部门数据)",
+    "flagCode": "init"
+  },
+  {
+    "typeCode": "init",
+    "userGroupCode": "department-data-administrator-group",
+    "name": "部门数据管理组(所属部门数据)",
     "flagCode": "init"
   },
   {
     "typeCode": "init",
     "userGroupCode": "general-group",
-    "name": "普通组",
+    "name": "普通组(个人数据)",
     "flagCode": "init"
   }
 ]
