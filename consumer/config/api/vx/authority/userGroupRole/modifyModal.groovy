@@ -5,7 +5,7 @@ import top.cardone.authority.service.UserGroupRoleService
 import top.cardone.context.ApplicationContextHolder
 import top.cardone.core.CodeException
 
-class modifyModal {
+class modifyModal implements java.io.Serializable {
     def input(input) {
         ["userGroupRoleId": input.userGroupRoleId]
     }

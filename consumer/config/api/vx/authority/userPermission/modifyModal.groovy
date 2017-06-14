@@ -5,7 +5,7 @@ import top.cardone.authority.service.UserPermissionService
 import top.cardone.context.ApplicationContextHolder
 import top.cardone.core.CodeException
 
-class modifyModal {
+class modifyModal implements java.io.Serializable {
     def input(input) {
         ["userPermissionId": input.userPermissionId]
     }
