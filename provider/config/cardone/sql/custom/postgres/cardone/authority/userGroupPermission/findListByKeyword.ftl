@@ -1,6 +1,9 @@
-SELECT d.USERGROUPPERMISSION_CODE  ,d.NAME FROM c1_user_group_permission d
-<#if cardone.StringUtils.isNotBlank(term)>
-WHERE strpos(d.NAME, :term) > 0 OR strpos(d.USERGROUPPERMISSION_CODE, :term) > 0
+SELECT t.USERGROUPPERMISSION_CODE, t.NAME FROM c1_user_group_permission t
+where t.state_code ='1' and t.data_state_code = '1'
+<#if cardone.StringUtils.isBlank(notTerm) >
+    <#if cardone.StringUtils.isNotBlank(term)>
+    and (strpos(t.NAME, :term) > 0 OR strpos(t.USERGROUPPERMISSION_CODE, :term) > 0)
+    </#if>
 </#if>
-ORDER BY d.ORDER_BY_, d.USERGROUPPERMISSION_CODE
+ORDER BY t.ORDER_BY_, t.USERGROUPPERMISSION_CODE
 LIMIT 20

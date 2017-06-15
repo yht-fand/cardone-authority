@@ -1,4 +1,4 @@
-package api.vx.authority.userGroupRole
+package top.cardone.api.vx.authority.userGroupRole
 
 import org.apache.commons.lang3.StringUtils
 import top.cardone.authority.service.UserGroupRoleService

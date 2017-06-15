@@ -1,14 +1,4 @@
 {
-  "input": {
-    "oAuthConsumerIds": {
-      "stringToListFunc": {
-        "idName": "oAuthConsumerId",
-        "map": {
-          "dataStateCode": "0"
-        }
-      }
-    }
-  },
   "validation": {
     "rules": {
       "oAuthConsumerIds": {

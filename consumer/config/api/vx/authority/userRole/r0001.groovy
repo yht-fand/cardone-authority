@@ -1,4 +1,4 @@
-package api.vx.authority.userRole
+package top.cardone.api.vx.authority.userRole
 
 import top.cardone.configuration.service.DictionaryService
 import top.cardone.context.ApplicationContextHolder

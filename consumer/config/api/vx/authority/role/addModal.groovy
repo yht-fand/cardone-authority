@@ -1,4 +1,4 @@
-package api.vx.authority.role
+package top.cardone.api.vx.authority.role
 
 import org.apache.commons.lang3.StringUtils
 import top.cardone.authority.service.RoleService

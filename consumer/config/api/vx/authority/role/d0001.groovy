@@ -1,4 +1,4 @@
-package api.vx.authority.role
+package top.cardone.api.vx.authority.role
 
 import org.apache.commons.lang3.StringUtils
 import top.cardone.authority.service.RoleService
@@ -26,10 +26,10 @@ class d0001 implements java.io.Serializable {
     }
 
     def func(input) {
-        ['deleteCounts': ApplicationContextHolder.getBean(RoleService.class).updateListCache(input?.roleIds)]
+        ApplicationContextHolder.getBean(RoleService.class).updateListCache(input?.roleIds)
     }
 
     def output(output) {
-        output
+        ['deleteCounts': output]
     }
 }

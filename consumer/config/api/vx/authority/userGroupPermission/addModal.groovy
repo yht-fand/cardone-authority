@@ -1,4 +1,4 @@
-package api.vx.authority.userGroupPermission
+package top.cardone.api.vx.authority.userGroupPermission
 
 import org.apache.commons.lang3.StringUtils
 import top.cardone.authority.service.UserGroupPermissionService

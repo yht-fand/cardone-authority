@@ -1,4 +1,4 @@
-package api.vx.authority.permission
+package top.cardone.api.vx.authority.permission
 
 import org.apache.commons.lang3.time.DateFormatUtils
 import org.apache.shiro.SecurityUtils

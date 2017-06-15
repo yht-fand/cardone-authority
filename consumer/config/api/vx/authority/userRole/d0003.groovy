@@ -1,4 +1,4 @@
-package api.vx.authority.userRole
+package top.cardone.api.vx.authority.userRole
 
 import org.apache.commons.lang3.StringUtils
 import top.cardone.authority.service.UserRoleService
@@ -26,10 +26,10 @@ class d0001 implements java.io.Serializable {
     }
 
     def func(input) {
-        ['deleteCounts': ApplicationContextHolder.getBean(UserRoleService.class).updateListCache(input?.userRoleIds)]
+        ApplicationContextHolder.getBean(UserRoleService.class).updateListCache(input?.userRoleIds)
     }
 
     def output(output) {
-        output
+        ['deleteCounts': output]
     }
 }

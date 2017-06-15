@@ -1,4 +1,4 @@
-package api.vx.authority.userRole
+package top.cardone.api.vx.authority.userRole
 
 import org.apache.commons.lang3.StringUtils
 import top.cardone.authority.service.UserRoleService
@@ -9,28 +9,30 @@ class c0001 implements java.io.Serializable {
     def input(input) {
         def newInput = [:]
 
-		newInput['batchNo'] = input['batchNo']
-		newInput['beginDate'] = input['beginDate']
-		newInput['createdByCode'] = input['createdByCode']
-		newInput['createdDate'] = input['createdDate']
-		newInput['dataStateCode'] = input['dataStateCode']
-		newInput['departmentCode'] = input['departmentCode']
-		newInput['endDate'] = input['endDate']
-		newInput['flagCode'] = input['flagCode']
-		newInput['flagObjectCode'] = input['flagObjectCode']
-		newInput['jsonData'] = input['jsonData']
-		newInput['lastModifiedByCode'] = input['lastModifiedByCode']
-		newInput['lastModifiedDate'] = input['lastModifiedDate']
-		newInput['orderBy'] = input['orderBy']
-		newInput['orgCode'] = input['orgCode']
-		newInput['personalCode'] = input['personalCode']
-		newInput['roleCode'] = input['roleCode']
-		newInput['siteCode'] = input['siteCode']
-		newInput['stateCode'] = input['stateCode']
-		newInput['systemInfoCode'] = input['systemInfoCode']
-		newInput['userCode'] = input['userCode']
-		newInput['userRoleId'] = input['userRoleId']
-		newInput['version'] = input['version']
+		newInput?.batchNo = input?.batchNo
+		newInput?.beginDate = input?.beginDate
+		newInput?.createdByCode = input?.createdByCode
+		newInput?.createdDate = input?.createdDate
+		newInput?.dataStateCode = input?.dataStateCode
+		newInput?.departmentCode = input?.departmentCode
+		newInput?.endDate = input?.endDate
+		newInput?.flagCode = input?.flagCode
+		newInput?.flagObjectCode = input?.flagObjectCode
+		newInput?.jsonData = input?.jsonData
+		newInput?.lastModifiedByCode = input?.lastModifiedByCode
+		newInput?.lastModifiedDate = input?.lastModifiedDate
+		newInput?.orderBy = input?.orderBy
+		newInput?.orgCode = input?.orgCode
+		newInput?.personalCode = input?.personalCode
+		newInput?.roleCode = input?.roleCode
+		newInput?.siteCode = input?.siteCode
+		newInput?.stateCode = input?.stateCode
+		newInput?.systemInfoCode = input?.systemInfoCode
+		newInput?.userCode = input?.userCode
+		newInput?.userRoleId = input?.userRoleId
+		newInput?.version = input?.version
+
+        newInput.flagCode = StringUtils.defaultIfBlank(input.flagCode, "input")
 
         newInput
     }
@@ -60,7 +62,7 @@ class c0001 implements java.io.Serializable {
 //          throw new CodeException("name maxlength", "用户与角色名称需小于{0}个字符", 255)
 //      }
 		
-		def readOne = ['userRoleCode': input.userRoleCode]
+		def readOne = ['userRoleCode': input.userRoleCode, "dataStateCode": "1"]
 
 		def count = ApplicationContextHolder.getBean(UserRoleService.class).readOne(Integer.class, readOne)
 
@@ -74,6 +76,6 @@ class c0001 implements java.io.Serializable {
     }
 
     def output(output) {
-		['insertCount': output]
+		['insertCount': output]        
     }
 }

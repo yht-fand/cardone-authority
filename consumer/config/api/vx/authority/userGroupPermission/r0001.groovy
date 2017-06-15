@@ -1,4 +1,4 @@
-package api.vx.authority.userGroupPermission
+package top.cardone.api.vx.authority.userGroupPermission
 
 import top.cardone.configuration.service.DictionaryService
 import top.cardone.context.ApplicationContextHolder

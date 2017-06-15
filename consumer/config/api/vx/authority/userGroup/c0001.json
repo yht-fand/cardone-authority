@@ -1,32 +1,4 @@
 {
-  "input": {
-    "batchNo": "batchNo",
-    "beginDate": "beginDate",
-    "createdByCode": "createdByCode",
-    "createdDate": "createdDate",
-    "dataStateCode": "dataStateCode",
-    "departmentCode": "departmentCode",
-    "endDate": "endDate",
-    "flagCode": "flagCode",
-    "flagObjectCode": "flagObjectCode",
-    "jsonData": "jsonData",
-    "lastModifiedByCode": "lastModifiedByCode",
-    "lastModifiedDate": "lastModifiedDate",
-    "name": "name",
-    "orderBy": "orderBy",
-    "orgCode": "orgCode",
-    "parentCode": "parentCode",
-    "parentTreeCode": "parentTreeCode",
-    "parentTreeName": "parentTreeName",
-    "personalCode": "personalCode",
-    "siteCode": "siteCode",
-    "stateCode": "stateCode",
-    "systemInfoCode": "systemInfoCode",
-    "typeCode": "typeCode",
-    "userGroupCode": "userGroupCode",
-    "userGroupId": "userGroupId",
-    "version": "version"
-  },
   "validation": {
     "rules": {
       "userGroupCode": {

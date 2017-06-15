@@ -1,27 +1,4 @@
 {
-  "input": {
-    "batchNo": "batchNo",
-    "beginDate": "beginDate",
-    "clientSecret": "clientSecret",
-    "createdByCode": "createdByCode",
-    "createdDate": "createdDate",
-    "dataStateCode": "dataStateCode",
-    "departmentCode": "departmentCode",
-    "endDate": "endDate",
-    "flagCode": "flagCode",
-    "flagObjectCode": "flagObjectCode",
-    "jsonData": "jsonData",
-    "lastModifiedByCode": "lastModifiedByCode",
-    "lastModifiedDate": "lastModifiedDate",
-    "oauthConsumerId": "oauthConsumerId",
-    "orderBy": "orderBy",
-    "orgCode": "orgCode",
-    "personalCode": "personalCode",
-    "siteCode": "siteCode",
-    "stateCode": "stateCode",
-    "systemInfoCode": "systemInfoCode",
-    "version": "version"
-  },
   "validation": {
     "rules": {
       "oAuthConsumerId": {

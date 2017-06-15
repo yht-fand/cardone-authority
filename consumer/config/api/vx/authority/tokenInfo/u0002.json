@@ -1,30 +1,4 @@
 {
-  "input": {
-    "batchNo": "batchNo",
-    "beginDate": "beginDate",
-    "clientId": "clientId",
-    "createdByCode": "createdByCode",
-    "createdDate": "createdDate",
-    "dataStateCode": "dataStateCode",
-    "departmentCode": "departmentCode",
-    "endDate": "endDate",
-    "flagCode": "flagCode",
-    "flagObjectCode": "flagObjectCode",
-    "jsonData": "jsonData",
-    "lastModifiedByCode": "lastModifiedByCode",
-    "lastModifiedDate": "lastModifiedDate",
-    "orderBy": "orderBy",
-    "orgCode": "orgCode",
-    "personalCode": "personalCode",
-    "scope": "scope",
-    "siteCode": "siteCode",
-    "stateCode": "stateCode",
-    "systemInfoCode": "systemInfoCode",
-    "tokenInfoCode": "tokenInfoCode",
-    "tokenInfoId": "tokenInfoId",
-    "userCode": "userCode",
-    "version": "version"
-  },
   "validation": {
     "rules": {
       "tokenInfoId": {

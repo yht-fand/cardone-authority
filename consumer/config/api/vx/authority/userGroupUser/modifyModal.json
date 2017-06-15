@@ -1,7 +1,4 @@
 {
-  "input": {
-    "userGroupUserId": "userGroupUserId"
-  },
   "validation": {
     "rules": {
       "userGroupUserId": {
@@ -13,29 +10,5 @@
         "required": "用户组与用户标识必填"
       }
     }
-  },
-  "output": {
-    "batchNo": "batch_no",
-    "beginDate": "begin_date",
-    "createdByCode": "created_by_code",
-    "createdDate": "created_date",
-    "dataStateCode": "data_state_code",
-    "departmentCode": "department_code",
-    "endDate": "end_date",
-    "flagCode": "flag_code",
-    "flagObjectCode": "flag_object_code",
-    "jsonData": "json_data",
-    "lastModifiedByCode": "last_modified_by_code",
-    "lastModifiedDate": "last_modified_date",
-    "orderBy": "order_by_",
-    "orgCode": "org_code",
-    "personalCode": "personal_code",
-    "siteCode": "site_code",
-    "stateCode": "state_code",
-    "systemInfoCode": "system_info_code",
-    "userCode": "user_code",
-    "userGroupCode": "user_group_code",
-    "userGroupUserId": "user_group_user_id",
-    "version": "version_"
   }
 }

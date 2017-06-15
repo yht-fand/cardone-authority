@@ -1,4 +1,4 @@
-package api.vx.authority.userGroupUser
+package top.cardone.api.vx.authority.userGroupUser
 
 import org.apache.commons.lang3.StringUtils
 import top.cardone.authority.service.UserGroupUserService
@@ -26,10 +26,10 @@ class d0001 implements java.io.Serializable {
     }
 
     def func(input) {
-        ['deleteCounts': ApplicationContextHolder.getBean(UserGroupUserService.class).updateListCache(input?.userGroupUserIds)]
+        ApplicationContextHolder.getBean(UserGroupUserService.class).updateListCache(input?.userGroupUserIds)
     }
 
     def output(output) {
-        output
+        ['deleteCounts': output]
     }
 }

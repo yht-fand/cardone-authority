@@ -1,4 +1,4 @@
-package api.vx.authority.oAuthConsumer
+package top.cardone.api.vx.authority.oAuthConsumer
 
 import org.apache.commons.lang3.StringUtils
 import top.cardone.authority.service.OAuthConsumerService
@@ -26,10 +26,10 @@ class d0001 implements java.io.Serializable {
     }
 
     def func(input) {
-        ['deleteCounts': ApplicationContextHolder.getBean(OAuthConsumerService.class).updateListCache(input?.oAuthConsumerIds)]
+        ApplicationContextHolder.getBean(OAuthConsumerService.class).updateListCache(input?.oAuthConsumerIds)
     }
 
     def output(output) {
-        output
+        ['deleteCounts': output]
     }
 }

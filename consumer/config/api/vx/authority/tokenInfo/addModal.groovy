@@ -1,4 +1,4 @@
-package api.vx.authority.tokenInfo
+package top.cardone.api.vx.authority.tokenInfo
 
 import org.apache.commons.lang3.StringUtils
 import top.cardone.authority.service.TokenInfoService

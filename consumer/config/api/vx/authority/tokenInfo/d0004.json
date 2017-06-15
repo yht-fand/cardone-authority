@@ -1,14 +1,4 @@
 {
-  "input": {
-    "tokenInfoIds": {
-      "stringToListFunc": {
-        "idName": "tokenInfoId",
-        "map": {
-          "dataStateCode": "0"
-        }
-      }
-    }
-  },
   "validation": {
     "rules": {
       "tokenInfoIds": {

@@ -1,4 +1,4 @@
-SELECT d.USERGROUPROLE_CODE  ,d.NAME FROM c1_user_group_role d
+SELECT d.USERGROUPROLE_CODE, d.NAME FROM c1_user_group_role d
 <#if cardone.StringUtils.isNotBlank(term)>
 WHERE LOCATE(:term, d.`NAME`) OR LOCATE(:term, d.`USERGROUPROLE_CODE`)
 </#if>

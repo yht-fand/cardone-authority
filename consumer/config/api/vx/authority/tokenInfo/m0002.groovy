@@ -1,4 +1,4 @@
-package api.vx.authority.tokenInfo
+package top.cardone.api.vx.authority.tokenInfo
 
 import org.apache.commons.lang3.StringUtils
 import top.cardone.authority.service.TokenInfoService
@@ -9,30 +9,30 @@ class m0002 implements java.io.Serializable {
     def input(input) {
         def newInput = [:]
 
-		newInput['batchNo'] = input['batchNo']
-		newInput['beginDate'] = input['beginDate']
-		newInput['clientId'] = input['clientId']
-		newInput['createdByCode'] = input['createdByCode']
-		newInput['createdDate'] = input['createdDate']
-		newInput['dataStateCode'] = input['dataStateCode']
-		newInput['departmentCode'] = input['departmentCode']
-		newInput['endDate'] = input['endDate']
-		newInput['flagCode'] = input['flagCode']
-		newInput['flagObjectCode'] = input['flagObjectCode']
-		newInput['jsonData'] = input['jsonData']
-		newInput['lastModifiedByCode'] = input['lastModifiedByCode']
-		newInput['lastModifiedDate'] = input['lastModifiedDate']
-		newInput['orderBy'] = input['orderBy']
-		newInput['orgCode'] = input['orgCode']
-		newInput['personalCode'] = input['personalCode']
-		newInput['scope'] = input['scope']
-		newInput['siteCode'] = input['siteCode']
-		newInput['stateCode'] = input['stateCode']
-		newInput['systemInfoCode'] = input['systemInfoCode']
-		newInput['tokenInfoCode'] = input['tokenInfoCode']
-		newInput['tokenInfoId'] = input['tokenInfoId']
-		newInput['userCode'] = input['userCode']
-		newInput['version'] = input['version']
+		newInput?.batchNo = input?.batchNo
+		newInput?.beginDate = input?.beginDate
+		newInput?.clientId = input?.clientId
+		newInput?.createdByCode = input?.createdByCode
+		newInput?.createdDate = input?.createdDate
+		newInput?.dataStateCode = input?.dataStateCode
+		newInput?.departmentCode = input?.departmentCode
+		newInput?.endDate = input?.endDate
+		newInput?.flagCode = input?.flagCode
+		newInput?.flagObjectCode = input?.flagObjectCode
+		newInput?.jsonData = input?.jsonData
+		newInput?.lastModifiedByCode = input?.lastModifiedByCode
+		newInput?.lastModifiedDate = input?.lastModifiedDate
+		newInput?.orderBy = input?.orderBy
+		newInput?.orgCode = input?.orgCode
+		newInput?.personalCode = input?.personalCode
+		newInput?.scope = input?.scope
+		newInput?.siteCode = input?.siteCode
+		newInput?.stateCode = input?.stateCode
+		newInput?.systemInfoCode = input?.systemInfoCode
+		newInput?.tokenInfoCode = input?.tokenInfoCode
+		newInput?.tokenInfoId = input?.tokenInfoId
+		newInput?.userCode = input?.userCode
+		newInput?.version = input?.version
 
         newInput
     }
@@ -62,7 +62,7 @@ class m0002 implements java.io.Serializable {
 //          throw new CodeException("name maxlength", "令牌信息名称需小于{0}个字符", 255)
 //      }
 		
-		def readOne = ['tokenInfoCode': input.tokenInfoCode]
+		def readOne = ['tokenInfoCode': input.tokenInfoCode, "dataStateCode": "1"]
 
 		def count = ApplicationContextHolder.getBean(TokenInfoService.class).readOne(Integer.class, readOne)
 
@@ -78,30 +78,30 @@ class m0002 implements java.io.Serializable {
     def output(output) {
         def newOutput = [:]
 
-		newOutput['batchNo'] = output['batch_no']
-		newOutput['beginDate'] = output['begin_date']
-		newOutput['clientId'] = output['client_id']
-		newOutput['createdByCode'] = output['created_by_code']
-		newOutput['createdDate'] = output['created_date']
-		newOutput['dataStateCode'] = output['data_state_code']
-		newOutput['departmentCode'] = output['department_code']
-		newOutput['endDate'] = output['end_date']
-		newOutput['flagCode'] = output['flag_code']
-		newOutput['flagObjectCode'] = output['flag_object_code']
-		newOutput['jsonData'] = output['json_data']
-		newOutput['lastModifiedByCode'] = output['last_modified_by_code']
-		newOutput['lastModifiedDate'] = output['last_modified_date']
-		newOutput['orderBy'] = output['order_by_']
-		newOutput['orgCode'] = output['org_code']
-		newOutput['personalCode'] = output['personal_code']
-		newOutput['scope'] = output['scope']
-		newOutput['siteCode'] = output['site_code']
-		newOutput['stateCode'] = output['state_code']
-		newOutput['systemInfoCode'] = output['system_info_code']
-		newOutput['tokenInfoCode'] = output['token_info_code']
-		newOutput['tokenInfoId'] = output['token_info_id']
-		newOutput['userCode'] = output['user_code']
-		newOutput['version'] = output['version_']
+		newOutput?.batchNo = output?.batch_no
+		newOutput?.beginDate = output?.begin_date
+		newOutput?.clientId = output?.client_id
+		newOutput?.createdByCode = output?.created_by_code
+		newOutput?.createdDate = output?.created_date
+		newOutput?.dataStateCode = output?.data_state_code
+		newOutput?.departmentCode = output?.department_code
+		newOutput?.endDate = output?.end_date
+		newOutput?.flagCode = output?.flag_code
+		newOutput?.flagObjectCode = output?.flag_object_code
+		newOutput?.jsonData = output?.json_data
+		newOutput?.lastModifiedByCode = output?.last_modified_by_code
+		newOutput?.lastModifiedDate = output?.last_modified_date
+		newOutput?.orderBy = output?.order_by_
+		newOutput?.orgCode = output?.org_code
+		newOutput?.personalCode = output?.personal_code
+		newOutput?.scope = output?.scope
+		newOutput?.siteCode = output?.site_code
+		newOutput?.stateCode = output?.state_code
+		newOutput?.systemInfoCode = output?.system_info_code
+		newOutput?.tokenInfoCode = output?.token_info_code
+		newOutput?.tokenInfoId = output?.token_info_id
+		newOutput?.userCode = output?.user_code
+		newOutput?.version = output?.version_
 
         newOutput
     }

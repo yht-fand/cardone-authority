@@ -1,4 +1,4 @@
-package api.vx.authority.userGroup
+package top.cardone.api.vx.authority.userGroup
 
 import org.apache.commons.lang3.StringUtils
 import top.cardone.authority.service.UserGroupService

@@ -1,4 +1,4 @@
-package api.vx.authority.oAuthConsumer
+package top.cardone.api.vx.authority.oAuthConsumer
 
 import org.apache.commons.lang3.time.DateFormatUtils
 import org.apache.shiro.SecurityUtils

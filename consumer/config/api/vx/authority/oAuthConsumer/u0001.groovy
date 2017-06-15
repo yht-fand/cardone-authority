@@ -1,4 +1,4 @@
-package api.vx.authority.oAuthConsumer
+package top.cardone.api.vx.authority.oAuthConsumer
 
 import org.apache.commons.lang3.StringUtils
 import top.cardone.authority.service.OAuthConsumerService
@@ -9,27 +9,29 @@ class u0001 implements java.io.Serializable {
     def input(input) {
         def newInput = [:]
 
-		newInput['batchNo'] = input['batchNo']
-		newInput['beginDate'] = input['beginDate']
-		newInput['clientSecret'] = input['clientSecret']
-		newInput['createdByCode'] = input['createdByCode']
-		newInput['createdDate'] = input['createdDate']
-		newInput['dataStateCode'] = input['dataStateCode']
-		newInput['departmentCode'] = input['departmentCode']
-		newInput['endDate'] = input['endDate']
-		newInput['flagCode'] = input['flagCode']
-		newInput['flagObjectCode'] = input['flagObjectCode']
-		newInput['jsonData'] = input['jsonData']
-		newInput['lastModifiedByCode'] = input['lastModifiedByCode']
-		newInput['lastModifiedDate'] = input['lastModifiedDate']
-		newInput['oauthConsumerId'] = input['oauthConsumerId']
-		newInput['orderBy'] = input['orderBy']
-		newInput['orgCode'] = input['orgCode']
-		newInput['personalCode'] = input['personalCode']
-		newInput['siteCode'] = input['siteCode']
-		newInput['stateCode'] = input['stateCode']
-		newInput['systemInfoCode'] = input['systemInfoCode']
-		newInput['version'] = input['version']
+		newInput?.batchNo = input?.batchNo
+		newInput?.beginDate = input?.beginDate
+		newInput?.clientSecret = input?.clientSecret
+		newInput?.createdByCode = input?.createdByCode
+		newInput?.createdDate = input?.createdDate
+		newInput?.dataStateCode = input?.dataStateCode
+		newInput?.departmentCode = input?.departmentCode
+		newInput?.endDate = input?.endDate
+		newInput?.flagCode = input?.flagCode
+		newInput?.flagObjectCode = input?.flagObjectCode
+		newInput?.jsonData = input?.jsonData
+		newInput?.lastModifiedByCode = input?.lastModifiedByCode
+		newInput?.lastModifiedDate = input?.lastModifiedDate
+		newInput?.oauthConsumerId = input?.oauthConsumerId
+		newInput?.orderBy = input?.orderBy
+		newInput?.orgCode = input?.orgCode
+		newInput?.personalCode = input?.personalCode
+		newInput?.siteCode = input?.siteCode
+		newInput?.stateCode = input?.stateCode
+		newInput?.systemInfoCode = input?.systemInfoCode
+		newInput?.version = input?.version
+
+        newInput.flagCode = StringUtils.defaultIfBlank(input.flagCode, "input")
 
         newInput
     }
@@ -51,7 +53,7 @@ class u0001 implements java.io.Serializable {
 //          throw new CodeException("name maxlength", "授权消费名称需小于{0}个字符", 255)
 //      }
 
-		def readOne = ["oAuthConsumerCode": input.oAuthConsumerCode, "object_id": "oAuthConsumerId"]
+		def readOne = ["oAuthConsumerCode": input.oAuthConsumerCode, "object_id": "oAuthConsumerId", "dataStateCode": "1"]
 
 		String dbOAuthConsumerId = ApplicationContextHolder.getBean(OAuthConsumerService.class).readOne(String.class, readOne)
 
@@ -65,6 +67,6 @@ class u0001 implements java.io.Serializable {
     }
 
     def output(output) {
-		['updateCount': output]
+		['updateCount': output]        
     }
 }

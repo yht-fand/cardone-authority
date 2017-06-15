@@ -1,14 +1,4 @@
 {
-  "input": {
-    "userRoleIds": {
-      "stringToListFunc": {
-        "idName": "userRoleId",
-        "map": {
-          "dataStateCode": "0"
-        }
-      }
-    }
-  },
   "validation": {
     "rules": {
       "userRoleIds": {

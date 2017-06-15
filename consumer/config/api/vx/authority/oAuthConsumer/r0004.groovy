@@ -1,4 +1,4 @@
-package api.vx.authority.oAuthConsumer
+package top.cardone.api.vx.authority.oAuthConsumer
 
 import top.cardone.configuration.service.DictionaryService
 import top.cardone.context.ApplicationContextHolder

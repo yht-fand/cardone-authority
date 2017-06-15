@@ -1,14 +1,4 @@
 {
-  "input": {
-    "userGroupPermissionIds": {
-      "stringToListFunc": {
-        "idName": "userGroupPermissionId",
-        "map": {
-          "dataStateCode": "0"
-        }
-      }
-    }
-  },
   "validation": {
     "rules": {
       "userGroupPermissionIds": {

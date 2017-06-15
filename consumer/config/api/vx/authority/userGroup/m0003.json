@@ -1,32 +1,4 @@
 {
-  "input": {
-    "batchNo": "batchNo",
-    "beginDate": "beginDate",
-    "createdByCode": "createdByCode",
-    "createdDate": "createdDate",
-    "dataStateCode": "dataStateCode",
-    "departmentCode": "departmentCode",
-    "endDate": "endDate",
-    "flagCode": "flagCode",
-    "flagObjectCode": "flagObjectCode",
-    "jsonData": "jsonData",
-    "lastModifiedByCode": "lastModifiedByCode",
-    "lastModifiedDate": "lastModifiedDate",
-    "name": "name",
-    "orderBy": "orderBy",
-    "orgCode": "orgCode",
-    "parentCode": "parentCode",
-    "parentTreeCode": "parentTreeCode",
-    "parentTreeName": "parentTreeName",
-    "personalCode": "personalCode",
-    "siteCode": "siteCode",
-    "stateCode": "stateCode",
-    "systemInfoCode": "systemInfoCode",
-    "typeCode": "typeCode",
-    "userGroupCode": "userGroupCode",
-    "userGroupId": "userGroupId",
-    "version": "version"
-  },
   "validation": {
     "rules": {
       "userGroupCode": {
@@ -52,33 +24,5 @@
         "maxlength": "用户组名称需小于{0}个字符"
       }
     }
-  },
-  "output": {
-    "batchNo": "batch_no",
-    "beginDate": "begin_date",
-    "createdByCode": "created_by_code",
-    "createdDate": "created_date",
-    "dataStateCode": "data_state_code",
-    "departmentCode": "department_code",
-    "endDate": "end_date",
-    "flagCode": "flag_code",
-    "flagObjectCode": "flag_object_code",
-    "jsonData": "json_data",
-    "lastModifiedByCode": "last_modified_by_code",
-    "lastModifiedDate": "last_modified_date",
-    "name": "name",
-    "orderBy": "order_by_",
-    "orgCode": "org_code",
-    "parentCode": "parent_code",
-    "parentTreeCode": "parent_tree_code",
-    "parentTreeName": "parent_tree_name",
-    "personalCode": "personal_code",
-    "siteCode": "site_code",
-    "stateCode": "state_code",
-    "systemInfoCode": "system_info_code",
-    "typeCode": "type_code",
-    "userGroupCode": "user_group_code",
-    "userGroupId": "user_group_id",
-    "version": "version_"
   }
 }

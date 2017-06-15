@@ -1,6 +1,9 @@
-SELECT d.user_group_code  ,d.NAME FROM c1_user_group d
-<#if cardone.StringUtils.isNotBlank(term)>
-WHERE strpos(d.NAME, :term) > 0 OR strpos(d.user_group_code, :term) > 0
+SELECT t.user_group_code, t.NAME FROM c1_user_group t
+where t.state_code ='1' and t.data_state_code = '1'
+<#if cardone.StringUtils.isBlank(notTerm) >
+    <#if cardone.StringUtils.isNotBlank(term)>
+    and (strpos(t.NAME, :term) > 0 OR strpos(t.user_group_code, :term) > 0)
+    </#if>
 </#if>
-ORDER BY d.ORDER_BY_, d.user_group_code
+ORDER BY t.ORDER_BY_, t.user_group_code
 LIMIT 20

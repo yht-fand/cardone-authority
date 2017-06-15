@@ -1,4 +1,4 @@
-package api.vx.authority.tokenInfo
+package top.cardone.api.vx.authority.tokenInfo
 
 import top.cardone.configuration.service.DictionaryService
 import top.cardone.context.ApplicationContextHolder

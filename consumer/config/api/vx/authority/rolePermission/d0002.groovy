@@ -1,4 +1,4 @@
-package api.vx.authority.rolePermission
+package top.cardone.api.vx.authority.rolePermission
 
 import org.apache.commons.lang3.StringUtils
 import top.cardone.authority.service.RolePermissionService
@@ -26,10 +26,10 @@ class d0001 implements java.io.Serializable {
     }
 
     def func(input) {
-        ['deleteCounts': ApplicationContextHolder.getBean(RolePermissionService.class).deleteListCache(input?.rolePermissionIds)]
+        ApplicationContextHolder.getBean(RolePermissionService.class).updateListCache(input?.rolePermissionIds)
     }
 
     def output(output) {
-        output
+        ['deleteCounts': output]
     }
 }

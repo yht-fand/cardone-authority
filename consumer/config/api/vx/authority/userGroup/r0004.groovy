@@ -1,4 +1,4 @@
-package api.vx.authority.userGroup
+package top.cardone.api.vx.authority.userGroup
 
 import top.cardone.configuration.service.DictionaryService
 import top.cardone.context.ApplicationContextHolder

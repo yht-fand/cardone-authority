@@ -1,4 +1,4 @@
-package api.vx.authority.tokenInfo
+package top.cardone.api.vx.authority.tokenInfo
 
 import org.apache.commons.lang3.StringUtils
 import top.cardone.authority.service.TokenInfoService
@@ -9,30 +9,32 @@ class u0001 implements java.io.Serializable {
     def input(input) {
         def newInput = [:]
 
-		newInput['batchNo'] = input['batchNo']
-		newInput['beginDate'] = input['beginDate']
-		newInput['clientId'] = input['clientId']
-		newInput['createdByCode'] = input['createdByCode']
-		newInput['createdDate'] = input['createdDate']
-		newInput['dataStateCode'] = input['dataStateCode']
-		newInput['departmentCode'] = input['departmentCode']
-		newInput['endDate'] = input['endDate']
-		newInput['flagCode'] = input['flagCode']
-		newInput['flagObjectCode'] = input['flagObjectCode']
-		newInput['jsonData'] = input['jsonData']
-		newInput['lastModifiedByCode'] = input['lastModifiedByCode']
-		newInput['lastModifiedDate'] = input['lastModifiedDate']
-		newInput['orderBy'] = input['orderBy']
-		newInput['orgCode'] = input['orgCode']
-		newInput['personalCode'] = input['personalCode']
-		newInput['scope'] = input['scope']
-		newInput['siteCode'] = input['siteCode']
-		newInput['stateCode'] = input['stateCode']
-		newInput['systemInfoCode'] = input['systemInfoCode']
-		newInput['tokenInfoCode'] = input['tokenInfoCode']
-		newInput['tokenInfoId'] = input['tokenInfoId']
-		newInput['userCode'] = input['userCode']
-		newInput['version'] = input['version']
+		newInput?.batchNo = input?.batchNo
+		newInput?.beginDate = input?.beginDate
+		newInput?.clientId = input?.clientId
+		newInput?.createdByCode = input?.createdByCode
+		newInput?.createdDate = input?.createdDate
+		newInput?.dataStateCode = input?.dataStateCode
+		newInput?.departmentCode = input?.departmentCode
+		newInput?.endDate = input?.endDate
+		newInput?.flagCode = input?.flagCode
+		newInput?.flagObjectCode = input?.flagObjectCode
+		newInput?.jsonData = input?.jsonData
+		newInput?.lastModifiedByCode = input?.lastModifiedByCode
+		newInput?.lastModifiedDate = input?.lastModifiedDate
+		newInput?.orderBy = input?.orderBy
+		newInput?.orgCode = input?.orgCode
+		newInput?.personalCode = input?.personalCode
+		newInput?.scope = input?.scope
+		newInput?.siteCode = input?.siteCode
+		newInput?.stateCode = input?.stateCode
+		newInput?.systemInfoCode = input?.systemInfoCode
+		newInput?.tokenInfoCode = input?.tokenInfoCode
+		newInput?.tokenInfoId = input?.tokenInfoId
+		newInput?.userCode = input?.userCode
+		newInput?.version = input?.version
+
+        newInput.flagCode = StringUtils.defaultIfBlank(input.flagCode, "input")
 
         newInput
     }
@@ -54,7 +56,7 @@ class u0001 implements java.io.Serializable {
 //          throw new CodeException("name maxlength", "令牌信息名称需小于{0}个字符", 255)
 //      }
 
-		def readOne = ["tokenInfoCode": input.tokenInfoCode, "object_id": "tokenInfoId"]
+		def readOne = ["tokenInfoCode": input.tokenInfoCode, "object_id": "tokenInfoId", "dataStateCode": "1"]
 
 		String dbTokenInfoId = ApplicationContextHolder.getBean(TokenInfoService.class).readOne(String.class, readOne)
 
@@ -68,6 +70,6 @@ class u0001 implements java.io.Serializable {
     }
 
     def output(output) {
-		['updateCount': output]
+		['updateCount': output]        
     }
 }

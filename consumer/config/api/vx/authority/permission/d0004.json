@@ -1,14 +1,4 @@
 {
-  "input": {
-    "permissionIds": {
-      "stringToListFunc": {
-        "idName": "permissionId",
-        "map": {
-          "dataStateCode": "0"
-        }
-      }
-    }
-  },
   "validation": {
     "rules": {
       "permissionIds": {
