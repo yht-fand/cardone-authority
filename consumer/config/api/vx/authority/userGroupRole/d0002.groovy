@@ -16,7 +16,7 @@ class d0001 implements java.io.Serializable {
         def userGroupRoleIdList = []
 
         for (def userGroupRoleId : userGroupRoleIds) {
-            userGroupRoleIdList.add(["userGroupRoleId": userGroupRoleId, "dataStateCode": "0", "endDate": new Date()])
+            userGroupRoleIdList.add(["userGroupRoleId": userGroupRoleId, "flagCode": "input", "dataStateCode": "0", "endDate": new Date()])
         }
 
         ["userGroupRoleIds": userGroupRoleIdList]

@@ -16,7 +16,7 @@ class d0001 implements java.io.Serializable {
         def oAuthConsumerIdList = []
 
         for (def oAuthConsumerId : oAuthConsumerIds) {
-            oAuthConsumerIdList.add(["oAuthConsumerId": oAuthConsumerId, "dataStateCode": "0", "endDate": new Date()])
+            oAuthConsumerIdList.add(["oAuthConsumerId": oAuthConsumerId, "flagCode": "input", "dataStateCode": "0", "endDate": new Date()])
         }
 
         ["oAuthConsumerIds": oAuthConsumerIdList]

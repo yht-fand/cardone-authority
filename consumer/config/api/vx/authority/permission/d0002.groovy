@@ -16,7 +16,7 @@ class d0001 implements java.io.Serializable {
         def permissionIdList = []
 
         for (def permissionId : permissionIds) {
-            permissionIdList.add(["permissionId": permissionId, "dataStateCode": "0", "endDate": new Date()])
+            permissionIdList.add(["permissionId": permissionId, "flagCode": "input", "dataStateCode": "0", "endDate": new Date()])
         }
 
         ["permissionIds": permissionIdList]

@@ -16,7 +16,7 @@ class d0001 implements java.io.Serializable {
         def tokenInfoIdList = []
 
         for (def tokenInfoId : tokenInfoIds) {
-            tokenInfoIdList.add(["tokenInfoId": tokenInfoId, "dataStateCode": "0", "endDate": new Date()])
+            tokenInfoIdList.add(["tokenInfoId": tokenInfoId, "flagCode": "input", "dataStateCode": "0", "endDate": new Date()])
         }
 
         ["tokenInfoIds": tokenInfoIdList]
