@@ -20,6 +20,7 @@
                         <entry key="userRoleId" value="readRandomUUIDFunc"/>
                         <entry key="createdByCode" value="readPrincipalFunc"/>
                         <entry key="createdDate" value="readOneDateFunc"/>
+                        <entry key="beginDate" value="readOneDateFunc"/>
                     </map>
                 </entry>
                 <entry key="update">
