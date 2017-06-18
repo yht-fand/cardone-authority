@@ -12,7 +12,7 @@
                     <map>
                         <entry key="sqlFileRoot" value="/cardone/authority/userGroupUser/"/>
                         <entry key="pks" value="userGroupUserId"/>
-                        <entry key="codes" value="userGroupCode,userCode"/>
+                        <entry key="codes" value="userGroupCode,userCode,endDate"/>
                     </map>
                 </entry>
                 <entry key="insert">
@@ -21,12 +21,14 @@
                         <entry key="createdByCode" value="readPrincipalFunc"/>
                         <entry key="createdDate" value="readOneDateFunc"/>
                         <entry key="beginDate" value="readOneDateFunc"/>
+                        <entry key="endDate" value="endDateDefaultValueFunc"/>
                     </map>
                 </entry>
                 <entry key="update">
                     <map>
                         <entry key="lastModifiedByCode" value="readPrincipalFunc"/>
                         <entry key="lastModifiedDate" value="readOneDateFunc"/>
+                        <entry key="endDate" value="endDateDefaultValueFunc"/>
                     </map>
                 </entry>
             </map>
