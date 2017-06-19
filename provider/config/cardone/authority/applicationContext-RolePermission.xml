@@ -12,7 +12,7 @@
                     <map>
                         <entry key="sqlFileRoot" value="/cardone/authority/rolePermission/"/>
                         <entry key="pks" value="rolePermissionId"/>
-                        <entry key="codes" value="roleCode,permissionCode,endDate"/>
+                        <entry key="codes" value="systemInfoCode,siteCode,roleCode,permissionCode,endDate"/>
                     </map>
                 </entry>
                 <entry key="insert">
@@ -22,6 +22,8 @@
                         <entry key="createdDate" value="readOneDateFunc"/>
                         <entry key="beginDate" value="readOneDateFunc"/>
                         <entry key="endDate" value="endDateDefaultValueFunc"/>
+                        <entry key="systemInfoCode" value="systemInfoCodeDefaultValueFunc"/>
+                        <entry key="siteCode" value="siteCodeDefaultValueFunc"/>
                     </map>
                 </entry>
                 <entry key="update">
@@ -29,6 +31,8 @@
                         <entry key="lastModifiedByCode" value="readPrincipalFunc"/>
                         <entry key="lastModifiedDate" value="readOneDateFunc"/>
                         <entry key="endDate" value="endDateDefaultValueFunc"/>
+                        <entry key="systemInfoCode" value="systemInfoCodeDefaultValueFunc"/>
+                        <entry key="siteCode" value="siteCodeDefaultValueFunc"/>
                     </map>
                 </entry>
             </map>
