@@ -15,7 +15,7 @@ public class UserGroupPermissionDaoImpl extends PageDaoImpl implements top.cardo
     @Override
     public Map<String, Object> findOneByUserGroupPermissionId(Map<String, Object> findOne) {
         String findOneSqlFilePath = this.getSqlFilePath("page.find");
-		
+
         return this.findOne(findOneSqlFilePath, findOne);
     }
 
@@ -37,17 +37,15 @@ public class UserGroupPermissionDaoImpl extends PageDaoImpl implements top.cardo
         putAll.put("flagCode", "generate");
         putAll.put("flagObjectCode", flagObjectCode);
 
-        int count = 0;
+        String deleteOtherByFlagObjectCodeSqlFilePath = this.getSqlFilePath("deleteOtherByFlagObjectCode");
+
+        int count = this.update(deleteOtherByFlagObjectCodeSqlFilePath, putAll);
 
         for (Map<String, Object> forRolePermission : forRolePermissionList) {
             forRolePermission.putAll(putAll);
 
-            count += this.insert(forRolePermission);
+            count += this.insertByNotExists(forRolePermission);
         }
-
-        String deleteOtherByFlagObjectCodeSqlFilePath = this.getSqlFilePath("deleteOtherByFlagObjectCode");
-
-        count += this.update(deleteOtherByFlagObjectCodeSqlFilePath, putAll);
 
         return count;
     }

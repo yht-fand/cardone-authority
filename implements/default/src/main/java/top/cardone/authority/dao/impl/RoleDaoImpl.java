@@ -44,17 +44,16 @@ public class RoleDaoImpl extends PageDaoImpl implements top.cardone.authority.da
         putAll.put("flagCode", "generate");
         putAll.put("flagObjectCode", flagObjectCode);
 
-        int count = 0;
+        String deleteOtherByFlagObjectCodeSqlFilePath = this.getSqlFilePath("deleteOtherByFlagObjectCode");
+
+        int count = this.update(deleteOtherByFlagObjectCodeSqlFilePath, putAll);
 //
 //        for (Map<String, Object> forDepartment : forDepartmentList) {
 //            forDepartment.putAll(putAll);
 //
-//            count += this.insert(forDepartment);
+//            count += this.insertByNotExists(forDepartment);
 //        }
 //
-        String deleteOtherByFlagObjectCodeSqlFilePath = this.getSqlFilePath("deleteOtherByFlagObjectCode");
-
-        count += this.update(deleteOtherByFlagObjectCodeSqlFilePath, putAll);
 
         return count;
     }

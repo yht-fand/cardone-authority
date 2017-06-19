@@ -38,7 +38,9 @@ public class UserGroupUserDaoImpl extends PageDaoImpl implements top.cardone.aut
         putAll.put("flagCode", "generate");
         putAll.put("flagObjectCode", flagObjectCode);
 
-        int count = 0;
+        String deleteOtherByFlagObjectCodeSqlFilePath = this.getSqlFilePath("deleteOtherByFlagObjectCode");
+
+        int count = this.update(deleteOtherByFlagObjectCodeSqlFilePath, putAll);
 
         for (Map<String, Object> forUser : forUserList) {
             forUser.putAll(putAll);
@@ -48,12 +50,8 @@ public class UserGroupUserDaoImpl extends PageDaoImpl implements top.cardone.aut
             forUser.put("userGroupCode", "general");
             forUser.put("userGroupUserId", UUID.randomUUID().toString());
 
-            count += this.insert(forUser);
+            count += this.insertByNotExists(forUser);
         }
-
-        String deleteOtherByFlagObjectCodeSqlFilePath = this.getSqlFilePath("deleteOtherByFlagObjectCode");
-
-        count += this.update(deleteOtherByFlagObjectCodeSqlFilePath, putAll);
 
         return count;
     }

@@ -48,7 +48,9 @@ public class PermissionDaoImpl extends PageDaoImpl implements top.cardone.author
         putAll.put("flagCode", "generate");
         putAll.put("flagObjectCode", flagObjectCode);
 
-        int count = 0;
+        String deleteOtherByFlagObjectCodeSqlFilePath = this.getSqlFilePath("deleteOtherByFlagObjectCode");
+
+        int count = this.update(deleteOtherByFlagObjectCodeSqlFilePath, putAll);
 
         for (Map.Entry<String, Object> generateSqlEntry : generateSqlMap.entrySet()) {
             Map<String, Object> findList = Maps.newHashMap();
@@ -64,13 +66,9 @@ public class PermissionDaoImpl extends PageDaoImpl implements top.cardone.author
             for (Map<String, Object> generate : generateList) {
                 generate.putAll(putAll);
 
-                count += this.insert(generate);
+                count += this.insertByNotExists(generate);
             }
         }
-
-        String deleteOtherByFlagObjectCodeSqlFilePath = this.getSqlFilePath("deleteOtherByFlagObjectCode");
-
-        count += this.update(deleteOtherByFlagObjectCodeSqlFilePath, putAll);
 
         return count;
     }

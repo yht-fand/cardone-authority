@@ -15,7 +15,7 @@ public class RolePermissionDaoImpl extends PageDaoImpl implements top.cardone.au
     @Override
     public Map<String, Object> findOneByRolePermissionId(Map<String, Object> findOne) {
         String findOneSqlFilePath = this.getSqlFilePath("page.find");
-		
+
         return this.findOne(findOneSqlFilePath, findOne);
     }
 
@@ -37,17 +37,16 @@ public class RolePermissionDaoImpl extends PageDaoImpl implements top.cardone.au
         putAll.put("flagCode", "generate");
         putAll.put("flagObjectCode", flagObjectCode);
 
-        int count = 0;
+        String deleteOtherByFlagObjectCodeSqlFilePath = this.getSqlFilePath("deleteOtherByFlagObjectCode");
+
+        int count = this.update(deleteOtherByFlagObjectCodeSqlFilePath, putAll);
 //
 //        for (Map<String, Object> forDepartment : forDepartmentList) {
 //            forDepartment.putAll(putAll);
 //
-//            count += this.insert(forDepartment);
+//            count += this.insertByNotExists(forDepartment);
 //        }
 //
-        String deleteOtherByFlagObjectCodeSqlFilePath = this.getSqlFilePath("deleteOtherByFlagObjectCode");
-
-        count += this.update(deleteOtherByFlagObjectCodeSqlFilePath, putAll);
 
         return count;
     }
