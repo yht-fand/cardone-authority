@@ -96,6 +96,7 @@ ${prefixName?string('  ', ', ')}"user_code"
 ${prefixName?string('  ', ', ')}"version_"
 <#assign prefixName = false>
 </#if>
+<#if prefixName>
 *
 </#if>
 FROM c1_token_info
