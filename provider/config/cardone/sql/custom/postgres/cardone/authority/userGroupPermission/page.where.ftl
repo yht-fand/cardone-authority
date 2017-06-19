@@ -14,11 +14,11 @@ ${prefixName?string('WHERE ', 'AND ')}(POSITION(:permissionTreeName in p.permiss
     <#assign prefixName = false>
 </#if>
 <#if cardone.ObjectUtils.anyNotNull(startTime)>
-${prefixName?string('WHERE ', 'AND ')}((ug.begin_date is null OR ug.begin_date >= :startTime) OR (ug.end_date is null OR ug.end_date >= :startTime))
+${prefixName?string('WHERE ', 'AND ')}(ug.begin_date >= :startTime OR ug.end_date >= :startTime)
     <#assign prefixName = false>
 </#if>
 <#if cardone.ObjectUtils.anyNotNull(endTime)>
-${prefixName?string('WHERE ', 'AND ')}((ug.begin_date is null OR ug.begin_date < :endTime) OR (ug.end_date is null OR ug.end_date < :endTime))
+${prefixName?string('WHERE ', 'AND ')}(ug.begin_date < :endTime OR ug.end_date < :endTime)
     <#assign prefixName = false>
 </#if>
 <#if cardone.StringUtils.isNotBlank(flagCode)>

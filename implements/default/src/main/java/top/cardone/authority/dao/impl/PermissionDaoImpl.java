@@ -66,7 +66,7 @@ public class PermissionDaoImpl extends PageDaoImpl implements top.cardone.author
             for (Map<String, Object> generate : generateList) {
                 generate.putAll(putAll);
 
-                count += this.insertByNotExists(generate);
+                count += this.save(generate);
             }
         }
 

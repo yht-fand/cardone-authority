@@ -45,12 +45,12 @@ public class UserGroupUserDaoImpl extends PageDaoImpl implements top.cardone.aut
         for (Map<String, Object> forUser : forUserList) {
             forUser.putAll(putAll);
 
-            count += this.insert(forUser);
+            count += this.save(forUser);
 
             forUser.put("userGroupCode", "general");
             forUser.put("userGroupUserId", UUID.randomUUID().toString());
 
-            count += this.insertByNotExists(forUser);
+            count += this.save(forUser);
         }
 
         return count;

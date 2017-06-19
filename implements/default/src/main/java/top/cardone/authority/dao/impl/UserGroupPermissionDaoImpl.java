@@ -44,7 +44,7 @@ public class UserGroupPermissionDaoImpl extends PageDaoImpl implements top.cardo
         for (Map<String, Object> forRolePermission : forRolePermissionList) {
             forRolePermission.putAll(putAll);
 
-            count += this.insertByNotExists(forRolePermission);
+            count += this.save(forRolePermission);
         }
 
         return count;

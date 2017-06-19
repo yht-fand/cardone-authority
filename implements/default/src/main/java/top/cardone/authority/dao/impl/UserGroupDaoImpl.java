@@ -51,7 +51,7 @@ public class UserGroupDaoImpl extends PageDaoImpl implements top.cardone.authori
         for (Map<String, Object> forDepartment : forDepartmentList) {
             forDepartment.putAll(putAll);
 
-            count += this.insertByNotExists(forDepartment);
+            count += this.save(forDepartment);
         }
 
         return count;

@@ -44,7 +44,7 @@ public class UserPermissionDaoImpl extends PageDaoImpl implements top.cardone.au
         for (Map<String, Object> forUserGroupPermission : forUserGroupPermissionList) {
             forUserGroupPermission.putAll(putAll);
 
-            count += this.insertByNotExists(forUserGroupPermission);
+            count += this.save(forUserGroupPermission);
         }
 
         return count;
