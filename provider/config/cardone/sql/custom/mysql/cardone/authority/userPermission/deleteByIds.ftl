@@ -1,1 +1,0 @@
-DELETE FROM c1_user_permission WHERE INSTR(:userPermissionIds, USER_PERMISSION_ID) > 0

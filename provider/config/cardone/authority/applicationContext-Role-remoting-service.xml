@@ -1,19 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns="http://www.springframework.org/schema/beans"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-    <!-- 角色 -->
-    <bean parent="messageListenerContainerParnet">
-        <property name="messageListener">
-            <bean  parent="remoteInvocationExecutorParnet">
-                <property name="serviceInterface" value="top.cardone.authority.service.RoleService"/>
-                <property name="service" ref="top.cardone.authority.service.RoleService"/>
-            </bean>
-        </property>
-        <property name="destination">
-            <bean class="org.apache.activemq.command.ActiveMQQueue">
-                <constructor-arg value="cardone-authority-${cardone-authority-version}:top.cardone.authority.service.RoleService"/>
-            </bean>
-        </property>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:rabbit="http://www.springframework.org/schema/rabbit"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/rabbit http://www.springframework.org/schema/rabbit/spring-rabbit.xsd">
+    <rabbit:direct-exchange
+            name="exchange:cardone-authority-${cardone-authority-version}:top.cardone.authority.service.RoleService">
+        <rabbit:bindings>
+            <rabbit:binding
+                    queue="queue:cardone-authority-${cardone-authority-version}:top.cardone.authority.service.RoleService"
+                    key="queue:cardone-authority-${cardone-authority-version}:top.cardone.authority.service.RoleService"/>
+        </rabbit:bindings>
+    </rabbit:direct-exchange>
+
+    <rabbit:queue
+            name="queue:cardone-authority-${cardone-authority-version}:top.cardone.authority.service.RoleService"/>
+
+    <bean id="top.cardone.authority.service.RoleServiceExporter"
+          class="org.springframework.amqp.remoting.service.AmqpInvokerServiceExporter">
+        <property name="serviceInterface" value="top.cardone.authority.service.RoleService"/>
+        <property name="service" ref="top.cardone.authority.service.RoleService"/>
+        <property name="amqpTemplate" ref="org.springframework.amqp.core.AmqpTemplate"/>
     </bean>
+
+    <rabbit:listener-container acknowledge="none" max-concurrency="128" prefetch="10">
+        <rabbit:listener ref="top.cardone.authority.service.RoleServiceExporter"
+                         queue-names="queue:cardone-authority-${cardone-authority-version}:top.cardone.authority.service.RoleService"/>
+    </rabbit:listener-container>
 </beans>

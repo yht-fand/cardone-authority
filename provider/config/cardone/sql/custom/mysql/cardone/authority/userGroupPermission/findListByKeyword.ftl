@@ -1,6 +1,0 @@
-SELECT d.USERGROUPPERMISSION_CODE, d.NAME FROM c1_user_group_permission d
-<#if cardone.StringUtils.isNotBlank(term)>
-WHERE LOCATE(:term, d.`NAME`) OR LOCATE(:term, d.`USERGROUPPERMISSION_CODE`)
-</#if>
-ORDER BY d.ORDER_BY_, d.USERGROUPPERMISSION_CODE
-LIMIT 20

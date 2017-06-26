@@ -1,4 +1,0 @@
-SELECT t.`ROLE_CODE` FROM `c1_user_role` t
-WHERE t.`USER_CODE` = :userCode
-AND ((t.`BEGIN_DATE` IS NULL OR t.`BEGIN_DATE` >= NOW()) OR (t.`END_DATE` IS NULL OR t.`END_DATE` >= NOW()))
-AND ((t.`BEGIN_DATE` IS NULL OR t.`BEGIN_DATE` <= NOW()) OR (t.`END_DATE` IS NULL OR t.`END_DATE` <= NOW()))

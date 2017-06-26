@@ -1,1 +1,0 @@
-UPDATE c1_user_group_permission SET END_DATE = NOW(), DATA_STATE_CODE = '0' WHERE INSTR(:userGroupPermissionIds, USER_GROUP_PERMISSION_ID) > 0

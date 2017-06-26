@@ -1,1 +1,0 @@
-UPDATE c1_token_info SET END_DATE = NOW(), DATA_STATE_CODE = '0' WHERE INSTR(:tokenInfoIds, TOKEN_INFO_ID) > 0

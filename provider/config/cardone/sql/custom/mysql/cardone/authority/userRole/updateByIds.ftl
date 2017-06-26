@@ -1,1 +1,0 @@
-UPDATE c1_user_role SET END_DATE = NOW(), DATA_STATE_CODE = '0' WHERE INSTR(:userRoleIds, USER_ROLE_ID) > 0

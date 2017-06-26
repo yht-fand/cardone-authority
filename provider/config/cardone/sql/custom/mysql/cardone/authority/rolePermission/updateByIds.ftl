@@ -1,1 +1,0 @@
-UPDATE c1_role_permission SET END_DATE = NOW(), DATA_STATE_CODE = '0' WHERE INSTR(:rolePermissionIds, ROLE_PERMISSION_ID) > 0
