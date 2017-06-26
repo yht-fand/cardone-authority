@@ -13,6 +13,7 @@
           parent="invokerProxyFactoryParnet">
         <property name="amqpTemplate">
             <rabbit:template connection-factory="rabbitConnectionFactory"
+                             message-converter="protoMessageConverter"
                              queue="queue:cardone-authority-${cardone-authority-version}:top.cardone.authority.service.UserGroupPermissionService"
                              exchange="exchange:cardone-authority-${cardone-authority-version}:top.cardone.authority.service.UserGroupPermissionService" reply-timeout="${rabbit.template.replyTimeout:60000}"/>
         </property>
