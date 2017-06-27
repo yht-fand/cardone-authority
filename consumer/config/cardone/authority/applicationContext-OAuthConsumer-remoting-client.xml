@@ -13,9 +13,9 @@
           parent="invokerProxyFactoryParnet">
         <property name="amqpTemplate">
             <rabbit:template connection-factory="rabbitConnectionFactory"
-                             message-converter="protoMessageConverter"
+                             message-converter="amqpMessageConverter"
                              queue="queue:cardone-authority-${cardone-authority-version}:top.cardone.authority.service.OAuthConsumerService"
-                             exchange="exchange:cardone-authority-${cardone-authority-version}:top.cardone.authority.service.OAuthConsumerService" reply-timeout="${rabbit.template.replyTimeout:60000}"/>
+                             exchange="exchange:cardone-authority-${cardone-authority-version}:top.cardone.authority.service.OAuthConsumerService" reply-timeout="${spring.rabbitmq.template.replyTimeout:60000}"/>
         </property>
     </bean>
 </beans>
