@@ -55,9 +55,9 @@ class u0001 implements java.io.Serializable {
 
 		def readOne = ["oAuthConsumerCode": input.oAuthConsumerCode, "object_id": "oAuthConsumerId", "dataStateCode": "1"]
 
-		String dbOAuthConsumerId = ApplicationContextHolder.getBean(OAuthConsumerService.class).readOne(String.class, readOne)
+		def dbOAuthConsumerId = ApplicationContextHolder.getBean(OAuthConsumerService.class).readOne(String.class, readOne)
 
-		if ((dbOAuthConsumerId != null) && !StringUtils.equals(dbOAuthConsumerId, input.oAuthConsumerId)) {
+		if (!StringUtils.equals(dbOAuthConsumerId, input.oAuthConsumerId)) {
 			throw new CodeException("oAuthConsumerId already exists", "授权消费编号已经存在")
 		}
     }

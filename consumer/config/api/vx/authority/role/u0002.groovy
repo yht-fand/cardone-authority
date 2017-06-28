@@ -60,9 +60,9 @@ class u0002 implements java.io.Serializable {
 
 		def readOne = ["roleCode": input.roleCode, "object_id": "roleId", "dataStateCode": "1"]
 
-		String dbRoleId = ApplicationContextHolder.getBean(RoleService.class).readOne(String.class, readOne)
+		def dbRoleId = ApplicationContextHolder.getBean(RoleService.class).readOne(String.class, readOne)
 
-		if ((dbRoleId != null) && !StringUtils.equals(dbRoleId, input.roleId)) {
+		if (!StringUtils.equals(dbRoleId, input.roleId)) {
 			throw new CodeException("roleId already exists", "角色编号已经存在")
 		}
     }

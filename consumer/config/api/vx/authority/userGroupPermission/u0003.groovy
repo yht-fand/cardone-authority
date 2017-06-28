@@ -56,9 +56,9 @@ class u0003 implements java.io.Serializable {
 
 		def readOne = ["userGroupPermissionCode": input.userGroupPermissionCode, "object_id": "userGroupPermissionId", "dataStateCode": "1"]
 
-		String dbUserGroupPermissionId = ApplicationContextHolder.getBean(UserGroupPermissionService.class).readOne(String.class, readOne)
+		def dbUserGroupPermissionId = ApplicationContextHolder.getBean(UserGroupPermissionService.class).readOne(String.class, readOne)
 
-		if ((dbUserGroupPermissionId != null) && !StringUtils.equals(dbUserGroupPermissionId, input.userGroupPermissionId)) {
+		if (!StringUtils.equals(dbUserGroupPermissionId, input.userGroupPermissionId)) {
 			throw new CodeException("userGroupPermissionId already exists", "用户组与许可编号已经存在")
 		}
     }

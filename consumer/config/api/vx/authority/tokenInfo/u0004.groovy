@@ -58,9 +58,9 @@ class u0004 implements java.io.Serializable {
 
 		def readOne = ["tokenInfoCode": input.tokenInfoCode, "object_id": "tokenInfoId", "dataStateCode": "1"]
 
-		String dbTokenInfoId = ApplicationContextHolder.getBean(TokenInfoService.class).readOne(String.class, readOne)
+		def dbTokenInfoId = ApplicationContextHolder.getBean(TokenInfoService.class).readOne(String.class, readOne)
 
-		if ((dbTokenInfoId != null) && !StringUtils.equals(dbTokenInfoId, input.tokenInfoId)) {
+		if (!StringUtils.equals(dbTokenInfoId, input.tokenInfoId)) {
 			throw new CodeException("tokenInfoId already exists", "令牌信息编号已经存在")
 		}
     }

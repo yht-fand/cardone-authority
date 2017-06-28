@@ -60,9 +60,9 @@ class u0003 implements java.io.Serializable {
 
 		def readOne = ["userGroupCode": input.userGroupCode, "object_id": "userGroupId", "dataStateCode": "1"]
 
-		String dbUserGroupId = ApplicationContextHolder.getBean(UserGroupService.class).readOne(String.class, readOne)
+		def dbUserGroupId = ApplicationContextHolder.getBean(UserGroupService.class).readOne(String.class, readOne)
 
-		if ((dbUserGroupId != null) && !StringUtils.equals(dbUserGroupId, input.userGroupId)) {
+		if (!StringUtils.equals(dbUserGroupId, input.userGroupId)) {
 			throw new CodeException("userGroupId already exists", "用户组编号已经存在")
 		}
     }

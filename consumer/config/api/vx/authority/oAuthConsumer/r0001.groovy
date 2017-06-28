@@ -11,7 +11,23 @@ import java.time.ZoneId
 
 class r0001 implements java.io.Serializable {
     def input(input) {
-        input.startTime = DateUtils.parseDate(input.startTime)        if (Objects.isNull(input.startTime)) {            def dateTime = LocalDateTime.now()            dateTime = LocalDateTime.of(dateTime.getYear(), dateTime.getMonth(), dateTime.getDayOfMonth(), 0, 0, 0).plusDays(-6)            input.startTime = Date.from(dateTime.atZone(ZoneId.systemDefault()).toInstant())        }        input.endTime = DateUtils.parseDate(input.endTime)        def dateTime = Objects.isNull(input.endTime) ? LocalDateTime.now() : LocalDateTime.ofInstant(Instant.ofEpochMilli(input.endTime.getTime()), ZoneId.systemDefault())        dateTime = LocalDateTime.of(dateTime.getYear(), dateTime.getMonth(), dateTime.getDayOfMonth(), 0, 0, 0).plusDays(1)        input.endTime = Date.from(dateTime.atZone(ZoneId.systemDefault()).toInstant())
+        input.startTime = DateUtils.parseDate(input.startTime)
+
+        if (Objects.isNull(input.startTime)) {
+            def dateTime = LocalDateTime.now()
+
+            dateTime = LocalDateTime.of(dateTime.getYear(), dateTime.getMonth(), dateTime.getDayOfMonth(), 0, 0, 0).plusDays(-6)
+
+            input.startTime = Date.from(dateTime.atZone(ZoneId.systemDefault()).toInstant())
+        }
+
+        input.endTime = DateUtils.parseDate(input.endTime)
+
+        def dateTime = Objects.isNull(input.endTime) ? LocalDateTime.now() : LocalDateTime.ofInstant(Instant.ofEpochMilli(input.endTime.getTime()), ZoneId.systemDefault())
+
+        dateTime = LocalDateTime.of(dateTime.getYear(), dateTime.getMonth(), dateTime.getDayOfMonth(), 0, 0, 0).plusDays(1)
+
+        input.endTime = Date.from(dateTime.atZone(ZoneId.systemDefault()).toInstant())
 
         input
     }

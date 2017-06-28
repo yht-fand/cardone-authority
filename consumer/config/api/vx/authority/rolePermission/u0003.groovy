@@ -56,9 +56,9 @@ class u0003 implements java.io.Serializable {
 
 		def readOne = ["rolePermissionCode": input.rolePermissionCode, "object_id": "rolePermissionId", "dataStateCode": "1"]
 
-		String dbRolePermissionId = ApplicationContextHolder.getBean(RolePermissionService.class).readOne(String.class, readOne)
+		def dbRolePermissionId = ApplicationContextHolder.getBean(RolePermissionService.class).readOne(String.class, readOne)
 
-		if ((dbRolePermissionId != null) && !StringUtils.equals(dbRolePermissionId, input.rolePermissionId)) {
+		if (!StringUtils.equals(dbRolePermissionId, input.rolePermissionId)) {
 			throw new CodeException("rolePermissionId already exists", "角色与许可编号已经存在")
 		}
     }

@@ -56,9 +56,9 @@ class u0004 implements java.io.Serializable {
 
 		def readOne = ["userPermissionCode": input.userPermissionCode, "object_id": "userPermissionId", "dataStateCode": "1"]
 
-		String dbUserPermissionId = ApplicationContextHolder.getBean(UserPermissionService.class).readOne(String.class, readOne)
+		def dbUserPermissionId = ApplicationContextHolder.getBean(UserPermissionService.class).readOne(String.class, readOne)
 
-		if ((dbUserPermissionId != null) && !StringUtils.equals(dbUserPermissionId, input.userPermissionId)) {
+		if (!StringUtils.equals(dbUserPermissionId, input.userPermissionId)) {
 			throw new CodeException("userPermissionId already exists", "用户与许可编号已经存在")
 		}
     }
