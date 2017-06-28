@@ -127,7 +127,7 @@ public interface RolePermissionService extends PageService {
      * @see top.cardone.authority.service.RolePermissionService#save
      */
     @CacheEvict(value = "top.cardone.authority.service.RolePermissionService", allEntries = true)
-    Integer saveCache(Object save);
+    int saveCache(Object save);
 
     /**
      * @see top.cardone.authority.service.RolePermissionService#update

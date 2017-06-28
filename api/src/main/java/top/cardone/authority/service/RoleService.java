@@ -137,7 +137,7 @@ public interface RoleService extends PageService {
      */
     @CacheEvict(value = "top.cardone.authority.service.RoleService", allEntries = true)
     @Func(beanId = "funcAnnotationFunc", value = "{\"afterBeanIds\": \"generateRoleTreeFunc\"}")
-    Integer saveCache(Object save);
+    int saveCache(Object save);
 
     /**
      * @see top.cardone.authority.service.RoleService#update

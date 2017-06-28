@@ -123,7 +123,7 @@ public class UserRoleServiceImpl extends PageServiceImpl<UserRoleDao> implements
 
     @Override
     @Transactional
-    public Integer saveCache(Object save) {
+    public int saveCache(Object save) {
         return this.save(save);
     }
 

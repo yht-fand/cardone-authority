@@ -127,7 +127,7 @@ public interface OAuthConsumerService extends PageService {
      * @see top.cardone.authority.service.OAuthConsumerService#save
      */
     @CacheEvict(value = "top.cardone.authority.service.OAuthConsumerService", allEntries = true)
-    Integer saveCache(Object save);
+    int saveCache(Object save);
 
     /**
      * @see top.cardone.authority.service.OAuthConsumerService#update

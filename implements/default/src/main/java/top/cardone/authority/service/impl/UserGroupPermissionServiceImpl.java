@@ -119,7 +119,7 @@ public class UserGroupPermissionServiceImpl extends PageServiceImpl<UserGroupPer
 
     @Override
     @Transactional
-    public Integer saveCache(Object save) {
+    public int saveCache(Object save) {
         return this.save(save);
     }
 

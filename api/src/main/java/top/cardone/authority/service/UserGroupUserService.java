@@ -127,7 +127,7 @@ public interface UserGroupUserService extends PageService {
      * @see top.cardone.authority.service.UserGroupUserService#save
      */
     @CacheEvict(value = "top.cardone.authority.service.UserGroupUserService", allEntries = true)
-    Integer saveCache(Object save);
+    int saveCache(Object save);
 
     /**
      * @see top.cardone.authority.service.UserGroupUserService#update

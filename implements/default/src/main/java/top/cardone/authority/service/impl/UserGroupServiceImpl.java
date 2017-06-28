@@ -119,7 +119,7 @@ public class UserGroupServiceImpl extends PageServiceImpl<UserGroupDao> implemen
 
     @Override
     @Transactional
-    public Integer saveCache(Object save) {
+    public int saveCache(Object save) {
         return this.save(save);
     }
 

@@ -115,7 +115,7 @@ public class TokenInfoServiceImpl extends PageServiceImpl<TokenInfoDao> implemen
 
     @Override
     @Transactional
-    public Integer saveCache(Object save) {
+    public int saveCache(Object save) {
         return this.save(save);
     }
 

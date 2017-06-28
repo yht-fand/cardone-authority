@@ -127,7 +127,7 @@ public interface UserRoleService extends PageService {
      * @see top.cardone.authority.service.UserRoleService#save
      */
     @CacheEvict(value = "top.cardone.authority.service.UserRoleService", allEntries = true)
-    Integer saveCache(Object save);
+    int saveCache(Object save);
 
     /**
      * @see top.cardone.authority.service.UserRoleService#update

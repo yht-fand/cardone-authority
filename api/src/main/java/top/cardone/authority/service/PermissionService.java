@@ -137,7 +137,7 @@ public interface PermissionService extends PageService {
      */
     @CacheEvict(value = "top.cardone.authority.service.PermissionService", allEntries = true)
     @Func(beanId = "funcAnnotationFunc", value = "{\"afterBeanIds\": \"generatePermissionTreeFunc\"}")
-    Integer saveCache(Object save);
+    int saveCache(Object save);
 
     /**
      * @see top.cardone.authority.service.PermissionService#update

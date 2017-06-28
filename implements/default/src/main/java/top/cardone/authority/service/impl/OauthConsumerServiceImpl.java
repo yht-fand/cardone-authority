@@ -115,7 +115,7 @@ public class OAuthConsumerServiceImpl extends PageServiceImpl<OAuthConsumerDao> 
 
     @Override
     @Transactional
-    public Integer saveCache(Object save) {
+    public int saveCache(Object save) {
         return this.save(save);
     }
 

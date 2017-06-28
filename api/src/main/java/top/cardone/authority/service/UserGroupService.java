@@ -137,7 +137,7 @@ public interface UserGroupService extends PageService {
      */
     @CacheEvict(value = "top.cardone.authority.service.UserGroupService", allEntries = true)
     @Func(beanId = "funcAnnotationFunc", value = "{\"afterBeanIds\": \"generateUserGroupTreeFunc\"}")
-    Integer saveCache(Object save);
+    int saveCache(Object save);
 
     /**
      * @see top.cardone.authority.service.UserGroupService#update
