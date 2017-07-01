@@ -4,7 +4,10 @@ import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
 import top.cardone.cache.Caches;
+import top.cardone.context.annotation.Event;
+import top.cardone.context.annotation.Events;
 import top.cardone.context.annotation.Func;
+import top.cardone.context.event.SimpleEvent;
 import top.cardone.data.service.PageService;
 
 import java.util.List;
@@ -56,28 +59,28 @@ public interface PermissionService extends PageService {
      * @see top.cardone.authority.service.PermissionService#delete
      */
     @CacheEvict(value = "top.cardone.authority.service.PermissionService", allEntries = true)
-    @Func(beanId = "funcAnnotationFunc", value = "{\"afterBeanIds\": \"generatePermissionTreeFunc\"}")
+    @Events({@Event(applicationEvent = SimpleEvent.class, config = "func0BeanName:generatePermissionTreeFunc")})
     int deleteCache(Object delete);
 
     /**
      * @see top.cardone.authority.service.PermissionService#deleteAll
      */
     @CacheEvict(value = "top.cardone.authority.service.PermissionService", allEntries = true)
-    @Func(beanId = "funcAnnotationFunc", value = "{\"afterBeanIds\": \"generatePermissionTreeFunc\"}")
+    @Events({@Event(applicationEvent = SimpleEvent.class, config = "func0BeanName:generatePermissionTreeFunc")})
     int deleteAllCache();
 
     /**
      * @see top.cardone.authority.service.PermissionService#deleteByIds
      */
     @CacheEvict(value = "top.cardone.authority.service.PermissionService", allEntries = true)
-    @Func(beanId = "funcAnnotationFunc", value = "{\"afterBeanIds\": \"generatePermissionTreeFunc\"}")
+    @Events({@Event(applicationEvent = SimpleEvent.class, config = "func0BeanName:generatePermissionTreeFunc")})
     int deleteByIdsCache(Object ids);
 
     /**
      * @see top.cardone.authority.service.PermissionService#deleteList
      */
     @CacheEvict(value = "top.cardone.authority.service.PermissionService", allEntries = true)
-    @Func(beanId = "funcAnnotationFunc", value = "{\"afterBeanIds\": \"generatePermissionTreeFunc\"}")
+    @Events({@Event(applicationEvent = SimpleEvent.class, config = "func0BeanName:generatePermissionTreeFunc")})
     int[] deleteListCache(List<Object> deleteList);
 
     /**
@@ -96,28 +99,28 @@ public interface PermissionService extends PageService {
      * @see top.cardone.authority.service.PermissionService#insert
      */
     @CacheEvict(value = "top.cardone.authority.service.PermissionService", allEntries = true)
-    @Func(beanId = "funcAnnotationFunc", value = "{\"afterBeanIds\": \"generatePermissionTreeFunc\"}")
+    @Events({@Event(applicationEvent = SimpleEvent.class, config = "func0BeanName:generatePermissionTreeFunc")})
     int insertCache(Object insert);
 
     /**
      * @see top.cardone.authority.service.PermissionService#insertByNotExists
      */
     @CacheEvict(value = "top.cardone.authority.service.PermissionService", allEntries = true)
-    @Func(beanId = "funcAnnotationFunc", value = "{\"afterBeanIds\": \"generatePermissionTreeFunc\"}")
+    @Events({@Event(applicationEvent = SimpleEvent.class, config = "func0BeanName:generatePermissionTreeFunc")})
     int insertByNotExistsCache(Object insert);
 
     /**
      * @see top.cardone.authority.service.PermissionService#insertList
      */
     @CacheEvict(value = "top.cardone.authority.service.PermissionService", allEntries = true)
-    @Func(beanId = "funcAnnotationFunc", value = "{\"afterBeanIds\": \"generatePermissionTreeFunc\"}")
+    @Events({@Event(applicationEvent = SimpleEvent.class, config = "func0BeanName:generatePermissionTreeFunc")})
     int[] insertListCache(List<Object> insertList);
 
     /**
      * @see top.cardone.authority.service.PermissionService#insertListByNotExists
      */
     @CacheEvict(value = "top.cardone.authority.service.PermissionService", allEntries = true)
-    @Func(beanId = "funcAnnotationFunc", value = "{\"afterBeanIds\": \"generatePermissionTreeFunc\"}")
+    @Events({@Event(applicationEvent = SimpleEvent.class, config = "func0BeanName:generatePermissionTreeFunc")})
     int[] insertListByNotExistsCache(List<Object> insertList);
 
     /**
@@ -136,21 +139,21 @@ public interface PermissionService extends PageService {
      * @see top.cardone.authority.service.PermissionService#save
      */
     @CacheEvict(value = "top.cardone.authority.service.PermissionService", allEntries = true)
-    @Func(beanId = "funcAnnotationFunc", value = "{\"afterBeanIds\": \"generatePermissionTreeFunc\"}")
+    @Events({@Event(applicationEvent = SimpleEvent.class, config = "func0BeanName:generatePermissionTreeFunc")})
     int saveCache(Object save);
 
     /**
      * @see top.cardone.authority.service.PermissionService#update
      */
     @CacheEvict(value = "top.cardone.authority.service.PermissionService", allEntries = true)
-    @Func(beanId = "funcAnnotationFunc", value = "{\"afterBeanIds\": \"generatePermissionTreeFunc\"}")
+    @Events({@Event(applicationEvent = SimpleEvent.class, config = "func0BeanName:generatePermissionTreeFunc")})
     int updateCache(Object update);
 
     /**
      * @see top.cardone.authority.service.PermissionService#updateList
      */
     @CacheEvict(value = "top.cardone.authority.service.PermissionService", allEntries = true)
-    @Func(beanId = "funcAnnotationFunc", value = "{\"afterBeanIds\": \"generatePermissionTreeFunc\"}")
+    @Events({@Event(applicationEvent = SimpleEvent.class, config = "func0BeanName:generatePermissionTreeFunc")})
     int[] updateListCache(List<Object> updateList);
 
     /**
@@ -183,7 +186,7 @@ public interface PermissionService extends PageService {
      * @return
      */
     @CacheEvict(value = "top.cardone.authority.service.PermissionService", allEntries = true)
-    @Func(beanId = "funcAnnotationFunc", value = "{\"afterBeanIds\": \"generatePermissionTreeFunc\"}")
+    @Events({@Event(applicationEvent = SimpleEvent.class, config = "func0BeanName:generatePermissionTreeFunc")})
     int generateData();
 
     /**
@@ -193,6 +196,6 @@ public interface PermissionService extends PageService {
      * @return
      */
     @CacheEvict(value = "top.cardone.authority.service.PermissionService", allEntries = true)
-    @Func(beanId = "funcAnnotationFunc", value = "{\"afterBeanIds\": \"generatePermissionTreeFunc\"}")
+    @Events({@Event(applicationEvent = SimpleEvent.class, config = "func0BeanName:generatePermissionTreeFunc")})
     int generateData(String flagObjectCode);
 }

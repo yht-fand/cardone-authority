@@ -4,7 +4,9 @@ import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
 import top.cardone.cache.Caches;
-import top.cardone.context.annotation.Func;
+import top.cardone.context.annotation.Event;
+import top.cardone.context.annotation.Events;
+import top.cardone.context.event.SimpleEvent;
 import top.cardone.data.service.PageService;
 
 import java.util.List;
@@ -56,28 +58,28 @@ public interface UserGroupService extends PageService {
      * @see top.cardone.authority.service.UserGroupService#delete
      */
     @CacheEvict(value = "top.cardone.authority.service.UserGroupService", allEntries = true)
-    @Func(beanId = "funcAnnotationFunc", value = "{\"afterBeanIds\": \"generateUserGroupTreeFunc\"}")
+    @Events({@Event(applicationEvent = SimpleEvent.class, config = "func0BeanName:generateUserGroupTreeFunc")})
     int deleteCache(Object delete);
 
     /**
      * @see top.cardone.authority.service.UserGroupService#deleteAll
      */
     @CacheEvict(value = "top.cardone.authority.service.UserGroupService", allEntries = true)
-    @Func(beanId = "funcAnnotationFunc", value = "{\"afterBeanIds\": \"generateUserGroupTreeFunc\"}")
+    @Events({@Event(applicationEvent = SimpleEvent.class, config = "func0BeanName:generateUserGroupTreeFunc")})
     int deleteAllCache();
 
     /**
      * @see top.cardone.authority.service.UserGroupService#deleteByIds
      */
     @CacheEvict(value = "top.cardone.authority.service.UserGroupService", allEntries = true)
-    @Func(beanId = "funcAnnotationFunc", value = "{\"afterBeanIds\": \"generateUserGroupTreeFunc\"}")
+    @Events({@Event(applicationEvent = SimpleEvent.class, config = "func0BeanName:generateUserGroupTreeFunc")})
     int deleteByIdsCache(Object ids);
 
     /**
      * @see top.cardone.authority.service.UserGroupService#deleteList
      */
     @CacheEvict(value = "top.cardone.authority.service.UserGroupService", allEntries = true)
-    @Func(beanId = "funcAnnotationFunc", value = "{\"afterBeanIds\": \"generateUserGroupTreeFunc\"}")
+    @Events({@Event(applicationEvent = SimpleEvent.class, config = "func0BeanName:generateUserGroupTreeFunc")})
     int[] deleteListCache(List<Object> deleteList);
 
     /**
@@ -96,28 +98,28 @@ public interface UserGroupService extends PageService {
      * @see top.cardone.authority.service.UserGroupService#insert
      */
     @CacheEvict(value = "top.cardone.authority.service.UserGroupService", allEntries = true)
-    @Func(beanId = "funcAnnotationFunc", value = "{\"afterBeanIds\": \"generateUserGroupTreeFunc\"}")
+    @Events({@Event(applicationEvent = SimpleEvent.class, config = "func0BeanName:generateUserGroupTreeFunc")})
     int insertCache(Object insert);
 
     /**
      * @see top.cardone.authority.service.UserGroupService#insertByNotExists
      */
     @CacheEvict(value = "top.cardone.authority.service.UserGroupService", allEntries = true)
-    @Func(beanId = "funcAnnotationFunc", value = "{\"afterBeanIds\": \"generateUserGroupTreeFunc\"}")
+    @Events({@Event(applicationEvent = SimpleEvent.class, config = "func0BeanName:generateUserGroupTreeFunc")})
     int insertByNotExistsCache(Object insert);
 
     /**
      * @see top.cardone.authority.service.UserGroupService#insertList
      */
     @CacheEvict(value = "top.cardone.authority.service.UserGroupService", allEntries = true)
-    @Func(beanId = "funcAnnotationFunc", value = "{\"afterBeanIds\": \"generateUserGroupTreeFunc\"}")
+    @Events({@Event(applicationEvent = SimpleEvent.class, config = "func0BeanName:generateUserGroupTreeFunc")})
     int[] insertListCache(List<Object> insertList);
 
     /**
      * @see top.cardone.authority.service.UserGroupService#insertListByNotExists
      */
     @CacheEvict(value = "top.cardone.authority.service.UserGroupService", allEntries = true)
-    @Func(beanId = "funcAnnotationFunc", value = "{\"afterBeanIds\": \"generateUserGroupTreeFunc\"}")
+    @Events({@Event(applicationEvent = SimpleEvent.class, config = "func0BeanName:generateUserGroupTreeFunc")})
     int[] insertListByNotExistsCache(List<Object> insertList);
 
     /**
@@ -136,28 +138,28 @@ public interface UserGroupService extends PageService {
      * @see top.cardone.authority.service.UserGroupService#save
      */
     @CacheEvict(value = "top.cardone.authority.service.UserGroupService", allEntries = true)
-    @Func(beanId = "funcAnnotationFunc", value = "{\"afterBeanIds\": \"generateUserGroupTreeFunc\"}")
+    @Events({@Event(applicationEvent = SimpleEvent.class, config = "func0BeanName:generateUserGroupTreeFunc")})
     int saveCache(Object save);
 
     /**
      * @see top.cardone.authority.service.UserGroupService#update
      */
     @CacheEvict(value = "top.cardone.authority.service.UserGroupService", allEntries = true)
-    @Func(beanId = "funcAnnotationFunc", value = "{\"afterBeanIds\": \"generateUserGroupTreeFunc\"}")
+    @Events({@Event(applicationEvent = SimpleEvent.class, config = "func0BeanName:generateUserGroupTreeFunc")})
     int updateCache(Object update);
 
     /**
      * @see top.cardone.authority.service.UserGroupService#updateList
      */
     @CacheEvict(value = "top.cardone.authority.service.UserGroupService", allEntries = true)
-    @Func(beanId = "funcAnnotationFunc", value = "{\"afterBeanIds\": \"generateUserGroupTreeFunc\"}")
+    @Events({@Event(applicationEvent = SimpleEvent.class, config = "func0BeanName:generateUserGroupTreeFunc")})
     int[] updateListCache(List<Object> updateList);
 
     /**
      * @see top.cardone.authority.service.UserGroupService#saveList
      */
     @CacheEvict(value = "top.cardone.authority.service.UserGroupService", allEntries = true)
-    @Func(beanId = "funcAnnotationFunc", value = "{\"afterBeanIds\": \"generateUserGroupTreeFunc\"}")
+    @Events({@Event(applicationEvent = SimpleEvent.class, config = "func0BeanName:generateUserGroupTreeFunc")})
     int[][] saveListCache(List<Object> saveList);
 
     /**
@@ -190,7 +192,7 @@ public interface UserGroupService extends PageService {
      * @return
      */
     @CacheEvict(value = "top.cardone.authority.service.UserGroupService", allEntries = true)
-    @Func(beanId = "funcAnnotationFunc", value = "{\"afterBeanIds\": \"generateUserGroupTreeFunc\"}")
+    @Events({@Event(applicationEvent = SimpleEvent.class, config = "func0BeanName:generateUserGroupTreeFunc")})
     int generateData();
 
     /**
@@ -200,6 +202,6 @@ public interface UserGroupService extends PageService {
      * @return
      */
     @CacheEvict(value = "top.cardone.authority.service.UserGroupService", allEntries = true)
-    @Func(beanId = "funcAnnotationFunc", value = "{\"afterBeanIds\": \"generateUserGroupTreeFunc\"}")
+    @Events({@Event(applicationEvent = SimpleEvent.class, config = "func0BeanName:generateUserGroupTreeFunc")})
     int generateData(String flagObjectCode);
 }

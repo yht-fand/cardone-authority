@@ -4,7 +4,10 @@ import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
 import top.cardone.cache.Caches;
+import top.cardone.context.annotation.Event;
+import top.cardone.context.annotation.Events;
 import top.cardone.context.annotation.Func;
+import top.cardone.context.event.SimpleEvent;
 import top.cardone.data.service.PageService;
 
 import java.util.List;
@@ -56,28 +59,28 @@ public interface RoleService extends PageService {
      * @see top.cardone.authority.service.RoleService#delete
      */
     @CacheEvict(value = "top.cardone.authority.service.RoleService", allEntries = true)
-    @Func(beanId = "funcAnnotationFunc", value = "{\"afterBeanIds\": \"generateRoleTreeFunc\"}")
+    @Events({@Event(applicationEvent = SimpleEvent.class, config = "func0BeanName:generateRoleTreeFunc")})
     int deleteCache(Object delete);
 
     /**
      * @see top.cardone.authority.service.RoleService#deleteAll
      */
     @CacheEvict(value = "top.cardone.authority.service.RoleService", allEntries = true)
-    @Func(beanId = "funcAnnotationFunc", value = "{\"afterBeanIds\": \"generateRoleTreeFunc\"}")
+    @Events({@Event(applicationEvent = SimpleEvent.class, config = "func0BeanName:generateRoleTreeFunc")})
     int deleteAllCache();
 
     /**
      * @see top.cardone.authority.service.RoleService#deleteByIds
      */
     @CacheEvict(value = "top.cardone.authority.service.RoleService", allEntries = true)
-    @Func(beanId = "funcAnnotationFunc", value = "{\"afterBeanIds\": \"generateRoleTreeFunc\"}")
+    @Events({@Event(applicationEvent = SimpleEvent.class, config = "func0BeanName:generateRoleTreeFunc")})
     int deleteByIdsCache(Object ids);
 
     /**
      * @see top.cardone.authority.service.RoleService#deleteList
      */
     @CacheEvict(value = "top.cardone.authority.service.RoleService", allEntries = true)
-    @Func(beanId = "funcAnnotationFunc", value = "{\"afterBeanIds\": \"generateRoleTreeFunc\"}")
+    @Events({@Event(applicationEvent = SimpleEvent.class, config = "func0BeanName:generateRoleTreeFunc")})
     int[] deleteListCache(List<Object> deleteList);
 
     /**
@@ -96,28 +99,28 @@ public interface RoleService extends PageService {
      * @see top.cardone.authority.service.RoleService#insert
      */
     @CacheEvict(value = "top.cardone.authority.service.RoleService", allEntries = true)
-    @Func(beanId = "funcAnnotationFunc", value = "{\"afterBeanIds\": \"generateRoleTreeFunc\"}")
+    @Events({@Event(applicationEvent = SimpleEvent.class, config = "func0BeanName:generateRoleTreeFunc")})
     int insertCache(Object insert);
 
     /**
      * @see top.cardone.authority.service.RoleService#insertByNotExists
      */
     @CacheEvict(value = "top.cardone.authority.service.RoleService", allEntries = true)
-    @Func(beanId = "funcAnnotationFunc", value = "{\"afterBeanIds\": \"generateRoleTreeFunc\"}")
+    @Events({@Event(applicationEvent = SimpleEvent.class, config = "func0BeanName:generateRoleTreeFunc")})
     int insertByNotExistsCache(Object insert);
 
     /**
      * @see top.cardone.authority.service.RoleService#insertList
      */
     @CacheEvict(value = "top.cardone.authority.service.RoleService", allEntries = true)
-    @Func(beanId = "funcAnnotationFunc", value = "{\"afterBeanIds\": \"generateRoleTreeFunc\"}")
+    @Events({@Event(applicationEvent = SimpleEvent.class, config = "func0BeanName:generateRoleTreeFunc")})
     int[] insertListCache(List<Object> insertList);
 
     /**
      * @see top.cardone.authority.service.RoleService#insertListByNotExists
      */
     @CacheEvict(value = "top.cardone.authority.service.RoleService", allEntries = true)
-    @Func(beanId = "funcAnnotationFunc", value = "{\"afterBeanIds\": \"generateRoleTreeFunc\"}")
+    @Events({@Event(applicationEvent = SimpleEvent.class, config = "func0BeanName:generateRoleTreeFunc")})
     int[] insertListByNotExistsCache(List<Object> insertList);
 
     /**
@@ -136,21 +139,21 @@ public interface RoleService extends PageService {
      * @see top.cardone.authority.service.RoleService#save
      */
     @CacheEvict(value = "top.cardone.authority.service.RoleService", allEntries = true)
-    @Func(beanId = "funcAnnotationFunc", value = "{\"afterBeanIds\": \"generateRoleTreeFunc\"}")
+    @Events({@Event(applicationEvent = SimpleEvent.class, config = "func0BeanName:generateRoleTreeFunc")})
     int saveCache(Object save);
 
     /**
      * @see top.cardone.authority.service.RoleService#update
      */
     @CacheEvict(value = "top.cardone.authority.service.RoleService", allEntries = true)
-    @Func(beanId = "funcAnnotationFunc", value = "{\"afterBeanIds\": \"generateRoleTreeFunc\"}")
+    @Events({@Event(applicationEvent = SimpleEvent.class, config = "func0BeanName:generateRoleTreeFunc")})
     int updateCache(Object update);
 
     /**
      * @see top.cardone.authority.service.RoleService#updateList
      */
     @CacheEvict(value = "top.cardone.authority.service.RoleService", allEntries = true)
-    @Func(beanId = "funcAnnotationFunc", value = "{\"afterBeanIds\": \"generateRoleTreeFunc\"}")
+    @Events({@Event(applicationEvent = SimpleEvent.class, config = "func0BeanName:generateRoleTreeFunc")})
     int[] updateListCache(List<Object> updateList);
 
     /**
@@ -183,7 +186,7 @@ public interface RoleService extends PageService {
      * @return
      */
     @CacheEvict(value = "top.cardone.authority.service.RoleService", allEntries = true)
-    @Func(beanId = "funcAnnotationFunc", value = "{\"afterBeanIds\": \"generateRoleTreeFunc\"}")
+    @Events({@Event(applicationEvent = SimpleEvent.class, config = "func0BeanName:generateRoleTreeFunc")})
     int generateData();
 
     /**
@@ -193,6 +196,6 @@ public interface RoleService extends PageService {
      * @return
      */
     @CacheEvict(value = "top.cardone.authority.service.RoleService", allEntries = true)
-    @Func(beanId = "funcAnnotationFunc", value = "{\"afterBeanIds\": \"generateRoleTreeFunc\"}")
+    @Events({@Event(applicationEvent = SimpleEvent.class, config = "func0BeanName:generateRoleTreeFunc")})
     int generateData(String flagObjectCode);
 }
