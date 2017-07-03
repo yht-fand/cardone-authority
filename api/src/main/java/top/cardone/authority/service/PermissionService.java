@@ -58,28 +58,28 @@ public interface PermissionService extends PageService {
      * @see top.cardone.authority.service.PermissionService#delete
      */
     @CacheEvict(value = "top.cardone.authority.service.PermissionService", allEntries = true)
-    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generatePermissionTreeFunc")})
+    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generatePermissionTreeAction")})
     int deleteCache(Object delete);
 
     /**
      * @see top.cardone.authority.service.PermissionService#deleteAll
      */
     @CacheEvict(value = "top.cardone.authority.service.PermissionService", allEntries = true)
-    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generatePermissionTreeFunc")})
+    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generatePermissionTreeAction")})
     int deleteAllCache();
 
     /**
      * @see top.cardone.authority.service.PermissionService#deleteByIds
      */
     @CacheEvict(value = "top.cardone.authority.service.PermissionService", allEntries = true)
-    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generatePermissionTreeFunc")})
+    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generatePermissionTreeAction")})
     int deleteByIdsCache(Object ids);
 
     /**
      * @see top.cardone.authority.service.PermissionService#deleteList
      */
     @CacheEvict(value = "top.cardone.authority.service.PermissionService", allEntries = true)
-    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generatePermissionTreeFunc")})
+    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generatePermissionTreeAction")})
     int[] deleteListCache(List<Object> deleteList);
 
     /**
@@ -98,28 +98,28 @@ public interface PermissionService extends PageService {
      * @see top.cardone.authority.service.PermissionService#insert
      */
     @CacheEvict(value = "top.cardone.authority.service.PermissionService", allEntries = true)
-    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generatePermissionTreeFunc")})
+    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generatePermissionTreeAction")})
     int insertCache(Object insert);
 
     /**
      * @see top.cardone.authority.service.PermissionService#insertByNotExists
      */
     @CacheEvict(value = "top.cardone.authority.service.PermissionService", allEntries = true)
-    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generatePermissionTreeFunc")})
+    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generatePermissionTreeAction")})
     int insertByNotExistsCache(Object insert);
 
     /**
      * @see top.cardone.authority.service.PermissionService#insertList
      */
     @CacheEvict(value = "top.cardone.authority.service.PermissionService", allEntries = true)
-    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generatePermissionTreeFunc")})
+    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generatePermissionTreeAction")})
     int[] insertListCache(List<Object> insertList);
 
     /**
      * @see top.cardone.authority.service.PermissionService#insertListByNotExists
      */
     @CacheEvict(value = "top.cardone.authority.service.PermissionService", allEntries = true)
-    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generatePermissionTreeFunc")})
+    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generatePermissionTreeAction")})
     int[] insertListByNotExistsCache(List<Object> insertList);
 
     /**
@@ -138,21 +138,21 @@ public interface PermissionService extends PageService {
      * @see top.cardone.authority.service.PermissionService#save
      */
     @CacheEvict(value = "top.cardone.authority.service.PermissionService", allEntries = true)
-    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generatePermissionTreeFunc")})
+    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generatePermissionTreeAction")})
     int saveCache(Object save);
 
     /**
      * @see top.cardone.authority.service.PermissionService#update
      */
     @CacheEvict(value = "top.cardone.authority.service.PermissionService", allEntries = true)
-    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generatePermissionTreeFunc")})
+    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generatePermissionTreeAction")})
     int updateCache(Object update);
 
     /**
      * @see top.cardone.authority.service.PermissionService#updateList
      */
     @CacheEvict(value = "top.cardone.authority.service.PermissionService", allEntries = true)
-    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generatePermissionTreeFunc")})
+    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generatePermissionTreeAction")})
     int[] updateListCache(List<Object> updateList);
 
     /**
@@ -185,7 +185,7 @@ public interface PermissionService extends PageService {
      * @return
      */
     @CacheEvict(value = "top.cardone.authority.service.PermissionService", allEntries = true)
-    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generatePermissionTreeFunc")})
+    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generatePermissionTreeAction")})
     int generateData();
 
     /**
@@ -195,6 +195,6 @@ public interface PermissionService extends PageService {
      * @return
      */
     @CacheEvict(value = "top.cardone.authority.service.PermissionService", allEntries = true)
-    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generatePermissionTreeFunc")})
+    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generatePermissionTreeAction")})
     int generateData(String flagObjectCode);
 }

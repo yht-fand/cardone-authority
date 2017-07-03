@@ -58,28 +58,28 @@ public interface UserGroupService extends PageService {
      * @see top.cardone.authority.service.UserGroupService#delete
      */
     @CacheEvict(value = "top.cardone.authority.service.UserGroupService", allEntries = true)
-    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generateUserGroupTreeFunc")})
+    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generateUserGroupTreeAction")})
     int deleteCache(Object delete);
 
     /**
      * @see top.cardone.authority.service.UserGroupService#deleteAll
      */
     @CacheEvict(value = "top.cardone.authority.service.UserGroupService", allEntries = true)
-    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generateUserGroupTreeFunc")})
+    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generateUserGroupTreeAction")})
     int deleteAllCache();
 
     /**
      * @see top.cardone.authority.service.UserGroupService#deleteByIds
      */
     @CacheEvict(value = "top.cardone.authority.service.UserGroupService", allEntries = true)
-    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generateUserGroupTreeFunc")})
+    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generateUserGroupTreeAction")})
     int deleteByIdsCache(Object ids);
 
     /**
      * @see top.cardone.authority.service.UserGroupService#deleteList
      */
     @CacheEvict(value = "top.cardone.authority.service.UserGroupService", allEntries = true)
-    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generateUserGroupTreeFunc")})
+    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generateUserGroupTreeAction")})
     int[] deleteListCache(List<Object> deleteList);
 
     /**
@@ -98,28 +98,28 @@ public interface UserGroupService extends PageService {
      * @see top.cardone.authority.service.UserGroupService#insert
      */
     @CacheEvict(value = "top.cardone.authority.service.UserGroupService", allEntries = true)
-    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generateUserGroupTreeFunc")})
+    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generateUserGroupTreeAction")})
     int insertCache(Object insert);
 
     /**
      * @see top.cardone.authority.service.UserGroupService#insertByNotExists
      */
     @CacheEvict(value = "top.cardone.authority.service.UserGroupService", allEntries = true)
-    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generateUserGroupTreeFunc")})
+    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generateUserGroupTreeAction")})
     int insertByNotExistsCache(Object insert);
 
     /**
      * @see top.cardone.authority.service.UserGroupService#insertList
      */
     @CacheEvict(value = "top.cardone.authority.service.UserGroupService", allEntries = true)
-    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generateUserGroupTreeFunc")})
+    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generateUserGroupTreeAction")})
     int[] insertListCache(List<Object> insertList);
 
     /**
      * @see top.cardone.authority.service.UserGroupService#insertListByNotExists
      */
     @CacheEvict(value = "top.cardone.authority.service.UserGroupService", allEntries = true)
-    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generateUserGroupTreeFunc")})
+    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generateUserGroupTreeAction")})
     int[] insertListByNotExistsCache(List<Object> insertList);
 
     /**
@@ -138,28 +138,28 @@ public interface UserGroupService extends PageService {
      * @see top.cardone.authority.service.UserGroupService#save
      */
     @CacheEvict(value = "top.cardone.authority.service.UserGroupService", allEntries = true)
-    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generateUserGroupTreeFunc")})
+    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generateUserGroupTreeAction")})
     int saveCache(Object save);
 
     /**
      * @see top.cardone.authority.service.UserGroupService#update
      */
     @CacheEvict(value = "top.cardone.authority.service.UserGroupService", allEntries = true)
-    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generateUserGroupTreeFunc")})
+    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generateUserGroupTreeAction")})
     int updateCache(Object update);
 
     /**
      * @see top.cardone.authority.service.UserGroupService#updateList
      */
     @CacheEvict(value = "top.cardone.authority.service.UserGroupService", allEntries = true)
-    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generateUserGroupTreeFunc")})
+    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generateUserGroupTreeAction")})
     int[] updateListCache(List<Object> updateList);
 
     /**
      * @see top.cardone.authority.service.UserGroupService#saveList
      */
     @CacheEvict(value = "top.cardone.authority.service.UserGroupService", allEntries = true)
-    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generateUserGroupTreeFunc")})
+    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generateUserGroupTreeAction")})
     int[][] saveListCache(List<Object> saveList);
 
     /**
@@ -192,7 +192,7 @@ public interface UserGroupService extends PageService {
      * @return
      */
     @CacheEvict(value = "top.cardone.authority.service.UserGroupService", allEntries = true)
-    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generateUserGroupTreeFunc")})
+    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generateUserGroupTreeAction")})
     int generateData();
 
     /**
@@ -202,6 +202,6 @@ public interface UserGroupService extends PageService {
      * @return
      */
     @CacheEvict(value = "top.cardone.authority.service.UserGroupService", allEntries = true)
-    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generateUserGroupTreeFunc")})
+    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generateUserGroupTreeAction")})
     int generateData(String flagObjectCode);
 }
