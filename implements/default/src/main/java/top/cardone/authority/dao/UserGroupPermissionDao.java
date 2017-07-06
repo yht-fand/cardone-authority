@@ -18,14 +18,6 @@ public interface UserGroupPermissionDao extends PageDao {
      * @return 用户组与许可对象
      */
     Map<String, Object> findOneByUserGroupPermissionId(Map<String, Object> findOne);
-	
-    /**
-     * 查询用户组与许可下拉列表
-     *
-     * @param findList 关键字
-     * @return 用户组与许可下拉列表
-     */
-    List<Map<String, Object>> findListByKeyword(Map<String, Object> findList);
 
     /**
      * 生成

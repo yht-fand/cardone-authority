@@ -18,12 +18,4 @@ public interface TokenInfoDao extends PageDao {
      * @return 令牌信息对象
      */
     Map<String, Object> findOneByTokenInfoId(Map<String, Object> findOne);
-	
-    /**
-     * 查询令牌信息下拉列表
-     *
-     * @param findList 关键字
-     * @return 令牌信息下拉列表
-     */
-    List<Map<String, Object>> findListByKeyword(Map<String, Object> findList);
 }

@@ -18,12 +18,4 @@ public interface OAuthConsumerDao extends PageDao {
      * @return 授权消费对象
      */
     Map<String, Object> findOneByOAuthConsumerId(Map<String, Object> findOne);
-	
-    /**
-     * 查询授权消费下拉列表
-     *
-     * @param findList 关键字
-     * @return 授权消费下拉列表
-     */
-    List<Map<String, Object>> findListByKeyword(Map<String, Object> findList);
 }

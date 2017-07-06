@@ -20,13 +20,6 @@ public class RoleDaoImpl extends PageDaoImpl implements top.cardone.authority.da
     }
 
     @Override
-    public List<Map<String, Object>> findListByKeyword(Map<String, Object> findList) {
-        String findListByKeywordSqlFilePath = this.getSqlFilePath("findListByKeyword");
-
-        return this.findList(findListByKeywordSqlFilePath, findList);
-    }
-
-    @Override
     public List<Map<String, Object>> findListForTree(Map<String, Object> findList) {
         String findListSqlFilePath = this.getSqlFilePath("findListForTree");
 

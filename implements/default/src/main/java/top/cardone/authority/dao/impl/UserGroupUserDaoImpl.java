@@ -21,13 +21,6 @@ public class UserGroupUserDaoImpl extends PageDaoImpl implements top.cardone.aut
     }
 
     @Override
-    public List<Map<String, Object>> findListByKeyword(Map<String, Object> findList) {
-        String findListByKeywordSqlFilePath = this.getSqlFilePath("findListByKeyword");
-
-        return this.findList(findListByKeywordSqlFilePath, findList);
-    }
-
-    @Override
     public int generateData(String flagObjectCode) {
         String findListForUserSqlFilePath = this.getSqlFilePath("findListForUser");
 

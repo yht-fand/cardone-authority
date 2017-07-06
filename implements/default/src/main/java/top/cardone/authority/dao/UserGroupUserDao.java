@@ -18,14 +18,6 @@ public interface UserGroupUserDao extends PageDao {
      * @return 用户组与用户对象
      */
     Map<String, Object> findOneByUserGroupUserId(Map<String, Object> findOne);
-	
-    /**
-     * 查询用户组与用户下拉列表
-     *
-     * @param findList 关键字
-     * @return 用户组与用户下拉列表
-     */
-    List<Map<String, Object>> findListByKeyword(Map<String, Object> findList);
 
     /**
      * 生成

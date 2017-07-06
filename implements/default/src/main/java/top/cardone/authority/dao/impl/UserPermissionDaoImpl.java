@@ -20,13 +20,6 @@ public class UserPermissionDaoImpl extends PageDaoImpl implements top.cardone.au
     }
 
     @Override
-    public List<Map<String, Object>> findListByKeyword(Map<String, Object> findList) {
-        String findListByKeywordSqlFilePath = this.getSqlFilePath("findListByKeyword");
-
-        return this.findList(findListByKeywordSqlFilePath, findList);
-    }
-
-    @Override
     public int generateData(String flagObjectCode) {
         String findListForUserGroupPermissionSqlFilePath = this.getSqlFilePath("findListForUserGroupPermission");
 

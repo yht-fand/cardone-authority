@@ -20,14 +20,6 @@ public interface RoleDao extends PageDao {
     Map<String, Object> findOneByRoleId(Map<String, Object> findOne);
 
     /**
-     * 查询角色下拉列表
-     *
-     * @param findList 关键字
-     * @return 角色下拉列表
-     */
-    List<Map<String, Object>> findListByKeyword(Map<String, Object> findList);
-
-    /**
      * 查询树
      *
      * @param findList 关键字

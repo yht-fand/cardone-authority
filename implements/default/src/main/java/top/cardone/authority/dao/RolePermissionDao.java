@@ -18,14 +18,6 @@ public interface RolePermissionDao extends PageDao {
      * @return 角色与许可对象
      */
     Map<String, Object> findOneByRolePermissionId(Map<String, Object> findOne);
-	
-    /**
-     * 查询角色与许可下拉列表
-     *
-     * @param findList 关键字
-     * @return 角色与许可下拉列表
-     */
-    List<Map<String, Object>> findListByKeyword(Map<String, Object> findList);
 
     /**
      * 生成
