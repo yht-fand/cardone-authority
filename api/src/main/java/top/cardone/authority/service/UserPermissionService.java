@@ -10,10 +10,12 @@ import top.cardone.context.annotation.Event;
 import top.cardone.context.annotation.Events;
 import top.cardone.context.event.SimpleErrorEvent;
 import top.cardone.context.event.SimpleEvent;
+import top.cardone.context.util.StringUtils;
 import top.cardone.data.service.PageService;
 
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 
 /**
  * 用户与许可服务
@@ -269,10 +271,28 @@ public interface UserPermissionService extends PageService {
 
 
     @Cacheable(key = Caches.KEY_2)
-    Map<String, Object> findOneByFunctionCodeCache(String userCode, String functionCode);
+    default Map<String, Object> findOneByFunctionCodeCache(String userCode, String functionCode) {
+        Map<String, Object> map = this.findOneByFunctionCode(userCode, functionCode);
+
+        for (Map.Entry<String, Object> mapEntry : map.entrySet()) {
+            if (mapEntry.getValue() == null) {
+                mapEntry.setValue(UUID.randomUUID().toString());
+
+                continue;
+            }
+
+            if (StringUtils.contains((String) mapEntry.getValue(), "*")) {
+                mapEntry.setValue(StringUtils.EMPTY);
+            }
+        }
+
+        return map;
+    }
 
     @Cacheable(key = Caches.KEY_1)
-    Map<String, Object> findOneByFunctionCodeCache(String functionCode);
+  default   Map<String, Object> findOneByFunctionCodeCache(String functionCode) {
+        return this.findOneByFunctionCode(functionCode);
+    }
 
     Map<String, Object> findOneByFunctionCode(String userCode, String functionCode);
 
