@@ -13,7 +13,7 @@
     <groupId>top.cardone</groupId>
     <artifactId>cardone-authority-parent</artifactId>
     <version>1.1.1-SNAPSHOT</version>
-    <name>${project.artifactId}</name>
+    <name>top.cardone cardone-authority-parent</name>
     <description>top.cardone cardone-authority-parent</description>
     <packaging>pom</packaging>
 
@@ -66,18 +66,6 @@
             <dependency>
                 <groupId>top.cardone</groupId>
 				<artifactId>cardone-authority-implements-default</artifactId>
-                <version>1.1.1-SNAPSHOT</version>
-            </dependency>
-
-            <dependency>
-                <groupId>top.cardone</groupId>
-				<artifactId>cardone-authority-provider</artifactId>
-                <version>1.1.1-SNAPSHOT</version>
-            </dependency>
-
-            <dependency>
-                <groupId>top.cardone</groupId>
-				<artifactId>cardone-authority-consumer</artifactId>
                 <version>1.1.1-SNAPSHOT</version>
             </dependency>
         </dependencies>
