@@ -22,8 +22,8 @@ import java.util.Map;
  */
 @Transactional(readOnly = true)
 @CacheConfig(cacheNames = {"top.cardone.authority.service.PermissionService"})
-@Events({@Event(applicationEvent = SimpleErrorEvent.class, configs = {"insertOperateLogAction"}),
-        @Event(applicationEvent = SimpleEvent.class, configs = {"insertOperateLogAction"})})
+@Events({@Event(applicationEvent = SimpleErrorEvent.class),
+        @Event(applicationEvent = SimpleEvent.class)})
 public interface PermissionService extends PageService {
     /**
      * @see top.cardone.authority.service.PermissionService#page
@@ -78,7 +78,7 @@ public interface PermissionService extends PageService {
      */
     @CacheEvict(allEntries = true)
     @Transactional
-    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generatePermissionTreeAction")})
+    @Events({@Event(applicationEvent = SimpleEvent.class)})
     default int deleteCache(Object delete) {
         return this.delete(delete);
     }
@@ -88,7 +88,7 @@ public interface PermissionService extends PageService {
      */
     @CacheEvict(allEntries = true)
     @Transactional
-    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generatePermissionTreeAction")})
+    @Events({@Event(applicationEvent = SimpleEvent.class)})
     default int deleteAllCache() {
         return this.deleteAll();
     }
@@ -98,7 +98,7 @@ public interface PermissionService extends PageService {
      */
     @CacheEvict(allEntries = true)
     @Transactional
-    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generatePermissionTreeAction")})
+    @Events({@Event(applicationEvent = SimpleEvent.class)})
     default int deleteByIdsCache(Object ids) {
         return this.deleteByIds(ids);
     }
@@ -108,7 +108,7 @@ public interface PermissionService extends PageService {
      */
     @CacheEvict(allEntries = true)
     @Transactional
-    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generatePermissionTreeAction")})
+    @Events({@Event(applicationEvent = SimpleEvent.class)})
     default int[] deleteListCache(List<Object> deleteList) {
         return this.deleteList(deleteList);
     }
@@ -134,7 +134,7 @@ public interface PermissionService extends PageService {
      */
     @CacheEvict(allEntries = true)
     @Transactional
-    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generatePermissionTreeAction")})
+    @Events({@Event(applicationEvent = SimpleEvent.class)})
     default int insertCache(Object insert) {
         return this.insert(insert);
     }
@@ -144,7 +144,7 @@ public interface PermissionService extends PageService {
      */
     @CacheEvict(allEntries = true)
     @Transactional
-    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generatePermissionTreeAction")})
+    @Events({@Event(applicationEvent = SimpleEvent.class)})
     default int insertByNotExistsCache(Object insert) {
         return this.insertByNotExists(insert);
     }
@@ -154,7 +154,7 @@ public interface PermissionService extends PageService {
      */
     @CacheEvict(allEntries = true)
     @Transactional
-    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generatePermissionTreeAction")})
+    @Events({@Event(applicationEvent = SimpleEvent.class)})
     default int[] insertListCache(List<Object> insertList) {
         return this.insertList(insertList);
     }
@@ -164,7 +164,7 @@ public interface PermissionService extends PageService {
      */
     @CacheEvict(allEntries = true)
     @Transactional
-    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generatePermissionTreeAction")})
+    @Events({@Event(applicationEvent = SimpleEvent.class)})
     default int[] insertListByNotExistsCache(List<Object> insertList) {
         return this.insertListByNotExists(insertList);
     }
@@ -190,7 +190,7 @@ public interface PermissionService extends PageService {
      */
     @CacheEvict(allEntries = true)
     @Transactional
-    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generatePermissionTreeAction")})
+    @Events({@Event(applicationEvent = SimpleEvent.class)})
     default int saveCache(Object save) {
         return this.save(save);
     }
@@ -200,7 +200,7 @@ public interface PermissionService extends PageService {
      */
     @CacheEvict(allEntries = true)
     @Transactional
-    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generatePermissionTreeAction")})
+    @Events({@Event(applicationEvent = SimpleEvent.class)})
     default int updateCache(Object update) {
         return this.update(update);
     }
@@ -210,7 +210,7 @@ public interface PermissionService extends PageService {
      */
     @CacheEvict(allEntries = true)
     @Transactional
-    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generatePermissionTreeAction")})
+    @Events({@Event(applicationEvent = SimpleEvent.class)})
     default int[] updateListCache(List<Object> updateList) {
         return this.updateList(updateList);
     }
@@ -220,7 +220,7 @@ public interface PermissionService extends PageService {
      */
     @CacheEvict(allEntries = true)
     @Transactional
-    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generatePermissionTreeAction")})
+    @Events({@Event(applicationEvent = SimpleEvent.class)})
     default int[][] saveListCache(List<Object> saveList) {
         return this.saveList(saveList);
     }
@@ -273,7 +273,7 @@ public interface PermissionService extends PageService {
      * @return
      */
     @CacheEvict(allEntries = true)
-    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generatePermissionTreeAction")})
+    @Events({@Event(applicationEvent = SimpleEvent.class)})
     int generateData();
 
     /**
@@ -283,6 +283,6 @@ public interface PermissionService extends PageService {
      * @return
      */
     @CacheEvict(allEntries = true)
-    @Events({@Event(applicationEvent = SimpleEvent.class, configs = "generatePermissionTreeAction")})
+    @Events({@Event(applicationEvent = SimpleEvent.class)})
     int generateData(String flagObjectCode);
 }

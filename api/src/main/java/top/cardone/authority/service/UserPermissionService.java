@@ -24,8 +24,8 @@ import java.util.UUID;
  */
 @Transactional(readOnly = true)
 @CacheConfig(cacheNames = {"top.cardone.authority.service.UserPermissionService"})
-@Events({@Event(applicationEvent = SimpleErrorEvent.class, configs = {"insertOperateLogAction"}),
-        @Event(applicationEvent = SimpleEvent.class, configs = {"insertOperateLogAction"})})
+@Events({@Event(applicationEvent = SimpleErrorEvent.class),
+        @Event(applicationEvent = SimpleEvent.class)})
 public interface UserPermissionService extends PageService {
     /**
      * @see top.cardone.authority.service.UserPermissionService#page
