@@ -78,7 +78,6 @@ public interface RoleService extends PageService {
      */
     @CacheEvict(allEntries = true)
     @Transactional
-    @Events({@Event(applicationEvent = SimpleEvent)})
     default int deleteCache(Object delete) {
         return this.delete(delete);
     }
@@ -88,7 +87,6 @@ public interface RoleService extends PageService {
      */
     @CacheEvict(allEntries = true)
     @Transactional
-    @Events({@Event(applicationEvent = SimpleEvent)})
     default int deleteAllCache() {
         return this.deleteAll();
     }
@@ -98,7 +96,6 @@ public interface RoleService extends PageService {
      */
     @CacheEvict(allEntries = true)
     @Transactional
-    @Events({@Event(applicationEvent = SimpleEvent)})
     default int deleteByIdsCache(Object ids) {
         return this.deleteByIds(ids);
     }
@@ -108,7 +105,6 @@ public interface RoleService extends PageService {
      */
     @CacheEvict(allEntries = true)
     @Transactional
-    @Events({@Event(applicationEvent = SimpleEvent)})
     default int[] deleteListCache(List<Object> deleteList) {
         return this.deleteList(deleteList);
     }
@@ -134,7 +130,6 @@ public interface RoleService extends PageService {
      */
     @CacheEvict(allEntries = true)
     @Transactional
-    @Events({@Event(applicationEvent = SimpleEvent)})
     default int insertCache(Object insert) {
         return this.insert(insert);
     }
@@ -144,7 +139,6 @@ public interface RoleService extends PageService {
      */
     @CacheEvict(allEntries = true)
     @Transactional
-    @Events({@Event(applicationEvent = SimpleEvent)})
     default int insertByNotExistsCache(Object insert) {
         return this.insertByNotExists(insert);
     }
@@ -154,7 +148,6 @@ public interface RoleService extends PageService {
      */
     @CacheEvict(allEntries = true)
     @Transactional
-    @Events({@Event(applicationEvent = SimpleEvent)})
     default int[] insertListCache(List<Object> insertList) {
         return this.insertList(insertList);
     }
@@ -164,7 +157,6 @@ public interface RoleService extends PageService {
      */
     @CacheEvict(allEntries = true)
     @Transactional
-    @Events({@Event(applicationEvent = SimpleEvent)})
     default int[] insertListByNotExistsCache(List<Object> insertList) {
         return this.insertListByNotExists(insertList);
     }
@@ -190,7 +182,6 @@ public interface RoleService extends PageService {
      */
     @CacheEvict(allEntries = true)
     @Transactional
-    @Events({@Event(applicationEvent = SimpleEvent)})
     default int saveCache(Object save) {
         return this.save(save);
     }
@@ -200,7 +191,6 @@ public interface RoleService extends PageService {
      */
     @CacheEvict(allEntries = true)
     @Transactional
-    @Events({@Event(applicationEvent = SimpleEvent)})
     default int updateCache(Object update) {
         return this.update(update);
     }
@@ -210,7 +200,6 @@ public interface RoleService extends PageService {
      */
     @CacheEvict(allEntries = true)
     @Transactional
-    @Events({@Event(applicationEvent = SimpleEvent)})
     default int[] updateListCache(List<Object> updateList) {
         return this.updateList(updateList);
     }
@@ -220,7 +209,6 @@ public interface RoleService extends PageService {
      */
     @CacheEvict(allEntries = true)
     @Transactional
-    @Events({@Event(applicationEvent = SimpleEvent)})
     default int[][] saveListCache(List<Object> saveList) {
         return this.saveList(saveList);
     }
@@ -273,7 +261,6 @@ public interface RoleService extends PageService {
      * @return
      */
     @CacheEvict(allEntries = true)
-    @Events({@Event(applicationEvent = SimpleEvent)})
     int generateData();
 
     /**
@@ -283,6 +270,5 @@ public interface RoleService extends PageService {
      * @return
      */
     @CacheEvict(allEntries = true)
-    @Events({@Event(applicationEvent = SimpleEvent)})
     int generateData(String flagObjectCode);
 }
