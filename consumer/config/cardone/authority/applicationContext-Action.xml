@@ -3,30 +3,4 @@
        xmlns="http://www.springframework.org/schema/beans"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
        default-lazy-init="true">
-    <bean id="generateUserGroupTreeAction"
-          class="top.cardone.data.action.GenerateTreeAction">
-        <property name="codePutKey" value="userGroupCode"/>
-        <property name="codeGetKey" value="USER_GROUP_CODE"/>
-        <property name="pkPutKey" value="userGroupId"/>
-        <property name="pkGetKey" value="USER_GROUP_ID"/>
-        <property name="service" ref="top.cardone.authority.service.UserGroupService"/>
-    </bean>
-
-    <bean id="generateRoleTreeAction"
-          class="top.cardone.data.action.GenerateTreeAction">
-        <property name="codePutKey" value="roleCode"/>
-        <property name="codeGetKey" value="ROLE_CODE"/>
-        <property name="pkPutKey" value="roleId"/>
-        <property name="pkGetKey" value="ROLE_ID"/>
-        <property name="service" ref="top.cardone.authority.service.RoleService"/>
-    </bean>
-
-    <bean id="generatePermissionTreeAction"
-          class="top.cardone.data.action.GenerateTreeAction">
-        <property name="codePutKey" value="permissionCode"/>
-        <property name="codeGetKey" value="PERMISSION_CODE"/>
-        <property name="pkPutKey" value="permissionId"/>
-        <property name="pkGetKey" value="PERMISSION_ID"/>
-        <property name="service" ref="top.cardone.authority.service.PermissionService"/>
-    </bean>
 </beans>
