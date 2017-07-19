@@ -7,7 +7,7 @@
         <property name="codeGetKey" value="USER_GROUP_CODE"/>
         <property name="pkPutKey" value="userGroupId"/>
         <property name="pkGetKey" value="USER_GROUP_ID"/>
-        <property name="service" ref="top.cardone.authority.service.UserGroupService"/>
+        <property name="serviceBeanId" value="top.cardone.authority.service.UserGroupService"/>
     </bean>
 
     <bean class="top.cardone.data.listener.GenerateTreeListener">
@@ -15,7 +15,7 @@
         <property name="codeGetKey" value="ROLE_CODE"/>
         <property name="pkPutKey" value="roleId"/>
         <property name="pkGetKey" value="ROLE_ID"/>
-        <property name="service" ref="top.cardone.authority.service.RoleService"/>
+        <property name="serviceBeanId" value="top.cardone.authority.service.RoleService"/>
     </bean>
 
     <bean class="top.cardone.data.listener.GenerateTreeListener">
@@ -23,6 +23,6 @@
         <property name="codeGetKey" value="PERMISSION_CODE"/>
         <property name="pkPutKey" value="permissionId"/>
         <property name="pkGetKey" value="PERMISSION_ID"/>
-        <property name="service" ref="top.cardone.authority.service.PermissionService"/>
+        <property name="serviceBeanId" value="top.cardone.authority.service.PermissionService"/>
     </bean>
 </beans>
