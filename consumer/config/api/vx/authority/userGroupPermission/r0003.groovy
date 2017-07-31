@@ -80,6 +80,8 @@ class r0003 implements java.io.Serializable {
 
             data['createdByCode'] = contentItem['created_by_code']
 
+            data['createdById'] = contentItem['created_by_id']
+
             data['createdDate'] = contentItem['created_date']
 
             data['dataStateCode'] = contentItem['data_state_code']
@@ -96,6 +98,8 @@ class r0003 implements java.io.Serializable {
 
             data['lastModifiedByCode'] = contentItem['last_modified_by_code']
 
+            data['lastModifiedById'] = contentItem['last_modified_by_id']
+
             data['lastModifiedDate'] = contentItem['last_modified_date']
 
             data['orderBy'] = contentItem['order_by_']
@@ -104,7 +108,11 @@ class r0003 implements java.io.Serializable {
 
             data['permissionCode'] = contentItem['permission_code']
 
+            data['permissionId'] = contentItem['permission_id']
+
             data['personalCode'] = contentItem['personal_code']
+
+            data['personalId'] = contentItem['personal_id']
 
             data['siteCode'] = contentItem['site_code']
 
@@ -113,6 +121,8 @@ class r0003 implements java.io.Serializable {
             data['systemInfoCode'] = contentItem['system_info_code']
 
             data['userGroupCode'] = contentItem['user_group_code']
+
+            data['userGroupId'] = contentItem['user_group_id']
 
             data['userGroupPermissionId'] = contentItem['user_group_permission_id']
 

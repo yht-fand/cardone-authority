@@ -16,6 +16,10 @@ ${prefixName?string('SET ', ', ')}"client_secret" = :update_clientSecret_value
 ${prefixName?string('SET ', ', ')}"created_by_code" = :update_createdByCode_value
 <#assign prefixName = false>
 </#if>
+<#if (update_createdById??)>
+${prefixName?string('SET ', ', ')}"created_by_id" = :update_createdById_value
+<#assign prefixName = false>
+</#if>
 <#if (update_createdDate??)>
 ${prefixName?string('SET ', ', ')}"created_date" = :update_createdDate_value
 <#assign prefixName = false>
@@ -48,6 +52,10 @@ ${prefixName?string('SET ', ', ')}"json_data" = :update_jsonData_value
 ${prefixName?string('SET ', ', ')}"last_modified_by_code" = :update_lastModifiedByCode_value
 <#assign prefixName = false>
 </#if>
+<#if (update_lastModifiedById??)>
+${prefixName?string('SET ', ', ')}"last_modified_by_id" = :update_lastModifiedById_value
+<#assign prefixName = false>
+</#if>
 <#if (update_lastModifiedDate??)>
 ${prefixName?string('SET ', ', ')}"last_modified_date" = :update_lastModifiedDate_value
 <#assign prefixName = false>
@@ -66,6 +74,10 @@ ${prefixName?string('SET ', ', ')}"org_code" = :update_orgCode_value
 </#if>
 <#if (update_personalCode??)>
 ${prefixName?string('SET ', ', ')}"personal_code" = :update_personalCode_value
+<#assign prefixName = false>
+</#if>
+<#if (update_personalId??)>
+${prefixName?string('SET ', ', ')}"personal_id" = :update_personalId_value
 <#assign prefixName = false>
 </#if>
 <#if (update_siteCode??)>

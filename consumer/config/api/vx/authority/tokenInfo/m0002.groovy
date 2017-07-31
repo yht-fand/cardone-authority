@@ -13,6 +13,7 @@ class m0002 implements java.io.Serializable {
 		newInput?.beginDate = input?.beginDate
 		newInput?.clientId = input?.clientId
 		newInput?.createdByCode = input?.createdByCode
+		newInput?.createdById = input?.createdById
 		newInput?.createdDate = input?.createdDate
 		newInput?.dataStateCode = input?.dataStateCode
 		newInput?.departmentCode = input?.departmentCode
@@ -21,10 +22,12 @@ class m0002 implements java.io.Serializable {
 		newInput?.flagObjectCode = input?.flagObjectCode
 		newInput?.jsonData = input?.jsonData
 		newInput?.lastModifiedByCode = input?.lastModifiedByCode
+		newInput?.lastModifiedById = input?.lastModifiedById
 		newInput?.lastModifiedDate = input?.lastModifiedDate
 		newInput?.orderBy = input?.orderBy
 		newInput?.orgCode = input?.orgCode
 		newInput?.personalCode = input?.personalCode
+		newInput?.personalId = input?.personalId
 		newInput?.scope = input?.scope
 		newInput?.siteCode = input?.siteCode
 		newInput?.stateCode = input?.stateCode
@@ -32,6 +35,7 @@ class m0002 implements java.io.Serializable {
 		newInput?.tokenInfoCode = input?.tokenInfoCode
 		newInput?.tokenInfoId = input?.tokenInfoId
 		newInput?.userCode = input?.userCode
+		newInput?.userId = input?.userId
 		newInput?.version = input?.version
 
         newInput
@@ -82,6 +86,7 @@ class m0002 implements java.io.Serializable {
 		newOutput?.beginDate = output?.begin_date
 		newOutput?.clientId = output?.client_id
 		newOutput?.createdByCode = output?.created_by_code
+		newOutput?.createdById = output?.created_by_id
 		newOutput?.createdDate = output?.created_date
 		newOutput?.dataStateCode = output?.data_state_code
 		newOutput?.departmentCode = output?.department_code
@@ -90,10 +95,12 @@ class m0002 implements java.io.Serializable {
 		newOutput?.flagObjectCode = output?.flag_object_code
 		newOutput?.jsonData = output?.json_data
 		newOutput?.lastModifiedByCode = output?.last_modified_by_code
+		newOutput?.lastModifiedById = output?.last_modified_by_id
 		newOutput?.lastModifiedDate = output?.last_modified_date
 		newOutput?.orderBy = output?.order_by_
 		newOutput?.orgCode = output?.org_code
 		newOutput?.personalCode = output?.personal_code
+		newOutput?.personalId = output?.personal_id
 		newOutput?.scope = output?.scope
 		newOutput?.siteCode = output?.site_code
 		newOutput?.stateCode = output?.state_code
@@ -101,6 +108,7 @@ class m0002 implements java.io.Serializable {
 		newOutput?.tokenInfoCode = output?.token_info_code
 		newOutput?.tokenInfoId = output?.token_info_id
 		newOutput?.userCode = output?.user_code
+		newOutput?.userId = output?.user_id
 		newOutput?.version = output?.version_
 
         newOutput

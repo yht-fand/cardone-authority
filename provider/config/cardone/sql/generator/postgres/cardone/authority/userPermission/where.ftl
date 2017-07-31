@@ -23,6 +23,14 @@ ${prefixName?string('WHERE ', 'AND ')}("created_by_code" IS NULL OR "created_by_
 </#if>
 <#assign prefixName = false>
 </#if>
+<#if (where_and_eq_createdById??)>
+<#if (where_and_eq_createdById_value??)>
+${prefixName?string('WHERE ', 'AND ')}"created_by_id" = :where_and_eq_createdById_value
+<#else>
+${prefixName?string('WHERE ', 'AND ')}("created_by_id" IS NULL OR "created_by_id" = '')
+</#if>
+<#assign prefixName = false>
+</#if>
 <#if (where_and_eq_createdDate??)>
 <#if (where_and_eq_createdDate_value??)>
 ${prefixName?string('WHERE ', 'AND ')}"created_date" = :where_and_eq_createdDate_value
@@ -87,6 +95,14 @@ ${prefixName?string('WHERE ', 'AND ')}("last_modified_by_code" IS NULL OR "last_
 </#if>
 <#assign prefixName = false>
 </#if>
+<#if (where_and_eq_lastModifiedById??)>
+<#if (where_and_eq_lastModifiedById_value??)>
+${prefixName?string('WHERE ', 'AND ')}"last_modified_by_id" = :where_and_eq_lastModifiedById_value
+<#else>
+${prefixName?string('WHERE ', 'AND ')}("last_modified_by_id" IS NULL OR "last_modified_by_id" = '')
+</#if>
+<#assign prefixName = false>
+</#if>
 <#if (where_and_eq_lastModifiedDate??)>
 <#if (where_and_eq_lastModifiedDate_value??)>
 ${prefixName?string('WHERE ', 'AND ')}"last_modified_date" = :where_and_eq_lastModifiedDate_value
@@ -119,11 +135,27 @@ ${prefixName?string('WHERE ', 'AND ')}("permission_code" IS NULL OR "permission_
 </#if>
 <#assign prefixName = false>
 </#if>
+<#if (where_and_eq_permissionId??)>
+<#if (where_and_eq_permissionId_value??)>
+${prefixName?string('WHERE ', 'AND ')}"permission_id" = :where_and_eq_permissionId_value
+<#else>
+${prefixName?string('WHERE ', 'AND ')}("permission_id" IS NULL OR "permission_id" = '')
+</#if>
+<#assign prefixName = false>
+</#if>
 <#if (where_and_eq_personalCode??)>
 <#if (where_and_eq_personalCode_value??)>
 ${prefixName?string('WHERE ', 'AND ')}"personal_code" = :where_and_eq_personalCode_value
 <#else>
 ${prefixName?string('WHERE ', 'AND ')}("personal_code" IS NULL OR "personal_code" = '')
+</#if>
+<#assign prefixName = false>
+</#if>
+<#if (where_and_eq_personalId??)>
+<#if (where_and_eq_personalId_value??)>
+${prefixName?string('WHERE ', 'AND ')}"personal_id" = :where_and_eq_personalId_value
+<#else>
+${prefixName?string('WHERE ', 'AND ')}("personal_id" IS NULL OR "personal_id" = '')
 </#if>
 <#assign prefixName = false>
 </#if>
@@ -156,6 +188,14 @@ ${prefixName?string('WHERE ', 'AND ')}("system_info_code" IS NULL OR "system_inf
 ${prefixName?string('WHERE ', 'AND ')}"user_code" = :where_and_eq_userCode_value
 <#else>
 ${prefixName?string('WHERE ', 'AND ')}("user_code" IS NULL OR "user_code" = '')
+</#if>
+<#assign prefixName = false>
+</#if>
+<#if (where_and_eq_userId??)>
+<#if (where_and_eq_userId_value??)>
+${prefixName?string('WHERE ', 'AND ')}"user_id" = :where_and_eq_userId_value
+<#else>
+${prefixName?string('WHERE ', 'AND ')}("user_id" IS NULL OR "user_id" = '')
 </#if>
 <#assign prefixName = false>
 </#if>

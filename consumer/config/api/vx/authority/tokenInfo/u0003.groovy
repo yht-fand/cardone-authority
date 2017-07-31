@@ -13,6 +13,7 @@ class u0003 implements java.io.Serializable {
 		newInput?.beginDate = input?.beginDate
 		newInput?.clientId = input?.clientId
 		newInput?.createdByCode = input?.createdByCode
+		newInput?.createdById = input?.createdById
 		newInput?.createdDate = input?.createdDate
 		newInput?.dataStateCode = input?.dataStateCode
 		newInput?.departmentCode = input?.departmentCode
@@ -21,10 +22,12 @@ class u0003 implements java.io.Serializable {
 		newInput?.flagObjectCode = input?.flagObjectCode
 		newInput?.jsonData = input?.jsonData
 		newInput?.lastModifiedByCode = input?.lastModifiedByCode
+		newInput?.lastModifiedById = input?.lastModifiedById
 		newInput?.lastModifiedDate = input?.lastModifiedDate
 		newInput?.orderBy = input?.orderBy
 		newInput?.orgCode = input?.orgCode
 		newInput?.personalCode = input?.personalCode
+		newInput?.personalId = input?.personalId
 		newInput?.scope = input?.scope
 		newInput?.siteCode = input?.siteCode
 		newInput?.stateCode = input?.stateCode
@@ -32,6 +35,7 @@ class u0003 implements java.io.Serializable {
 		newInput?.tokenInfoCode = input?.tokenInfoCode
 		newInput?.tokenInfoId = input?.tokenInfoId
 		newInput?.userCode = input?.userCode
+		newInput?.userId = input?.userId
 		newInput?.version = input?.version
 
         newInput.flagCode = StringUtils.defaultIfBlank(input.flagCode, "input")

@@ -12,6 +12,9 @@ SELECT
 <#case "createdByCode">
 "created_by_code"
 <#break>
+<#case "createdById">
+"created_by_id"
+<#break>
 <#case "createdDate">
 "created_date"
 <#break>
@@ -36,6 +39,9 @@ SELECT
 <#case "lastModifiedByCode">
 "last_modified_by_code"
 <#break>
+<#case "lastModifiedById">
+"last_modified_by_id"
+<#break>
 <#case "lastModifiedDate">
 "last_modified_date"
 <#break>
@@ -50,6 +56,9 @@ SELECT
 <#break>
 <#case "personalCode">
 "personal_code"
+<#break>
+<#case "personalId">
+"personal_id"
 <#break>
 <#case "siteCode">
 "site_code"

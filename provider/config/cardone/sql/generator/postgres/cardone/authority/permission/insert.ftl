@@ -13,6 +13,10 @@ ${prefixName?string('  ', ', ')}"begin_date"
 ${prefixName?string('  ', ', ')}"created_by_code"
 <#assign prefixName = false>
 </#if>
+<#if (insert_createdById??) && (insert_createdById_value??)>
+${prefixName?string('  ', ', ')}"created_by_id"
+<#assign prefixName = false>
+</#if>
 <#if (insert_createdDate??) && (insert_createdDate_value??)>
 ${prefixName?string('  ', ', ')}"created_date"
 <#assign prefixName = false>
@@ -45,6 +49,10 @@ ${prefixName?string('  ', ', ')}"json_data"
 ${prefixName?string('  ', ', ')}"last_modified_by_code"
 <#assign prefixName = false>
 </#if>
+<#if (insert_lastModifiedById??) && (insert_lastModifiedById_value??)>
+${prefixName?string('  ', ', ')}"last_modified_by_id"
+<#assign prefixName = false>
+</#if>
 <#if (insert_lastModifiedDate??) && (insert_lastModifiedDate_value??)>
 ${prefixName?string('  ', ', ')}"last_modified_date"
 <#assign prefixName = false>
@@ -69,6 +77,10 @@ ${prefixName?string('  ', ', ')}"parent_code"
 ${prefixName?string('  ', ', ')}"parent_tree_code"
 <#assign prefixName = false>
 </#if>
+<#if (insert_parentTreeId??) && (insert_parentTreeId_value??)>
+${prefixName?string('  ', ', ')}"parent_tree_id"
+<#assign prefixName = false>
+</#if>
 <#if (insert_parentTreeName??) && (insert_parentTreeName_value??)>
 ${prefixName?string('  ', ', ')}"parent_tree_name"
 <#assign prefixName = false>
@@ -83,6 +95,10 @@ ${prefixName?string('  ', ', ')}"permission_id"
 </#if>
 <#if (insert_personalCode??) && (insert_personalCode_value??)>
 ${prefixName?string('  ', ', ')}"personal_code"
+<#assign prefixName = false>
+</#if>
+<#if (insert_personalId??) && (insert_personalId_value??)>
+${prefixName?string('  ', ', ')}"personal_id"
 <#assign prefixName = false>
 </#if>
 <#if (insert_siteCode??) && (insert_siteCode_value??)>
@@ -120,6 +136,10 @@ ${prefixName?string('  ', ', ')}:insert_beginDate_value
 ${prefixName?string('  ', ', ')}:insert_createdByCode_value
 <#assign prefixName = false>
 </#if>
+<#if (insert_createdById??) && (insert_createdById_value??)>
+${prefixName?string('  ', ', ')}:insert_createdById_value
+<#assign prefixName = false>
+</#if>
 <#if (insert_createdDate??) && (insert_createdDate_value??)>
 ${prefixName?string('  ', ', ')}:insert_createdDate_value
 <#assign prefixName = false>
@@ -152,6 +172,10 @@ ${prefixName?string('  ', ', ')}:insert_jsonData_value
 ${prefixName?string('  ', ', ')}:insert_lastModifiedByCode_value
 <#assign prefixName = false>
 </#if>
+<#if (insert_lastModifiedById??) && (insert_lastModifiedById_value??)>
+${prefixName?string('  ', ', ')}:insert_lastModifiedById_value
+<#assign prefixName = false>
+</#if>
 <#if (insert_lastModifiedDate??) && (insert_lastModifiedDate_value??)>
 ${prefixName?string('  ', ', ')}:insert_lastModifiedDate_value
 <#assign prefixName = false>
@@ -176,6 +200,10 @@ ${prefixName?string('  ', ', ')}:insert_parentCode_value
 ${prefixName?string('  ', ', ')}:insert_parentTreeCode_value
 <#assign prefixName = false>
 </#if>
+<#if (insert_parentTreeId??) && (insert_parentTreeId_value??)>
+${prefixName?string('  ', ', ')}:insert_parentTreeId_value
+<#assign prefixName = false>
+</#if>
 <#if (insert_parentTreeName??) && (insert_parentTreeName_value??)>
 ${prefixName?string('  ', ', ')}:insert_parentTreeName_value
 <#assign prefixName = false>
@@ -190,6 +218,10 @@ ${prefixName?string('  ', ', ')}:insert_permissionId_value
 </#if>
 <#if (insert_personalCode??) && (insert_personalCode_value??)>
 ${prefixName?string('  ', ', ')}:insert_personalCode_value
+<#assign prefixName = false>
+</#if>
+<#if (insert_personalId??) && (insert_personalId_value??)>
+${prefixName?string('  ', ', ')}:insert_personalId_value
 <#assign prefixName = false>
 </#if>
 <#if (insert_siteCode??) && (insert_siteCode_value??)>

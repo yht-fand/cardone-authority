@@ -12,6 +12,10 @@ ${prefixName?string('  ', ', ')}"begin_date"
 ${prefixName?string('  ', ', ')}"created_by_code"
 <#assign prefixName = false>
 </#if>
+<#if (select_createdById??)>
+${prefixName?string('  ', ', ')}"created_by_id"
+<#assign prefixName = false>
+</#if>
 <#if (select_createdDate??)>
 ${prefixName?string('  ', ', ')}"created_date"
 <#assign prefixName = false>
@@ -44,6 +48,10 @@ ${prefixName?string('  ', ', ')}"json_data"
 ${prefixName?string('  ', ', ')}"last_modified_by_code"
 <#assign prefixName = false>
 </#if>
+<#if (select_lastModifiedById??)>
+${prefixName?string('  ', ', ')}"last_modified_by_id"
+<#assign prefixName = false>
+</#if>
 <#if (select_lastModifiedDate??)>
 ${prefixName?string('  ', ', ')}"last_modified_date"
 <#assign prefixName = false>
@@ -68,6 +76,10 @@ ${prefixName?string('  ', ', ')}"parent_code"
 ${prefixName?string('  ', ', ')}"parent_tree_code"
 <#assign prefixName = false>
 </#if>
+<#if (select_parentTreeId??)>
+${prefixName?string('  ', ', ')}"parent_tree_id"
+<#assign prefixName = false>
+</#if>
 <#if (select_parentTreeName??)>
 ${prefixName?string('  ', ', ')}"parent_tree_name"
 <#assign prefixName = false>
@@ -82,6 +94,10 @@ ${prefixName?string('  ', ', ')}"permission_id"
 </#if>
 <#if (select_personalCode??)>
 ${prefixName?string('  ', ', ')}"personal_code"
+<#assign prefixName = false>
+</#if>
+<#if (select_personalId??)>
+${prefixName?string('  ', ', ')}"personal_id"
 <#assign prefixName = false>
 </#if>
 <#if (select_siteCode??)>
@@ -122,6 +138,10 @@ ${prefixName?string('ORDER BY ', ', ')}"begin_date" ${order_by_beginDate_value!}
 ${prefixName?string('ORDER BY ', ', ')}"created_by_code" ${order_by_createdByCode_value!}
 <#assign prefixName = false>
 </#if>
+<#if (order_by_createdById??)>
+${prefixName?string('ORDER BY ', ', ')}"created_by_id" ${order_by_createdById_value!}
+<#assign prefixName = false>
+</#if>
 <#if (order_by_createdDate??)>
 ${prefixName?string('ORDER BY ', ', ')}"created_date" ${order_by_createdDate_value!}
 <#assign prefixName = false>
@@ -154,6 +174,10 @@ ${prefixName?string('ORDER BY ', ', ')}"json_data" ${order_by_jsonData_value!}
 ${prefixName?string('ORDER BY ', ', ')}"last_modified_by_code" ${order_by_lastModifiedByCode_value!}
 <#assign prefixName = false>
 </#if>
+<#if (order_by_lastModifiedById??)>
+${prefixName?string('ORDER BY ', ', ')}"last_modified_by_id" ${order_by_lastModifiedById_value!}
+<#assign prefixName = false>
+</#if>
 <#if (order_by_lastModifiedDate??)>
 ${prefixName?string('ORDER BY ', ', ')}"last_modified_date" ${order_by_lastModifiedDate_value!}
 <#assign prefixName = false>
@@ -178,6 +202,10 @@ ${prefixName?string('ORDER BY ', ', ')}"parent_code" ${order_by_parentCode_value
 ${prefixName?string('ORDER BY ', ', ')}"parent_tree_code" ${order_by_parentTreeCode_value!}
 <#assign prefixName = false>
 </#if>
+<#if (order_by_parentTreeId??)>
+${prefixName?string('ORDER BY ', ', ')}"parent_tree_id" ${order_by_parentTreeId_value!}
+<#assign prefixName = false>
+</#if>
 <#if (order_by_parentTreeName??)>
 ${prefixName?string('ORDER BY ', ', ')}"parent_tree_name" ${order_by_parentTreeName_value!}
 <#assign prefixName = false>
@@ -192,6 +220,10 @@ ${prefixName?string('ORDER BY ', ', ')}"permission_id" ${order_by_permissionId_v
 </#if>
 <#if (order_by_personalCode??)>
 ${prefixName?string('ORDER BY ', ', ')}"personal_code" ${order_by_personalCode_value!}
+<#assign prefixName = false>
+</#if>
+<#if (order_by_personalId??)>
+${prefixName?string('ORDER BY ', ', ')}"personal_id" ${order_by_personalId_value!}
 <#assign prefixName = false>
 </#if>
 <#if (order_by_siteCode??)>
