@@ -143,6 +143,14 @@ ${prefixName?string('WHERE ', 'AND ')}("parent_code" IS NULL OR "parent_code" = 
 </#if>
 <#assign prefixName = false>
 </#if>
+<#if (where_and_eq_parentId??)>
+<#if (where_and_eq_parentId_value??)>
+${prefixName?string('WHERE ', 'AND ')}"parent_id" = :where_and_eq_parentId_value
+<#else>
+${prefixName?string('WHERE ', 'AND ')}("parent_id" IS NULL OR "parent_id" = '')
+</#if>
+<#assign prefixName = false>
+</#if>
 <#if (where_and_eq_parentTreeCode??)>
 <#if (where_and_eq_parentTreeCode_value??)>
 ${prefixName?string('WHERE ', 'AND ')}"parent_tree_code" = :where_and_eq_parentTreeCode_value

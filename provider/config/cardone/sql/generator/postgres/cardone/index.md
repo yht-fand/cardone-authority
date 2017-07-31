@@ -93,6 +93,7 @@ name|YES|String(255)|名称
 order_by_|YES|Long(19)|排序
 org_code|YES|String(255)|组织编号
 parent_code|YES|String(255)|父级编号
+parent_id|YES|String(255)|父级标识
 parent_tree_code|YES|String(1023)|父级树编号
 parent_tree_id|YES|String(1023)|父级树标识
 parent_tree_name|YES|String(1023)|父级树名称
@@ -128,6 +129,7 @@ name|YES|String(255)|名称
 order_by_|YES|Long(19)|排序
 org_code|YES|String(255)|组织编号
 parent_code|YES|String(255)|父级编号
+parent_id|YES|String(255)|父级标识
 parent_tree_code|YES|String(1023)|父级树编号
 parent_tree_id|YES|String(1023)|父级树标识
 parent_tree_name|YES|String(1023)|父级树名称
@@ -195,6 +197,7 @@ name|YES|String(255)|名称
 order_by_|YES|Long(19)|排序
 org_code|YES|String(255)|组织编号
 parent_code|YES|String(255)|父级编号
+parent_id|YES|String(255)|父级标识
 parent_tree_code|YES|String(1023)|父级树编号
 parent_tree_id|YES|String(1023)|父级树标识
 parent_tree_name|YES|String(1023)|父级树名称

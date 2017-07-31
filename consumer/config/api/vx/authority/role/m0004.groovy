@@ -27,6 +27,7 @@ class m0004 implements java.io.Serializable {
 		newInput?.orderBy = input?.orderBy
 		newInput?.orgCode = input?.orgCode
 		newInput?.parentCode = input?.parentCode
+		newInput?.parentId = input?.parentId
 		newInput?.parentTreeCode = input?.parentTreeCode
 		newInput?.parentTreeId = input?.parentTreeId
 		newInput?.parentTreeName = input?.parentTreeName
@@ -102,6 +103,7 @@ class m0004 implements java.io.Serializable {
 		newOutput?.orderBy = output?.order_by_
 		newOutput?.orgCode = output?.org_code
 		newOutput?.parentCode = output?.parent_code
+		newOutput?.parentId = output?.parent_id
 		newOutput?.parentTreeCode = output?.parent_tree_code
 		newOutput?.parentTreeId = output?.parent_tree_id
 		newOutput?.parentTreeName = output?.parent_tree_name

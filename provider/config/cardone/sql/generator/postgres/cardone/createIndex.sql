@@ -202,6 +202,9 @@ create index IF NOT EXISTS idx_c1_permission_org_code ON c1_permission ("org_cod
 --父级编号
 drop index IF EXISTS idx_c1_permission_parent_code;
 create index IF NOT EXISTS idx_c1_permission_parent_code ON c1_permission ("parent_code" varchar_pattern_ops);
+--父级标识
+drop index IF EXISTS idx_c1_permission_parent_id;
+create index IF NOT EXISTS idx_c1_permission_parent_id ON c1_permission ("parent_id" varchar_pattern_ops);
 --父级树编号
 drop index IF EXISTS idx_c1_permission_parent_tree_code;
 create index IF NOT EXISTS idx_c1_permission_parent_tree_code ON c1_permission ("parent_tree_code" varchar_pattern_ops);
@@ -286,6 +289,9 @@ create index IF NOT EXISTS idx_c1_role_org_code ON c1_role ("org_code" varchar_p
 --父级编号
 drop index IF EXISTS idx_c1_role_parent_code;
 create index IF NOT EXISTS idx_c1_role_parent_code ON c1_role ("parent_code" varchar_pattern_ops);
+--父级标识
+drop index IF EXISTS idx_c1_role_parent_id;
+create index IF NOT EXISTS idx_c1_role_parent_id ON c1_role ("parent_id" varchar_pattern_ops);
 --父级树编号
 drop index IF EXISTS idx_c1_role_parent_tree_code;
 create index IF NOT EXISTS idx_c1_role_parent_tree_code ON c1_role ("parent_tree_code" varchar_pattern_ops);
@@ -445,6 +451,9 @@ create index IF NOT EXISTS idx_c1_user_group_org_code ON c1_user_group ("org_cod
 --父级编号
 drop index IF EXISTS idx_c1_user_group_parent_code;
 create index IF NOT EXISTS idx_c1_user_group_parent_code ON c1_user_group ("parent_code" varchar_pattern_ops);
+--父级标识
+drop index IF EXISTS idx_c1_user_group_parent_id;
+create index IF NOT EXISTS idx_c1_user_group_parent_id ON c1_user_group ("parent_id" varchar_pattern_ops);
 --父级树编号
 drop index IF EXISTS idx_c1_user_group_parent_tree_code;
 create index IF NOT EXISTS idx_c1_user_group_parent_tree_code ON c1_user_group ("parent_tree_code" varchar_pattern_ops);

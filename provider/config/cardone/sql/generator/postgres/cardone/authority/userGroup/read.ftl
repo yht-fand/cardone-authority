@@ -54,6 +54,9 @@ SELECT
 <#case "parentCode">
 "parent_code"
 <#break>
+<#case "parentId">
+"parent_id"
+<#break>
 <#case "parentTreeCode">
 "parent_tree_code"
 <#break>

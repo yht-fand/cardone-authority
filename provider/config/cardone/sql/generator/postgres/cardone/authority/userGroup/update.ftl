@@ -72,6 +72,10 @@ ${prefixName?string('SET ', ', ')}"org_code" = :update_orgCode_value
 ${prefixName?string('SET ', ', ')}"parent_code" = :update_parentCode_value
 <#assign prefixName = false>
 </#if>
+<#if (update_parentId??)>
+${prefixName?string('SET ', ', ')}"parent_id" = :update_parentId_value
+<#assign prefixName = false>
+</#if>
 <#if (update_parentTreeCode??)>
 ${prefixName?string('SET ', ', ')}"parent_tree_code" = :update_parentTreeCode_value
 <#assign prefixName = false>

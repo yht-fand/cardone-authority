@@ -110,6 +110,8 @@ class r0001 implements java.io.Serializable {
 
             data['parentCode'] = contentItem['parent_code']
 
+            data['parentId'] = contentItem['parent_id']
+
             data['parentTreeCode'] = contentItem['parent_tree_code']
 
             data['parentTreeId'] = contentItem['parent_tree_id']
