@@ -6,8 +6,8 @@ ${prefixName?string('WHERE ', 'AND ')}t.type_code = :typeCode
 ${prefixName?string('WHERE ', 'AND ')} EXISTS(SELECT s.* FROM c1_dictionary s WHERE s.DICTIONARY_TYPE_CODE = 'permissionType' AND LOCATE(:typeName, s.NAME))
     <#assign prefixName = false>
 </#if>
-<#if cardone.StringUtils.isNotBlank(parentCode)>
-${prefixName?string('WHERE ', 'AND ')}:parentCode = ANY(string_to_array(t.parent_tree_code, ','))
+<#if cardone.StringUtils.isNotBlank(parentId)>
+${prefixName?string('WHERE ', 'AND ')}:parentId = ANY(string_to_array(t.parent_tree_id, ','))
     <#assign prefixName = false>
 <#elseif cardone.StringUtils.isNotBlank(parentTreeName)>
 ${prefixName?string('WHERE ', 'AND ')}(POSITION(:parentTreeName in t.PARENT_code) > 0 OR POSITION(:parentTreeName in t.PARENT_TREE_code) > 0 OR POSITION(:parentTreeName in t.PARENT_TREE_NAME) > 0)
