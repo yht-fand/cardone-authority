@@ -37,4 +37,9 @@ public class UserGroupUserServiceImpl extends PageServiceImpl<UserGroupUserDao> 
 
         return this.dao.generateData(flagObjectCode);
     }
+
+    @Override
+    public List<Map<String, Object>> findListByUserId(Map<String, Object> findList) {
+        return this.dao.findListByUserId(findList);
+    }
 }

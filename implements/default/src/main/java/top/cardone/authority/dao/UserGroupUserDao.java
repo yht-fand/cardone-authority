@@ -26,4 +26,12 @@ public interface UserGroupUserDao extends PageDao {
      * @return
      */
     int generateData(String flagObjectCode);
+
+    /**
+     * 用户标识查询
+     *
+     * @param findList
+     * @return
+     */
+    List<Map<String, Object>> findListByUserId(Map<String, Object> findList);
 }
