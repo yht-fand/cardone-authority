@@ -7,6 +7,6 @@ select ugu.user_group_id
 from c1_user_group_user ugu
 join c1_user_group ug on (ug.user_group_code = ugu.user_group_code)
 join c1_user u on (u.user_id = ugu.user_id)
-where ugu.user_id = :userId
+where (ugu.user_id = :userId or ugu.user_code = :userCode)
 and ugu.data_state_code = '1'
 and ugu.state_code = '1'
