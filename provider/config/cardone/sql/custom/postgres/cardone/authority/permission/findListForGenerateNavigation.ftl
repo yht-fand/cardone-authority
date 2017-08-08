@@ -1,18 +1,24 @@
 SELECT
+'navigation:view:*' AS "permissionId",
 'navigation:view:*' AS "permissionCode",
-NULL AS "parentCode",
-NULL AS "parentTreeCode",
-NULL AS "parentTreeName",
+'' AS "parentId",
+'' AS "parentCode",
+'' AS "parentTreeCode",
+'' AS "parentTreeId",
+'' AS "parentTreeName",
 'navigation' AS "typeCode",
 'generate' AS "flagCode",
 '导航所有数据权限' AS "name",
-NULL AS "beginDate",
-NULL AS "endDate"
+'1999-01-01'::date AS "beginDate",
+'9999-01-01'::date AS "endDate"
 UNION ALL
 SELECT
+'navigation:view:'||COALESCE(t.NAVIGATION_CODE, '') AS "permissionId",
 'navigation:view:'||COALESCE(t.NAVIGATION_CODE, '') AS "permissionCode",
+CASE WHEN (t.PARENT_CODE IS NULL OR t.PARENT_CODE = '') THEN 'navigation:view:*' ELSE 'navigation:view:'||COALESCE(t.PARENT_CODE, '') END AS "parentId",
 CASE WHEN (t.PARENT_CODE IS NULL OR t.PARENT_CODE = '') THEN 'navigation:view:*' ELSE 'navigation:view:'||COALESCE(t.PARENT_CODE, '') END AS "parentCode",
 'navigation:view:'||COALESCE(t.PARENT_TREE_CODE, '') AS "parentTreeCode",
+'navigation:view:'||COALESCE(t.parent_tree_id, '') AS "parentTreeId",
 t.PARENT_TREE_NAME AS "parentTreeName",
 'navigation' AS "typeCode",
 'generate' AS "flagCode",
