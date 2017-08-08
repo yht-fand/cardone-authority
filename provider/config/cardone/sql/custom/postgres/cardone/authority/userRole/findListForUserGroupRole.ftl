@@ -1,5 +1,7 @@
 SELECT ugu.USER_CODE AS "userCode",
+ugu.user_id AS "userId",
 t.ROLE_CODE AS "roleCode",
+t.role_id AS "roleId",
 'generate' AS "flagCode",
 t.BEGIN_DATE AS "beginDate",
 t.END_DATE AS "endDate"

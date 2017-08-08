@@ -39,11 +39,6 @@ public class UserGroupUserDaoImpl extends PageDaoImpl implements top.cardone.aut
             forUser.putAll(putAll);
 
             count += this.save(forUser);
-
-            forUser.put("userGroupCode", "general");
-            forUser.put("userGroupUserId", UUID.randomUUID().toString());
-
-            count += this.save(forUser);
         }
 
         return count;
