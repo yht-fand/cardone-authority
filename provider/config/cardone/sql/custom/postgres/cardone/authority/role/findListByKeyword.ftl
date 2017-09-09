@@ -1,4 +1,4 @@
-SELECT t.ROLE_CODE, t.NAME FROM c1_role t
+SELECT t.ROLE_id, t.ROLE_CODE,t.NAME FROM c1_role t
 where t.state_code ='1' and t.data_state_code = '1'
 <#if cardone.StringUtils.isBlank(notTerm) >
     <#if cardone.StringUtils.isNotBlank(term)>

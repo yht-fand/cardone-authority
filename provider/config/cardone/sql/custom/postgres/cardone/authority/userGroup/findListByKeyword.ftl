@@ -1,4 +1,4 @@
-SELECT t.user_group_code, t.NAME FROM c1_user_group t
+SELECT t.user_group_id, t.user_group_code, t.NAME FROM c1_user_group t
 where t.state_code ='1' and t.data_state_code = '1'
 <#if cardone.StringUtils.isBlank(notTerm) >
     <#if cardone.StringUtils.isNotBlank(term)>

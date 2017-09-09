@@ -1,6 +1,6 @@
 SELECT
-t.permission_code
-, t.permission_id
+t.permission_id
+, t.permission_code
 , t.NAME
 , t.PARENT_ID
 , t.PARENT_CODE

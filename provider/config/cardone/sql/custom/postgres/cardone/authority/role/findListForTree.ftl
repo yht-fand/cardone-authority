@@ -1,6 +1,6 @@
 SELECT
-t.role_code
-, t.role_id
+t.role_id
+, t.role_code
 , t.NAME
 , t.PARENT_ID
 , t.PARENT_CODE
