@@ -19,7 +19,6 @@
     <bean id="top.cardone.authority.service.RolePermissionServiceExporter" parent="remoteInvocationExecutorParnet">
         <property name="serviceInterface" value="top.cardone.authority.service.RolePermissionService"/>
         <property name="service" ref="top.cardone.authority.service.RolePermissionService"/>
-        <property name="amqpTemplate" ref="org.springframework.amqp.core.AmqpTemplate"/>
     </bean>
 
     <rabbit:listener-container acknowledge="none" max-concurrency="128" prefetch="10">
