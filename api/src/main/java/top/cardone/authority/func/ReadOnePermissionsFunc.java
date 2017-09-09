@@ -1,5 +1,6 @@
 package top.cardone.authority.func;
 
+import com.google.common.collect.Lists;
 import lombok.Setter;
 import org.apache.shiro.SecurityUtils;
 import org.springframework.util.CollectionUtils;
@@ -39,6 +40,12 @@ public class ReadOnePermissionsFunc implements Func1<String, Object> {
             return "*";
         }
 
-        return StringUtils.join(permissionList, separator);
+        List<String> newPermissionList = Lists.newArrayList();
+
+        for (String permission : permissionList) {
+            newPermissionList.add(StringUtils.substring(permission, this.permission.length()));
+        }
+
+        return StringUtils.join(newPermissionList, separator);
     }
 }
