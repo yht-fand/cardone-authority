@@ -10,12 +10,10 @@ import top.cardone.context.annotation.Event;
 import top.cardone.context.annotation.Events;
 import top.cardone.context.event.SimpleErrorEvent;
 import top.cardone.context.event.SimpleEvent;
-import top.cardone.context.util.StringUtils;
 import top.cardone.data.service.PageService;
 
 import java.util.List;
 import java.util.Map;
-import java.util.UUID;
 
 /**
  * 用户与许可服务
@@ -269,32 +267,10 @@ public interface UserPermissionService extends PageService {
      */
     List<String> readListPermissionCodeByUserCode(String userCode);
 
-
     @Cacheable(key = Caches.KEY_2)
-    default Map<String, Object> findOneByFunctionCodeCache(String userCode, String functionCode) {
-        Map<String, Object> map = this.findOneByFunctionCode(userCode, functionCode);
-
-        for (Map.Entry<String, Object> mapEntry : map.entrySet()) {
-            if (mapEntry.getValue() == null) {
-                mapEntry.setValue(UUID.randomUUID().toString());
-
-                continue;
-            }
-
-            if (StringUtils.contains((String) mapEntry.getValue(), "*")) {
-                mapEntry.setValue(StringUtils.EMPTY);
-            }
-        }
-
-        return map;
+    default List<String> readListPermissionCodeByPermissionCache(String userCode, String permission) {
+        return this.readListPermissionCodeByPermission(userCode, permission);
     }
 
-    @Cacheable(key = Caches.KEY_1)
-  default   Map<String, Object> findOneByFunctionCodeCache(String functionCode) {
-        return this.findOneByFunctionCode(functionCode);
-    }
-
-    Map<String, Object> findOneByFunctionCode(String userCode, String functionCode);
-
-    Map<String, Object> findOneByFunctionCode(String functionCode);
+    List<String> readListPermissionCodeByPermission(String userCode, String permission);
 }

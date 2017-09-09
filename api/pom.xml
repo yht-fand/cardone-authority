@@ -27,6 +27,11 @@
             <groupId>top.cardone</groupId>
             <artifactId>cardone-cache-api</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>top.cardone</groupId>
+            <artifactId>cardone-security-implements-shiro-oauth2-core</artifactId>
+        </dependency>
     </dependencies>
 </project>
 

@@ -35,5 +35,5 @@ public interface UserPermissionDao extends PageDao {
      */
     List<String> readListPermissionCodeByUserCode(String userCode);
 
-    Map<String, Object> findOneByFunctionCode(String userCode, String functionCode);
+    List<String> readListPermissionCodeByPermission(String userCode, String permission);
 }

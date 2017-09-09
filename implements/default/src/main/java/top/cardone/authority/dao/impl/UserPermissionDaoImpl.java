@@ -55,14 +55,14 @@ public class UserPermissionDaoImpl extends PageDaoImpl implements top.cardone.au
     }
 
     @Override
-    public Map<String, Object> findOneByFunctionCode(String userCode, String functionCode) {
-        String findOneSqlFilePath = this.getSqlFilePath("findOneByFunctionCode");
+    public List<String> readListPermissionCodeByPermission(String userCode, String permission) {
+        String sqlFilePath = this.getSqlFilePath("readListPermissionCodeByPermission");
 
-        Map<String, Object> findOne = Maps.newHashMap();
+        Map<String, Object> readList = Maps.newHashMap();
 
-        findOne.put("userCode", userCode);
-        findOne.put("functionCode", functionCode);
+        readList.put("userCode", userCode);
+        readList.put("permission", permission);
 
-        return this.findOne(findOneSqlFilePath, findOne);
+        return this.readList(String.class, sqlFilePath, readList);
     }
 }
