@@ -16,8 +16,7 @@
     <rabbit:queue
             name="queue:cardone-authority-${cardone-authority-version}:top.cardone.authority.service.UserGroupPermissionService"/>
 
-    <bean id="top.cardone.authority.service.UserGroupPermissionServiceExporter"
-          class="org.springframework.amqp.remoting.service.AmqpInvokerServiceExporter">
+    <bean id="top.cardone.authority.service.UserGroupPermissionServiceExporter" parent="remoteInvocationExecutorParnet">
         <property name="serviceInterface" value="top.cardone.authority.service.UserGroupPermissionService"/>
         <property name="service" ref="top.cardone.authority.service.UserGroupPermissionService"/>
         <property name="amqpTemplate" ref="org.springframework.amqp.core.AmqpTemplate"/>

@@ -16,8 +16,7 @@
     <rabbit:queue
             name="queue:cardone-authority-${cardone-authority-version}:top.cardone.authority.service.RoleService"/>
 
-    <bean id="top.cardone.authority.service.RoleServiceExporter"
-          class="org.springframework.amqp.remoting.service.AmqpInvokerServiceExporter">
+    <bean id="top.cardone.authority.service.RoleServiceExporter" parent="remoteInvocationExecutorParnet">
         <property name="serviceInterface" value="top.cardone.authority.service.RoleService"/>
         <property name="service" ref="top.cardone.authority.service.RoleService"/>
         <property name="amqpTemplate" ref="org.springframework.amqp.core.AmqpTemplate"/>

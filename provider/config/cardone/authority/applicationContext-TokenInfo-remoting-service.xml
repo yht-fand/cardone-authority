@@ -16,8 +16,7 @@
     <rabbit:queue
             name="queue:cardone-authority-${cardone-authority-version}:top.cardone.authority.service.TokenInfoService"/>
 
-    <bean id="top.cardone.authority.service.TokenInfoServiceExporter"
-          class="org.springframework.amqp.remoting.service.AmqpInvokerServiceExporter">
+    <bean id="top.cardone.authority.service.TokenInfoServiceExporter" parent="remoteInvocationExecutorParnet">
         <property name="serviceInterface" value="top.cardone.authority.service.TokenInfoService"/>
         <property name="service" ref="top.cardone.authority.service.TokenInfoService"/>
         <property name="amqpTemplate" ref="org.springframework.amqp.core.AmqpTemplate"/>
