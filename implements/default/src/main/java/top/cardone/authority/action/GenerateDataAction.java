@@ -3,6 +3,7 @@ package top.cardone.authority.action;
 import com.google.common.collect.Maps;
 import lombok.Setter;
 import org.apache.commons.lang3.BooleanUtils;
+import org.apache.commons.lang3.StringUtils;
 import top.cardone.authority.service.UserGroupService;
 import top.cardone.cache.Cache;
 import top.cardone.context.ApplicationContextHolder;
@@ -40,6 +41,12 @@ public class GenerateDataAction implements Action0 {
 
         ApplicationContextHolder.getBean(Func1.class, this.saveDictionaryFuncBeanId).func(save);
 
-        ApplicationContextHolder.getBean(Cache.class).clear(ApplicationContextHolder.getApplicationContext().getBeanDefinitionNames());
+        String[] beanDefinitionNames = ApplicationContextHolder.getApplicationContext().getBeanDefinitionNames();
+
+        for (String beanDefinitionName : beanDefinitionNames) {
+            if (StringUtils.endsWith(beanDefinitionName, "Service")) {
+                ApplicationContextHolder.getBean(Cache.class).clear(beanDefinitionName);
+            }
+        }
     }
 }
