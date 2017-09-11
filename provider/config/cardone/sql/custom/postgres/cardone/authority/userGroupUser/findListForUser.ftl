@@ -1,5 +1,5 @@
-SELECT 'department_'||COALESCE(t.DEPARTMENT_CODE, '') as "userGroupCode",
-'department_'||COALESCE(t.DEPARTMENT_CODE, '') as "userGroupId",
+SELECT 'general-group' as "userGroupCode",
+'general-group' as "userGroupId",
 t.USER_CODE as "userCode",
 t.user_id as "userId",
 'department' as "typeCode",
