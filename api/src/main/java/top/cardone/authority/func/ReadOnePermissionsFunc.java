@@ -48,6 +48,8 @@ public class ReadOnePermissionsFunc implements Func1<String, Object> {
                 // 查询部门权限并有部门树数据管理角色或部门数据管理角色，默认给登录用户的部门编号
                 if (SecurityUtils.getSubject().hasRole("department-data-administrator") || SecurityUtils.getSubject().hasRole("department-tree-data-administrator")) {
                     permissionList.add((String) ApplicationContextHolder.getBean(Func1.class, this.readOneUserDepartmentCodeByUserCodeFuncBeanId).func(userCode));
+                } else {
+                    return UUID.randomUUID().toString();
                 }
             } else {
                 return UUID.randomUUID().toString();
