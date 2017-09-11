@@ -10,7 +10,7 @@ SELECT
 '9999-01-01'::date AS "endDate"
 UNION ALL
 SELECT
-'user:view:'||COALESCE(t.USER_CODE, '') AS "permissionId",
+'user:view:'||COALESCE(t.USER_ID, '') AS "permissionId",
 'user:view:'||COALESCE(t.USER_CODE, '') AS "permissionCode",
 'user:view:*' AS "parentId",
 'user:view:*' AS "parentCode",

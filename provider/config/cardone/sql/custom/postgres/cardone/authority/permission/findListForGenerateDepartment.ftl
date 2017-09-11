@@ -13,12 +13,12 @@ SELECT
 '9999-01-01'::date AS "endDate"
 UNION ALL
 SELECT
-'department:view:'||COALESCE(t.DEPARTMENT_CODE, '') AS "permissionId",
+'department:view:'||COALESCE(t.DEPARTMENT_ID, '') AS "permissionId",
 'department:view:'||COALESCE(t.DEPARTMENT_CODE, '') AS "permissionCode",
-CASE WHEN (t.PARENT_CODE IS NULL OR t.PARENT_CODE = '') THEN 'department:view:*' ELSE 'department:view:'||COALESCE(t.PARENT_CODE, '') END AS "parentId",
+CASE WHEN (t.PARENT_ID IS NULL OR t.PARENT_ID = '') THEN 'department:view:*' ELSE 'department:view:'||COALESCE(t.PARENT_ID, '') END AS "parentId",
 CASE WHEN (t.PARENT_CODE IS NULL OR t.PARENT_CODE = '') THEN 'department:view:*' ELSE 'department:view:'||COALESCE(t.PARENT_CODE, '') END AS "parentCode",
-'department:view:'||COALESCE(t.PARENT_TREE_CODE, '') AS "parentTreeCode",
 'department:view:'||COALESCE(t.parent_tree_id, '') AS "parentTreeId",
+'department:view:'||COALESCE(t.PARENT_TREE_CODE, '') AS "parentTreeCode",
 t.PARENT_TREE_NAME AS "parentTreeName",
 'department' AS "typeCode",
 'generate' AS "flagCode",
