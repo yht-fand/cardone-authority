@@ -248,6 +248,7 @@ public interface UserGroupRoleService extends PageService {
      * @return
      */
     @CacheEvict(allEntries = true)
+    @Transactional
     int generateData();
 
     /**
