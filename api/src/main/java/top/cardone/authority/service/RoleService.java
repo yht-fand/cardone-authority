@@ -261,6 +261,7 @@ public interface RoleService extends PageService {
      * @return
      */
     @CacheEvict(allEntries = true)
+    @Transactional
     int generateData();
 
     /**
@@ -270,5 +271,6 @@ public interface RoleService extends PageService {
      * @return
      */
     @CacheEvict(allEntries = true)
+    @Transactional
     int generateData(String flagObjectCode);
 }

@@ -257,6 +257,7 @@ public interface UserGroupUserService extends PageService {
      * @return
      */
     @CacheEvict(allEntries = true)
+    @Transactional
     int generateData(String flagObjectCode);
 
     /**
