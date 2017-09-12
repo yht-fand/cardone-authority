@@ -7,3 +7,4 @@ t.user_id as "userId",
 t.BEGIN_DATE as "beginDate",
 t.END_DATE as "endDate"
 FROM c1_user t
+where t.state_code ='1' and t.data_state_code = '1'

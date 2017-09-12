@@ -7,3 +7,5 @@ t.BEGIN_DATE AS "beginDate",
 t.END_DATE AS "endDate"
 FROM c1_user_group_permission t
 JOIN c1_user_group_user ugu ON (ugu.USER_GROUP_CODE = t.USER_GROUP_CODE)
+where t.state_code ='1' and t.data_state_code = '1'
+and ugu.state_code ='1' and ugu.data_state_code = '1'

@@ -7,3 +7,5 @@ t.BEGIN_DATE AS "beginDate",
 t.END_DATE AS "endDate"
 FROM c1_role_permission t
 JOIN c1_user_group_role ugr ON (ugr.ROLE_CODE = t.ROLE_CODE)
+where t.state_code ='1' and t.data_state_code = '1'
+and ugr.state_code ='1' and ugr.data_state_code = '1'

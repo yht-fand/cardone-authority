@@ -20,3 +20,4 @@ t.NAME AS "name",
 t.BEGIN_DATE AS "beginDate",
 t.END_DATE AS "endDate"
 FROM c1_user t
+where t.state_code ='1' and t.data_state_code = '1'
