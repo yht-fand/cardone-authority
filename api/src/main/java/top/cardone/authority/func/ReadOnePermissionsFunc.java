@@ -34,7 +34,7 @@ public class ReadOnePermissionsFunc implements Func1<String, Object> {
         String userCode = (String) SecurityUtils.getSubject().getPrincipal();
 
         // 管理角色,所有数据管理角色
-        if (SecurityUtils.getSubject().hasRole("administrator") || SecurityUtils.getSubject().hasRole("all-data-administrator")) {
+        if (SecurityUtils.getSubject().hasRole("administrator")) {
             return "*";
         }
 
