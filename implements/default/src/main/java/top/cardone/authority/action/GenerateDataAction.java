@@ -39,14 +39,6 @@ public class GenerateDataAction implements Action0 {
         save.put("dictionaryCode", "authorityModify");
         save.put("value", "no");
 
-        ApplicationContextHolder.getBean(Func1.class, this.saveDictionaryFuncBeanId).func(save);
-
-        String[] beanDefinitionNames = ApplicationContextHolder.getApplicationContext().getBeanDefinitionNames();
-
-        for (String beanDefinitionName : beanDefinitionNames) {
-            if (StringUtils.endsWith(beanDefinitionName, "Service")) {
-                ApplicationContextHolder.getBean(Cache.class).clear(beanDefinitionName);
-            }
-        }
+        ApplicationContextHolder.getBean(Cache.class).clearBySkipNames();
     }
 }
