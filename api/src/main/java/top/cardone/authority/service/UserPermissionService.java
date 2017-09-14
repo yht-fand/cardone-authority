@@ -269,6 +269,11 @@ public interface UserPermissionService extends PageService {
      */
     List<String> readListPermissionCodeByUserCode(String userCode);
 
+    @Cacheable(key = Caches.KEY_1)
+    default List<String> readListPermissionCodeByUserCodeCache(String userCode) {
+        return this.readListPermissionCodeByUserCode(userCode);
+    }
+
     @Cacheable(key = Caches.KEY_2)
     default List<String> readListPermissionCodeByPermissionCache(String userCode, String permission) {
         return this.readListPermissionCodeByPermission(userCode, permission);

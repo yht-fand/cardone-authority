@@ -20,7 +20,7 @@ public class ReadListRoleCodeFunc implements Func1<Set<String>, String> {
 
     @Override
     public Set<String> func(String userCode) {
-        List<String> roleCodeList = ApplicationContextHolder.getBean(UserRoleService.class).readListRoleCodeByUserCode(userCode);
+        List<String> roleCodeList = ApplicationContextHolder.getBean(UserRoleService.class).readListRoleCodeByUserCodeCache(userCode);
 
         if (CollectionUtils.isEmpty(roleCodeList)) {
             roleCodeList.add(defaultRoleCode);

@@ -268,4 +268,15 @@ public interface UserRoleService extends PageService {
      * @return
      */
     List<String> readListRoleCodeByUserCode(String userCode);
+
+    /**
+     * 读取角色集合
+     *
+     * @param userCode 用户编号
+     * @return
+     */
+    @Cacheable(key = Caches.KEY_1)
+    default List<String> readListRoleCodeByUserCodeCache(String userCode) {
+        return this.readListRoleCodeByUserCode(userCode);
+    }
 }
