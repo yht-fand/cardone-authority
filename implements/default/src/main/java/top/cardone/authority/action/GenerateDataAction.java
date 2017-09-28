@@ -3,12 +3,10 @@ package top.cardone.authority.action;
 import com.google.common.collect.Maps;
 import lombok.Setter;
 import org.apache.commons.lang3.BooleanUtils;
-import org.apache.commons.lang3.StringUtils;
 import top.cardone.authority.service.UserGroupService;
 import top.cardone.cache.Cache;
 import top.cardone.context.ApplicationContextHolder;
 import top.cardone.core.util.action.Action0;
-import top.cardone.core.util.func.Func1;
 import top.cardone.core.util.func.Func2;
 
 import java.util.Map;
@@ -19,9 +17,6 @@ import java.util.Map;
 public class GenerateDataAction implements Action0 {
     @Setter
     private String readOneDictionaryValueByCodeFuncBeanId = "readOneDictionaryValueByCodeFunc";
-
-    @Setter
-    private String saveDictionaryFuncBeanId = "saveDictionaryFunc";
 
     @Override
     public void action() {
@@ -39,6 +34,6 @@ public class GenerateDataAction implements Action0 {
         save.put("dictionaryCode", "authorityModify");
         save.put("value", "no");
 
-        ApplicationContextHolder.getBean(Cache.class).clearBySkipNames();
+        ApplicationContextHolder.getBean(Cache.class).clearBySkipNames("org.apache.shiro.session");
     }
 }
