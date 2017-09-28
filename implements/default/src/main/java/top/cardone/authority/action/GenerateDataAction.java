@@ -34,6 +34,6 @@ public class GenerateDataAction implements Action0 {
         save.put("dictionaryCode", "authorityModify");
         save.put("value", "no");
 
-        ApplicationContextHolder.getBean(Cache.class).clearBySkipNames("org.apache.shiro.session");
+        ApplicationContextHolder.getBean(Cache.class).clearBySkipNames("top.cardone.security.shiro.session.mgt.eis.impl.SessionDaoImpl");
     }
 }
