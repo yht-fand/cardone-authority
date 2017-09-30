@@ -249,7 +249,7 @@ public interface UserPermissionService extends PageService {
      */
     @CacheEvict(allEntries = true)
     @Transactional
-    int generateData();
+    void generateData();
 
     /**
      * 生成
@@ -259,7 +259,7 @@ public interface UserPermissionService extends PageService {
      */
     @CacheEvict(allEntries = true)
     @Transactional
-    int generateData(String flagObjectCode);
+    void generateData(String flagObjectCode);
 
     /**
      * 读取许可集合

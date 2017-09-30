@@ -24,16 +24,16 @@ public class UserPermissionServiceImpl extends PageServiceImpl<UserPermissionDao
 
     @Override
     @Transactional
-    public int generateData() {
-        return ApplicationContextHolder.getBean(UserGroupService.class).generateData();
+    public void generateData() {
+        ApplicationContextHolder.getBean(UserGroupService.class).generateData();
     }
 
     @Override
     @Transactional
-    public int generateData(String flagObjectCode) {
+    public void generateData(String flagObjectCode) {
         ApplicationContextHolder.action(InitDataAction.class, action -> action.action(), "top.cardone.authority.service.UserPermissionService.init");
 
-        return this.dao.generateData(flagObjectCode);
+        this.dao.generateData(flagObjectCode);
     }
 
     @Override

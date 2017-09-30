@@ -1,6 +1,5 @@
 package top.cardone.authority.service.impl;
 
-import org.springframework.data.domain.Page;
 import org.springframework.transaction.annotation.Transactional;
 import top.cardone.authority.dao.UserGroupDao;
 import top.cardone.authority.service.*;
@@ -31,43 +30,41 @@ public class UserGroupServiceImpl extends PageServiceImpl<UserGroupDao> implemen
 
     @Override
     @Transactional
-    public int generateData() {
+    public void generateData() {
         String flagObjectCode = UUID.randomUUID().toString();
 
-        int count = this.generateData(flagObjectCode);
+        this.generateData(flagObjectCode);
 
         //用户组与用户
-        count += ApplicationContextHolder.getBean(UserGroupUserService.class).generateData(flagObjectCode);
+        ApplicationContextHolder.getBean(UserGroupUserService.class).generateData(flagObjectCode);
 
         //角色
-        count += ApplicationContextHolder.getBean(RoleService.class).generateData(flagObjectCode);
+        ApplicationContextHolder.getBean(RoleService.class).generateData(flagObjectCode);
 
         //用户组与角色
-        count += ApplicationContextHolder.getBean(UserGroupRoleService.class).generateData(flagObjectCode);
+        ApplicationContextHolder.getBean(UserGroupRoleService.class).generateData(flagObjectCode);
 
         //用户与角色
-        count += ApplicationContextHolder.getBean(UserRoleService.class).generateData(flagObjectCode);
+        ApplicationContextHolder.getBean(UserRoleService.class).generateData(flagObjectCode);
 
         //授权
-        count += ApplicationContextHolder.getBean(PermissionService.class).generateData(flagObjectCode);
+        ApplicationContextHolder.getBean(PermissionService.class).generateData(flagObjectCode);
 
         //角色与授权
-        count += ApplicationContextHolder.getBean(RolePermissionService.class).generateData(flagObjectCode);
+        ApplicationContextHolder.getBean(RolePermissionService.class).generateData(flagObjectCode);
 
         //用户组与授权
-        count += ApplicationContextHolder.getBean(UserGroupPermissionService.class).generateData(flagObjectCode);
+        ApplicationContextHolder.getBean(UserGroupPermissionService.class).generateData(flagObjectCode);
 
         //用户与授权
-        count += ApplicationContextHolder.getBean(UserPermissionService.class).generateData(flagObjectCode);
-
-        return count;
+        ApplicationContextHolder.getBean(UserPermissionService.class).generateData(flagObjectCode);
     }
 
     @Override
     @Transactional
-    public int generateData(String flagObjectCode) {
+    public void generateData(String flagObjectCode) {
         ApplicationContextHolder.action(InitDataAction.class, action -> action.action(), "top.cardone.authority.service.UserGroupService.init");
 
-        return this.dao.generateData(flagObjectCode);
+        this.dao.generateData(flagObjectCode);
     }
 }

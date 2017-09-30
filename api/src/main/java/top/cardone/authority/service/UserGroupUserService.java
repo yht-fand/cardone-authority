@@ -249,7 +249,7 @@ public interface UserGroupUserService extends PageService {
      */
     @CacheEvict(allEntries = true)
     @Transactional
-    int generateData();
+    void generateData();
 
     /**
      * 生成
@@ -259,7 +259,7 @@ public interface UserGroupUserService extends PageService {
      */
     @CacheEvict(allEntries = true)
     @Transactional
-    int generateData(String flagObjectCode);
+    void generateData(String flagObjectCode);
 
     /**
      * 用户标识查询

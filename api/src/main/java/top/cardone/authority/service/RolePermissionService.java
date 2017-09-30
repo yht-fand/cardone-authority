@@ -249,7 +249,7 @@ public interface RolePermissionService extends PageService {
      */
     @CacheEvict(allEntries = true)
     @Transactional
-    int generateData();
+    void generateData();
 
     /**
      * 生成
@@ -259,5 +259,5 @@ public interface RolePermissionService extends PageService {
      */
     @CacheEvict(allEntries = true)
     @Transactional
-    int generateData(String flagObjectCode);
+    void generateData(String flagObjectCode);
 }
