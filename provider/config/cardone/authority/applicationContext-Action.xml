@@ -5,46 +5,44 @@
     <bean name="top.cardone.authority.service.UserGroupService.init"
           class="top.cardone.data.action.InitDataAction">
         <property name="serviceBeanId" value="top.cardone.authority.service.UserGroupService"/>
-        <property name="reinit" value="true"/>
         <property name="jsonFiles" value="${app.root}/config/*/authority/init-data/userGroup-*.json"/>
+        <property name="reinit" value="true"/>
     </bean>
 
     <bean name="top.cardone.authority.service.RoleService.init" class="top.cardone.data.action.InitDataAction">
         <property name="serviceBeanId" value="top.cardone.authority.service.RoleService"/>
-        <property name="reinit" value="true"/>
         <property name="jsonFiles" value="${app.root}/config/*/authority/init-data/role-*.json"/>
+        <property name="reinit" value="true"/>
     </bean>
 
     <bean name="top.cardone.authority.service.PermissionService.init" class="top.cardone.data.action.InitDataAction">
         <property name="serviceBeanId" value="top.cardone.authority.service.PermissionService"/>
-        <property name="reinit" value="true"/>
         <property name="jsonFiles" value="${app.root}/config/*/authority/init-data/permission-*.json"/>
     </bean>
 
     <bean name="top.cardone.authority.service.UserGroupRoleService.init"
           class="top.cardone.data.action.InitDataAction">
         <property name="serviceBeanId" value="top.cardone.authority.service.UserGroupRoleService"/>
-        <property name="reinit" value="true"/>
         <property name="jsonFiles" value="${app.root}/config/*/authority/init-data/userGroupRole-*.json"/>
+        <property name="reinit" value="true"/>
     </bean>
 
     <bean name="top.cardone.authority.service.UserGroupUserService.init"
           class="top.cardone.data.action.InitDataAction">
         <property name="serviceBeanId" value="top.cardone.authority.service.UserGroupUserService"/>
-        <property name="reinit" value="true"/>
         <property name="jsonFiles" value="${app.root}/config/*/authority/init-data/userGroupUser-*.json"/>
+        <property name="reinit" value="true"/>
     </bean>
 
     <bean name="top.cardone.authority.service.UserRoleService.init" class="top.cardone.data.action.InitDataAction">
         <property name="serviceBeanId" value="top.cardone.authority.service.UserRoleService"/>
-        <property name="reinit" value="true"/>
         <property name="jsonFiles" value="${app.root}/config/*/authority/init-data/userRole-*.json"/>
+        <property name="reinit" value="true"/>
     </bean>
 
     <bean name="top.cardone.authority.service.RolePermissionService.init"
           class="top.cardone.data.action.InitDataAction">
         <property name="serviceBeanId" value="top.cardone.authority.service.RolePermissionService"/>
-        <property name="reinit" value="true"/>
         <property name="jsonFiles" value="${app.root}/config/*/authority/init-data/rolePermission-*.json"/>
     </bean>
 
