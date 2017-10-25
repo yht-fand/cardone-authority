@@ -83,4 +83,6 @@
         <property name="pkGetKey" value="PERMISSION_ID"/>
         <property name="serviceBeanId" value="top.cardone.authority.service.PermissionService"/>
     </bean>
+
+    <bean name="authorityGenerateDataAction" class="top.cardone.authority.action.GenerateDataAction"/>
 </beans>
