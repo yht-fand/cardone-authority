@@ -2,27 +2,60 @@
 <beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns="http://www.springframework.org/schema/beans"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-    <bean class="top.cardone.data.listener.GenerateTreeListener">
-        <property name="codePutKey" value="userGroupCode"/>
-        <property name="codeGetKey" value="USER_GROUP_CODE"/>
-        <property name="pkPutKey" value="userGroupId"/>
-        <property name="pkGetKey" value="USER_GROUP_ID"/>
+    <bean class="top.cardone.data.listener.GenerateListener">
         <property name="serviceBeanId" value="top.cardone.authority.service.UserGroupService"/>
+        <property name="saveListActionBeanId" value="saveListDictionaryFunc"/>
+        <property name="saveList">
+            <list>
+                <map>
+                    <entry key="dictionaryTypeCode" value="generate"/>
+                    <entry key="dictionaryCode" value="userGroup"/>
+                    <entry key="value" value="yes"/>
+                </map>
+                <map>
+                    <entry key="dictionaryTypeCode" value="generate"/>
+                    <entry key="dictionaryCode" value="userGroupTree"/>
+                    <entry key="value" value="yes"/>
+                </map>
+            </list>
+        </property>
     </bean>
 
-    <bean class="top.cardone.data.listener.GenerateTreeListener">
-        <property name="codePutKey" value="roleCode"/>
-        <property name="codeGetKey" value="ROLE_CODE"/>
-        <property name="pkPutKey" value="roleId"/>
-        <property name="pkGetKey" value="ROLE_ID"/>
+    <bean class="top.cardone.data.listener.GenerateListener">
         <property name="serviceBeanId" value="top.cardone.authority.service.RoleService"/>
+        <property name="saveListActionBeanId" value="saveListDictionaryFunc"/>
+        <property name="saveList">
+            <list>
+                <map>
+                    <entry key="dictionaryTypeCode" value="generate"/>
+                    <entry key="dictionaryCode" value="userGroup"/>
+                    <entry key="value" value="yes"/>
+                </map>
+                <map>
+                    <entry key="dictionaryTypeCode" value="generate"/>
+                    <entry key="dictionaryCode" value="roleTree"/>
+                    <entry key="value" value="yes"/>
+                </map>
+            </list>
+        </property>
     </bean>
 
-    <bean class="top.cardone.data.listener.GenerateTreeListener">
-        <property name="codePutKey" value="permissionCode"/>
-        <property name="codeGetKey" value="PERMISSION_CODE"/>
-        <property name="pkPutKey" value="permissionId"/>
-        <property name="pkGetKey" value="PERMISSION_ID"/>
+    <bean class="top.cardone.data.listener.GenerateListener">
         <property name="serviceBeanId" value="top.cardone.authority.service.PermissionService"/>
+        <property name="saveListActionBeanId" value="saveListDictionaryFunc"/>
+        <property name="saveList">
+            <list>
+                <map>
+                    <entry key="dictionaryTypeCode" value="generate"/>
+                    <entry key="dictionaryCode" value="userGroup"/>
+                    <entry key="value" value="yes"/>
+                </map>
+                <map>
+                    <entry key="dictionaryTypeCode" value="generate"/>
+                    <entry key="dictionaryCode" value="permissionTree"/>
+                    <entry key="value" value="yes"/>
+                </map>
+            </list>
+        </property>
     </bean>
 </beans>
