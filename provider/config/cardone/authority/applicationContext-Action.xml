@@ -60,7 +60,7 @@
         </property>
     </bean>
 
-    <bean class="top.cardone.data.action.GenerateTreeAction">
+    <bean name="userGroupGenerateTreeAction" class="top.cardone.data.action.GenerateTreeAction">
         <property name="codePutKey" value="userGroupCode"/>
         <property name="codeGetKey" value="USER_GROUP_CODE"/>
         <property name="pkPutKey" value="userGroupId"/>
@@ -68,7 +68,7 @@
         <property name="serviceBeanId" value="top.cardone.authority.service.UserGroupService"/>
     </bean>
 
-    <bean class="top.cardone.data.action.GenerateTreeAction">
+    <bean name="roleGenerateTreeAction" class="top.cardone.data.action.GenerateTreeAction">
         <property name="codePutKey" value="roleCode"/>
         <property name="codeGetKey" value="ROLE_CODE"/>
         <property name="pkPutKey" value="roleId"/>
@@ -76,7 +76,7 @@
         <property name="serviceBeanId" value="top.cardone.authority.service.RoleService"/>
     </bean>
 
-    <bean class="top.cardone.data.action.GenerateTreeAction">
+    <bean name="permissionGenerateTreeAction" class="top.cardone.data.action.GenerateTreeAction">
         <property name="codePutKey" value="permissionCode"/>
         <property name="codeGetKey" value="PERMISSION_CODE"/>
         <property name="pkPutKey" value="permissionId"/>

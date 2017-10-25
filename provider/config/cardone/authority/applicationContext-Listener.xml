@@ -4,7 +4,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
     <bean class="top.cardone.data.listener.GenerateListener">
         <property name="serviceBeanId" value="top.cardone.authority.service.UserGroupService"/>
-        <property name="saveListActionBeanId" value="saveListDictionaryFunc"/>
+        <property name="saveListFuncBeanId" value="saveListDictionaryFunc"/>
         <property name="saveList">
             <list>
                 <map>
@@ -23,7 +23,7 @@
 
     <bean class="top.cardone.data.listener.GenerateListener">
         <property name="serviceBeanId" value="top.cardone.authority.service.RoleService"/>
-        <property name="saveListActionBeanId" value="saveListDictionaryFunc"/>
+        <property name="saveListFuncBeanId" value="saveListDictionaryFunc"/>
         <property name="saveList">
             <list>
                 <map>
@@ -42,7 +42,7 @@
 
     <bean class="top.cardone.data.listener.GenerateListener">
         <property name="serviceBeanId" value="top.cardone.authority.service.PermissionService"/>
-        <property name="saveListActionBeanId" value="saveListDictionaryFunc"/>
+        <property name="saveListFuncBeanId" value="saveListDictionaryFunc"/>
         <property name="saveList">
             <list>
                 <map>
