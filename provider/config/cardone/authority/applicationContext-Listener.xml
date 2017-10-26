@@ -9,11 +9,6 @@
             <list>
                 <map>
                     <entry key="dictionaryTypeCode" value="generate"/>
-                    <entry key="dictionaryCode" value="userGroup"/>
-                    <entry key="value" value="yes"/>
-                </map>
-                <map>
-                    <entry key="dictionaryTypeCode" value="generate"/>
                     <entry key="dictionaryCode" value="userGroupTree"/>
                     <entry key="value" value="yes"/>
                 </map>
@@ -28,11 +23,6 @@
             <list>
                 <map>
                     <entry key="dictionaryTypeCode" value="generate"/>
-                    <entry key="dictionaryCode" value="userGroup"/>
-                    <entry key="value" value="yes"/>
-                </map>
-                <map>
-                    <entry key="dictionaryTypeCode" value="generate"/>
                     <entry key="dictionaryCode" value="roleTree"/>
                     <entry key="value" value="yes"/>
                 </map>
@@ -45,11 +35,6 @@
         <property name="saveListFuncBeanId" value="saveListDictionaryFunc"/>
         <property name="saveList">
             <list>
-                <map>
-                    <entry key="dictionaryTypeCode" value="generate"/>
-                    <entry key="dictionaryCode" value="userGroup"/>
-                    <entry key="value" value="yes"/>
-                </map>
                 <map>
                     <entry key="dictionaryTypeCode" value="generate"/>
                     <entry key="dictionaryCode" value="permissionTree"/>
