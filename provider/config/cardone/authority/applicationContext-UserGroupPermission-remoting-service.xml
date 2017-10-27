@@ -21,7 +21,7 @@
         <property name="service" ref="top.cardone.authority.service.UserGroupPermissionService"/>
     </bean>
 
-    <rabbit:listener-container acknowledge="none" max-concurrency="128" prefetch="10">
+    <rabbit:listener-container acknowledge="none" concurrency="128" prefetch="10">
         <rabbit:listener ref="top.cardone.authority.service.UserGroupPermissionServiceExporter"
                          queue-names="queue:cardone-authority-${cardone-authority-version}:top.cardone.authority.service.UserGroupPermissionService"/>
     </rabbit:listener-container>
