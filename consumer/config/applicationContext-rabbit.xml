@@ -18,7 +18,8 @@
 
     <rabbit:template id="org.springframework.amqp.core.AmqpTemplate"
                      connection-factory="rabbitConnectionFactory"
-                     message-converter="amqpMessageConverter"/>
+                     message-converter="amqpMessageConverter"
+                     reply-timeout="${spring.rabbitmq.replyTimeout:300000}"/>
 
     <rabbit:admin connection-factory="rabbitConnectionFactory"/>
 </beans>
