@@ -21,7 +21,7 @@
         <property name="service" ref="top.cardone.authority.service.UserGroupService"/>
     </bean>
 
-    <rabbit:listener-container acknowledge="none" concurrency="100" prefetch="10">
+    <rabbit:listener-container acknowledge="none" concurrency="20" prefetch="5">
         <rabbit:listener ref="top.cardone.authority.service.UserGroupServiceExporter"
                          queue-names="queue:cardone-authority-${cardone-authority-version}:top.cardone.authority.service.UserGroupService"/>
     </rabbit:listener-container>
