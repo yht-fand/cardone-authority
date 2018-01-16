@@ -11,7 +11,7 @@
             username="${spring.rabbitmq.username:cardone}"
             password="${spring.rabbitmq.password:cardone.123}"
             virtual-host="${spring.rabbitmq.virtualHost:cardone}"
-            channel-cache-size="${spring.rabbitmq.channelCacheSize:50}"
+            channel-cache-size="${spring.rabbitmq.channelCacheSize:120}"
             connection-limit="${spring.rabbitmq.connectionLimit:100}"/>
 
     <bean id="amqpMessageConverter" class="org.springframework.amqp.support.converter.SimpleMessageConverter"/>
