@@ -13,7 +13,7 @@
         </rabbit:bindings>
     </rabbit:direct-exchange>
 
-    <rabbit:queue
+    <rabbit:queue exclusive="true"
             name="queue:cardone-authority-${cardone-authority-version}:top.cardone.authority.service.RolePermissionService"/>
 
     <bean id="top.cardone.authority.service.RolePermissionServiceExporter" parent="remoteInvocationExecutorParnet">
@@ -21,7 +21,7 @@
         <property name="service" ref="top.cardone.authority.service.RolePermissionService"/>
     </bean>
 
-    <rabbit:listener-container acknowledge="none" concurrency="5" prefetch="10">
+    <rabbit:listener-container acknowledge="none" concurrency="1" prefetch="20">
         <rabbit:listener ref="top.cardone.authority.service.RolePermissionServiceExporter"
                          queue-names="queue:cardone-authority-${cardone-authority-version}:top.cardone.authority.service.RolePermissionService"/>
     </rabbit:listener-container>
