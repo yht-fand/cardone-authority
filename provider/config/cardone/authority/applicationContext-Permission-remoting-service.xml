@@ -21,7 +21,7 @@
         <property name="service" ref="top.cardone.authority.service.PermissionService"/>
     </bean>
 
-    <rabbit:listener-container acknowledge="none" concurrency="20" prefetch="5">
+    <rabbit:listener-container acknowledge="none" concurrency="10" prefetch="5">
         <rabbit:listener ref="top.cardone.authority.service.PermissionServiceExporter"
                          queue-names="queue:cardone-authority-${cardone-authority-version}:top.cardone.authority.service.PermissionService"/>
     </rabbit:listener-container>
