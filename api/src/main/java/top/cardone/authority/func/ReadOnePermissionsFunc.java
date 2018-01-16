@@ -54,15 +54,11 @@ public class ReadOnePermissionsFunc implements Func1<String, Object> {
                 if (SecurityUtils.getSubject().hasRole("department-data-administrator") || SecurityUtils.getSubject().hasRole("department-tree-data-administrator")) {
                     permissionList.add((String) ApplicationContextHolder.getBean(Func1.class, this.readOneUserDepartmentCodeByUserCodeFuncBeanId).func(userCode));
                 } else {
-                    return "#permissionsEmpty#";
+                    return UUID.randomUUID().toString();
                 }
             } else {
-                return "#permissionsEmpty#";
+                return UUID.randomUUID().toString();
             }
-        }
-
-        if(CollectionUtils.isEmpty(permissionList)){
-            return "#permissionsEmpty#";
         }
 
         if (CollectionUtils.contains(permissionList.iterator(), "*")) {
