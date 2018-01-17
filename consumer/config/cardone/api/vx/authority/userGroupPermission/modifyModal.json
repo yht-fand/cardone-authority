@@ -1,0 +1,14 @@
+{
+  "validation": {
+    "rules": {
+      "userGroupPermissionId": {
+        "required": true
+      }
+    },
+    "messages": {
+      "userGroupPermissionId": {
+        "required": "用户组与许可标识必填"
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "validation": {
+    "rules": {
+      "tokenInfoId": {
+        "required": true
+      }
+    },
+    "messages": {
+      "tokenInfoId": {
+        "required": "令牌信息标识必填"
+      }
+    }
+  }
+}

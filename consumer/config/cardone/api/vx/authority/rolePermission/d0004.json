@@ -1,0 +1,14 @@
+{
+  "validation": {
+    "rules": {
+      "rolePermissionIds": {
+        "required": true
+      }
+    },
+    "messages": {
+      "rolePermissionIds": {
+        "required": "角色与许可标识集合必填"
+      }
+    }
+  }
+}

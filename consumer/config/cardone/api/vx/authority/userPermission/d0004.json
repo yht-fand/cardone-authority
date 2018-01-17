@@ -1,0 +1,14 @@
+{
+  "validation": {
+    "rules": {
+      "userPermissionIds": {
+        "required": true
+      }
+    },
+    "messages": {
+      "userPermissionIds": {
+        "required": "用户与许可标识集合必填"
+      }
+    }
+  }
+}

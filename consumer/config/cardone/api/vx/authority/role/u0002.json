@@ -1,0 +1,24 @@
+{
+  "validation": {
+    "rules": {
+      "roleId": {
+        "required": true
+      },
+      "name": {
+        "required": true,
+        "minlength": 4,
+        "maxlength": 255
+      }
+    },
+    "messages": {
+      "roleId": {
+        "required": "角色标识必填"
+      },
+      "name": {
+        "required": "角色名称必填",
+        "minlength": "角色名称需{0}个字符以上",
+        "maxlength": "角色名称需小于{0}个字符"
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "validation": {
+    "rules": {
+      "roleId": {
+        "required": true
+      }
+    },
+    "messages": {
+      "roleId": {
+        "required": "角色标识必填"
+      }
+    }
+  }
+}
