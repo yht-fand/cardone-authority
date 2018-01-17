@@ -75,5 +75,5 @@ SELECT
 <#default>
 COUNT(*) AS COUNT_
 </#switch>
-FROM c1_oauth_consumer
+FROM "c1_oauth_consumer"
 <#include "where.ftl">

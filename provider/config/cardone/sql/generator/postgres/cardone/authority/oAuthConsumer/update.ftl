@@ -1,4 +1,4 @@
-UPDATE c1_oauth_consumer
+UPDATE "c1_oauth_consumer"
 <#assign prefixName = true>
 <#if (update_batchNo??)>
 ${prefixName?string('SET ', ', ')}"batch_no" = :update_batchNo_value

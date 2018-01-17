@@ -99,7 +99,7 @@ ${prefixName?string('  ', ', ')}"version_"
 <#if prefixName>
 *
 </#if>
-FROM c1_oauth_consumer
+FROM "c1_oauth_consumer"
 <#include "where.ftl">
 <#assign prefixName = true>
 <#if (order_by_batchNo??)>

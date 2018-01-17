@@ -1,5 +1,5 @@
 INSERT
-INTO c1_role_permission
+INTO "c1_role_permission"
 (<#assign prefixName = true>
 <#if (insert_batchNo??) && (insert_batchNo_value??)>
 ${prefixName?string('  ', ', ')}"batch_no"

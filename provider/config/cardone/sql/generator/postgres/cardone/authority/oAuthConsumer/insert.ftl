@@ -1,5 +1,5 @@
 INSERT
-INTO c1_oauth_consumer
+INTO "c1_oauth_consumer"
 (<#assign prefixName = true>
 <#if (insert_batchNo??) && (insert_batchNo_value??)>
 ${prefixName?string('  ', ', ')}"batch_no"

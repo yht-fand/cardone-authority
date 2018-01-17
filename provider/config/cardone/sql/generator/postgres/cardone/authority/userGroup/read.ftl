@@ -96,5 +96,5 @@ SELECT
 <#default>
 COUNT(*) AS COUNT_
 </#switch>
-FROM c1_user_group
+FROM "c1_user_group"
 <#include "where.ftl">

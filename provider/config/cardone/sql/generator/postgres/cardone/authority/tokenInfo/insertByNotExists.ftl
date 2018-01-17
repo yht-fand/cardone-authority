@@ -1,6 +1,6 @@
 INSERT
 INTO
-c1_token_info
+"c1_token_info"
 (<#assign prefixName = true>
 <#if (insert_batchNo??) && (insert_batchNo_value??)>
 ${prefixName?string('  ', ', ')}"batch_no"
@@ -229,7 +229,7 @@ ${prefixName?string('  ', ', ')}:insert_userId_value
 ${prefixName?string('  ', ', ')}:insert_version_value
 <#assign prefixName = false>
 </#if>
-WHERE NOT EXISTS (SELECT 1 FROM c1_token_info E
+WHERE NOT EXISTS (SELECT 1 FROM "c1_token_info" E
 <#assign prefixName = true>
 <#if (where_and_eq_batchNo??)>
 <#if (where_and_eq_batchNo_value??)>

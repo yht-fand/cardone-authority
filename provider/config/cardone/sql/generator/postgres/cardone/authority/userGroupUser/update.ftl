@@ -1,4 +1,4 @@
-UPDATE c1_user_group_user
+UPDATE "c1_user_group_user"
 <#assign prefixName = true>
 <#if (update_batchNo??)>
 ${prefixName?string('SET ', ', ')}"batch_no" = :update_batchNo_value

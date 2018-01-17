@@ -87,5 +87,5 @@ SELECT
 <#default>
 COUNT(*) AS COUNT_
 </#switch>
-FROM c1_token_info
+FROM "c1_token_info"
 <#include "where.ftl">

@@ -111,7 +111,7 @@ ${prefixName?string('  ', ', ')}"version_"
 <#if prefixName>
 *
 </#if>
-FROM c1_user_group_user
+FROM "c1_user_group_user"
 <#include "where.ftl">
 <#assign prefixName = true>
 <#if (order_by_batchNo??)>

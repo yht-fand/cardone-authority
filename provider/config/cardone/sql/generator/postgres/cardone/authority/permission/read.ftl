@@ -96,5 +96,5 @@ SELECT
 <#default>
 COUNT(*) AS COUNT_
 </#switch>
-FROM c1_permission
+FROM "c1_permission"
 <#include "where.ftl">

@@ -84,5 +84,5 @@ SELECT
 <#default>
 COUNT(*) AS COUNT_
 </#switch>
-FROM c1_user_group_permission
+FROM "c1_user_group_permission"
 <#include "where.ftl">
