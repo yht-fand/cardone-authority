@@ -1,6 +1,6 @@
 package top.cardone.authority.action;
 
-import lombok.Synchronized;
+
 import top.cardone.authority.service.UserGroupService;
 import top.cardone.context.ApplicationContextHolder;
 import top.cardone.core.util.action.Action0;

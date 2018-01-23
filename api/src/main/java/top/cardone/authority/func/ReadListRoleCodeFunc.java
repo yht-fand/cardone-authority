@@ -2,7 +2,7 @@ package top.cardone.authority.func;
 
 import com.google.common.collect.Sets;
 import lombok.Setter;
-import lombok.Synchronized;
+
 import org.springframework.util.CollectionUtils;
 import top.cardone.authority.service.UserRoleService;
 import top.cardone.context.ApplicationContextHolder;

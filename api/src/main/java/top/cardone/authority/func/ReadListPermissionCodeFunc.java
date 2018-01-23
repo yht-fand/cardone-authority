@@ -1,7 +1,7 @@
 package top.cardone.authority.func;
 
 import com.google.common.collect.Sets;
-import lombok.Synchronized;
+
 import top.cardone.authority.service.UserPermissionService;
 import top.cardone.context.ApplicationContextHolder;
 import top.cardone.core.util.func.Func1;
