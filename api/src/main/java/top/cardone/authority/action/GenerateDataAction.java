@@ -1,5 +1,6 @@
 package top.cardone.authority.action;
 
+import lombok.Synchronized;
 import top.cardone.authority.service.UserGroupService;
 import top.cardone.context.ApplicationContextHolder;
 import top.cardone.core.util.action.Action0;
@@ -9,6 +10,7 @@ import top.cardone.core.util.action.Action0;
  */
 public class GenerateDataAction implements Action0 {
     @Override
+    @Synchronized
     public void action() {
         ApplicationContextHolder.getBean(UserGroupService.class).generateData();
     }

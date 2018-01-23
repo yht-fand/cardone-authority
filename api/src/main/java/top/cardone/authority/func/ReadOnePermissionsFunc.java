@@ -2,6 +2,7 @@ package top.cardone.authority.func;
 
 import com.google.common.collect.Sets;
 import lombok.Setter;
+import lombok.Synchronized;
 import org.apache.shiro.SecurityUtils;
 import org.springframework.util.CollectionUtils;
 import top.cardone.authority.service.UserPermissionService;
@@ -30,6 +31,7 @@ public class ReadOnePermissionsFunc implements Func1<String, Object> {
     private String readOneUserDepartmentCodeByUserCodeFuncBeanId = "readOneUserDepartmentCodeByUserCodeFunc";
 
     @Override
+    @Synchronized
     public String func(Object obj) {
         String userCode = (String) SecurityUtils.getSubject().getPrincipal();
 
