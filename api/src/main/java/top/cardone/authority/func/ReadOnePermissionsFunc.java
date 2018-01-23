@@ -31,7 +31,7 @@ public class ReadOnePermissionsFunc implements Func1<String, Object> {
     private String readOneUserDepartmentCodeByUserCodeFuncBeanId = "readOneUserDepartmentCodeByUserCodeFunc";
 
     @Override
-    @Synchronized
+
     public String func(Object obj) {
         String userCode = (String) SecurityUtils.getSubject().getPrincipal();
 

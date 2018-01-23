@@ -14,7 +14,7 @@ import java.util.Set;
  */
 public class ReadListPermissionCodeFunc implements Func1<Set<String>, String> {
     @Override
-    @Synchronized
+
     public Set<String> func(String userCode) {
         List<String> permissionCodeList = ApplicationContextHolder.getBean(UserPermissionService.class).readListPermissionCodeByUserCodeCache(userCode);
 
