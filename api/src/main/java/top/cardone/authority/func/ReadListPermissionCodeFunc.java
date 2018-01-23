@@ -1,6 +1,7 @@
 package top.cardone.authority.func;
 
 import com.google.common.collect.Sets;
+import lombok.Synchronized;
 import top.cardone.authority.service.UserPermissionService;
 import top.cardone.context.ApplicationContextHolder;
 import top.cardone.core.util.func.Func1;
@@ -13,6 +14,7 @@ import java.util.Set;
  */
 public class ReadListPermissionCodeFunc implements Func1<Set<String>, String> {
     @Override
+    @Synchronized
     public Set<String> func(String userCode) {
         List<String> permissionCodeList = ApplicationContextHolder.getBean(UserPermissionService.class).readListPermissionCodeByUserCodeCache(userCode);
 
