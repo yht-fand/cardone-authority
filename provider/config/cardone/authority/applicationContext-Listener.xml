@@ -4,12 +4,11 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
     <bean class="top.cardone.data.listener.GenerateListener">
         <property name="serviceBeanId" value="top.cardone.authority.service.UserGroupService"/>
-        <property name="saveListFuncBeanId" value="saveListDictionaryFunc"/>
+        <property name="saveListFuncBeanId" value="saveListVariableFunc"/>
         <property name="saveList">
             <list>
                 <map>
-                    <entry key="dictionaryTypeCode" value="generate"/>
-                    <entry key="dictionaryCode" value="userGroupTree"/>
+                    <entry key="variableCode" value="userGroupTree"/>
                     <entry key="value" value="yes"/>
                 </map>
             </list>
@@ -18,12 +17,11 @@
 
     <bean class="top.cardone.data.listener.GenerateListener">
         <property name="serviceBeanId" value="top.cardone.authority.service.RoleService"/>
-        <property name="saveListFuncBeanId" value="saveListDictionaryFunc"/>
+        <property name="saveListFuncBeanId" value="saveListVariableFunc"/>
         <property name="saveList">
             <list>
                 <map>
-                    <entry key="dictionaryTypeCode" value="generate"/>
-                    <entry key="dictionaryCode" value="roleTree"/>
+                    <entry key="variableCode" value="roleTree"/>
                     <entry key="value" value="yes"/>
                 </map>
             </list>
@@ -32,12 +30,11 @@
 
     <bean class="top.cardone.data.listener.GenerateListener">
         <property name="serviceBeanId" value="top.cardone.authority.service.PermissionService"/>
-        <property name="saveListFuncBeanId" value="saveListDictionaryFunc"/>
+        <property name="saveListFuncBeanId" value="saveListVariableFunc"/>
         <property name="saveList">
             <list>
                 <map>
-                    <entry key="dictionaryTypeCode" value="generate"/>
-                    <entry key="dictionaryCode" value="permissionTree"/>
+                    <entry key="variableCode" value="permissionTree"/>
                     <entry key="value" value="yes"/>
                 </map>
             </list>
