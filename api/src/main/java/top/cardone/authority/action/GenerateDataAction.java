@@ -10,7 +10,6 @@ import top.cardone.core.util.action.Action0;
  */
 public class GenerateDataAction implements Action0 {
     @Override
-
     public void action() {
         ApplicationContextHolder.getBean(UserGroupService.class).generateData();
     }
