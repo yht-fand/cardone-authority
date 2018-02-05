@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * Created by cardone-home-001 on 2016/4/19.
+ * @author cardone-home-001 on 2016/4/19.
  */
 public class ReadListPermissionCodeFunc implements Func1<Set<String>, String> {
     @Override

@@ -15,7 +15,7 @@ import java.util.Set;
 import java.util.UUID;
 
 /**
- * Created by cardone-home-001 on 2016/4/19.
+ * @author cardone-home-001 on 2016/4/19.
  */
 public class ReadOnePermissionsFunc implements Func1<String, Object> {
     @Setter
