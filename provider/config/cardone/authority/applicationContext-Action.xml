@@ -84,5 +84,5 @@
         <property name="serviceBeanId" value="top.cardone.authority.service.PermissionService"/>
     </bean>
 
-    <bean name="authorityGenerateDataAction" class="top.cardone.authority.action.GenerateDataAction"/>
+    <bean name="authorityGenerateDataAction" class="top.cardone.authority.action.UserGroupGenerateDataAction"/>
 </beans>
