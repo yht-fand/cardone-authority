@@ -3,13 +3,13 @@
        xmlns="http://www.springframework.org/schema/beans"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
        default-lazy-init="true">
-    <bean id="top.cardone.authority.func.ReadListPermissionCodeFunc"
-          class="top.cardone.authority.func.ReadListPermissionCodeFunc"/>
+    <bean name="readListPermissionCodeFunc" class="top.cardone.context.action.MethodInvokerFunc1">
+        <property name="targetBeanName" value="top.cardone.authority.service.UserPermissionService"/>
+        <property name="targetMethod" value="readListPermissionCodeByUserCodeCache"/>
+    </bean>
 
-    <alias name="top.cardone.authority.func.ReadListPermissionCodeFunc" alias="readListPermissionCodeFunc"/>
-
-    <bean id="top.cardone.authority.func.ReadListRoleCodeFunc"
-          class="top.cardone.authority.func.ReadListRoleCodeFunc"/>
-
-    <alias name="top.cardone.authority.func.ReadListRoleCodeFunc" alias="readListRoleCodeFunc"/>
+    <bean name="readListRoleCodeFunc" class="top.cardone.context.action.MethodInvokerFunc1">
+        <property name="targetBeanName" value="top.cardone.authority.service.UserRoleService"/>
+        <property name="targetMethod" value="readListRoleCodeByUserCodeCache"/>
+    </bean>
 </beans>

@@ -1,6 +1,8 @@
 package top.cardone.authority.service.impl;
 
+import lombok.Setter;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.CollectionUtils;
 import top.cardone.authority.dao.UserRoleDao;
 import top.cardone.authority.service.UserGroupService;
 import top.cardone.context.ApplicationContextHolder;
@@ -36,8 +38,17 @@ public class UserRoleServiceImpl extends PageServiceImpl<UserRoleDao> implements
         this.dao.generateData(flagObjectCode);
     }
 
+    @Setter
+    private String defaultRoleCode = "general";
+
     @Override
     public List<String> readListRoleCodeByUserCode(String userCode) {
-        return this.dao.readListRoleCodeByUserCode(userCode);
+        List<String> roleCodeList = this.dao.readListRoleCodeByUserCode(userCode);
+
+        if (CollectionUtils.isEmpty(roleCodeList)) {
+            roleCodeList.add(defaultRoleCode);
+        }
+
+        return roleCodeList;
     }
 }
