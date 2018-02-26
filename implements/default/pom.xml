@@ -32,11 +32,6 @@
             <groupId>top.cardone</groupId>
             <artifactId>cardone-data-jdbc-implements-default</artifactId>
         </dependency>
-
-        <dependency>
-            <groupId>top.cardone</groupId>
-            <artifactId>cardone-security-implements-shiro-oauth2-core</artifactId>
-        </dependency>
     </dependencies>
 </project>
 
