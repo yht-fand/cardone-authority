@@ -32,8 +32,6 @@ public class ReadOnePermissionsFunc implements Func1<String, Object> {
 
     @Override
     public String func(Object obj) {
-        String userCode = (String) SecurityUtils.getSubject().getPrincipal();
-
         // 管理角色
         if (SecurityUtils.getSubject().hasRole("administrator")) {
             return "*";
@@ -43,6 +41,8 @@ public class ReadOnePermissionsFunc implements Func1<String, Object> {
         if (SecurityUtils.getSubject().hasRole("all-data-administrator") && !"navigation:view:".equals(this.permission)) {
             return "*";
         }
+
+        String userCode = (String) SecurityUtils.getSubject().getPrincipal();
 
         List<String> permissionList = ApplicationContextHolder.getBean(UserPermissionService.class).readListPermissionCodeByPermissionCache(userCode, this.permission);
 
