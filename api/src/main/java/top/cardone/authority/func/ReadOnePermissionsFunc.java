@@ -4,7 +4,6 @@ import com.google.common.collect.Sets;
 import lombok.Setter;
 import org.apache.shiro.SecurityUtils;
 import org.springframework.util.CollectionUtils;
-import top.cardone.authority.service.UserGroupService;
 import top.cardone.authority.service.UserPermissionService;
 import top.cardone.cache.Cache;
 import top.cardone.context.ApplicationContextHolder;
@@ -98,7 +97,7 @@ public class ReadOnePermissionsFunc implements Func0<String> {
         }
 
         return ApplicationContextHolder.getBean(Cache.class).get(
-                UserGroupService.class.getName(),
+                UserPermissionService.class.getName(),
                 this.permission + "," + userCode, (Func0<String>) () -> this.readOnePermissions(userCode)
         );
     }
