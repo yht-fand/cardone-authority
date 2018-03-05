@@ -2,12 +2,14 @@ package top.cardone.authority.func;
 
 import com.google.common.collect.Sets;
 import lombok.Setter;
-
 import org.apache.shiro.SecurityUtils;
 import org.springframework.util.CollectionUtils;
+import top.cardone.authority.service.UserGroupService;
 import top.cardone.authority.service.UserPermissionService;
+import top.cardone.cache.Cache;
 import top.cardone.context.ApplicationContextHolder;
 import top.cardone.context.util.StringUtils;
+import top.cardone.core.util.func.Func0;
 import top.cardone.core.util.func.Func1;
 
 import java.util.List;
@@ -17,7 +19,7 @@ import java.util.UUID;
 /**
  * @author cardone-home-001 on 2016/4/19.
  */
-public class ReadOnePermissionsFunc implements Func1<String, Object> {
+public class ReadOnePermissionsFunc implements Func0<String> {
     @Setter
     private String separator = ",";
 
@@ -30,8 +32,7 @@ public class ReadOnePermissionsFunc implements Func1<String, Object> {
     @Setter
     private String readOneUserDepartmentCodeByUserCodeFuncBeanId = "readOneUserDepartmentCodeByUserCodeFunc";
 
-    @Override
-    public String func(Object obj) {
+    private String readOnePermissions(String userCode) {
         // 管理角色
         if (SecurityUtils.getSubject().hasRole("administrator")) {
             return "*";
@@ -41,8 +42,6 @@ public class ReadOnePermissionsFunc implements Func1<String, Object> {
         if (SecurityUtils.getSubject().hasRole("all-data-administrator") && !"navigation:view:".equals(this.permission)) {
             return "*";
         }
-
-        String userCode = (String) SecurityUtils.getSubject().getPrincipal();
 
         List<String> permissionList = ApplicationContextHolder.getBean(UserPermissionService.class).readListPermissionCodeByPermissionCache(userCode, this.permission);
 
@@ -88,5 +87,19 @@ public class ReadOnePermissionsFunc implements Func1<String, Object> {
         }
 
         return StringUtils.join(newPermissionSet, separator);
+    }
+
+    @Override
+    public String func() {
+        String userCode = (String) SecurityUtils.getSubject().getPrincipal();
+
+        if (StringUtils.isBlank(userCode)) {
+            return UUID.randomUUID().toString();
+        }
+
+        return ApplicationContextHolder.getBean(Cache.class).get(
+                UserGroupService.class.getName(),
+                this.permission + "," + userCode, (Func0<String>) () -> this.readOnePermissions(userCode)
+        );
     }
 }
