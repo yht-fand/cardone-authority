@@ -19,6 +19,9 @@ import java.util.Map;
  */
 @Transactional(readOnly = true)
 public class UserRoleServiceImpl extends PageServiceImpl<UserRoleDao> implements top.cardone.authority.service.UserRoleService {
+    @Setter
+    private String defaultRoleCode = "general";
+
     @Override
     public Map<String, Object> findOneByUserRoleId(Map<String, Object> findOne) {
         return this.dao.findOneByUserRoleId(findOne);
@@ -37,9 +40,6 @@ public class UserRoleServiceImpl extends PageServiceImpl<UserRoleDao> implements
 
         this.dao.generateData(flagObjectCode);
     }
-
-    @Setter
-    private String defaultRoleCode = "general";
 
     @Override
     public List<String> readListRoleCodeByUserCode(String userCode) {

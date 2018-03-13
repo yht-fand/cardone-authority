@@ -17,7 +17,6 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.util.StopWatch;
 import top.cardone.ConsumerApplication;
 import top.cardone.context.ApplicationContextHolder;
-import top.cardone.core.util.func.Func1;
 
 import java.io.IOException;
 
