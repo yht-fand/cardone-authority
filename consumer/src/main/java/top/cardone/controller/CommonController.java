@@ -31,7 +31,7 @@ public class CommonController {
     @RequestMapping(value = "/**/*")
     @ResponseBody
     public Object allJson(HttpServletRequest request) throws IOException {
-        return ApplicationContextHolder.getBean(WebSupport.class).func(request, !log.isDebugEnabled(), request.getServletPath());
+        return ApplicationContextHolder.getBean(WebSupport.class).func(request, request.getServletPath(), !log.isDebugEnabled());
     }
 
     @RequestMapping("/")
