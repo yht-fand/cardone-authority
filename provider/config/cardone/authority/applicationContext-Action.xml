@@ -46,7 +46,7 @@
         <property name="jsonFiles" value="${app.root}/config/*/authority/init-data/rolePermission-*.json"/>
     </bean>
 
-    <bean class="top.cardone.context.action.Actions" init-method="action">
+    <bean class="top.cardone.context.action.BatchAction0" init-method="action">
         <property name="actions">
             <list>
                 <ref bean="top.cardone.authority.service.UserGroupService.init"/>
