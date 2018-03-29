@@ -36,8 +36,6 @@ public class UserRoleServiceImpl extends PageServiceImpl<UserRoleDao> implements
     @Override
     @Transactional
     public void generateData(String flagObjectCode) {
-        ApplicationContextHolder.action(InitDataAction.class, action -> action.action(), "top.cardone.authority.service.UserRoleService.init");
-
         this.dao.generateData(flagObjectCode);
     }
 

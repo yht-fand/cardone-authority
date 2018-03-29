@@ -31,8 +31,6 @@ public class UserPermissionServiceImpl extends PageServiceImpl<UserPermissionDao
     @Override
     @Transactional
     public void generateData(String flagObjectCode) {
-        ApplicationContextHolder.action(InitDataAction.class, action -> action.action(), "top.cardone.authority.service.UserPermissionService.init");
-
         this.dao.generateData(flagObjectCode);
     }
 
@@ -40,7 +38,6 @@ public class UserPermissionServiceImpl extends PageServiceImpl<UserPermissionDao
     public List<String> readListPermissionCodeByUserCode(String userCode) {
         return this.dao.readListPermissionCodeByUserCode(userCode);
     }
-
 
     @Override
     public List<String> readListPermissionCodeByPermission(String userCode, String permission) {

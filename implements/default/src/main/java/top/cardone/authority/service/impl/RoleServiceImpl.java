@@ -36,8 +36,6 @@ public class RoleServiceImpl extends PageServiceImpl<RoleDao> implements top.car
     @Override
     @Transactional
     public void generateData(String flagObjectCode) {
-        ApplicationContextHolder.action(InitDataAction.class, action -> action.action(), "top.cardone.authority.service.RoleService.init");
-
         this.dao.generateData(flagObjectCode);
     }
 }

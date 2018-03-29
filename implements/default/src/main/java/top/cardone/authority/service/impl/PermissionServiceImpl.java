@@ -36,8 +36,6 @@ public class PermissionServiceImpl extends PageServiceImpl<PermissionDao> implem
     @Override
     @Transactional
     public void generateData(String flagObjectCode) {
-        ApplicationContextHolder.action(InitDataAction.class, action -> action.action(), "top.cardone.authority.service.PermissionService.init");
-
         this.dao.generateData(flagObjectCode);
     }
 }

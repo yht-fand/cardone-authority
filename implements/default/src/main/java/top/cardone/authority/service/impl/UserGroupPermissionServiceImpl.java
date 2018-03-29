@@ -30,8 +30,6 @@ public class UserGroupPermissionServiceImpl extends PageServiceImpl<UserGroupPer
     @Override
     @Transactional
     public void generateData(String flagObjectCode) {
-        ApplicationContextHolder.action(InitDataAction.class, action -> action.action(), "top.cardone.authority.service.UserGroupPermissionService.init");
-
         this.dao.generateData(flagObjectCode);
     }
 }
