@@ -11,6 +11,10 @@
                     <entry key="variableCode" value="userGroupTree"/>
                     <entry key="value" value="yes"/>
                 </map>
+                <map>
+                    <entry key="variableCode" value="userGroup"/>
+                    <entry key="value" value="yes"/>
+                </map>
             </list>
         </property>
     </bean>
@@ -24,6 +28,10 @@
                     <entry key="variableCode" value="roleTree"/>
                     <entry key="value" value="yes"/>
                 </map>
+                <map>
+                    <entry key="variableCode" value="userGroup"/>
+                    <entry key="value" value="yes"/>
+                </map>
             </list>
         </property>
     </bean>
@@ -35,6 +43,36 @@
             <list>
                 <map>
                     <entry key="variableCode" value="permissionTree"/>
+                    <entry key="value" value="yes"/>
+                </map>
+                <map>
+                    <entry key="variableCode" value="userGroup"/>
+                    <entry key="value" value="yes"/>
+                </map>
+            </list>
+        </property>
+    </bean>
+
+    <bean class="top.cardone.data.listener.GenerateListener">
+        <property name="serviceBeanId" value="top.cardone.authority.service.UserGroupPermissionService"/>
+        <property name="saveListFuncBeanId" value="saveListVariableFunc"/>
+        <property name="saveList">
+            <list>
+                <map>
+                    <entry key="variableCode" value="userGroup"/>
+                    <entry key="value" value="yes"/>
+                </map>
+            </list>
+        </property>
+    </bean>
+
+    <bean class="top.cardone.data.listener.GenerateListener">
+        <property name="serviceBeanId" value="top.cardone.authority.service.RolePermissionService"/>
+        <property name="saveListFuncBeanId" value="saveListVariableFunc"/>
+        <property name="saveList">
+            <list>
+                <map>
+                    <entry key="variableCode" value="userGroup"/>
                     <entry key="value" value="yes"/>
                 </map>
             </list>
