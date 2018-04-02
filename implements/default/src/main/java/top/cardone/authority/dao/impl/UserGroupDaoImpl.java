@@ -20,9 +20,9 @@ public class UserGroupDaoImpl extends PageDaoImpl implements top.cardone.authori
 
     @Override
     public List<Map<String, Object>> findListForTree(Map<String, Object> findList) {
-        String findListSqlFilePath = this.getSqlFilePath("findListForTree");
+        String findListForTreeSqlFilePath = this.getSqlFilePath("findListForTree");
 
-        return this.findList(findListSqlFilePath, findList);
+        return this.findList(findListForTreeSqlFilePath, this.toMap(findList, "select"));
     }
 
     @Override
