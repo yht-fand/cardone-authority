@@ -4,7 +4,6 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
     <bean class="top.cardone.data.listener.GenerateListener">
         <property name="serviceBeanId" value="top.cardone.authority.service.UserGroupService"/>
-        <property name="saveListFuncBeanId" value="saveListVariableFunc"/>
         <property name="saveList">
             <list>
                 <map>
@@ -21,7 +20,6 @@
 
     <bean class="top.cardone.data.listener.GenerateListener">
         <property name="serviceBeanId" value="top.cardone.authority.service.RoleService"/>
-        <property name="saveListFuncBeanId" value="saveListVariableFunc"/>
         <property name="saveList">
             <list>
                 <map>
@@ -38,7 +36,6 @@
 
     <bean class="top.cardone.data.listener.GenerateListener">
         <property name="serviceBeanId" value="top.cardone.authority.service.PermissionService"/>
-        <property name="saveListFuncBeanId" value="saveListVariableFunc"/>
         <property name="saveList">
             <list>
                 <map>
@@ -55,7 +52,6 @@
 
     <bean class="top.cardone.data.listener.GenerateListener">
         <property name="serviceBeanId" value="top.cardone.authority.service.UserGroupPermissionService"/>
-        <property name="saveListFuncBeanId" value="saveListVariableFunc"/>
         <property name="saveList">
             <list>
                 <map>
@@ -68,7 +64,6 @@
 
     <bean class="top.cardone.data.listener.GenerateListener">
         <property name="serviceBeanId" value="top.cardone.authority.service.RolePermissionService"/>
-        <property name="saveListFuncBeanId" value="saveListVariableFunc"/>
         <property name="saveList">
             <list>
                 <map>
