@@ -30,7 +30,7 @@ public class PermissionDaoImpl extends PageDaoImpl implements top.cardone.author
 
     @Override
     public int generateData(String flagObjectCode) {
-        Map<String, Object> generateSqlMap = this.configTable.row("generateSql");
+        Map<String, Object> generateSqlMap = this.getConfigTable().row("generateSql");
 
         if (MapUtils.isEmpty(generateSqlMap)) {
             return 0;
