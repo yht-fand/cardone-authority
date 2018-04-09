@@ -3,7 +3,6 @@ package top.cardone.authority.service;
 import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.transaction.annotation.Transactional;
-import top.cardone.cache.Caches;
 import top.cardone.context.annotation.Event;
 import top.cardone.context.annotation.Events;
 import top.cardone.context.event.SimpleErrorEvent;
@@ -36,7 +35,7 @@ public interface OAuthConsumerService extends PageService {
      * @param findOne 授权消费标识
      * @return 授权消费对象
      */
-    @Cacheable(key = Caches.KEY_1)
+    @Cacheable
     default Map<String, Object> findOneByOAuthConsumerIdCache(Map<String, Object> findOne) {
         return this.findOneByOAuthConsumerId(findOne);
     }

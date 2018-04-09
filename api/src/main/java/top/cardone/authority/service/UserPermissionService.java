@@ -4,7 +4,6 @@ import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.transaction.annotation.Transactional;
-import top.cardone.cache.Caches;
 import top.cardone.context.annotation.Event;
 import top.cardone.context.annotation.Events;
 import top.cardone.context.event.SimpleErrorEvent;
