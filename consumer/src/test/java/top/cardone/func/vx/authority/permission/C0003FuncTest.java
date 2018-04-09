@@ -27,10 +27,10 @@ public class C0003FuncTest {
     @Value("http://localhost:${server.port:8765}${server.context-path:}/vx/authority/permission/c0003.json")
     private String funcUrl;
 
-    @Value("${app.root}/src/test/resources/top/cardone/func/vx/authority/permission/C0003FuncTest.func.input.json")
+    @Value("file:src/test/resources/top/cardone/func/vx/authority/permission/C0003FuncTest.func.input.json")
     private Resource funcInputResource;
 
-    @Value("${app.root}/src/test/resources/top/cardone/func/vx/authority/permission/C0003FuncTest.func.output.json")
+    @Value("file:src/test/resources/top/cardone/func/vx/authority/permission/C0003FuncTest.func.output.json")
     private Resource funcOutputResource;
 
     private HttpEntity<String> httpEntity;
