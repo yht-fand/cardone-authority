@@ -38,7 +38,7 @@ public interface RoleService extends PageService {
      * @param findOne 角色标识
      * @return 角色对象
      */
-    @Cacheable(key = Caches.KEY_1)
+    @Cacheable
     default Map<String, Object> findOneByRoleIdCache(Map<String, Object> findOne) {
         return this.findOneByRoleId(findOne);
     }
@@ -51,7 +51,7 @@ public interface RoleService extends PageService {
      */
     List<Map<String, Object>> findListForTree(Map<String, Object> findList);
 
-    @Cacheable(key = Caches.KEY_1)
+    @Cacheable
     default List<Map<String, Object>> findListForTreeCache(Map<String, Object> findList) {
         return this.findListForTree(findList);
     }

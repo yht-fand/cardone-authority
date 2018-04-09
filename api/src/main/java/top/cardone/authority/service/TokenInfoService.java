@@ -36,7 +36,7 @@ public interface TokenInfoService extends PageService {
      * @param findOne 令牌信息标识
      * @return 令牌信息对象
      */
-    @Cacheable(key = Caches.KEY_1)
+    @Cacheable
     default Map<String, Object> findOneByTokenInfoIdCache(Map<String, Object> findOne) {
         return this.findOneByTokenInfoId(findOne);
     }

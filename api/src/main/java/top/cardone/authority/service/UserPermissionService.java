@@ -38,7 +38,7 @@ public interface UserPermissionService extends PageService {
      * @param findOne 用户与许可标识
      * @return 用户与许可对象
      */
-    @Cacheable(key = Caches.KEY_1)
+    @Cacheable
     default Map<String, Object> findOneByUserPermissionIdCache(Map<String, Object> findOne) {
         return this.findOneByUserPermissionId(findOne);
     }
@@ -70,12 +70,12 @@ public interface UserPermissionService extends PageService {
      */
     List<String> readListPermissionCodeByUserCode(String userCode);
 
-    @Cacheable(key = Caches.KEY_1)
+    @Cacheable
     default List<String> readListPermissionCodeByUserCodeCache(String userCode) {
         return this.readListPermissionCodeByUserCode(userCode);
     }
 
-    @Cacheable(key = Caches.KEY_2)
+    @Cacheable
     default List<String> readListPermissionCodeByPermissionCache(String userCode, String permission) {
         return this.readListPermissionCodeByPermission(userCode, permission);
     }

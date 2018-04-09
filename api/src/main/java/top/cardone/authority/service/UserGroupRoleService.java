@@ -37,7 +37,7 @@ public interface UserGroupRoleService extends PageService {
      * @param findOne 用户组与角色标识
      * @return 用户组与角色对象
      */
-    @Cacheable(key = Caches.KEY_1)
+    @Cacheable
     default Map<String, Object> findOneByUserGroupRoleIdCache(Map<String, Object> findOne) {
         return this.findOneByUserGroupRoleId(findOne);
     }

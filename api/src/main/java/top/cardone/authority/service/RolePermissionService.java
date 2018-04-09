@@ -37,7 +37,7 @@ public interface RolePermissionService extends PageService {
      * @param findOne 角色与许可标识
      * @return 角色与许可对象
      */
-    @Cacheable(key = Caches.KEY_1)
+    @Cacheable
     default Map<String, Object> findOneByRolePermissionIdCache(Map<String, Object> findOne) {
         return this.findOneByRolePermissionId(findOne);
     }

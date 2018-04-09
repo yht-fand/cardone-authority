@@ -38,7 +38,7 @@ public interface UserGroupUserService extends PageService {
      * @param findOne 用户组与用户标识
      * @return 用户组与用户对象
      */
-    @Cacheable(key = Caches.KEY_1)
+    @Cacheable
     default Map<String, Object> findOneByUserGroupUserIdCache(Map<String, Object> findOne) {
         return this.findOneByUserGroupUserId(findOne);
     }

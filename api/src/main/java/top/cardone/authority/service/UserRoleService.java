@@ -38,7 +38,7 @@ public interface UserRoleService extends PageService {
      * @param findOne 用户与角色标识
      * @return 用户与角色对象
      */
-    @Cacheable(key = Caches.KEY_1)
+    @Cacheable
     default Map<String, Object> findOneByUserRoleIdCache(Map<String, Object> findOne) {
         return this.findOneByUserRoleId(findOne);
     }
@@ -76,7 +76,7 @@ public interface UserRoleService extends PageService {
      * @param userCode 用户编号
      * @return
      */
-    @Cacheable(key = Caches.KEY_1)
+    @Cacheable
     default List<String> readListRoleCodeByUserCodeCache(String userCode) {
         return this.readListRoleCodeByUserCode(userCode);
     }

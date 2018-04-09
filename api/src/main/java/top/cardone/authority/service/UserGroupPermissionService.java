@@ -37,7 +37,7 @@ public interface UserGroupPermissionService extends PageService {
      * @param findOne 用户组与许可标识
      * @return 用户组与许可对象
      */
-    @Cacheable(key = Caches.KEY_1)
+    @Cacheable
     default Map<String, Object> findOneByUserGroupPermissionIdCache(Map<String, Object> findOne) {
         return this.findOneByUserGroupPermissionId(findOne);
     }
