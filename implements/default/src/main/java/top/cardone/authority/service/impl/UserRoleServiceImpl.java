@@ -6,7 +6,6 @@ import org.springframework.util.CollectionUtils;
 import top.cardone.authority.dao.UserRoleDao;
 import top.cardone.authority.service.UserGroupService;
 import top.cardone.context.ApplicationContextHolder;
-import top.cardone.data.action.InitDataAction;
 import top.cardone.data.service.impl.PageServiceImpl;
 
 import java.util.List;

@@ -4,7 +4,6 @@ import org.springframework.transaction.annotation.Transactional;
 import top.cardone.authority.dao.UserGroupDao;
 import top.cardone.authority.service.*;
 import top.cardone.context.ApplicationContextHolder;
-import top.cardone.data.action.InitDataAction;
 import top.cardone.data.service.impl.PageServiceImpl;
 
 import java.util.List;
