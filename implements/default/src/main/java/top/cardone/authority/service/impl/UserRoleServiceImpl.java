@@ -23,7 +23,7 @@ public class UserRoleServiceImpl extends PageServiceImpl<UserRoleDao> implements
 
     @Override
     public Map<String, Object> findOneByUserRoleId(Map<String, Object> findOne) {
-        return this.dao.findOneByUserRoleId(findOne);
+        return this.dao.findOneBySqlFileName("page.find", findOne);
     }
 
     @Override

@@ -11,13 +11,6 @@ import java.util.Map;
  * @author yao hai tao
  */
 public interface UserPermissionDao extends PageDao {
-    /**
-     * 查询用户与许可对象
-     *
-     * @param findOne 用户与许可标识
-     * @return 用户与许可对象
-     */
-    Map<String, Object> findOneByUserPermissionId(Map<String, Object> findOne);
 
     /**
      * 生成

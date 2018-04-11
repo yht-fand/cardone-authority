@@ -10,10 +10,4 @@ import java.util.Map;
  * @author yao hai tao
  */
 public class TokenInfoDaoImpl extends PageDaoImpl implements top.cardone.authority.dao.TokenInfoDao {
-    @Override
-    public Map<String, Object> findOneByTokenInfoId(Map<String, Object> findOne) {
-        String findOneSqlFilePath = this.getSqlFilePath("page.find");
-
-        return this.findOne(findOneSqlFilePath, findOne);
-    }
 }

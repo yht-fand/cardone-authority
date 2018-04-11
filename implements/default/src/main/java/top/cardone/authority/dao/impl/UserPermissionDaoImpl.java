@@ -13,13 +13,6 @@ import java.util.Map;
  */
 public class UserPermissionDaoImpl extends PageDaoImpl implements top.cardone.authority.dao.UserPermissionDao {
     @Override
-    public Map<String, Object> findOneByUserPermissionId(Map<String, Object> findOne) {
-        String findOneSqlFilePath = this.getSqlFilePath("page.find");
-
-        return this.findOne(findOneSqlFilePath, findOne);
-    }
-
-    @Override
     public int generateData(String flagObjectCode) {
         String findListForUserGroupPermissionSqlFilePath = this.getSqlFilePath("findListForUserGroupPermission");
 

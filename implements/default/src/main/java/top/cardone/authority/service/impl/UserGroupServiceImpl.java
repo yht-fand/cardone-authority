@@ -19,12 +19,12 @@ import java.util.UUID;
 public class UserGroupServiceImpl extends PageServiceImpl<UserGroupDao> implements top.cardone.authority.service.UserGroupService {
     @Override
     public Map<String, Object> findOneByUserGroupId(Map<String, Object> findOne) {
-        return this.dao.findOneByUserGroupId(findOne);
+        return this.dao.findOneBySqlFileName("page.find", findOne);
     }
 
     @Override
     public List<Map<String, Object>> findListForTree(Map<String, Object> findList) {
-        return this.dao.findListForTree(findList);
+        return this.dao.findListBySqlFileName("findListForTree", findList);
     }
 
     @Override

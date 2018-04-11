@@ -18,7 +18,7 @@ import java.util.Map;
 public class UserGroupUserServiceImpl extends PageServiceImpl<UserGroupUserDao> implements top.cardone.authority.service.UserGroupUserService {
     @Override
     public Map<String, Object> findOneByUserGroupUserId(Map<String, Object> findOne) {
-        return this.dao.findOneByUserGroupUserId(findOne);
+        return this.dao.findOneBySqlFileName("page.find", findOne);
     }
 
     @Override

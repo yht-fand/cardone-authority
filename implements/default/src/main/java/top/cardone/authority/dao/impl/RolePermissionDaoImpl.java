@@ -12,13 +12,6 @@ import java.util.Map;
  */
 public class RolePermissionDaoImpl extends PageDaoImpl implements top.cardone.authority.dao.RolePermissionDao {
     @Override
-    public Map<String, Object> findOneByRolePermissionId(Map<String, Object> findOne) {
-        String findOneSqlFilePath = this.getSqlFilePath("page.find");
-
-        return this.findOne(findOneSqlFilePath, findOne);
-    }
-
-    @Override
     public int generateData(String flagObjectCode) {
 //        String findListForDepartmentSqlFilePath = this.getSqlFilePath("findListForDepartment");
 //

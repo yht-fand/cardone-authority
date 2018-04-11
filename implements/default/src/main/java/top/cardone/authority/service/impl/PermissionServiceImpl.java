@@ -18,12 +18,12 @@ import java.util.Map;
 public class PermissionServiceImpl extends PageServiceImpl<PermissionDao> implements top.cardone.authority.service.PermissionService {
     @Override
     public Map<String, Object> findOneByPermissionId(Map<String, Object> findOne) {
-        return this.dao.findOneByPermissionId(findOne);
+        return this.dao.findOneBySqlFileName("page.find", findOne);
     }
 
     @Override
     public List<Map<String, Object>> findListForTree(Map<String, Object> findList) {
-        return this.dao.findListForTree(findList);
+        return this.dao.findListBySqlFileName("findListForTree", findList);
     }
 
     @Override

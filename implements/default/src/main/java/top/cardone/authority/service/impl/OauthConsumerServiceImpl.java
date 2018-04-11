@@ -15,6 +15,6 @@ import java.util.Map;
 public class OAuthConsumerServiceImpl extends PageServiceImpl<OAuthConsumerDao> implements top.cardone.authority.service.OAuthConsumerService {
     @Override
     public Map<String, Object> findOneByOAuthConsumerId(Map<String, Object> findOne) {
-        return this.dao.findOneByOAuthConsumerId(findOne);
+        return this.dao.findOneBySqlFileName("page.find", findOne);
     }
 }

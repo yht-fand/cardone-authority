@@ -15,6 +15,6 @@ import java.util.Map;
 public class TokenInfoServiceImpl extends PageServiceImpl<TokenInfoDao> implements top.cardone.authority.service.TokenInfoService {
     @Override
     public Map<String, Object> findOneByTokenInfoId(Map<String, Object> findOne) {
-        return this.dao.findOneByTokenInfoId(findOne);
+        return this.dao.findOneBySqlFileName("page.find", findOne);
     }
 }

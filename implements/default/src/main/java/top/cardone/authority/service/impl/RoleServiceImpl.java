@@ -18,12 +18,12 @@ import java.util.Map;
 public class RoleServiceImpl extends PageServiceImpl<RoleDao> implements top.cardone.authority.service.RoleService {
     @Override
     public Map<String, Object> findOneByRoleId(Map<String, Object> findOne) {
-        return this.dao.findOneByRoleId(findOne);
+        return this.dao.findOneBySqlFileName("page.find", findOne);
     }
 
     @Override
     public List<Map<String, Object>> findListForTree(Map<String, Object> findList) {
-        return this.dao.findListForTree(findList);
+        return this.dao.findListBySqlFileName("findListForTree", findList);
     }
 
     @Override

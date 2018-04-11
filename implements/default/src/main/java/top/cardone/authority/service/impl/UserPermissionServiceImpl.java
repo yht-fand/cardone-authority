@@ -18,7 +18,7 @@ import java.util.Map;
 public class UserPermissionServiceImpl extends PageServiceImpl<UserPermissionDao> implements top.cardone.authority.service.UserPermissionService {
     @Override
     public Map<String, Object> findOneByUserPermissionId(Map<String, Object> findOne) {
-        return this.dao.findOneByUserPermissionId(findOne);
+        return this.dao.findOneBySqlFileName("page.find", findOne);
     }
 
     @Override

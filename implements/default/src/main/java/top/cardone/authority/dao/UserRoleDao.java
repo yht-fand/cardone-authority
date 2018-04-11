@@ -12,14 +12,6 @@ import java.util.Map;
  */
 public interface UserRoleDao extends PageDao {
     /**
-     * 查询用户与角色对象
-     *
-     * @param findOne 用户与角色标识
-     * @return 用户与角色对象
-     */
-    Map<String, Object> findOneByUserRoleId(Map<String, Object> findOne);
-
-    /**
      * 生成
      *
      * @param flagObjectCode 标识对象编号
