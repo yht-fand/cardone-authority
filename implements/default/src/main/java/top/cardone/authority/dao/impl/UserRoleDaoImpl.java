@@ -35,15 +35,4 @@ public class UserRoleDaoImpl extends PageDaoImpl implements top.cardone.authorit
 
         return count;
     }
-
-    @Override
-    public List<String> readListRoleCodeByUserCode(String userCode) {
-        String sqlFilePath = this.getSqlFilePath("readListRoleCodeByUserCode");
-
-        Map<String, Object> readList = Maps.newHashMap();
-
-        readList.put("userCode", userCode);
-
-        return this.readList(String.class, sqlFilePath, readList);
-    }
 }

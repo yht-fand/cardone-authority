@@ -1,5 +1,6 @@
 package top.cardone.authority.service.impl;
 
+import com.google.common.collect.Maps;
 import lombok.Setter;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.CollectionUtils;
@@ -40,7 +41,11 @@ public class UserRoleServiceImpl extends PageServiceImpl<UserRoleDao> implements
 
     @Override
     public List<String> readListRoleCodeByUserCode(String userCode) {
-        List<String> roleCodeList = this.dao.readListRoleCodeByUserCode(userCode);
+        Map<String, Object> readList = Maps.newHashMap();
+
+        readList.put("userCode", userCode);
+
+        List<String> roleCodeList = this.dao.readListBySqlFileName(String.class, "readListRoleCodeByUserCode", readList);
 
         if (CollectionUtils.isEmpty(roleCodeList)) {
             roleCodeList.add(defaultRoleCode);

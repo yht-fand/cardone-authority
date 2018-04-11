@@ -2,8 +2,6 @@ package top.cardone.authority.dao.impl;
 
 import top.cardone.data.jdbc.dao.impl.PageDaoImpl;
 
-import java.util.Map;
-
 /**
  * 用户组
  *

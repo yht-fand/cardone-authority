@@ -2,9 +2,6 @@ package top.cardone.authority.dao;
 
 import top.cardone.data.dao.PageDao;
 
-import java.util.List;
-import java.util.Map;
-
 /**
  * 角色
  *
