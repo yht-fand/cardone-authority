@@ -8,7 +8,6 @@ import top.cardone.data.dao.PageDao;
  * @author yao hai tao
  */
 public interface PermissionDao extends PageDao {
-
     /**
      * 生成
      *
