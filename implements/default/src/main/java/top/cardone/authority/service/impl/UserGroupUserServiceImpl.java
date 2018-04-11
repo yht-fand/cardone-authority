@@ -35,6 +35,6 @@ public class UserGroupUserServiceImpl extends PageServiceImpl<UserGroupUserDao> 
 
     @Override
     public List<Map<String, Object>> findListByUserId(Map<String, Object> findList) {
-        return this.dao.findListByUserId(findList);
+        return this.dao.findListBySqlFileName("findListByUserId", findList);
     }
 }

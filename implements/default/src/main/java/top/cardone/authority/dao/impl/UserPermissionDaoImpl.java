@@ -35,27 +35,4 @@ public class UserPermissionDaoImpl extends PageDaoImpl implements top.cardone.au
 
         return count;
     }
-
-    @Override
-    public List<String> readListPermissionCodeByUserCode(String userCode) {
-        String sqlFilePath = this.getSqlFilePath("readListPermissionCodeByUserCode");
-
-        Map<String, Object> readList = Maps.newHashMap();
-
-        readList.put("userCode", userCode);
-
-        return this.readList(String.class, sqlFilePath, readList);
-    }
-
-    @Override
-    public List<String> readListPermissionCodeByPermission(String userCode, String permission) {
-        String sqlFilePath = this.getSqlFilePath("readListPermissionCodeByPermission");
-
-        Map<String, Object> readList = Maps.newHashMap();
-
-        readList.put("userCode", userCode);
-        readList.put("permission", permission);
-
-        return this.readList(String.class, sqlFilePath, readList);
-    }
 }

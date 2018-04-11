@@ -1,5 +1,6 @@
 package top.cardone.authority.service.impl;
 
+import com.google.common.collect.Maps;
 import org.springframework.transaction.annotation.Transactional;
 import top.cardone.authority.dao.UserPermissionDao;
 import top.cardone.authority.service.UserGroupService;
@@ -35,11 +36,20 @@ public class UserPermissionServiceImpl extends PageServiceImpl<UserPermissionDao
 
     @Override
     public List<String> readListPermissionCodeByUserCode(String userCode) {
-        return this.dao.readListPermissionCodeByUserCode(userCode);
+        Map<String, Object> readList = Maps.newHashMap();
+
+        readList.put("userCode", userCode);
+
+        return this.dao.readListBySqlFileName(String.class, "readListPermissionCodeByUserCode", readList);
     }
 
     @Override
     public List<String> readListPermissionCodeByPermission(String userCode, String permission) {
-        return this.dao.readListPermissionCodeByPermission(userCode, permission);
+        Map<String, Object> readList = Maps.newHashMap();
+
+        readList.put("userCode", userCode);
+        readList.put("permission", permission);
+
+        return this.dao.readListBySqlFileName(String.class, "readListPermissionCodeByPermission", readList);
     }
 }

@@ -35,11 +35,4 @@ public class UserGroupUserDaoImpl extends PageDaoImpl implements top.cardone.aut
 
         return count;
     }
-
-    @Override
-    public List<Map<String, Object>> findListByUserId(Map<String, Object> findList) {
-        String findListByUserIdSqlFilePath = this.getSqlFilePath("findListByUserId");
-
-        return this.findList(findListByUserIdSqlFilePath, findList);
-    }
 }
