@@ -2,7 +2,7 @@
 <beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns="http://www.springframework.org/schema/beans"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-    <bean class="top.cardone.data.listener.GenerateListener">
+    <bean class="top.cardone.data.listener.GenerateListener" lazy-init="${listener.UserGroupService.lazyInit:false}">
         <property name="serviceBeanId" value="top.cardone.authority.service.UserGroupService"/>
         <property name="saveList">
             <list>
@@ -14,7 +14,7 @@
         </property>
     </bean>
 
-    <bean class="top.cardone.data.listener.GenerateListener">
+    <bean class="top.cardone.data.listener.GenerateListener" lazy-init="${listener.RoleService.lazyInit:false}">
         <property name="serviceBeanId" value="top.cardone.authority.service.RoleService"/>
         <property name="saveList">
             <list>
@@ -26,7 +26,7 @@
         </property>
     </bean>
 
-    <bean class="top.cardone.data.listener.GenerateListener">
+    <bean class="top.cardone.data.listener.GenerateListener" lazy-init="${listener.PermissionService.lazyInit:false}">
         <property name="serviceBeanId" value="top.cardone.authority.service.PermissionService"/>
         <property name="saveList">
             <list>
@@ -38,7 +38,7 @@
         </property>
     </bean>
 
-    <bean class="top.cardone.data.listener.GenerateListener">
+    <bean class="top.cardone.data.listener.GenerateListener" lazy-init="${listener.UserGroupPermissionService.lazyInit:false}">
         <property name="serviceBeanId" value="top.cardone.authority.service.UserGroupPermissionService"/>
         <property name="saveList">
             <list>
@@ -50,8 +50,32 @@
         </property>
     </bean>
 
-    <bean class="top.cardone.data.listener.GenerateListener">
+    <bean class="top.cardone.data.listener.GenerateListener" lazy-init="${listener.UserGroupUserService.lazyInit:false}">
+        <property name="serviceBeanId" value="top.cardone.authority.service.UserGroupUserService"/>
+        <property name="saveList">
+            <list>
+                <map>
+                    <entry key="variableCode" value="userGroup"/>
+                    <entry key="value" value="yes"/>
+                </map>
+            </list>
+        </property>
+    </bean>
+
+    <bean class="top.cardone.data.listener.GenerateListener" lazy-init="${listener.RolePermissionService.lazyInit:false}">
         <property name="serviceBeanId" value="top.cardone.authority.service.RolePermissionService"/>
+        <property name="saveList">
+            <list>
+                <map>
+                    <entry key="variableCode" value="userGroup"/>
+                    <entry key="value" value="yes"/>
+                </map>
+            </list>
+        </property>
+    </bean>
+
+    <bean class="top.cardone.data.listener.GenerateListener" lazy-init="${listener.UserRoleService.lazyInit:false}">
+        <property name="serviceBeanId" value="top.cardone.authority.service.UserRoleService"/>
         <property name="saveList">
             <list>
                 <map>
