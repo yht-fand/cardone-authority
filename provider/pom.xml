@@ -6,7 +6,7 @@
     <parent>
         <groupId>top.cardone</groupId>
         <artifactId>cardone-authority-parent</artifactId>
-        <version>1.1.1-SNAPSHOT</version>
+        <version>MANGO-SNAPSHOT</version>
         <relativePath>../parent</relativePath>
     </parent>
 
@@ -16,7 +16,7 @@
 
     <groupId>top.cardone</groupId>
     <artifactId>cardone-authority-provider</artifactId>
-    <version>1.1.1-SNAPSHOT</version>
+    <version>MANGO-SNAPSHOT</version>
     <name>top.cardone cardone-authority-provider</name>
     <description>top.cardone cardone-authority-provider</description>
     <packaging>jar</packaging>
