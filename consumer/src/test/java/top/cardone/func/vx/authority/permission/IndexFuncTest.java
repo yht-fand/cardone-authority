@@ -24,7 +24,7 @@ import java.io.IOException;
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest(classes = ConsumerApplication.class, value = {"spring.profiles.active=test"}, webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
 public class IndexFuncTest {
-    @Value("http://localhost:${server.port:8765}${server.context-path:}/vx/authority/permission/index.json")
+    @Value("http://localhost:${server.port:8765}${server.servlet.context-path:}/vx/authority/permission/index.json")
     private String funcUrl;
 
     @Value("file:src/test/resources/top/cardone/func/vx/authority/permission/IndexFuncTest.func.input.json")
