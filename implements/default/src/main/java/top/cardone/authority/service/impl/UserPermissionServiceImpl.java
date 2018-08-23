@@ -9,6 +9,7 @@ import top.cardone.data.service.impl.PageServiceImpl;
 
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 
 /**
  * 用户与许可服务
@@ -29,11 +30,20 @@ public class UserPermissionServiceImpl extends PageServiceImpl<UserPermissionDao
     }
 
     @Override
-    @Transactional
-    public void generateData(String flagObjectCode) {
-        this.dao.generateData(flagObjectCode);
+    public void generateDataByUserId(String userId) {
+        this.dao.generateData(UUID.randomUUID().toString(), userId, null);
     }
 
+    @Override
+    public void generateDataByUserCode(String userCode) {
+        this.dao.generateData(UUID.randomUUID().toString(), null, userCode);
+    }
+
+    @Override
+    @Transactional
+    public void generateData(String flagObjectCode) {
+        this.dao.generateData(flagObjectCode, null, null);
+    }
     @Override
     public List<String> readListPermissionCodeByUserCode(String userCode) {
         Map<String, Object> readList = Maps.newHashMap();

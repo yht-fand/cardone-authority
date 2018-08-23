@@ -13,10 +13,15 @@ import java.util.Map;
  */
 public class UserRoleDaoImpl extends PageDaoImpl implements top.cardone.authority.dao.UserRoleDao {
     @Override
-    public int generateData(String flagObjectCode) {
+    public int generateData(String flagObjectCode, String userId, String userCode) {
         String findListForUserGroupRoleSqlFilePath = this.getSqlFilePath("findListForUserGroupRole");
 
-        List<Map<String, Object>> forUserGroupRoleList = this.findList(findListForUserGroupRoleSqlFilePath);
+        Map<String, Object> other = Maps.newHashMap();
+
+        other.put("userId", userId);
+        other.put("userCode", userCode);
+
+        List<Map<String, Object>> forUserGroupRoleList = this.findList(findListForUserGroupRoleSqlFilePath, other);
 
         Map<String, Object> putAll = Maps.newHashMap();
 
@@ -25,7 +30,9 @@ public class UserRoleDaoImpl extends PageDaoImpl implements top.cardone.authorit
 
         String deleteOtherByFlagObjectCodeSqlFilePath = this.getSqlFilePath("deleteOtherByFlagObjectCode");
 
-        int count = this.update(deleteOtherByFlagObjectCodeSqlFilePath, putAll);
+        other.putAll(putAll);
+
+        int count = this.update(deleteOtherByFlagObjectCodeSqlFilePath, other);
 
         for (Map<String, Object> forUserGroupRole : forUserGroupRoleList) {
             forUserGroupRole.putAll(putAll);

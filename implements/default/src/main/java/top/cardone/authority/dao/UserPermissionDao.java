@@ -14,5 +14,5 @@ public interface UserPermissionDao extends PageDao {
      * @param flagObjectCode 标识对象编号
      * @return
      */
-    int generateData(String flagObjectCode);
+    int generateData(String flagObjectCode, String userId, String userCode);
 }

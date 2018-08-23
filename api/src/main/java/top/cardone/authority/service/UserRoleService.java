@@ -54,6 +54,24 @@ public interface UserRoleService extends PageService {
     /**
      * 生成
      *
+     * @return
+     */
+    @CacheEvict(allEntries = true)
+    @Transactional
+    void generateDataByUserId(String userId);
+
+    /**
+     * 生成
+     *
+     * @return
+     */
+    @CacheEvict(allEntries = true)
+    @Transactional
+    void generateDataByUserCode(String userCode);
+
+    /**
+     * 生成
+     *
      * @param flagObjectCode 标识对象编号
      * @return
      */
