@@ -105,7 +105,7 @@ public class ReadOnePermissionsFunc implements Func0<String> {
 
     @Override
     public String func() {
-        String userCode = (String) SecurityUtils.getSubject().getPrincipal();
+        String userCode = ApplicationContextHolder.func(Func0.class, func -> (String) func.func(), "readPrincipalFunc");
 
         if (StringUtils.isBlank(userCode)) {
             return UUID.randomUUID().toString();
