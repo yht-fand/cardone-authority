@@ -3,8 +3,6 @@ package top.cardone.authority.action
 import org.apache.commons.lang3.ObjectUtils
 import org.apache.shiro.authc.AuthenticationToken
 import org.apache.shiro.subject.Subject
-import org.springframework.core.task.TaskExecutor
-import org.springframework.scheduling.support.TaskUtils
 import top.cardone.cache.Cache
 import top.cardone.context.ApplicationContextHolder
 import top.cardone.core.util.action.Action1
@@ -45,8 +43,6 @@ class ShiroAuthenticatingFilterLoginSuccessAction implements Action4<Authenticat
                 token.getPrincipal(),
                 System.currentTimeMillis())
 
-        ApplicationContextHolder.getBean(TaskExecutor.class, "slowTaskExecutor").execute(TaskUtils.decorateTaskWithErrorHandler({
-            ApplicationContextHolder.getBean(Action1.class, "top/cardone/usercenter/action/EvictUserCacheAction").action(token.getPrincipal())
-        }, null, true))
+        ApplicationContextHolder.getBean(Action1.class, "top/cardone/usercenter/action/EvictUserCacheAction").action(token.getPrincipal())
     }
 }
