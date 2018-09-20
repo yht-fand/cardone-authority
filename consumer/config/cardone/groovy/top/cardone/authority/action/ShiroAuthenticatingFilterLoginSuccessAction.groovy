@@ -14,6 +14,8 @@ import javax.servlet.ServletResponse
 class ShiroAuthenticatingFilterLoginSuccessAction implements Action4<AuthenticationToken, Subject, ServletRequest, ServletResponse> {
     def authorityCacheTimeout
 
+    def cacheBeanName = "cardone.web.cache";
+
     ShiroAuthenticatingFilterLoginSuccessAction() {
         authorityCacheTimeout = ObjectUtils.defaultIfNull(ApplicationContextHolder.applicationContext.getEnvironment().getProperty("authority.cache.timeout", Long.class),
                 10 * 60 * 60)
@@ -25,7 +27,7 @@ class ShiroAuthenticatingFilterLoginSuccessAction implements Action4<Authenticat
             return
         }
 
-        def time = ApplicationContextHolder.getBean(Cache.class).get(
+        def time = ApplicationContextHolder.getBean(Cache.class, cacheBeanName).get(
                 ShiroAuthenticatingFilterLoginSuccessAction.class.getName(),
                 1,
                 token.getPrincipal(),
