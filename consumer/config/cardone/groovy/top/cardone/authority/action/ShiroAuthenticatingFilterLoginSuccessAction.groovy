@@ -18,7 +18,7 @@ class ShiroAuthenticatingFilterLoginSuccessAction implements Action4<Authenticat
 
     ShiroAuthenticatingFilterLoginSuccessAction() {
         authorityCacheTimeout = ObjectUtils.defaultIfNull(ApplicationContextHolder.applicationContext.getEnvironment().getProperty("authority.cache.timeout", Long.class),
-                10 * 60 * 60)
+                10 * 60)
     }
 
     @Override
