@@ -39,7 +39,7 @@ class ShiroAuthenticatingFilterLoginSuccessAction implements Action4<Authenticat
             return
         }
 
-        ApplicationContextHolder.getBean(Cache.class).put(
+        ApplicationContextHolder.getBean(Cache.class, cacheBeanName).put(
                 ShiroAuthenticatingFilterLoginSuccessAction.class.getName(),
                 1,
                 token.getPrincipal(),
