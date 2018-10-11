@@ -13,10 +13,6 @@ import java.util.Map;
 public class RolePermissionDaoImpl extends PageDaoImpl implements top.cardone.authority.dao.RolePermissionDao {
     @Override
     public int generateData(String flagObjectCode) {
-//        String findListForDepartmentSqlFilePath = this.getSqlFilePath("findListForDepartment");
-//
-//        List<Map<String, Object>> forDepartmentList = this.findList(findListForDepartmentSqlFilePath);
-//
         Map<String, Object> putAll = Maps.newHashMap();
 
         putAll.put("flagCode", "generate");
@@ -25,13 +21,6 @@ public class RolePermissionDaoImpl extends PageDaoImpl implements top.cardone.au
         String deleteOtherByFlagObjectCodeSqlFilePath = this.getSqlFilePath("deleteOtherByFlagObjectCode");
 
         int count = this.update(deleteOtherByFlagObjectCodeSqlFilePath, putAll);
-//
-//        for (Map<String, Object> forDepartment : forDepartmentList) {
-//            forDepartment.putAll(putAll);
-//
-//            count += this.insertByNotExists(forDepartment);
-//        }
-//
 
         return count;
     }
