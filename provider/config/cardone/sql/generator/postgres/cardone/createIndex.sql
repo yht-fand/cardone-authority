@@ -5,7 +5,7 @@
 -- 用户与许可（c1_user_permission）
 
 --业务代码
---drop index IF EXISTS idx_c1_user_permission_business_code;
+-- IF EXISTS idx_c1_user_permission_business_code;
 --create UNIQUE index IF NOT EXISTS idx_c1_user_permission_business_code ON c1_user_permission ("code");
 --批次编号
 --drop index IF EXISTS idx_c1_user_permission_batch_no;
