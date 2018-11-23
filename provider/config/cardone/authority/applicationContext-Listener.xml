@@ -2,7 +2,8 @@
 <beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns="http://www.springframework.org/schema/beans"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-    <bean class="top.cardone.data.listener.GenerateListener">
+    <bean name="top.cardone.authority.listener.UserGroupGenerateListener"
+          class="top.cardone.data.listener.GenerateListener">
         <property name="skip" value="${GenerateListener.UserGroupService.skip:false}"/>
         <property name="serviceBeanId" value="top.cardone.authority.service.UserGroupService"/>
         <property name="saveList">
@@ -15,7 +16,7 @@
         </property>
     </bean>
 
-    <bean class="top.cardone.data.listener.GenerateListener">
+    <bean name="top.cardone.authority.listener.RoleListener" class="top.cardone.data.listener.GenerateListener">
         <property name="skip" value="${GenerateListener.RoleService.skip:false}"/>
         <property name="serviceBeanId" value="top.cardone.authority.service.RoleService"/>
         <property name="saveList">
@@ -28,7 +29,7 @@
         </property>
     </bean>
 
-    <bean class="top.cardone.data.listener.GenerateListener">
+    <bean name="top.cardone.authority.listener.PermissionListener" class="top.cardone.data.listener.GenerateListener">
         <property name="skip" value="${GenerateListener.PermissionService.skip:false}"/>
         <property name="serviceBeanId" value="top.cardone.authority.service.PermissionService"/>
         <property name="saveList">
@@ -41,7 +42,8 @@
         </property>
     </bean>
 
-    <bean class="top.cardone.data.listener.GenerateListener">
+    <bean name="top.cardone.authority.listener.UserGroupPermissionListener"
+          class="top.cardone.data.listener.GenerateListener">
         <property name="skip" value="${GenerateListener.UserGroupPermissionService.skip:false}"/>
         <property name="serviceBeanId" value="top.cardone.authority.service.UserGroupPermissionService"/>
         <property name="saveList">
@@ -54,7 +56,8 @@
         </property>
     </bean>
 
-    <bean class="top.cardone.data.listener.GenerateListener">
+    <bean name="top.cardone.authority.listener.UserGroupUserGenerateListener"
+          class="top.cardone.data.listener.GenerateListener">
         <property name="skip" value="${GenerateListener.UserGroupUserService.skip:false}"/>
         <property name="serviceBeanId" value="top.cardone.authority.service.UserGroupUserService"/>
         <property name="saveList">
@@ -67,7 +70,8 @@
         </property>
     </bean>
 
-    <bean class="top.cardone.data.listener.GenerateListener">
+    <bean name="top.cardone.authority.listener.RolePermissionGenerateListener"
+          class="top.cardone.data.listener.GenerateListener">
         <property name="skip" value="${GenerateListener.RolePermissionService.skip:false}"/>
         <property name="serviceBeanId" value="top.cardone.authority.service.RolePermissionService"/>
         <property name="saveList">
@@ -80,7 +84,8 @@
         </property>
     </bean>
 
-    <bean class="top.cardone.data.listener.GenerateListener">
+    <bean name="top.cardone.authority.listener.UserRoleGenerateListener"
+          class="top.cardone.data.listener.GenerateListener">
         <property name="skip" value="${GenerateListener.UserRoleService.skip:false}"/>
         <property name="serviceBeanId" value="top.cardone.authority.service.UserRoleService"/>
         <property name="saveList">
