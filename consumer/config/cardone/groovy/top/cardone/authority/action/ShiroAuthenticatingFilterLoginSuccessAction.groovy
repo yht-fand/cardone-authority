@@ -33,7 +33,7 @@ class ShiroAuthenticatingFilterLoginSuccessAction implements Action4<Authenticat
                 token.getPrincipal(),
                 { System.currentTimeMillis() })
 
-        def timeDifference = (System.currentTimeMillis() - time) / 1000l
+        def timeDifference = (System.currentTimeMillis() - time) / 1000L
 
         if (timeDifference < authorityCacheTimeout) {
             return
