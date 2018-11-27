@@ -1,0 +1,14 @@
+{
+  "validation": {
+    "rules": {
+      "permissionIds": {
+        "required": true
+      }
+    },
+    "messages": {
+      "permissionIds": {
+        "required": "许可标识集合必填"
+      }
+    }
+  }
+}

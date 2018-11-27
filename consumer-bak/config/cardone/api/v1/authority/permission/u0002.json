@@ -1,0 +1,24 @@
+{
+  "validation": {
+    "rules": {
+      "permissionId": {
+        "required": true
+      },
+      "name": {
+        "required": true,
+        "minlength": 4,
+        "maxlength": 255
+      }
+    },
+    "messages": {
+      "permissionId": {
+        "required": "许可标识必填"
+      },
+      "name": {
+        "required": "许可名称必填",
+        "minlength": "许可名称需{0}个字符以上",
+        "maxlength": "许可名称需小于{0}个字符"
+      }
+    }
+  }
+}

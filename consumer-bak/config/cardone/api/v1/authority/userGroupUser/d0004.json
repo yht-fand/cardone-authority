@@ -1,0 +1,14 @@
+{
+  "validation": {
+    "rules": {
+      "userGroupUserIds": {
+        "required": true
+      }
+    },
+    "messages": {
+      "userGroupUserIds": {
+        "required": "用户组与用户标识集合必填"
+      }
+    }
+  }
+}

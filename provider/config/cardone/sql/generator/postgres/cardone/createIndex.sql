@@ -5,7 +5,7 @@
 -- 用户与许可（c1_user_permission）
 
 --业务代码
--- IF EXISTS idx_c1_user_permission_business_code;
+--drop index IF EXISTS idx_c1_user_permission_business_code;
 --create UNIQUE index IF NOT EXISTS idx_c1_user_permission_business_code ON c1_user_permission ("code");
 --批次编号
 --drop index IF EXISTS idx_c1_user_permission_batch_no;
@@ -889,5 +889,53 @@
 --用户标识
 --drop index IF EXISTS idx_c1_token_info_user_id;
 --create index IF NOT EXISTS idx_c1_token_info_user_id ON c1_token_info ("user_id" varchar_pattern_ops);
+
+
+
+
+ALTER TABLE "c1_user_permission" ALTER COLUMN "json_data" TYPE jsonb;
+
+--- sql end ---
+
+ALTER TABLE "c1_user_role" ALTER COLUMN "json_data" TYPE jsonb;
+
+--- sql end ---
+
+ALTER TABLE "c1_permission" ALTER COLUMN "json_data" TYPE jsonb;
+
+--- sql end ---
+
+ALTER TABLE "c1_role" ALTER COLUMN "json_data" TYPE jsonb;
+
+--- sql end ---
+
+ALTER TABLE "c1_role_permission" ALTER COLUMN "json_data" TYPE jsonb;
+
+--- sql end ---
+
+ALTER TABLE "c1_user_group" ALTER COLUMN "json_data" TYPE jsonb;
+
+--- sql end ---
+
+ALTER TABLE "c1_user_group_permission" ALTER COLUMN "json_data" TYPE jsonb;
+
+--- sql end ---
+
+ALTER TABLE "c1_user_group_role" ALTER COLUMN "json_data" TYPE jsonb;
+
+--- sql end ---
+
+ALTER TABLE "c1_user_group_user" ALTER COLUMN "json_data" TYPE jsonb;
+
+--- sql end ---
+
+ALTER TABLE "c1_oauth_consumer" ALTER COLUMN "json_data" TYPE jsonb;
+
+--- sql end ---
+
+ALTER TABLE "c1_token_info" ALTER COLUMN "json_data" TYPE jsonb;
+
+--- sql end ---
+
 
 

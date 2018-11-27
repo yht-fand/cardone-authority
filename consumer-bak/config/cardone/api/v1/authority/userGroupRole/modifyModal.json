@@ -1,0 +1,14 @@
+{
+  "validation": {
+    "rules": {
+      "userGroupRoleId": {
+        "required": true
+      }
+    },
+    "messages": {
+      "userGroupRoleId": {
+        "required": "用户组与角色标识必填"
+      }
+    }
+  }
+}
