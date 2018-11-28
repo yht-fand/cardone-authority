@@ -21,7 +21,7 @@
         <property name="service" ref="top.cardone.authority.service.UserGroupRoleService"/>
     </bean>
 
-    <rabbit:listener-container message-converter="amqpMessageConverter" connection-factory="rabbitConnectionFactory" concurrency="2">
+    <rabbit:listener-container message-converter="amqpMessageConverter" connection-factory="rabbitConnectionFactory" concurrency="1" max-concurrency="10">
         <rabbit:listener ref="top.cardone.authority.service.UserGroupRoleServiceExporter"
                          queue-names="queue:cardone-authority-${cardone-authority-version}:top.cardone.authority.service.UserGroupRoleService"/>
     </rabbit:listener-container>
