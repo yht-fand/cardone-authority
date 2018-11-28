@@ -37,7 +37,7 @@ public class UserRoleDaoImpl extends PageDaoImpl implements top.cardone.authorit
         for (Map<String, Object> forUserGroupRole : forUserGroupRoleList) {
             forUserGroupRole.putAll(putAll);
 
-            count += this.save(forUserGroupRole);
+            count += this.saveOnConflict(forUserGroupRole);
         }
 
         return count;
