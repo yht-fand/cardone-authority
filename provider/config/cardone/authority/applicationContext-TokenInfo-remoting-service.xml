@@ -21,7 +21,7 @@
         <property name="service" ref="top.cardone.authority.service.TokenInfoService"/>
     </bean>
 
-    <rabbit:listener-container message-converter="amqpMessageConverter" connection-factory="rabbitConnectionFactory" concurrency="1" max-concurrency="10">
+    <rabbit:listener-container message-converter="amqpMessageConverter" connection-factory="rabbitConnectionFactory" concurrency="1" max-concurrency="1">
         <rabbit:listener ref="top.cardone.authority.service.TokenInfoServiceExporter"
                          queue-names="queue:cardone-authority-${cardone-authority-version}:top.cardone.authority.service.TokenInfoService"/>
     </rabbit:listener-container>
