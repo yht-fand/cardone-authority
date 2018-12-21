@@ -21,7 +21,7 @@
         <property name="service" ref="top.cardone.authority.service.UserPermissionService"/>
     </bean>
 
-    <rabbit:listener-container message-converter="amqpMessageConverter" connection-factory="rabbitConnectionFactory" concurrency="1" max-concurrency="${spring.rabbitmq.listener.container.maxConcurrency:10}">
+    <rabbit:listener-container message-converter="amqpMessageConverter" connection-factory="rabbitConnectionFactory" concurrency="1" max-concurrency="${spring.rabbitmq.listener.container.common.maxConcurrency:10}">
         <rabbit:listener ref="top.cardone.authority.service.UserPermissionServiceExporter"
                          queue-names="queue:cardone-authority-${cardone-authority-version}:top.cardone.authority.service.UserPermissionService"/>
     </rabbit:listener-container>
