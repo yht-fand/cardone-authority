@@ -1,100 +1,118 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns="http://www.springframework.org/schema/beans"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-    <bean name="top.cardone.authority.listener.UserGroupGenerateListener"
-          class="top.cardone.data.listener.GenerateListener">
-        <property name="skip" value="${GenerateListener.UserGroupService.skip:false}"/>
-        <property name="serviceBeanId" value="top.cardone.authority.service.UserGroupService"/>
-        <property name="saveList">
-            <list>
-                <map>
-                    <entry key="variableCode" value="userGroupTree"/>
-                    <entry key="value" value="yes"/>
-                </map>
-            </list>
-        </property>
-    </bean>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:lang="http://www.springframework.org/schema/lang"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+   		http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang.xsd">
+    <lang:groovy id="top.cardone.authority.listener.UserGroupGenerateListener">
+        <lang:inline-script>
+            <![CDATA[
+            def environment = top.cardone.context.ApplicationContextHolder.applicationContext.environment
 
-    <bean name="top.cardone.authority.listener.RoleListener" class="top.cardone.data.listener.GenerateListener">
-        <property name="skip" value="${GenerateListener.RoleService.skip:false}"/>
-        <property name="serviceBeanId" value="top.cardone.authority.service.RoleService"/>
-        <property name="saveList">
-            <list>
-                <map>
-                    <entry key="variableCode" value="roleTree"/>
-                    <entry key="value" value="yes"/>
-                </map>
-            </list>
-        </property>
-    </bean>
+            if (!(environment.getProperty("cardone.generateListener.enable", Boolean.class, true) ||
+                    environment.getProperty("cardone.userGroupGenerateListener.enable", Boolean.class, false))) {
+                return "cardone.userGroupGenerateListener.enable:false"
+            }
 
-    <bean name="top.cardone.authority.listener.PermissionListener" class="top.cardone.data.listener.GenerateListener">
-        <property name="skip" value="${GenerateListener.PermissionService.skip:false}"/>
-        <property name="serviceBeanId" value="top.cardone.authority.service.PermissionService"/>
-        <property name="saveList">
-            <list>
-                <map>
-                    <entry key="variableCode" value="permissionTree"/>
-                    <entry key="value" value="yes"/>
-                </map>
-            </list>
-        </property>
-    </bean>
+            new top.cardone.data.listener.GenerateListener(serviceBeanId: "top.cardone.authority.service.UserGroupService",
+                    saveList: [[variableCode: "userGroupTree", value: "yes"]])
+            ]]>
+        </lang:inline-script>
+    </lang:groovy>
 
-    <bean name="top.cardone.authority.listener.UserGroupPermissionListener"
-          class="top.cardone.data.listener.GenerateListener">
-        <property name="skip" value="${GenerateListener.UserGroupPermissionService.skip:false}"/>
-        <property name="serviceBeanId" value="top.cardone.authority.service.UserGroupPermissionService"/>
-        <property name="saveList">
-            <list>
-                <map>
-                    <entry key="variableCode" value="userGroup"/>
-                    <entry key="value" value="yes"/>
-                </map>
-            </list>
-        </property>
-    </bean>
+    <lang:groovy id="top.cardone.authority.listener.RoleListener">
+        <lang:inline-script>
+            <![CDATA[
+            def environment = top.cardone.context.ApplicationContextHolder.applicationContext.environment
 
-    <bean name="top.cardone.authority.listener.UserGroupUserGenerateListener"
-          class="top.cardone.data.listener.GenerateListener">
-        <property name="skip" value="${GenerateListener.UserGroupUserService.skip:false}"/>
-        <property name="serviceBeanId" value="top.cardone.authority.service.UserGroupUserService"/>
-        <property name="saveList">
-            <list>
-                <map>
-                    <entry key="variableCode" value="userGroup"/>
-                    <entry key="value" value="yes"/>
-                </map>
-            </list>
-        </property>
-    </bean>
+            if (!(environment.getProperty("cardone.generateListener.enable", Boolean.class, true) ||
+                    environment.getProperty("cardone.roleListener.enable", Boolean.class, false))) {
+                return "cardone.roleListener.enable:false"
+            }
 
-    <bean name="top.cardone.authority.listener.RolePermissionGenerateListener"
-          class="top.cardone.data.listener.GenerateListener">
-        <property name="skip" value="${GenerateListener.RolePermissionService.skip:false}"/>
-        <property name="serviceBeanId" value="top.cardone.authority.service.RolePermissionService"/>
-        <property name="saveList">
-            <list>
-                <map>
-                    <entry key="variableCode" value="userGroup"/>
-                    <entry key="value" value="yes"/>
-                </map>
-            </list>
-        </property>
-    </bean>
+            new top.cardone.data.listener.GenerateListener(serviceBeanId: "top.cardone.authority.service.RoleService",
+                    saveList: [[variableCode: "roleTree", value: "yes"]])
+            ]]>
+        </lang:inline-script>
+    </lang:groovy>
 
-    <bean name="top.cardone.authority.listener.UserRoleGenerateListener"
-          class="top.cardone.data.listener.GenerateListener">
-        <property name="skip" value="${GenerateListener.UserRoleService.skip:false}"/>
-        <property name="serviceBeanId" value="top.cardone.authority.service.UserRoleService"/>
-        <property name="saveList">
-            <list>
-                <map>
-                    <entry key="variableCode" value="userGroup"/>
-                    <entry key="value" value="yes"/>
-                </map>
-            </list>
-        </property>
-    </bean>
+    <lang:groovy id="top.cardone.authority.listener.PermissionListener">
+        <lang:inline-script>
+            <![CDATA[
+            def environment = top.cardone.context.ApplicationContextHolder.applicationContext.environment
+
+            if (!(environment.getProperty("cardone.generateListener.enable", Boolean.class, true) ||
+                    environment.getProperty("cardone.permissionListener.enable", Boolean.class, false))) {
+                return "cardone.permissionListener.enable:false"
+            }
+
+            new top.cardone.data.listener.GenerateListener(serviceBeanId: "top.cardone.authority.service.PermissionService",
+                    saveList: [[variableCode: "permissionTree", value: "yes"]])
+            ]]>
+        </lang:inline-script>
+    </lang:groovy>
+
+    <lang:groovy id="top.cardone.authority.listener.UserGroupPermissionListener">
+        <lang:inline-script>
+            <![CDATA[
+            def environment = top.cardone.context.ApplicationContextHolder.applicationContext.environment
+
+            if (!(environment.getProperty("cardone.generateListener.enable", Boolean.class, true) ||
+                    environment.getProperty("cardone.userGroupPermissionListener.enable", Boolean.class, false))) {
+                return "cardone.userGroupPermissionListener.enable:false"
+            }
+
+            new top.cardone.data.listener.GenerateListener(serviceBeanId: "top.cardone.authority.service.UserGroupPermissionService",
+                    saveList: [[variableCode: "userGroup", value: "yes"]])
+            ]]>
+        </lang:inline-script>
+    </lang:groovy>
+
+    <lang:groovy id="top.cardone.authority.listener.UserGroupUserGenerateListener">
+        <lang:inline-script>
+            <![CDATA[
+            def environment = top.cardone.context.ApplicationContextHolder.applicationContext.environment
+
+            if (!(environment.getProperty("cardone.generateListener.enable", Boolean.class, true) ||
+                    environment.getProperty("cardone.userGroupUserGenerateListener.enable", Boolean.class, false))) {
+                return "cardone.userGroupUserGenerateListener.enable:false"
+            }
+
+            new top.cardone.data.listener.GenerateListener(serviceBeanId: "top.cardone.authority.service.UserGroupUserService",
+                    saveList: [[variableCode: "userGroup", value: "yes"]])
+            ]]>
+        </lang:inline-script>
+    </lang:groovy>
+
+    <lang:groovy id="top.cardone.authority.listener.RolePermissionGenerateListener">
+        <lang:inline-script>
+            <![CDATA[
+            def environment = top.cardone.context.ApplicationContextHolder.applicationContext.environment
+
+            if (!(environment.getProperty("cardone.generateListener.enable", Boolean.class, true) ||
+                    environment.getProperty("cardone.rolePermissionGenerateListener.enable", Boolean.class, false))) {
+                return "cardone.rolePermissionGenerateListener.enable:false"
+            }
+
+            new top.cardone.data.listener.GenerateListener(serviceBeanId: "top.cardone.authority.service.RolePermissionService",
+                    saveList: [[variableCode: "userGroup", value: "yes"]])
+            ]]>
+        </lang:inline-script>
+    </lang:groovy>
+
+    <lang:groovy id="top.cardone.authority.listener.UserRoleGenerateListener">
+        <lang:inline-script>
+            <![CDATA[
+            def environment = top.cardone.context.ApplicationContextHolder.applicationContext.environment
+
+            if (!(environment.getProperty("cardone.generateListener.enable", Boolean.class, true) ||
+                    environment.getProperty("cardone.userRoleGenerateListener.enable", Boolean.class, false))) {
+                return "cardone.userRoleGenerateListener.enable:false"
+            }
+
+            new top.cardone.data.listener.GenerateListener(serviceBeanId: "top.cardone.authority.service.UserRoleService",
+                    saveList: [[variableCode: "userGroup", value: "yes"]])
+            ]]>
+        </lang:inline-script>
+    </lang:groovy>
 </beans>
