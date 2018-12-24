@@ -1,6 +1,6 @@
 package top.cardone.api.vx.authority
 
-import top.cardone.authority.service.OAuthConsumerService
+import top.cardone.authority.service.OauthConsumerService
 import org.springframework.stereotype.Controller
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.ResponseBody
@@ -14,14 +14,14 @@ import javax.servlet.http.HttpServletRequest
  */
 @Controller
 @RequestMapping("/v1/authority/oAuthConsumer")
-class OAuthConsumerController {
+class OauthConsumerController {
     /**
      * /c0001.json begin
      **xx/
     @RequestMapping("/c0001.json")
     @ResponseBody
     Object c0001Json(HttpServletRequest request) {
-        ApplicationContextHolder.getBean(WebSupport.class).func(request, { input -> ApplicationContextHolder.getBean(OAuthConsumerService.class).insertByNotExistsCache(input) })
+        ApplicationContextHolder.getBean(WebSupport.class).func(request, { input -> ApplicationContextHolder.getBean(OauthConsumerService.class).insertByNotExistsCache(input) })
     }
     /** /c0001.json end **/
 }

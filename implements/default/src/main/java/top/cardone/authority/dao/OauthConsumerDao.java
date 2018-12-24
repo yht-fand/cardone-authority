@@ -7,5 +7,5 @@ import top.cardone.data.dao.PageDao;
  *
  * @author yao hai tao
  */
-public interface OAuthConsumerDao extends PageDao {
+public interface OauthConsumerDao extends PageDao {
 }

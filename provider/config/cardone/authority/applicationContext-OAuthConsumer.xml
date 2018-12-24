@@ -4,8 +4,8 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
        default-lazy-init="true">
     <!-- 授权消费 -->
-    <bean id="top.cardone.authority.dao.OAuthConsumerDao"
-          class="top.cardone.authority.dao.impl.OAuthConsumerDaoImpl">
+    <bean id="top.cardone.authority.dao.OauthConsumerDao"
+          class="top.cardone.authority.dao.impl.OauthConsumerDaoImpl">
         <property name="configTable">
             <map>
                 <entry key="config">
@@ -39,8 +39,8 @@
         </property>
     </bean>
 	
-    <bean id="top.cardone.authority.service.OAuthConsumerService"
-          class="top.cardone.authority.service.impl.OAuthConsumerServiceImpl">
-		<property name="dao" ref="top.cardone.authority.dao.OAuthConsumerDao"/>
+    <bean id="top.cardone.authority.service.OauthConsumerService"
+          class="top.cardone.authority.service.impl.OauthConsumerServiceImpl">
+		<property name="dao" ref="top.cardone.authority.dao.OauthConsumerDao"/>
 	</bean>
 </beans>

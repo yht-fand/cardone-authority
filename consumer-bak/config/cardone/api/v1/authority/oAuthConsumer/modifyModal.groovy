@@ -1,7 +1,7 @@
 package top.cardone.api.vx.authority.oAuthConsumer
 
 import org.apache.commons.lang3.StringUtils
-import top.cardone.authority.service.OAuthConsumerService
+import top.cardone.authority.service.OauthConsumerService
 import top.cardone.context.ApplicationContextHolder
 import top.cardone.core.CodeException
 
@@ -17,7 +17,7 @@ class modifyModal implements java.io.Serializable {
     }
 
     def func(input) {
-		ApplicationContextHolder.getBean(OAuthConsumerService.class).findOneByOAuthConsumerId(input)
+		ApplicationContextHolder.getBean(OauthConsumerService.class).findOneByOauthConsumerId(input)
     }
 
     def output(output) {

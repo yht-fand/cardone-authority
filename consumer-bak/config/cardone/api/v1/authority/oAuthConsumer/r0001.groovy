@@ -3,7 +3,7 @@ package top.cardone.api.vx.authority.oAuthConsumer
 import top.cardone.configuration.service.DictionaryService
 import top.cardone.context.ApplicationContextHolder
 import top.cardone.context.util.DateUtils
-import top.cardone.authority.service.OAuthConsumerService
+import top.cardone.authority.service.OauthConsumerService
 
 import java.time.Instant
 import java.time.LocalDateTime
@@ -28,7 +28,7 @@ class r0001 implements java.io.Serializable {
     }
 
     def func(input) {
-		ApplicationContextHolder.getBean(OAuthConsumerService.class).page(input)
+		ApplicationContextHolder.getBean(OauthConsumerService.class).page(input)
     }
 
     def output(output) {

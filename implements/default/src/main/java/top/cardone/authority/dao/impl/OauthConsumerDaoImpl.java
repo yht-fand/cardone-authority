@@ -7,5 +7,5 @@ import top.cardone.data.jdbc.dao.impl.PageDaoImpl;
  *
  * @author yao hai tao
  */
-public class OAuthConsumerDaoImpl extends PageDaoImpl implements top.cardone.authority.dao.OAuthConsumerDao {
+public class OauthConsumerDaoImpl extends PageDaoImpl implements top.cardone.authority.dao.OauthConsumerDao {
 }

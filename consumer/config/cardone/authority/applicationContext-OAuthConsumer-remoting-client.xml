@@ -7,14 +7,14 @@
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
        default-lazy-init="true">
     <!-- 授权消费 -->
-    <bean name="top.cardone.authority.service.OAuthConsumerService"
-          p:serviceInterface="top.cardone.authority.service.OAuthConsumerService"
-          p:routingKey="queue:cardone-authority-${cardone-authority-version}:top.cardone.authority.service.OAuthConsumerService"
+    <bean name="top.cardone.authority.service.OauthConsumerService"
+          p:serviceInterface="top.cardone.authority.service.OauthConsumerService"
+          p:routingKey="queue:cardone-authority-${cardone-authority-version}:top.cardone.authority.service.OauthConsumerService"
           parent="invokerProxyFactoryParnet">
         <property name="amqpTemplate">
             <bean parent="rabbitTemplateParnet">
-                <property name="queue" value="queue:cardone-authority-${cardone-authority-version}:top.cardone.authority.service.OAuthConsumerService"/>
-                <property name="exchange" value="exchange:cardone-authority-${cardone-authority-version}:top.cardone.authority.service.OAuthConsumerService"/>
+                <property name="queue" value="queue:cardone-authority-${cardone-authority-version}:top.cardone.authority.service.OauthConsumerService"/>
+                <property name="exchange" value="exchange:cardone-authority-${cardone-authority-version}:top.cardone.authority.service.OauthConsumerService"/>
             </bean>
         </property>
     </bean>

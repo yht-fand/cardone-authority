@@ -5,24 +5,24 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/rabbit http://www.springframework.org/schema/rabbit/spring-rabbit.xsd">
     <rabbit:direct-exchange
-            name="exchange:cardone-authority-${cardone-authority-version}:top.cardone.authority.service.OAuthConsumerService">
+            name="exchange:cardone-authority-${cardone-authority-version}:top.cardone.authority.service.OauthConsumerService">
         <rabbit:bindings>
             <rabbit:binding
-                    queue="queue:cardone-authority-${cardone-authority-version}:top.cardone.authority.service.OAuthConsumerService"
-                    key="queue:cardone-authority-${cardone-authority-version}:top.cardone.authority.service.OAuthConsumerService"/>
+                    queue="queue:cardone-authority-${cardone-authority-version}:top.cardone.authority.service.OauthConsumerService"
+                    key="queue:cardone-authority-${cardone-authority-version}:top.cardone.authority.service.OauthConsumerService"/>
         </rabbit:bindings>
     </rabbit:direct-exchange>
 
     <rabbit:queue
-            name="queue:cardone-authority-${cardone-authority-version}:top.cardone.authority.service.OAuthConsumerService"/>
+            name="queue:cardone-authority-${cardone-authority-version}:top.cardone.authority.service.OauthConsumerService"/>
 
-    <bean id="top.cardone.authority.service.OAuthConsumerServiceExporter" parent="remoteInvocationExecutorParnet">
-        <property name="serviceInterface" value="top.cardone.authority.service.OAuthConsumerService"/>
-        <property name="service" ref="top.cardone.authority.service.OAuthConsumerService"/>
+    <bean id="top.cardone.authority.service.OauthConsumerServiceExporter" parent="remoteInvocationExecutorParnet">
+        <property name="serviceInterface" value="top.cardone.authority.service.OauthConsumerService"/>
+        <property name="service" ref="top.cardone.authority.service.OauthConsumerService"/>
     </bean>
 
     <rabbit:listener-container message-converter="amqpMessageConverter" connection-factory="rabbitConnectionFactory" concurrency="1" max-concurrency="${spring.rabbitmq.listener.container.maxConcurrency:10}">
-        <rabbit:listener ref="top.cardone.authority.service.OAuthConsumerServiceExporter"
-                         queue-names="queue:cardone-authority-${cardone-authority-version}:top.cardone.authority.service.OAuthConsumerService"/>
+        <rabbit:listener ref="top.cardone.authority.service.OauthConsumerServiceExporter"
+                         queue-names="queue:cardone-authority-${cardone-authority-version}:top.cardone.authority.service.OauthConsumerService"/>
     </rabbit:listener-container>
 </beans>

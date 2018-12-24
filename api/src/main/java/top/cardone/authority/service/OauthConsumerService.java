@@ -17,17 +17,17 @@ import java.util.Map;
  * @author yao hai tao
  */
 @Transactional(readOnly = true)
-@CacheConfig(cacheNames = {"top.cardone.authority.service.OAuthConsumerService"})
+@CacheConfig(cacheNames = {"top.cardone.authority.service.OauthConsumerService"})
 @Events({@Event(applicationEvent = SimpleErrorEvent.class),
         @Event(applicationEvent = SimpleEvent.class)})
-public interface OAuthConsumerService extends PageService {
+public interface OauthConsumerService extends PageService {
     /**
      * 查询授权消费对象
      *
      * @param findOne 授权消费标识
      * @return 授权消费对象
      */
-    Map<String, Object> findOneByOAuthConsumerId(Map<String, Object> findOne);
+    Map<String, Object> findOneByOauthConsumerId(Map<String, Object> findOne);
 
     /**
      * 查询授权消费对象
@@ -36,7 +36,7 @@ public interface OAuthConsumerService extends PageService {
      * @return 授权消费对象
      */
     @Cacheable
-    default Map<String, Object> findOneByOAuthConsumerIdCache(Map<String, Object> findOne) {
-        return this.findOneByOAuthConsumerId(findOne);
+    default Map<String, Object> findOneByOauthConsumerIdCache(Map<String, Object> findOne) {
+        return this.findOneByOauthConsumerId(findOne);
     }
 }

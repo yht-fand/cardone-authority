@@ -1,7 +1,7 @@
 package top.cardone.api.vx.authority.oAuthConsumer
 
 import org.apache.commons.lang3.StringUtils
-import top.cardone.authority.service.OAuthConsumerService
+import top.cardone.authority.service.OauthConsumerService
 import top.cardone.context.ApplicationContextHolder
 import top.cardone.core.CodeException
 
@@ -58,15 +58,15 @@ class u0001 implements java.io.Serializable {
 
 		def readOne = ["oAuthConsumerCode": input.oAuthConsumerCode, "object_id": "oAuthConsumerId", "dataStateCode": "1"]
 
-		def dbOAuthConsumerId = ApplicationContextHolder.getBean(OAuthConsumerService.class).readOne(String.class, readOne)
+		def dbOauthConsumerId = ApplicationContextHolder.getBean(OauthConsumerService.class).readOne(String.class, readOne)
 
-		if (!StringUtils.equals(dbOAuthConsumerId, input.oAuthConsumerId)) {
+		if (!StringUtils.equals(dbOauthConsumerId, input.oAuthConsumerId)) {
 			throw new CodeException("oAuthConsumerId already exists", "授权消费编号已经存在")
 		}
     }
 
     def func(input) {
-		ApplicationContextHolder.getBean(OAuthConsumerService.class).updateCache(input)
+		ApplicationContextHolder.getBean(OauthConsumerService.class).updateCache(input)
     }
 
     def output(output) {

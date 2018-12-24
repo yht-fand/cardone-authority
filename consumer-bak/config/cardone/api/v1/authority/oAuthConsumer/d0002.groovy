@@ -1,7 +1,7 @@
 package top.cardone.api.vx.authority.oAuthConsumer
 
 import org.apache.commons.lang3.StringUtils
-import top.cardone.authority.service.OAuthConsumerService
+import top.cardone.authority.service.OauthConsumerService
 import top.cardone.context.ApplicationContextHolder
 import top.cardone.core.CodeException
 
@@ -26,7 +26,7 @@ class d0002 implements java.io.Serializable {
     }
 
     def func(input) {
-        ApplicationContextHolder.getBean(OAuthConsumerService.class).updateListCache(input?.oAuthConsumerIds)
+        ApplicationContextHolder.getBean(OauthConsumerService.class).updateListCache(input?.oAuthConsumerIds)
     }
 
     def output(output) {
