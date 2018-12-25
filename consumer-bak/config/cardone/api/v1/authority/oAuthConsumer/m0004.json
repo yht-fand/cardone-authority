@@ -1,7 +1,7 @@
 {
   "validation": {
     "rules": {
-      "oAuthConsumerCode": {
+      "oauthConsumerCode": {
         "required": true,
         "minlength": 4,
         "maxlength": 255
@@ -13,7 +13,7 @@
       }
     },
     "messages": {
-      "oAuthConsumerCode": {
+      "oauthConsumerCode": {
         "required": "授权消费编号必填",
         "minlength": "授权消费编号需{0}个字符以上",
         "maxlength": "授权消费编号需小于{0}个字符"

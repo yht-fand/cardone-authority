@@ -1,4 +1,4 @@
-package top.cardone.api.vx.authority.oAuthConsumer
+package top.cardone.api.vx.authority.oauthConsumer
 
 import org.apache.commons.lang3.StringUtils
 import top.cardone.authority.service.OauthConsumerService
@@ -7,26 +7,26 @@ import top.cardone.core.CodeException
 
 class d0003 implements java.io.Serializable {
     def input(input) {
-        def oAuthConsumerIds = input?.oAuthConsumerIds?.split(",")
+        def oauthConsumerIds = input?.oauthConsumerIds?.split(",")
 
-        if (!oAuthConsumerIds) {
-            throw new CodeException("oAuthConsumerIds required", "授权消费标识集合必填")
+        if (!oauthConsumerIds) {
+            throw new CodeException("oauthConsumerIds required", "授权消费标识集合必填")
         }
 
-        def oAuthConsumerIdList = []
+        def oauthConsumerIdList = []
 
-        for (def oAuthConsumerId : oAuthConsumerIds) {
-            oAuthConsumerIdList.add(["oAuthConsumerId": oAuthConsumerId, "flagCode": "input", "dataStateCode": "0", "endDate": new Date()])
+        for (def oauthConsumerId : oauthConsumerIds) {
+            oauthConsumerIdList.add(["oauthConsumerId": oauthConsumerId, "flagCode": "input", "dataStateCode": "0", "endDate": new Date()])
         }
 
-        ["oAuthConsumerIds": oAuthConsumerIdList]
+        ["oauthConsumerIds": oauthConsumerIdList]
     }
 
     def validation(input) {
     }
 
     def func(input) {
-        ApplicationContextHolder.getBean(OauthConsumerService.class).updateListCache(input?.oAuthConsumerIds)
+        ApplicationContextHolder.getBean(OauthConsumerService.class).updateListCache(input?.oauthConsumerIds)
     }
 
     def output(output) {

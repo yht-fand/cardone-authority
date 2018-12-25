@@ -1,7 +1,7 @@
 {
   "validation": {
     "rules": {
-      "oAuthConsumerId": {
+      "oauthConsumerId": {
         "required": true
       },
       "name": {
@@ -11,7 +11,7 @@
       }
     },
     "messages": {
-      "oAuthConsumerId": {
+      "oauthConsumerId": {
         "required": "授权消费标识必填"
       },
       "name": {

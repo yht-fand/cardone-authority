@@ -1,4 +1,4 @@
-package top.cardone.api.vx.authority.oAuthConsumer
+package top.cardone.api.vx.authority.oauthConsumer
 
 import org.apache.commons.lang3.StringUtils
 import top.cardone.authority.service.OauthConsumerService
@@ -7,12 +7,12 @@ import top.cardone.core.CodeException
 
 class modifyModal implements java.io.Serializable {
     def input(input) {
-        ["oAuthConsumerId": input.oAuthConsumerId]
+        ["oauthConsumerId": input.oauthConsumerId]
     }
 
     def validation(input) {
-//      if (StringUtils.isBlank(input?.oAuthConsumerId)) {
-//          throw new CodeException("oAuthConsumerId required", "授权消费标识必填")
+//      if (StringUtils.isBlank(input?.oauthConsumerId)) {
+//          throw new CodeException("oauthConsumerId required", "授权消费标识必填")
 //      }
     }
 

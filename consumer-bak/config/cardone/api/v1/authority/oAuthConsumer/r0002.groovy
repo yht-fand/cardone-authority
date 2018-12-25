@@ -1,4 +1,4 @@
-package top.cardone.api.vx.authority.oAuthConsumer
+package top.cardone.api.vx.authority.oauthConsumer
 
 import org.apache.commons.lang3.StringUtils
 import top.cardone.authority.service.OauthConsumerService

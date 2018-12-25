@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletRequest
  * Created by yht
  */
 @Controller
-@RequestMapping("/v1/authority/oAuthConsumer")
+@RequestMapping("/v1/authority/oauthConsumer")
 class OauthConsumerController {
     /**
      * /c0001.json begin

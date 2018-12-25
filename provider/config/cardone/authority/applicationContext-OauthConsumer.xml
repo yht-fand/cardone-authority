@@ -10,9 +10,9 @@
             <map>
                 <entry key="config">
                     <map>
-                        <entry key="sqlFileRoot" value="/cardone/authority/oAuthConsumer/"/>
+                        <entry key="sqlFileRoot" value="/cardone/authority/oauthConsumer/"/>
                         <entry key="pks" value="oauthConsumerId"/>
-                        <entry key="codes" value="systemInfoCode,siteCode,clientSecret,endDate"/>
+                        <entry key="codes" value="systemInfoCode,siteCode,orgCode,oauthConsumerId,endDate"/>
                     </map>
                 </entry>
                 <entry key="insert">
@@ -24,6 +24,7 @@
                         <entry key="endDate" value="endDateDefaultValueFunc"/>
                         <entry key="systemInfoCode" value="systemInfoCodeDefaultValueFunc"/>
                         <entry key="siteCode" value="siteCodeDefaultValueFunc"/>
+                        <entry key="orgCode" value="orgCodeDefaultValueFunc"/>
                     </map>
                 </entry>
                 <entry key="update">
@@ -33,6 +34,7 @@
                         <entry key="endDate" value="endDateDefaultValueFunc"/>
                         <entry key="systemInfoCode" value="systemInfoCodeDefaultValueFunc"/>
                         <entry key="siteCode" value="siteCodeDefaultValueFunc"/>
+                        <entry key="orgCode" value="orgCodeDefaultValueFunc"/>
                     </map>
                 </entry>
             </map>

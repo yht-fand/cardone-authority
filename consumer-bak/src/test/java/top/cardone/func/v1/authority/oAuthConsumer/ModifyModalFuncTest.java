@@ -1,4 +1,4 @@
-package top.cardone.func.v1.authority.oAuthConsumer;
+package top.cardone.func.v1.authority.oauthConsumer;
 
 import com.google.common.base.Charsets;
 import com.google.common.collect.Maps;
@@ -26,13 +26,13 @@ import java.util.Map;
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest(classes = ConsumerApplication.class, value = {"spring.profiles.active=test"}, webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
 public class ModifyModalFuncTest {
-    @Value("http://localhost:${server.port:8765}${server.servlet.context-path:}/v1/authority/oAuthConsumer/modifyModal.json")
+    @Value("http://localhost:${server.port:8765}${server.servlet.context-path:}/v1/authority/oauthConsumer/modifyModal.json")
     private String funcUrl;
 
-    @Value("file:src/test/resources/top/cardone/func/v1/authority/oAuthConsumer/ModifyModalFuncTest.func.input.json")
+    @Value("file:src/test/resources/top/cardone/func/v1/authority/oauthConsumer/ModifyModalFuncTest.func.input.json")
     private Resource funcInputResource;
 
-    @Value("file:src/test/resources/top/cardone/func/v1/authority/oAuthConsumer/ModifyModalFuncTest.func.output.json")
+    @Value("file:src/test/resources/top/cardone/func/v1/authority/oauthConsumer/ModifyModalFuncTest.func.output.json")
     private Resource funcOutputResource;
 
     @Test

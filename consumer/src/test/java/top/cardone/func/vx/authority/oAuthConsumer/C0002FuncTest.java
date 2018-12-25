@@ -1,4 +1,4 @@
-package top.cardone.func.vx.authority.oAuthConsumer;
+package top.cardone.func.vx.authority.oauthConsumer;
 
 import com.google.common.base.Charsets;
 import lombok.extern.log4j.Log4j2;
@@ -24,13 +24,13 @@ import java.io.IOException;
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest(classes = ConsumerApplication.class, value = {"spring.profiles.active=test"}, webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
 public class C0002FuncTest {
-    @Value("http://localhost:${server.port:8765}${server.servlet.context-path:}/vx/authority/oAuthConsumer/c0002.json")
+    @Value("http://localhost:${server.port:8765}${server.servlet.context-path:}/vx/authority/oauthConsumer/c0002.json")
     private String funcUrl;
 
-    @Value("file:src/test/resources/top/cardone/func/vx/authority/oAuthConsumer/C0002FuncTest.func.input.json")
+    @Value("file:src/test/resources/top/cardone/func/vx/authority/oauthConsumer/C0002FuncTest.func.input.json")
     private Resource funcInputResource;
 
-    @Value("file:src/test/resources/top/cardone/func/vx/authority/oAuthConsumer/C0002FuncTest.func.output.json")
+    @Value("file:src/test/resources/top/cardone/func/vx/authority/oauthConsumer/C0002FuncTest.func.output.json")
     private Resource funcOutputResource;
 
     private HttpEntity<String> httpEntity;

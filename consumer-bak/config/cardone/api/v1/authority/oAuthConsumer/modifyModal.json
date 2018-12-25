@@ -1,12 +1,12 @@
 {
   "validation": {
     "rules": {
-      "oAuthConsumerId": {
+      "oauthConsumerId": {
         "required": true
       }
     },
     "messages": {
-      "oAuthConsumerId": {
+      "oauthConsumerId": {
         "required": "授权消费标识必填"
       }
     }

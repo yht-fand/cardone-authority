@@ -1,4 +1,4 @@
-package top.cardone.func.v1.authority.oAuthConsumer;
+package top.cardone.func.v1.authority.oauthConsumer;
 
 import com.google.common.base.Charsets;
 import com.google.common.collect.Maps;
@@ -26,13 +26,13 @@ import java.util.Map;
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest(classes = ConsumerApplication.class, value = {"spring.profiles.active=test"}, webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
 public class IndexFuncTest {
-    @Value("http://localhost:${server.port:8765}${server.servlet.context-path:}/v1/authority/oAuthConsumer/index.json")
+    @Value("http://localhost:${server.port:8765}${server.servlet.context-path:}/v1/authority/oauthConsumer/index.json")
     private String funcUrl;
 
-    @Value("file:src/test/resources/top/cardone/func/v1/authority/oAuthConsumer/IndexFuncTest.func.input.json")
+    @Value("file:src/test/resources/top/cardone/func/v1/authority/oauthConsumer/IndexFuncTest.func.input.json")
     private Resource funcInputResource;
 
-    @Value("file:src/test/resources/top/cardone/func/v1/authority/oAuthConsumer/IndexFuncTest.func.output.json")
+    @Value("file:src/test/resources/top/cardone/func/v1/authority/oauthConsumer/IndexFuncTest.func.output.json")
     private Resource funcOutputResource;
 
     @Test

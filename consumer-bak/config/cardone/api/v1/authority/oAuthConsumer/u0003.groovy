@@ -1,4 +1,4 @@
-package top.cardone.api.vx.authority.oAuthConsumer
+package top.cardone.api.vx.authority.oauthConsumer
 
 import org.apache.commons.lang3.StringUtils
 import top.cardone.authority.service.OauthConsumerService
@@ -40,8 +40,8 @@ class u0003 implements java.io.Serializable {
     }
 
     def validation(input) {
-//      if (StringUtils.isBlank(input?.oAuthConsumerId)) {
-//          throw new CodeException("oAuthConsumerId required", "授权消费标识必填")
+//      if (StringUtils.isBlank(input?.oauthConsumerId)) {
+//          throw new CodeException("oauthConsumerId required", "授权消费标识必填")
 //      }
 //
 //      if (StringUtils.isBlank(input?.name)) {
@@ -56,12 +56,12 @@ class u0003 implements java.io.Serializable {
 //          throw new CodeException("name maxlength", "授权消费名称需小于{0}个字符", 255)
 //      }
 
-		def readOne = ["oAuthConsumerCode": input.oAuthConsumerCode, "object_id": "oAuthConsumerId", "dataStateCode": "1"]
+		def readOne = ["oauthConsumerCode": input.oauthConsumerCode, "object_id": "oauthConsumerId", "dataStateCode": "1"]
 
 		def dbOauthConsumerId = ApplicationContextHolder.getBean(OauthConsumerService.class).readOne(String.class, readOne)
 
-		if (!StringUtils.equals(dbOauthConsumerId, input.oAuthConsumerId)) {
-			throw new CodeException("oAuthConsumerId already exists", "授权消费编号已经存在")
+		if (!StringUtils.equals(dbOauthConsumerId, input.oauthConsumerId)) {
+			throw new CodeException("oauthConsumerId already exists", "授权消费编号已经存在")
 		}
     }
 

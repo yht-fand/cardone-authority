@@ -1,4 +1,4 @@
-package top.cardone.api.vx.authority.oAuthConsumer
+package top.cardone.api.vx.authority.oauthConsumer
 
 import org.apache.commons.lang3.StringUtils
 import top.cardone.authority.service.OauthConsumerService
@@ -40,16 +40,16 @@ class c0002 implements java.io.Serializable {
     }
 
     def validation(input) {
-//      if (StringUtils.isBlank(input?.oAuthConsumerCode)) {
-//          throw new CodeException("oAuthConsumerCode required", "授权消费编号必填")
+//      if (StringUtils.isBlank(input?.oauthConsumerCode)) {
+//          throw new CodeException("oauthConsumerCode required", "授权消费编号必填")
 //      }
 //
-//      if (StringUtils.length(input?.oAuthConsumerCode) < 4) {
-//          throw new CodeException("oAuthConsumerCode minlength", "授权消费编号需{0}个字符以上", 4)
+//      if (StringUtils.length(input?.oauthConsumerCode) < 4) {
+//          throw new CodeException("oauthConsumerCode minlength", "授权消费编号需{0}个字符以上", 4)
 //      }
 //
-//      if (StringUtils.length(input?.oAuthConsumerCode) > 255) {
-//          throw new CodeException("oAuthConsumerCode maxlength", "授权消费编号需小于{0}个字符", 255)
+//      if (StringUtils.length(input?.oauthConsumerCode) > 255) {
+//          throw new CodeException("oauthConsumerCode maxlength", "授权消费编号需小于{0}个字符", 255)
 //      }
 //
 //      if (StringUtils.isBlank(input?.name)) {
@@ -64,12 +64,12 @@ class c0002 implements java.io.Serializable {
 //          throw new CodeException("name maxlength", "授权消费名称需小于{0}个字符", 255)
 //      }
 		
-		def readOne = ['oAuthConsumerCode': input.oAuthConsumerCode, "dataStateCode": "1"]
+		def readOne = ['oauthConsumerCode': input.oauthConsumerCode, "dataStateCode": "1"]
 
 		def count = ApplicationContextHolder.getBean(OauthConsumerService.class).readOne(Integer.class, readOne)
 
 		if (count > 0) {
-			throw new CodeException("oAuthConsumerCode already exists", "授权消费编号已经存在")
+			throw new CodeException("oauthConsumerCode already exists", "授权消费编号已经存在")
 		}
     }
 
