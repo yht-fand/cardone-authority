@@ -2,6 +2,7 @@ package top.cardone.authority.dao.impl;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
+import lombok.val;
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.collections.MapUtils;
 import top.cardone.data.jdbc.dao.impl.PageDaoImpl;
@@ -33,11 +34,25 @@ public class PermissionDaoImpl extends PageDaoImpl implements top.cardone.author
         for (Map.Entry<String, Object> generateSqlEntry : generateSqlMap.entrySet()) {
             String findListForGenerateSqlFilePath = this.getSqlFilePath((String) generateSqlEntry.getValue());
 
+            val saveLists = Lists.newArrayList();
+
             count += this.execute(findListForGenerateSqlFilePath, Maps.newHashMap(), mapOfColumnValues -> {
                 mapOfColumnValues.putAll(putAll);
 
-                this.saveOnConflict(mapOfColumnValues);
+                saveLists.add(mapOfColumnValues);
+
+                if (saveLists.size() > 100) {
+                    this.saveListOnConflict(saveLists);
+
+                    saveLists.clear();
+                }
             });
+
+            if (!saveLists.isEmpty()) {
+                this.saveListOnConflict(saveLists);
+
+                saveLists.clear();
+            }
         }
 
         String deleteOtherByFlagObjectCodeSqlFilePath = this.getSqlFilePath("deleteOtherByFlagObjectCode");

@@ -43,11 +43,25 @@ public class UserPermissionDaoImpl extends PageDaoImpl implements top.cardone.au
         for (Map.Entry<String, Object> generateSqlEntry : generateSqlMap.entrySet()) {
             String findListForGenerateSqlFilePath = this.getSqlFilePath((String) generateSqlEntry.getValue());
 
+            val saveLists = Lists.newArrayList();
+
             count += this.execute(findListForGenerateSqlFilePath, paramMap, mapOfColumnValues -> {
                 mapOfColumnValues.putAll(putAll);
 
-                this.saveOnConflict(mapOfColumnValues);
+                saveLists.add(mapOfColumnValues);
+
+                if (saveLists.size() > 100) {
+                    this.saveListOnConflict(saveLists);
+
+                    saveLists.clear();
+                }
             });
+
+            if (!saveLists.isEmpty()) {
+                this.saveListOnConflict(saveLists);
+
+                saveLists.clear();
+            }
         }
 
         String deleteOtherByFlagObjectCodeSqlFilePath = this.getSqlFilePath("deleteOtherByFlagObjectCode");

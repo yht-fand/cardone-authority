@@ -2,6 +2,7 @@ package top.cardone.authority.dao.impl;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
+import lombok.val;
 import top.cardone.data.jdbc.dao.impl.PageDaoImpl;
 
 import java.util.List;
@@ -22,11 +23,25 @@ public class UserGroupPermissionDaoImpl extends PageDaoImpl implements top.cardo
         putAll.put("flagCode", "generate");
         putAll.put("flagObjectCode", flagObjectCode);
 
+        val saveLists = Lists.newArrayList();
+
         int count = this.execute(findListForRolePermissionSqlFilePath, Maps.newHashMap(), mapOfColumnValues -> {
             mapOfColumnValues.putAll(putAll);
 
-            this.saveOnConflict(mapOfColumnValues);
+            saveLists.add(mapOfColumnValues);
+
+            if (saveLists.size() > 100) {
+                this.saveListOnConflict(saveLists);
+
+                saveLists.clear();
+            }
         });
+
+        if (!saveLists.isEmpty()) {
+            this.saveListOnConflict(saveLists);
+
+            saveLists.clear();
+        }
 
         String deleteOtherByFlagObjectCodeSqlFilePath = this.getSqlFilePath("deleteOtherByFlagObjectCode");
 

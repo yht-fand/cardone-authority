@@ -2,6 +2,7 @@ package top.cardone.authority.dao.impl;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
+import lombok.val;
 import org.apache.commons.lang3.math.NumberUtils;
 import top.cardone.data.jdbc.dao.impl.PageDaoImpl;
 
@@ -23,12 +24,25 @@ public class UserGroupUserDaoImpl extends PageDaoImpl implements top.cardone.aut
         putAll.put("flagCode", "generate");
         putAll.put("flagObjectCode", flagObjectCode);
 
+        val saveLists = Lists.newArrayList();
+
         int count = this.execute(findListForUserSqlFilePath, Maps.newHashMap(), mapOfColumnValues -> {
             mapOfColumnValues.putAll(putAll);
 
-            this.saveOnConflict(mapOfColumnValues);
+            saveLists.add(mapOfColumnValues);
+
+            if (saveLists.size() > 100) {
+                this.saveListOnConflict(saveLists);
+
+                saveLists.clear();
+            }
         });
 
+        if (!saveLists.isEmpty()) {
+            this.saveListOnConflict(saveLists);
+
+            saveLists.clear();
+        }
         String deleteOtherByFlagObjectCodeSqlFilePath = this.getSqlFilePath("deleteOtherByFlagObjectCode");
 
         count += this.update(deleteOtherByFlagObjectCodeSqlFilePath, putAll);

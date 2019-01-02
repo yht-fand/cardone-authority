@@ -1,5 +1,6 @@
 package top.cardone.authority.dao.impl;
 
+import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import lombok.val;
 import org.springframework.jdbc.core.ColumnMapRowMapper;
@@ -31,11 +32,25 @@ public class UserRoleDaoImpl extends PageDaoImpl implements top.cardone.authorit
         putAll.put("flagCode", "generate");
         putAll.put("flagObjectCode", flagObjectCode);
 
+        val saveLists = Lists.newArrayList();
+
         int count = this.execute(findListForUserGroupRoleSqlFilePath, paramMap, mapOfColumnValues -> {
             mapOfColumnValues.putAll(putAll);
 
-            this.saveOnConflict(mapOfColumnValues);
+            saveLists.add(mapOfColumnValues);
+
+            if (saveLists.size() > 100) {
+                this.saveListOnConflict(saveLists);
+
+                saveLists.clear();
+            }
         });
+
+        if (!saveLists.isEmpty()) {
+            this.saveListOnConflict(saveLists);
+
+            saveLists.clear();
+        }
 
         String deleteOtherByFlagObjectCodeSqlFilePath = this.getSqlFilePath("deleteOtherByFlagObjectCode");
 
