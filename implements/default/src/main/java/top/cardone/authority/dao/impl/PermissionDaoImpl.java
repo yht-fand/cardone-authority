@@ -41,7 +41,7 @@ public class PermissionDaoImpl extends PageDaoImpl implements top.cardone.author
 
                 saveLists.add(mapOfColumnValues);
 
-                if (saveLists.size() > 100) {
+                if (saveLists.size() > 500) {
                     this.saveListOnConflict(saveLists);
 
                     saveLists.clear();

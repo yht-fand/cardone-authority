@@ -30,7 +30,7 @@ public class UserGroupPermissionDaoImpl extends PageDaoImpl implements top.cardo
 
             saveLists.add(mapOfColumnValues);
 
-            if (saveLists.size() > 100) {
+            if (saveLists.size() > 500) {
                 this.saveListOnConflict(saveLists);
 
                 saveLists.clear();
