@@ -1,9 +1,14 @@
 package top.cardone.authority.dao.impl;
 
 import com.google.common.collect.Maps;
+import lombok.val;
+import org.springframework.jdbc.core.ColumnMapRowMapper;
+import org.springframework.jdbc.support.JdbcUtils;
+import top.cardone.context.ApplicationContextHolder;
 import top.cardone.data.jdbc.dao.impl.PageDaoImpl;
+import top.cardone.data.jdbc.support.NamedParameterJdbcOperationsSupport;
 
-import java.util.List;
+import java.sql.ResultSet;
 import java.util.Map;
 
 /**
@@ -16,29 +21,27 @@ public class UserRoleDaoImpl extends PageDaoImpl implements top.cardone.authorit
     public int generateData(String flagObjectCode, String userId, String userCode) {
         String findListForUserGroupRoleSqlFilePath = this.getSqlFilePath("findListForUserGroupRole");
 
-        Map<String, Object> other = Maps.newHashMap();
+        Map<String, Object> paramMap = Maps.newHashMap();
 
-        other.put("userId", userId);
-        other.put("userCode", userCode);
-
-        List<Map<String, Object>> forUserGroupRoleList = this.findList(findListForUserGroupRoleSqlFilePath, other);
+        paramMap.put("userId", userId);
+        paramMap.put("userCode", userCode);
 
         Map<String, Object> putAll = Maps.newHashMap();
 
         putAll.put("flagCode", "generate");
         putAll.put("flagObjectCode", flagObjectCode);
 
+        int count = this.execute(findListForUserGroupRoleSqlFilePath, paramMap, mapOfColumnValues -> {
+            mapOfColumnValues.putAll(putAll);
+
+            this.saveOnConflict(mapOfColumnValues);
+        });
+
         String deleteOtherByFlagObjectCodeSqlFilePath = this.getSqlFilePath("deleteOtherByFlagObjectCode");
 
-        other.putAll(putAll);
+        paramMap.putAll(putAll);
 
-        int count = this.update(deleteOtherByFlagObjectCodeSqlFilePath, other);
-
-        for (Map<String, Object> forUserGroupRole : forUserGroupRoleList) {
-            forUserGroupRole.putAll(putAll);
-
-            count += this.saveOnConflict(forUserGroupRole);
-        }
+        count += this.update(deleteOtherByFlagObjectCodeSqlFilePath, paramMap);
 
         return count;
     }

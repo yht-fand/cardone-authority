@@ -1,8 +1,16 @@
 package top.cardone.authority.dao.impl;
 
+import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
+import lombok.val;
+import org.apache.commons.collections.MapUtils;
+import org.springframework.jdbc.core.ColumnMapRowMapper;
+import org.springframework.jdbc.support.JdbcUtils;
+import top.cardone.context.ApplicationContextHolder;
 import top.cardone.data.jdbc.dao.impl.PageDaoImpl;
+import top.cardone.data.jdbc.support.NamedParameterJdbcOperationsSupport;
 
+import java.sql.ResultSet;
 import java.util.List;
 import java.util.Map;
 
@@ -14,31 +22,39 @@ import java.util.Map;
 public class UserPermissionDaoImpl extends PageDaoImpl implements top.cardone.authority.dao.UserPermissionDao {
     @Override
     public int generateData(String flagObjectCode, String userId, String userCode) {
-        String findListForUserGroupPermissionSqlFilePath = this.getSqlFilePath("findListForUserGroupPermission");
+        Map<String, Object> generateSqlMap = this.getConfigTable().row("generateSql");
 
-        Map<String, Object> other = Maps.newHashMap();
+        if (MapUtils.isEmpty(generateSqlMap)) {
+            return 0;
+        }
 
-        other.put("userId", userId);
-        other.put("userCode", userCode);
+        Map<String, Object> paramMap = Maps.newHashMap();
 
-        List<Map<String, Object>> forUserGroupPermissionList = this.findList(findListForUserGroupPermissionSqlFilePath,other);
+        paramMap.put("userId", userId);
+        paramMap.put("userCode", userCode);
 
         Map<String, Object> putAll = Maps.newHashMap();
 
         putAll.put("flagCode", "generate");
         putAll.put("flagObjectCode", flagObjectCode);
 
+        int count = 0;
+
+        for (Map.Entry<String, Object> generateSqlEntry : generateSqlMap.entrySet()) {
+            String findListForGenerateSqlFilePath = this.getSqlFilePath((String) generateSqlEntry.getValue());
+
+            count += this.execute(findListForGenerateSqlFilePath, paramMap, mapOfColumnValues -> {
+                mapOfColumnValues.putAll(putAll);
+
+                this.saveOnConflict(mapOfColumnValues);
+            });
+        }
+
         String deleteOtherByFlagObjectCodeSqlFilePath = this.getSqlFilePath("deleteOtherByFlagObjectCode");
 
-        other.putAll(putAll);
+        paramMap.putAll(putAll);
 
-        int count = this.update(deleteOtherByFlagObjectCodeSqlFilePath, other);
-
-        for (Map<String, Object> forUserGroupPermission : forUserGroupPermissionList) {
-            forUserGroupPermission.putAll(putAll);
-
-            count += this.saveOnConflict(forUserGroupPermission);
-        }
+        count += this.update(deleteOtherByFlagObjectCodeSqlFilePath, paramMap);
 
         return count;
     }

@@ -1,5 +1,6 @@
 package top.cardone.authority.dao.impl;
 
+import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.collections.MapUtils;
@@ -27,27 +28,21 @@ public class PermissionDaoImpl extends PageDaoImpl implements top.cardone.author
         putAll.put("flagCode", "generate");
         putAll.put("flagObjectCode", flagObjectCode);
 
-        String deleteOtherByFlagObjectCodeSqlFilePath = this.getSqlFilePath("deleteOtherByFlagObjectCode");
-
-        int count = this.update(deleteOtherByFlagObjectCodeSqlFilePath, putAll);
+        int count = 0;
 
         for (Map.Entry<String, Object> generateSqlEntry : generateSqlMap.entrySet()) {
-            Map<String, Object> findList = Maps.newHashMap();
-
             String findListForGenerateSqlFilePath = this.getSqlFilePath((String) generateSqlEntry.getValue());
 
-            List<Map<String, Object>> generateList = this.findList(findListForGenerateSqlFilePath, findList);
+            count += this.execute(findListForGenerateSqlFilePath, Maps.newHashMap(), mapOfColumnValues -> {
+                mapOfColumnValues.putAll(putAll);
 
-            if (CollectionUtils.isEmpty(generateList)) {
-                continue;
-            }
-
-            for (Map<String, Object> generate : generateList) {
-                generate.putAll(putAll);
-
-                count += this.save(generate);
-            }
+                this.saveOnConflict(mapOfColumnValues);
+            });
         }
+
+        String deleteOtherByFlagObjectCodeSqlFilePath = this.getSqlFilePath("deleteOtherByFlagObjectCode");
+
+        count += this.update(deleteOtherByFlagObjectCodeSqlFilePath, putAll);
 
         return count;
     }

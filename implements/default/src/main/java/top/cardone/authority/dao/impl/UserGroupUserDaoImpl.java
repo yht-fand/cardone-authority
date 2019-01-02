@@ -1,6 +1,8 @@
 package top.cardone.authority.dao.impl;
 
+import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
+import org.apache.commons.lang3.math.NumberUtils;
 import top.cardone.data.jdbc.dao.impl.PageDaoImpl;
 
 import java.util.List;
@@ -16,22 +18,20 @@ public class UserGroupUserDaoImpl extends PageDaoImpl implements top.cardone.aut
     public int generateData(String flagObjectCode) {
         String findListForUserSqlFilePath = this.getSqlFilePath("findListForUser");
 
-        List<Map<String, Object>> forUserList = this.findList(findListForUserSqlFilePath);
-
         Map<String, Object> putAll = Maps.newHashMap();
 
         putAll.put("flagCode", "generate");
         putAll.put("flagObjectCode", flagObjectCode);
 
+        int count = this.execute(findListForUserSqlFilePath, Maps.newHashMap(), mapOfColumnValues -> {
+            mapOfColumnValues.putAll(putAll);
+
+            this.saveOnConflict(mapOfColumnValues);
+        });
+
         String deleteOtherByFlagObjectCodeSqlFilePath = this.getSqlFilePath("deleteOtherByFlagObjectCode");
 
-        int count = this.update(deleteOtherByFlagObjectCodeSqlFilePath, putAll);
-
-        for (Map<String, Object> forUser : forUserList) {
-            forUser.putAll(putAll);
-
-            count += this.save(forUser);
-        }
+        count += this.update(deleteOtherByFlagObjectCodeSqlFilePath, putAll);
 
         return count;
     }

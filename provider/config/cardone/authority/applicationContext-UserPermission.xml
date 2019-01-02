@@ -35,6 +35,12 @@
                         <entry key="siteCode" value="siteCodeDefaultValueFunc"/>
                     </map>
                 </entry>
+                <entry key="generateSql">
+                    <map>
+                        <entry key="userRolePermission" value="findListForRolePermission"/>
+                        <entry key="userUserGroupPermission" value="findListForUserGroupPermission"/>
+                    </map>
+                </entry>
             </map>
         </property>
     </bean>

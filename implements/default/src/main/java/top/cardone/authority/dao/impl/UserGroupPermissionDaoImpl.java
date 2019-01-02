@@ -1,5 +1,6 @@
 package top.cardone.authority.dao.impl;
 
+import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import top.cardone.data.jdbc.dao.impl.PageDaoImpl;
 
@@ -16,22 +17,20 @@ public class UserGroupPermissionDaoImpl extends PageDaoImpl implements top.cardo
     public int generateData(String flagObjectCode) {
         String findListForRolePermissionSqlFilePath = this.getSqlFilePath("findListForRolePermission");
 
-        List<Map<String, Object>> forRolePermissionList = this.findList(findListForRolePermissionSqlFilePath);
-
         Map<String, Object> putAll = Maps.newHashMap();
 
         putAll.put("flagCode", "generate");
         putAll.put("flagObjectCode", flagObjectCode);
 
+        int count = this.execute(findListForRolePermissionSqlFilePath, Maps.newHashMap(), mapOfColumnValues -> {
+            mapOfColumnValues.putAll(putAll);
+
+            this.saveOnConflict(mapOfColumnValues);
+        });
+
         String deleteOtherByFlagObjectCodeSqlFilePath = this.getSqlFilePath("deleteOtherByFlagObjectCode");
 
-        int count = this.update(deleteOtherByFlagObjectCodeSqlFilePath, putAll);
-
-        for (Map<String, Object> forRolePermission : forRolePermissionList) {
-            forRolePermission.putAll(putAll);
-
-            count += this.save(forRolePermission);
-        }
+        count += this.update(deleteOtherByFlagObjectCodeSqlFilePath, putAll);
 
         return count;
     }
