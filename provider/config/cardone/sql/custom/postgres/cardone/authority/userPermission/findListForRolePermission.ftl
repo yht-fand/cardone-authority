@@ -1,4 +1,4 @@
-SELECT ur.USER_CODE AS "userCode",
+SELECT DISTINCT ur.USER_CODE AS "userCode",
 ur.user_id AS "userId",
 t.PERMISSION_CODE AS "permissionCode",
 t.permission_id AS "permissionId",
