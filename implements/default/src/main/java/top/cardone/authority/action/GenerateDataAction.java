@@ -25,24 +25,14 @@ public class GenerateDataAction implements Action0 {
             String flagObjectCode = UUID.randomUUID().toString();
 
             try {
-                ApplicationContextHolder.getBean(UserGroupService.class).generateData(flagObjectCode);
-
-                //角色
-                ApplicationContextHolder.getBean(RoleService.class).generateData(flagObjectCode);
-
-                //用户组与角色
-                ApplicationContextHolder.getBean(UserGroupRoleService.class).generateData(flagObjectCode);
-
                 //用户组与用户
                 ApplicationContextHolder.getBean(UserGroupUserService.class).generateData(flagObjectCode);
 
                 //用户与角色
                 ApplicationContextHolder.getBean(UserRoleService.class).generateData(flagObjectCode);
+
                 //授权
                 ApplicationContextHolder.getBean(PermissionService.class).generateData(flagObjectCode);
-
-                //角色与授权
-                ApplicationContextHolder.getBean(RolePermissionService.class).generateData(flagObjectCode);
 
                 //用户组与授权
                 ApplicationContextHolder.getBean(UserGroupPermissionService.class).generateData(flagObjectCode);
