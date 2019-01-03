@@ -2,6 +2,7 @@ package top.cardone.authority.service.impl;
 
 import com.google.common.collect.Maps;
 import lombok.Setter;
+import lombok.val;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.CollectionUtils;
 import top.cardone.authority.dao.UserRoleDao;
@@ -47,7 +48,11 @@ public class UserRoleServiceImpl extends PageServiceImpl<UserRoleDao> implements
     @Override
     @Transactional
     public void generateData(String flagObjectCode) {
-        this.dao.generateData(flagObjectCode, null, null);
+        List<String> userCodes = this.dao.readListBySqlFileName(String.class, "readListUserCode", null);
+
+        for (val userCode : userCodes) {
+            this.dao.generateData(flagObjectCode, null, userCode);
+        }
     }
 
     @Override
