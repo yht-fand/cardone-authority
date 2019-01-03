@@ -41,10 +41,7 @@ public class GenerateDataAction implements Action0 {
                 //用户与角色
                 ApplicationContextHolder.getBean(UserRoleService.class).generateData(flagObjectCode);
 
-                ApplicationContextHolder.getBean(UserRoleService.class).executeQueryBySqlFileName("readListUserCode", null, String.class, userCode -> {
-                    ApplicationContextHolder.getBean(TaskExecutor.class, "slowTaskExecutor").execute(TaskUtils.decorateTaskWithErrorHandler(
-                            () -> ApplicationContextHolder.getBean(UserRoleService.class).generateData(flagObjectCode, null, userCode), null, true));
-                });
+                ApplicationContextHolder.getBean(UserRoleService.class).generateData(flagObjectCode);
 
                 //授权
                 ApplicationContextHolder.getBean(PermissionService.class).generateData(flagObjectCode);
@@ -58,10 +55,7 @@ public class GenerateDataAction implements Action0 {
                 //用户与授权
                 ApplicationContextHolder.getBean(UserPermissionService.class).generateData(flagObjectCode);
 
-                ApplicationContextHolder.getBean(UserPermissionService.class).executeQueryBySqlFileName("readListUserCode", null, String.class, userCode -> {
-                    ApplicationContextHolder.getBean(TaskExecutor.class, "slowTaskExecutor").execute(TaskUtils.decorateTaskWithErrorHandler(
-                            () -> ApplicationContextHolder.getBean(UserPermissionService.class).generateData(flagObjectCode, null, userCode), null, true));
-                });
+                ApplicationContextHolder.getBean(UserPermissionService.class).generateData(flagObjectCode);
 
                 Thread.sleep(3000);
             } catch (InterruptedException e) {
