@@ -28,6 +28,9 @@ public class ReadOnePermissionsFunc implements Func0<String> {
     @Setter
     private String permission = "navigation";
 
+    @Setter
+    private String[] allDataRoles = new String[]{"leader-administrator", "all-data-administrator"};
+
     private String authorizationInfoBeanName = "shiroDbRealm";
 
     @Setter
@@ -47,8 +50,12 @@ public class ReadOnePermissionsFunc implements Func0<String> {
         }
 
         // 所有数据管理角色
-        if (SecurityUtils.getSubject().hasRole("all-data-administrator") && !"navigation:view:".equals(this.permission)) {
-            return "*";
+        if (!"navigation:view:".equals(this.permission)) {
+            for (String allDataRole : allDataRoles) {
+                if (SecurityUtils.getSubject().hasRole(allDataRole)) {
+                    return "*";
+                }
+            }
         }
 
         Collection<String> stringPermissions = ApplicationContextHolder.getBean(AuthorizationInfo.class, authorizationInfoBeanName).getStringPermissions();

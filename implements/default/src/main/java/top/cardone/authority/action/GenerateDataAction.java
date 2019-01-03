@@ -1,6 +1,8 @@
 package top.cardone.authority.action;
 
 import lombok.extern.log4j.Log4j2;
+import org.springframework.core.task.TaskExecutor;
+import org.springframework.scheduling.support.TaskUtils;
 import top.cardone.authority.service.*;
 import top.cardone.context.ApplicationContextHolder;
 import top.cardone.core.util.action.Action0;
@@ -40,7 +42,8 @@ public class GenerateDataAction implements Action0 {
                 ApplicationContextHolder.getBean(UserRoleService.class).generateData(flagObjectCode);
 
                 ApplicationContextHolder.getBean(UserRoleService.class).executeQueryBySqlFileName("readListUserCode", null, String.class, userCode -> {
-                    ApplicationContextHolder.getBean(UserRoleService.class).generateData(flagObjectCode, null, userCode);
+                    ApplicationContextHolder.getBean(TaskExecutor.class, "slowTaskExecutor").execute(TaskUtils.decorateTaskWithErrorHandler(
+                            () -> ApplicationContextHolder.getBean(UserRoleService.class).generateData(flagObjectCode, null, userCode), null, true));
                 });
 
                 //授权
@@ -56,7 +59,8 @@ public class GenerateDataAction implements Action0 {
                 ApplicationContextHolder.getBean(UserPermissionService.class).generateData(flagObjectCode);
 
                 ApplicationContextHolder.getBean(UserPermissionService.class).executeQueryBySqlFileName("readListUserCode", null, String.class, userCode -> {
-                    ApplicationContextHolder.getBean(UserPermissionService.class).generateData(flagObjectCode, null, userCode);
+                    ApplicationContextHolder.getBean(TaskExecutor.class, "slowTaskExecutor").execute(TaskUtils.decorateTaskWithErrorHandler(
+                            () -> ApplicationContextHolder.getBean(UserPermissionService.class).generateData(flagObjectCode, null, userCode), null, true));
                 });
 
                 Thread.sleep(3000);
