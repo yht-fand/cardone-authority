@@ -2,6 +2,7 @@ package top.cardone.authority.dao.impl;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
+import lombok.extern.log4j.Log4j2;
 import lombok.val;
 import org.apache.commons.collections.MapUtils;
 import top.cardone.data.jdbc.dao.impl.PageDaoImpl;
@@ -13,6 +14,7 @@ import java.util.Map;
  *
  * @author yao hai tao
  */
+@Log4j2
 public class PermissionDaoImpl extends PageDaoImpl implements top.cardone.authority.dao.PermissionDao {
     @Override
     public int generateData(String flagObjectCode) {
@@ -41,6 +43,12 @@ public class PermissionDaoImpl extends PageDaoImpl implements top.cardone.author
                     this.saveListOnConflict(saveLists);
 
                     saveLists.clear();
+
+                    try {
+                        Thread.sleep(200);
+                    } catch (InterruptedException e) {
+                        log.error(e);
+                    }
                 }
             });
 
