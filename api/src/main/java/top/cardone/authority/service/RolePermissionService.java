@@ -40,16 +40,6 @@ public interface RolePermissionService extends PageService {
     default Map<String, Object> findOneByRolePermissionIdCache(Map<String, Object> findOne) {
         return this.findOneByRolePermissionId(findOne);
     }
-
-    /**
-     * 生成
-     *
-     * @return
-     */
-    @CacheEvict(allEntries = true)
-    @Transactional
-    void generateData();
-
     /**
      * 生成
      *

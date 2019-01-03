@@ -22,7 +22,7 @@ public class UserGroupUserDaoImpl extends PageDaoImpl implements top.cardone.aut
 
         val saveLists = Lists.newArrayList();
 
-        int count = this.executeBySqlFileName("findListForUser", null, mapOfColumnValues -> {
+        int count = this.executeQueryBySqlFileName("findListForUser", null, mapOfColumnValues -> {
             mapOfColumnValues.putAll(putAll);
 
             saveLists.add(mapOfColumnValues);

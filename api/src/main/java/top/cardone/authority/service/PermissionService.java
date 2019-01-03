@@ -55,16 +55,7 @@ public interface PermissionService extends PageService {
         return this.findListForTree(findList);
     }
 
-    /**
-     * 生成
-     *
-     * @return
-     */
-    @CacheEvict(allEntries = true)
-    @Transactional
-    void generateData();
-
-    /**
+      /**
      * 生成
      *
      * @param flagObjectCode 标识对象编号

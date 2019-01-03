@@ -49,15 +49,6 @@ public interface UserRoleService extends PageService {
      */
     @CacheEvict(allEntries = true)
     @Transactional
-    void generateData();
-
-    /**
-     * 生成
-     *
-     * @return
-     */
-    @CacheEvict(allEntries = true)
-    @Transactional
     void generateDataByUserId(String userId);
 
     /**
@@ -78,6 +69,10 @@ public interface UserRoleService extends PageService {
     @CacheEvict(allEntries = true)
     @Transactional
     void generateData(String flagObjectCode);
+
+    @CacheEvict(allEntries = true)
+    @Transactional
+    int generateData(String flagObjectCode, String userId, String userCode);
 
     /**
      * 读取角色集合

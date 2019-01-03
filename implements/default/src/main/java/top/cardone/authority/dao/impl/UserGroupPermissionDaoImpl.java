@@ -22,7 +22,7 @@ public class UserGroupPermissionDaoImpl extends PageDaoImpl implements top.cardo
 
         val saveLists = Lists.newArrayList();
 
-        int count = this.executeBySqlFileName("findListForRolePermission", null, mapOfColumnValues -> {
+        int count = this.executeQueryBySqlFileName("findListForRolePermission", null, mapOfColumnValues -> {
             mapOfColumnValues.putAll(putAll);
 
             saveLists.add(mapOfColumnValues);

@@ -49,15 +49,6 @@ public interface UserPermissionService extends PageService {
      */
     @CacheEvict(allEntries = true)
     @Transactional
-    void generateData();
-
-    /**
-     * 生成
-     *
-     * @return
-     */
-    @CacheEvict(allEntries = true)
-    @Transactional
     void generateDataByUserId(String userId);
 
     /**
@@ -78,6 +69,16 @@ public interface UserPermissionService extends PageService {
     @CacheEvict(allEntries = true)
     @Transactional
     void generateData(String flagObjectCode);
+
+    /**
+     * 生成
+     *
+     * @param flagObjectCode 标识对象编号
+     * @return
+     */
+    @CacheEvict(allEntries = true)
+    @Transactional
+    int generateData(String flagObjectCode, String userId, String userCode);
 
     /**
      * 读取许可集合

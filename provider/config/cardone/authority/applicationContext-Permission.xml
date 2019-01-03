@@ -39,7 +39,7 @@
                     <map>
                         <entry key="navigation" value="findListForGenerateNavigation"/>
                         <entry key="department" value="findListForGenerateDepartment"/>
-                        <entry key="user" value="findListForGenerateUser"/>
+                        <!--<entry key="user" value="findListForGenerateUser"/>-->
                     </map>
                 </entry>
             </map>

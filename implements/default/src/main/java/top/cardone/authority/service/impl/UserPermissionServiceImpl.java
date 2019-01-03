@@ -1,11 +1,8 @@
 package top.cardone.authority.service.impl;
 
 import com.google.common.collect.Maps;
-import lombok.val;
 import org.springframework.transaction.annotation.Transactional;
 import top.cardone.authority.dao.UserPermissionDao;
-import top.cardone.authority.service.UserGroupService;
-import top.cardone.context.ApplicationContextHolder;
 import top.cardone.data.service.impl.PageServiceImpl;
 
 import java.util.List;
@@ -25,12 +22,6 @@ public class UserPermissionServiceImpl extends PageServiceImpl<UserPermissionDao
     }
 
     @Override
-    @Transactional
-    public void generateData() {
-        ApplicationContextHolder.getBean(UserGroupService.class).generateData();
-    }
-
-    @Override
     public void generateDataByUserId(String userId) {
         this.dao.generateData(UUID.randomUUID().toString(), userId, null);
     }
@@ -43,9 +34,14 @@ public class UserPermissionServiceImpl extends PageServiceImpl<UserPermissionDao
     @Override
     @Transactional
     public void generateData(String flagObjectCode) {
-        this.dao.executeBySqlFileName("readListUserCode",null,String.class,userCode->{
+        this.dao.executeQueryBySqlFileName("readListUserCode", null, String.class, userCode -> {
             this.dao.generateData(flagObjectCode, null, userCode);
         });
+    }
+
+    @Override
+    public int generateData(String flagObjectCode, String userId, String userCode) {
+        return this.dao.generateData(flagObjectCode, userId, userCode);
     }
 
     @Override

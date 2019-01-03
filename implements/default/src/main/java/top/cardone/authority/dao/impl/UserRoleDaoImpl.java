@@ -27,7 +27,7 @@ public class UserRoleDaoImpl extends PageDaoImpl implements top.cardone.authorit
 
         val saveLists = Lists.newArrayList();
 
-        int count = this.executeBySqlFileName("findListForUserGroupRole", paramMap, mapOfColumnValues -> {
+        int count = this.executeQueryBySqlFileName("findListForUserGroupRole", paramMap, mapOfColumnValues -> {
             mapOfColumnValues.putAll(putAll);
 
             saveLists.add(mapOfColumnValues);

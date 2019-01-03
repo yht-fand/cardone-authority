@@ -44,15 +44,6 @@ public interface UserGroupRoleService extends PageService {
     /**
      * 生成
      *
-     * @return
-     */
-    @CacheEvict(allEntries = true)
-    @Transactional
-    void generateData();
-
-    /**
-     * 生成
-     *
      * @param flagObjectCode 标识对象编号
      * @return
      */

@@ -2,8 +2,6 @@ package top.cardone.authority.service.impl;
 
 import org.springframework.transaction.annotation.Transactional;
 import top.cardone.authority.dao.RoleDao;
-import top.cardone.authority.service.UserGroupService;
-import top.cardone.context.ApplicationContextHolder;
 import top.cardone.data.service.impl.PageServiceImpl;
 
 import java.util.List;
@@ -24,12 +22,6 @@ public class RoleServiceImpl extends PageServiceImpl<RoleDao> implements top.car
     @Override
     public List<Map<String, Object>> findListForTree(Map<String, Object> findList) {
         return this.dao.findListBySqlFileName("findListForTree", findList);
-    }
-
-    @Override
-    @Transactional
-    public void generateData() {
-        ApplicationContextHolder.getBean(UserGroupService.class).generateData();
     }
 
     @Override

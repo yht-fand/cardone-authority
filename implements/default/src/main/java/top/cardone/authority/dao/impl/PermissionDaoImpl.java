@@ -32,7 +32,7 @@ public class PermissionDaoImpl extends PageDaoImpl implements top.cardone.author
         for (Map.Entry<String, Object> generateSqlEntry : generateSqlMap.entrySet()) {
             val saveLists = Lists.newArrayList();
 
-            count += this.executeBySqlFileName((String) generateSqlEntry.getValue(), null, mapOfColumnValues -> {
+            count += this.executeQueryBySqlFileName((String) generateSqlEntry.getValue(), null, mapOfColumnValues -> {
                 mapOfColumnValues.putAll(putAll);
 
                 saveLists.add(mapOfColumnValues);

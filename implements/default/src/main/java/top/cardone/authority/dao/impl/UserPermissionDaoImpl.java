@@ -37,7 +37,7 @@ public class UserPermissionDaoImpl extends PageDaoImpl implements top.cardone.au
         for (Map.Entry<String, Object> generateSqlEntry : generateSqlMap.entrySet()) {
             val saveLists = Lists.newArrayList();
 
-            count += this.executeBySqlFileName((String) generateSqlEntry.getValue(), paramMap, mapOfColumnValues -> {
+            count += this.executeQueryBySqlFileName((String) generateSqlEntry.getValue(), paramMap, mapOfColumnValues -> {
                 mapOfColumnValues.putAll(putAll);
 
                 saveLists.add(mapOfColumnValues);
