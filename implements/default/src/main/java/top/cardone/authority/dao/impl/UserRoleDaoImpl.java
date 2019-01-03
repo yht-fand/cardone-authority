@@ -32,7 +32,7 @@ public class UserRoleDaoImpl extends PageDaoImpl implements top.cardone.authorit
 
             saveLists.add(mapOfColumnValues);
 
-            if (saveLists.size() > 500) {
+            if (saveLists.size() > 100) {
                 this.saveListOnConflict(saveLists);
 
                 saveLists.clear();

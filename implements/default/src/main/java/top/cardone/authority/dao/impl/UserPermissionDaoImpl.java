@@ -42,7 +42,7 @@ public class UserPermissionDaoImpl extends PageDaoImpl implements top.cardone.au
 
                 saveLists.add(mapOfColumnValues);
 
-                if (saveLists.size() > 500) {
+                if (saveLists.size() > 100) {
                     this.saveListOnConflict(saveLists);
 
                     saveLists.clear();
