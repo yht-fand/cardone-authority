@@ -15,4 +15,4 @@ and ugu.user_id = :userId
 <#if cardone.StringUtils.isNotBlank(userCode)>
 and ugu.user_code = :userCode
 </#if>
-limit 400000
+limit 10000
