@@ -4,14 +4,8 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import lombok.val;
 import org.apache.commons.collections.MapUtils;
-import org.springframework.jdbc.core.ColumnMapRowMapper;
-import org.springframework.jdbc.support.JdbcUtils;
-import top.cardone.context.ApplicationContextHolder;
 import top.cardone.data.jdbc.dao.impl.PageDaoImpl;
-import top.cardone.data.jdbc.support.NamedParameterJdbcOperationsSupport;
 
-import java.sql.ResultSet;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -41,11 +35,9 @@ public class UserPermissionDaoImpl extends PageDaoImpl implements top.cardone.au
         int count = 0;
 
         for (Map.Entry<String, Object> generateSqlEntry : generateSqlMap.entrySet()) {
-            String findListForGenerateSqlFilePath = this.getSqlFilePath((String) generateSqlEntry.getValue());
-
             val saveLists = Lists.newArrayList();
 
-            count += this.execute(findListForGenerateSqlFilePath, paramMap, mapOfColumnValues -> {
+            count += this.executeBySqlFileName((String) generateSqlEntry.getValue(), paramMap, mapOfColumnValues -> {
                 mapOfColumnValues.putAll(putAll);
 
                 saveLists.add(mapOfColumnValues);

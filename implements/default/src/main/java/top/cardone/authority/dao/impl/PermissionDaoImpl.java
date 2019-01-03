@@ -3,11 +3,9 @@ package top.cardone.authority.dao.impl;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import lombok.val;
-import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.collections.MapUtils;
 import top.cardone.data.jdbc.dao.impl.PageDaoImpl;
 
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -32,11 +30,9 @@ public class PermissionDaoImpl extends PageDaoImpl implements top.cardone.author
         int count = 0;
 
         for (Map.Entry<String, Object> generateSqlEntry : generateSqlMap.entrySet()) {
-            String findListForGenerateSqlFilePath = this.getSqlFilePath((String) generateSqlEntry.getValue());
-
             val saveLists = Lists.newArrayList();
 
-            count += this.execute(findListForGenerateSqlFilePath, Maps.newHashMap(), mapOfColumnValues -> {
+            count += this.executeBySqlFileName((String) generateSqlEntry.getValue(), null, mapOfColumnValues -> {
                 mapOfColumnValues.putAll(putAll);
 
                 saveLists.add(mapOfColumnValues);

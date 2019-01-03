@@ -3,10 +3,8 @@ package top.cardone.authority.dao.impl;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import lombok.val;
-import org.apache.commons.lang3.math.NumberUtils;
 import top.cardone.data.jdbc.dao.impl.PageDaoImpl;
 
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -17,8 +15,6 @@ import java.util.Map;
 public class UserGroupUserDaoImpl extends PageDaoImpl implements top.cardone.authority.dao.UserGroupUserDao {
     @Override
     public int generateData(String flagObjectCode) {
-        String findListForUserSqlFilePath = this.getSqlFilePath("findListForUser");
-
         Map<String, Object> putAll = Maps.newHashMap();
 
         putAll.put("flagCode", "generate");
@@ -26,7 +22,7 @@ public class UserGroupUserDaoImpl extends PageDaoImpl implements top.cardone.aut
 
         val saveLists = Lists.newArrayList();
 
-        int count = this.execute(findListForUserSqlFilePath, Maps.newHashMap(), mapOfColumnValues -> {
+        int count = this.executeBySqlFileName("findListForUser", null, mapOfColumnValues -> {
             mapOfColumnValues.putAll(putAll);
 
             saveLists.add(mapOfColumnValues);
@@ -43,6 +39,7 @@ public class UserGroupUserDaoImpl extends PageDaoImpl implements top.cardone.aut
 
             saveLists.clear();
         }
+
         String deleteOtherByFlagObjectCodeSqlFilePath = this.getSqlFilePath("deleteOtherByFlagObjectCode");
 
         count += this.update(deleteOtherByFlagObjectCodeSqlFilePath, putAll);

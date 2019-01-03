@@ -5,7 +5,6 @@ import com.google.common.collect.Maps;
 import lombok.val;
 import top.cardone.data.jdbc.dao.impl.PageDaoImpl;
 
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -16,8 +15,6 @@ import java.util.Map;
 public class UserGroupPermissionDaoImpl extends PageDaoImpl implements top.cardone.authority.dao.UserGroupPermissionDao {
     @Override
     public int generateData(String flagObjectCode) {
-        String findListForRolePermissionSqlFilePath = this.getSqlFilePath("findListForRolePermission");
-
         Map<String, Object> putAll = Maps.newHashMap();
 
         putAll.put("flagCode", "generate");
@@ -25,7 +22,7 @@ public class UserGroupPermissionDaoImpl extends PageDaoImpl implements top.cardo
 
         val saveLists = Lists.newArrayList();
 
-        int count = this.execute(findListForRolePermissionSqlFilePath, Maps.newHashMap(), mapOfColumnValues -> {
+        int count = this.executeBySqlFileName("findListForRolePermission", null, mapOfColumnValues -> {
             mapOfColumnValues.putAll(putAll);
 
             saveLists.add(mapOfColumnValues);

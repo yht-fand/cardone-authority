@@ -3,13 +3,8 @@ package top.cardone.authority.dao.impl;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import lombok.val;
-import org.springframework.jdbc.core.ColumnMapRowMapper;
-import org.springframework.jdbc.support.JdbcUtils;
-import top.cardone.context.ApplicationContextHolder;
 import top.cardone.data.jdbc.dao.impl.PageDaoImpl;
-import top.cardone.data.jdbc.support.NamedParameterJdbcOperationsSupport;
 
-import java.sql.ResultSet;
 import java.util.Map;
 
 /**
@@ -20,8 +15,6 @@ import java.util.Map;
 public class UserRoleDaoImpl extends PageDaoImpl implements top.cardone.authority.dao.UserRoleDao {
     @Override
     public int generateData(String flagObjectCode, String userId, String userCode) {
-        String findListForUserGroupRoleSqlFilePath = this.getSqlFilePath("findListForUserGroupRole");
-
         Map<String, Object> paramMap = Maps.newHashMap();
 
         paramMap.put("userId", userId);
@@ -34,7 +27,7 @@ public class UserRoleDaoImpl extends PageDaoImpl implements top.cardone.authorit
 
         val saveLists = Lists.newArrayList();
 
-        int count = this.execute(findListForUserGroupRoleSqlFilePath, paramMap, mapOfColumnValues -> {
+        int count = this.executeBySqlFileName("findListForUserGroupRole", paramMap, mapOfColumnValues -> {
             mapOfColumnValues.putAll(putAll);
 
             saveLists.add(mapOfColumnValues);
