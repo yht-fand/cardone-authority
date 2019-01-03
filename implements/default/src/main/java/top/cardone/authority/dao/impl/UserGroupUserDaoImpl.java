@@ -40,9 +40,7 @@ public class UserGroupUserDaoImpl extends PageDaoImpl implements top.cardone.aut
             saveLists.clear();
         }
 
-        String deleteOtherByFlagObjectCodeSqlFilePath = this.getSqlFilePath("deleteOtherByFlagObjectCode");
-
-        count += this.update(deleteOtherByFlagObjectCodeSqlFilePath, putAll);
+        count += this.updateBySqlFileName("deleteOtherByFlagObjectCode", putAll);
 
         return count;
     }

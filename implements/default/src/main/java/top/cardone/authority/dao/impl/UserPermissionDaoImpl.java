@@ -56,11 +56,9 @@ public class UserPermissionDaoImpl extends PageDaoImpl implements top.cardone.au
             }
         }
 
-        String deleteOtherByFlagObjectCodeSqlFilePath = this.getSqlFilePath("deleteOtherByFlagObjectCode");
-
         paramMap.putAll(putAll);
 
-        count += this.update(deleteOtherByFlagObjectCodeSqlFilePath, paramMap);
+        count += this.updateBySqlFileName("deleteOtherByFlagObjectCode", paramMap);
 
         return count;
     }

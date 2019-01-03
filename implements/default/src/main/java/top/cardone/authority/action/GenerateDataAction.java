@@ -9,7 +9,7 @@ import java.util.UUID;
 
 @Log4j2
 public class GenerateDataAction implements Action0 {
-    private int runNum = 0;
+    private static int runNum = 0;
 
     @Override
     public void action() {

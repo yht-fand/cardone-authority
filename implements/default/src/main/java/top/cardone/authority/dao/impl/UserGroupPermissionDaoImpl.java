@@ -40,9 +40,7 @@ public class UserGroupPermissionDaoImpl extends PageDaoImpl implements top.cardo
             saveLists.clear();
         }
 
-        String deleteOtherByFlagObjectCodeSqlFilePath = this.getSqlFilePath("deleteOtherByFlagObjectCode");
-
-        count += this.update(deleteOtherByFlagObjectCodeSqlFilePath, putAll);
+        count += this.updateBySqlFileName("deleteOtherByFlagObjectCode", putAll);
 
         return count;
     }

@@ -18,9 +18,7 @@ public class RolePermissionDaoImpl extends PageDaoImpl implements top.cardone.au
         putAll.put("flagCode", "generate");
         putAll.put("flagObjectCode", flagObjectCode);
 
-        String deleteOtherByFlagObjectCodeSqlFilePath = this.getSqlFilePath("deleteOtherByFlagObjectCode");
-
-        int count = this.update(deleteOtherByFlagObjectCodeSqlFilePath, putAll);
+        int count = this.updateBySqlFileName("deleteOtherByFlagObjectCode", putAll);
 
         return count;
     }

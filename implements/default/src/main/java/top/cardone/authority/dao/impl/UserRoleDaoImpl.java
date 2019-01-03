@@ -45,11 +45,9 @@ public class UserRoleDaoImpl extends PageDaoImpl implements top.cardone.authorit
             saveLists.clear();
         }
 
-        String deleteOtherByFlagObjectCodeSqlFilePath = this.getSqlFilePath("deleteOtherByFlagObjectCode");
-
         paramMap.putAll(putAll);
 
-        count += this.update(deleteOtherByFlagObjectCodeSqlFilePath, paramMap);
+        count += this.updateBySqlFileName("deleteOtherByFlagObjectCode", paramMap);
 
         return count;
     }

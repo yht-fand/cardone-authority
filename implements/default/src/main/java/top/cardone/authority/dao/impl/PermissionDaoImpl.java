@@ -51,9 +51,7 @@ public class PermissionDaoImpl extends PageDaoImpl implements top.cardone.author
             }
         }
 
-        String deleteOtherByFlagObjectCodeSqlFilePath = this.getSqlFilePath("deleteOtherByFlagObjectCode");
-
-        count += this.update(deleteOtherByFlagObjectCodeSqlFilePath, putAll);
+        count += this.updateBySqlFileName("deleteOtherByFlagObjectCode", putAll);
 
         return count;
     }
