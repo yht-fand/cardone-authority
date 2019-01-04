@@ -13,7 +13,9 @@ public class GenerateDataAction implements Action0 {
 
     @Override
     public void action() {
-        if (runNum > 0) {
+        if (runNum > 1) {
+            return;
+        } else if (runNum > 0) {
             runNum++;
 
             return;
