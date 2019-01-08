@@ -12,7 +12,7 @@
         <property name="corePoolSize" value="10"/>
 
         <!-- 最大线程数，默认为Integer.MAX_VALUE -->
-        <property name="maxPoolSize" value="100"/>
+        <property name="maxPoolSize" value="10"/>
 
         <!-- 线程池维护线程所允许的空闲时间，默认为60s -->
         <property name="keepAliveSeconds" value="180"/>
