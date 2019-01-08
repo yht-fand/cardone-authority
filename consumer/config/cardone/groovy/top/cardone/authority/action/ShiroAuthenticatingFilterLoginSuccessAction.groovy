@@ -5,7 +5,6 @@ import org.apache.shiro.authc.AuthenticationToken
 import org.apache.shiro.subject.Subject
 import org.springframework.core.task.TaskExecutor
 import org.springframework.scheduling.support.TaskUtils
-import org.springframework.web.client.RestTemplate
 import top.cardone.cache.Cache
 import top.cardone.configuration.service.NavigationService
 import top.cardone.context.ApplicationContextHolder
@@ -63,7 +62,6 @@ class ShiroAuthenticatingFilterLoginSuccessAction implements Action4<Authenticat
                     System.currentTimeMillis())
 
             ApplicationContextHolder.getBean(Action1.class, "top/cardone/usercenter/action/EvictUserCacheAction").action(token.getPrincipal())
-
         }, null, true))
     }
 }
