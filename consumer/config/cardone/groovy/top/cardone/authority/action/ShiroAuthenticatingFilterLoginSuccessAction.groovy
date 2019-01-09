@@ -47,6 +47,8 @@ class ShiroAuthenticatingFilterLoginSuccessAction implements Action4<Authenticat
                     readOneByFuncIdCache(Date.class, "top/cardone/authority/userGroup/func/ReadOneMaxChangeDateFunc",
                             ["userCode": token.getPrincipal()])
 
+            Thread.sleep(10)
+
             if (!dbLastModifyDate) {
                 return
             }
