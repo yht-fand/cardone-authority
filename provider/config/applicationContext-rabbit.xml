@@ -43,5 +43,5 @@
                      reply-timeout="${spring.rabbitmq.replyTimeout:120000}"
                      receive-timeout="${spring.rabbitmq.receiveTimeout:120000}"/>
 
-    <rabbit:admin connection-factory="rabbitConnectionFactory"/>
+    <rabbit:admin connection-factory="rabbitConnectionFactory" ignore-declaration-exceptions="true"/>
 </beans>

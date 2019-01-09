@@ -9,10 +9,10 @@
     <bean id="org.springframework.core.task.TaskExecutor"
           class="org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor">
         <!-- 核心线程数，默认为1 -->
-        <property name="corePoolSize" value="10"/>
+        <property name="corePoolSize" value="150"/>
 
         <!-- 最大线程数，默认为Integer.MAX_VALUE -->
-        <property name="maxPoolSize" value="10"/>
+        <property name="maxPoolSize" value="150"/>
 
         <!-- 线程池维护线程所允许的空闲时间，默认为60s -->
         <property name="keepAliveSeconds" value="180"/>
