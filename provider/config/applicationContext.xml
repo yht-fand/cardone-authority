@@ -17,6 +17,8 @@
         <!-- 线程池维护线程所允许的空闲时间，默认为60s -->
         <property name="keepAliveSeconds" value="180"/>
 
+        <property name="allowCoreThreadTimeOut" value="true"/>
+
         <property name="rejectedExecutionHandler">
             <bean class="java.util.concurrent.ThreadPoolExecutor$CallerRunsPolicy"/>
         </property>
