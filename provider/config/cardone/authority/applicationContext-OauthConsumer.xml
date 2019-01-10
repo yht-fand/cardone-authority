@@ -5,7 +5,7 @@
        default-lazy-init="true">
     <!-- 授权消费 -->
     <bean id="top.cardone.authority.dao.OauthConsumerDao"
-          class="top.cardone.authority.dao.impl.OauthConsumerDaoImpl">
+          class="top.cardone.authority.dao.impl.OauthConsumerDaoImpl" lazy-init="true">
         <property name="configTable">
             <map>
                 <entry key="config">
@@ -42,7 +42,7 @@
     </bean>
 	
     <bean id="top.cardone.authority.service.OauthConsumerService"
-          class="top.cardone.authority.service.impl.OauthConsumerServiceImpl">
+          class="top.cardone.authority.service.impl.OauthConsumerServiceImpl" lazy-init="true">
 		<property name="dao" ref="top.cardone.authority.dao.OauthConsumerDao"/>
 	</bean>
 </beans>

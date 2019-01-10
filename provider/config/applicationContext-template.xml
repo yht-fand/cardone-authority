@@ -2,10 +2,10 @@
 <beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.springframework.org/schema/beans"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
    		http://www.springframework.org/schema/beans/spring-beans.xsd">
-    <bean name="freemarker.ext.beans.BeansWrapper" class="freemarker.ext.beans.BeansWrapper"/>
+    <bean name="freemarker.ext.beans.BeansWrapper" class="freemarker.ext.beans.BeansWrapper" lazy-init="true"/>
 
     <bean id="top.cardone.template.support.TemplateSupport.default"
-          class="top.cardone.ui.freemarker.FreeMarkerConfigurationFactoryBean">
+          class="top.cardone.ui.freemarker.FreeMarkerConfigurationFactoryBean" lazy-init="true">
         <property name="freemarkerSettings">
             <props>
                 <prop key="template_update_delay">${freemarkerSettings.template_update_delay:60}</prop>
@@ -31,7 +31,7 @@
     </bean>
 
     <bean name="top.cardone.template.support.TemplateSupport"
-          class="top.cardone.template.support.impl.TemplateSupportImpl">
+          class="top.cardone.template.support.impl.TemplateSupportImpl" lazy-init="true">
         <property name="targetConfigurations">
             <map>
                 <entry key="default" value-ref="top.cardone.template.support.TemplateSupport.default"/>

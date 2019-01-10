@@ -12,7 +12,7 @@
         <property name="appGroupName" value="${app.group.name:cardone}"/>
         <property name="cacheManagerList">
             <list>
-                <bean class="org.springframework.cache.caffeine.CaffeineCacheManager" lazy-init="true"/>
+                <bean class="org.springframework.cache.caffeine.CaffeineCacheManager"/>
             </list>
         </property>
     </bean>
@@ -22,7 +22,7 @@
         <property name="appGroupName" value="${app.group.name:cardone}"/>
         <property name="cacheManagerList">
             <list>
-                <bean class="org.springframework.cache.caffeine.CaffeineCacheManager" lazy-init="true">
+                <bean class="org.springframework.cache.caffeine.CaffeineCacheManager">
                     <property name="cacheSpecification" value="expireAfterWrite=300000s"/>
                 </bean>
             </list>
@@ -31,9 +31,9 @@
 
     <cache:annotation-driven cache-resolver="cardOneCacheResolver" key-generator="cardOneKeyGenerator"/>
 
-    <bean id="cardOneKeyGenerator" class="top.cardone.cache.interceptor.CardOneKeyGenerator"/>
+    <bean id="cardOneKeyGenerator" class="top.cardone.cache.interceptor.CardOneKeyGenerator" lazy-init="true"/>
 
-    <bean id="cardOneCacheResolver" class="top.cardone.cache.interceptor.CardOneCacheResolver">
+    <bean id="cardOneCacheResolver" class="top.cardone.cache.interceptor.CardOneCacheResolver" lazy-init="true">
         <property name="cacheManager" ref="top.cardone.cache.CardOneCacheManager"/>
     </bean>
 

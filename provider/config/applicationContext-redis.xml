@@ -62,7 +62,7 @@
         <property name="channel" value="topic:cache"/>
     </bean>
 
-    <bean id="redisTopicMessageListener" class="top.cardone.cache.listener.RedisTopicMessageListener">
+    <bean id="redisTopicMessageListener" class="top.cardone.cache.listener.RedisTopicMessageListener" lazy-init="true">
         <property name="redisTemplate" ref="org.springframework.data.redis.core.RedisTemplate"/>
     </bean>
 

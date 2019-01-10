@@ -5,7 +5,7 @@
        default-lazy-init="true">
     <!-- 角色与许可 -->
     <bean id="top.cardone.authority.dao.RolePermissionDao"
-          class="top.cardone.authority.dao.impl.RolePermissionDaoImpl">
+          class="top.cardone.authority.dao.impl.RolePermissionDaoImpl" lazy-init="true">
         <property name="configTable">
             <map>
                 <entry key="config">
@@ -40,7 +40,7 @@
     </bean>
 	
     <bean id="top.cardone.authority.service.RolePermissionService"
-          class="top.cardone.authority.service.impl.RolePermissionServiceImpl">
+          class="top.cardone.authority.service.impl.RolePermissionServiceImpl" lazy-init="true">
 		<property name="dao" ref="top.cardone.authority.dao.RolePermissionDao"/>
 	</bean>
 </beans>

@@ -4,12 +4,13 @@
        xmlns:rabbit="http://www.springframework.org/schema/rabbit"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/rabbit http://www.springframework.org/schema/rabbit/spring-rabbit.xsd">
-    <bean name="rabbitmqExecutorService" class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
+    <bean name="rabbitmqExecutorService" class="org.springframework.beans.factory.config.MethodInvokingFactoryBean"
+          lazy-init="true">
         <property name="staticMethod" value="java.util.concurrent.Executors.newFixedThreadPool"/>
         <property name="arguments" value="${spring.rabbitmq.sharedExecutor.poolSize:200}"/>
     </bean>
 
-    <bean name="com.rabbitmq.client.ConnectionFactory" class="com.rabbitmq.client.ConnectionFactory">
+    <bean name="com.rabbitmq.client.ConnectionFactory" class="com.rabbitmq.client.ConnectionFactory" lazy-init="true">
         <property name="networkRecoveryInterval" value="10000"/>
         <property name="connectionTimeout" value="15000"/>
         <property name="requestedHeartbeat" value="60"/>
@@ -27,7 +28,7 @@
             connection-factory="com.rabbitmq.client.ConnectionFactory"
             executor="${spring.rabbitmq.executor:org.springframework.core.task.TaskExecutor}"/>
 
-    <bean id="amqpMessageConverter" class="top.cardone.amqp.support.converter.RpcMessageConverter"/>
+    <bean id="amqpMessageConverter" class="top.cardone.amqp.support.converter.RpcMessageConverter" lazy-init="true"/>
 
     <bean name="rabbitTemplateParnet" class="org.springframework.amqp.rabbit.core.RabbitTemplate" abstract="true">
         <property name="connectionFactory" ref="rabbitConnectionFactory"/>

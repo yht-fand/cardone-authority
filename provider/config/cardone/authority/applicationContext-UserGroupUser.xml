@@ -5,7 +5,7 @@
        default-lazy-init="true">
     <!-- 用户组与用户 -->
     <bean id="top.cardone.authority.dao.UserGroupUserDao"
-          class="top.cardone.authority.dao.impl.UserGroupUserDaoImpl">
+          class="top.cardone.authority.dao.impl.UserGroupUserDaoImpl" lazy-init="true">
         <property name="configTable">
             <map>
                 <entry key="config">
@@ -40,7 +40,7 @@
     </bean>
 	
     <bean id="top.cardone.authority.service.UserGroupUserService"
-          class="top.cardone.authority.service.impl.UserGroupUserServiceImpl">
+          class="top.cardone.authority.service.impl.UserGroupUserServiceImpl" lazy-init="true">
 		<property name="dao" ref="top.cardone.authority.dao.UserGroupUserDao"/>
 	</bean>
 </beans>

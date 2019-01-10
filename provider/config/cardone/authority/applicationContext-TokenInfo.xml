@@ -5,7 +5,7 @@
        default-lazy-init="true">
     <!-- 令牌信息 -->
     <bean id="top.cardone.authority.dao.TokenInfoDao"
-          class="top.cardone.authority.dao.impl.TokenInfoDaoImpl">
+          class="top.cardone.authority.dao.impl.TokenInfoDaoImpl" lazy-init="true">
         <property name="configTable">
             <map>
                 <entry key="config">
@@ -40,7 +40,7 @@
     </bean>
 	
     <bean id="top.cardone.authority.service.TokenInfoService"
-          class="top.cardone.authority.service.impl.TokenInfoServiceImpl">
+          class="top.cardone.authority.service.impl.TokenInfoServiceImpl" lazy-init="true">
 		<property name="dao" ref="top.cardone.authority.dao.TokenInfoDao"/>
 	</bean>
 </beans>

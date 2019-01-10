@@ -5,6 +5,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
            http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
     <bean id="dataSourceParent" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close"
+          lazy-init="true"
           abstract="true">
         <property name="timeBetweenLogStatsMillis" value="300000"/>
         <property name="proxyFilters">
@@ -47,7 +48,7 @@
         <property name="maxOpenPreparedStatements" value="${dataSource.master_1.maxOpenPreparedStatements}"/>
     </bean>
 
-    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager" lazy-init="true">
         <property name="dataSource" ref="top.cardone.dataSource.master_1"/>
     </bean>
 
@@ -55,23 +56,23 @@
     <tx:annotation-driven order="100"/>
 
     <bean name="org.springframework.jdbc.core.namedparam.NamedParameterJdbcOperations"
-          class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate">
+          class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate" lazy-init="true">
         <constructor-arg ref="top.cardone.dataSource.master_1"></constructor-arg>
     </bean>
 
     <bean name="org.springframework.jdbc.core.JdbcOperations"
-          class="org.springframework.jdbc.core.JdbcTemplate">
+          class="org.springframework.jdbc.core.JdbcTemplate" lazy-init="true">
         <constructor-arg ref="top.cardone.dataSource.master_1"></constructor-arg>
     </bean>
 
     <bean id="org.springframework.jdbc.support.lob.LobHandler"
-          class="org.springframework.jdbc.support.lob.DefaultLobHandler"/>
+          class="org.springframework.jdbc.support.lob.DefaultLobHandler" lazy-init="true"/>
 
-    <bean id="parseSqlFunc" class="top.cardone.data.func.SqlParseFunc"/>
+    <bean id="parseSqlFunc" class="top.cardone.data.func.SqlParseFunc" lazy-init="true"/>
 
     <bean id="top.cardone.data.jdbc.support.JdbcOperationsSupport"
-          class="top.cardone.data.jdbc.support.impl.JdbcOperationsSupportImpl"/>
+          class="top.cardone.data.jdbc.support.impl.JdbcOperationsSupportImpl" lazy-init="true"/>
 
     <bean id="top.cardone.data.jdbc.support.NamedParameterJdbcOperationsSupport"
-          class="top.cardone.data.jdbc.support.impl.NamedParameterJdbcOperationsSupportImpl"/>
+          class="top.cardone.data.jdbc.support.impl.NamedParameterJdbcOperationsSupportImpl" lazy-init="true"/>
 </beans>

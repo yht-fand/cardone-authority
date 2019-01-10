@@ -26,7 +26,7 @@
         <property name="freemarkerVariables">
             <map>
                 <entry key="beansWrapperFn">
-                    <bean class="freemarker.ext.beans.BeansWrapper"/>
+                    <bean class="freemarker.ext.beans.BeansWrapper" lazy-init="true"/>
                 </entry>
             </map>
         </property>

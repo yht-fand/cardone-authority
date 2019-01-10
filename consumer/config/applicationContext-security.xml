@@ -3,9 +3,9 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
     <description>Shiro安全配置</description>
 
-    <bean name="shiroCacheManager" class="top.cardone.security.shiro.cache.impl.CacheManagerImpl"/>
+    <bean name="shiroCacheManager" class="top.cardone.security.shiro.cache.impl.CacheManagerImpl" lazy-init="true"/>
 
-    <bean id="shiroDbRealm" class="top.cardone.security.shiro.realm.impl.StatelessRealmImpl">
+    <bean id="shiroDbRealm" class="top.cardone.security.shiro.realm.impl.StatelessRealmImpl" lazy-init="true">
         <property name="cachingEnabled" value="false"/>
         <property name="authenticationCachingEnabled" value="false"/>
         <property name="authorizationCachingEnabled" value="false"/>
@@ -13,7 +13,7 @@
         <property name="readListRoleFuncName" value="readListRoleCodeFunc"/>
     </bean>
 
-    <bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
+    <bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager" lazy-init="true">
         <property name="realm" ref="shiroDbRealm"/>
         <property name="sessionManager">
             <bean class="org.apache.shiro.web.session.mgt.DefaultWebSessionManager">
