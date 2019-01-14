@@ -34,9 +34,8 @@ public class UserPermissionServiceImpl extends PageServiceImpl<UserPermissionDao
     @Override
     @Transactional
     public void generateData(String flagObjectCode) {
-        this.dao.executeQueryBySqlFileName("readListUserCode", null, String.class, userCode -> {
-            this.dao.generateData(flagObjectCode, null, userCode);
-        });
+        this.dao.executeQueryBySqlFileName("readListUserCode", null, String.class, userCode ->
+                this.dao.generateData(flagObjectCode, null, userCode));
     }
 
     @Override
