@@ -79,7 +79,7 @@
             }
 
             new top.cardone.data.listener.GenerateListener(serviceBeanId: "top.cardone.authority.service.UserGroupUserService",
-                    saveList: [[variableCode: "userGroup", value: "yes"]])
+                    actionBeanNames: ["top/cardone/authority/action/ChageUserGroupUserAction"])
             ]]>
         </lang:inline-script>
     </lang:groovy>
@@ -111,7 +111,7 @@
             }
 
             new top.cardone.data.listener.GenerateListener(serviceBeanId: "top.cardone.authority.service.UserRoleService",
-                    saveList: [[variableCode: "userGroup", value: "yes"]])
+                    actionBeanNames: ["top/cardone/authority/action/ChageUserRoleAction"])
             ]]>
         </lang:inline-script>
     </lang:groovy>
