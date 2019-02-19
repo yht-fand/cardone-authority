@@ -1,0 +1,24 @@
+{
+  "validation": {
+    "rules": {
+      "permissionMapperId": {
+        "required": true
+      },
+      "name": {
+        "required": true,
+        "minlength": 4,
+        "maxlength": 255
+      }
+    },
+    "messages": {
+      "permissionMapperId": {
+        "required": "许可映射标识必填"
+      },
+      "name": {
+        "required": "许可映射名称必填",
+        "minlength": "许可映射名称需{0}个字符以上",
+        "maxlength": "许可映射名称需小于{0}个字符"
+      }
+    }
+  }
+}

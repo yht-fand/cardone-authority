@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:rabbit="http://www.springframework.org/schema/rabbit"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/rabbit http://www.springframework.org/schema/rabbit/spring-rabbit.xsd">
+    <rabbit:direct-exchange
+            name="exchange:cardone-authority-${cardone-authority-version}:top.cardone.authority.service.PermissionMapperService">
+        <rabbit:bindings>
+            <rabbit:binding
+                    queue="queue:cardone-authority-${cardone-authority-version}:top.cardone.authority.service.PermissionMapperService"
+                    key="queue:cardone-authority-${cardone-authority-version}:top.cardone.authority.service.PermissionMapperService"/>
+        </rabbit:bindings>
+    </rabbit:direct-exchange>
+
+    <rabbit:queue
+            name="queue:cardone-authority-${cardone-authority-version}:top.cardone.authority.service.PermissionMapperService"/>
+
+    <bean id="top.cardone.authority.service.PermissionMapperServiceExporter" parent="remoteInvocationExecutorParnet">
+        <property name="serviceInterface" value="top.cardone.authority.service.PermissionMapperService"/>
+        <property name="service" ref="top.cardone.authority.service.PermissionMapperService"/>
+    </bean>
+
+    <rabbit:listener-container message-converter="amqpMessageConverter" connection-factory="rabbitConnectionFactory" concurrency="1" max-concurrency="${spring.rabbitmq.listener.container.maxConcurrency:10}">
+        <rabbit:listener ref="top.cardone.authority.service.PermissionMapperServiceExporter"
+                         queue-names="queue:cardone-authority-${cardone-authority-version}:top.cardone.authority.service.PermissionMapperService"/>
+    </rabbit:listener-container>
+</beans>

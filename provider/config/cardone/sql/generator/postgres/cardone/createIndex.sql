@@ -248,6 +248,84 @@
 --drop index IF EXISTS idx_c1_permission_type_code;
 --create index IF NOT EXISTS idx_c1_permission_type_code ON c1_permission ("type_code" varchar_pattern_ops);
 
+-- 许可映射（c1_permission_mapper）
+
+--业务代码
+--drop index IF EXISTS idx_c1_permission_mapper_business_code;
+--create UNIQUE index IF NOT EXISTS idx_c1_permission_mapper_business_code ON c1_permission_mapper ("code");
+--批次编号
+--drop index IF EXISTS idx_c1_permission_mapper_batch_no;
+--create index IF NOT EXISTS idx_c1_permission_mapper_batch_no ON c1_permission_mapper ("batch_no" varchar_pattern_ops);
+--开始日期
+--drop index IF EXISTS idx_c1_permission_mapper_begin_date;
+--create index IF NOT EXISTS idx_c1_permission_mapper_begin_date ON c1_permission_mapper ("begin_date");
+--创建人编号
+--drop index IF EXISTS idx_c1_permission_mapper_created_by_code;
+--create index IF NOT EXISTS idx_c1_permission_mapper_created_by_code ON c1_permission_mapper ("created_by_code" varchar_pattern_ops);
+--创建人标识
+--drop index IF EXISTS idx_c1_permission_mapper_created_by_id;
+--create index IF NOT EXISTS idx_c1_permission_mapper_created_by_id ON c1_permission_mapper ("created_by_id" varchar_pattern_ops);
+--创建日期
+--drop index IF EXISTS idx_c1_permission_mapper_created_date;
+--create index IF NOT EXISTS idx_c1_permission_mapper_created_date ON c1_permission_mapper ("created_date");
+--数据状态编号(数据字典)
+--drop index IF EXISTS idx_c1_permission_mapper_data_state_code;
+--create index IF NOT EXISTS idx_c1_permission_mapper_data_state_code ON c1_permission_mapper ("data_state_code" varchar_pattern_ops);
+--部门编号
+--drop index IF EXISTS idx_c1_permission_mapper_department_code;
+--create index IF NOT EXISTS idx_c1_permission_mapper_department_code ON c1_permission_mapper ("department_code" varchar_pattern_ops);
+--结束日期
+--drop index IF EXISTS idx_c1_permission_mapper_end_date;
+--create index IF NOT EXISTS idx_c1_permission_mapper_end_date ON c1_permission_mapper ("end_date");
+--标记编号(数据字典：工作流、同步、生成、录入、审批)
+--drop index IF EXISTS idx_c1_permission_mapper_flag_code;
+--create index IF NOT EXISTS idx_c1_permission_mapper_flag_code ON c1_permission_mapper ("flag_code" varchar_pattern_ops);
+--最后修改人编号
+--drop index IF EXISTS idx_c1_permission_mapper_last_modified_by_code;
+--create index IF NOT EXISTS idx_c1_permission_mapper_last_modified_by_code ON c1_permission_mapper ("last_modified_by_code" varchar_pattern_ops);
+--最后修改人标识
+--drop index IF EXISTS idx_c1_permission_mapper_last_modified_by_id;
+--create index IF NOT EXISTS idx_c1_permission_mapper_last_modified_by_id ON c1_permission_mapper ("last_modified_by_id" varchar_pattern_ops);
+--最后修改日期
+--drop index IF EXISTS idx_c1_permission_mapper_last_modified_date;
+--create index IF NOT EXISTS idx_c1_permission_mapper_last_modified_date ON c1_permission_mapper ("last_modified_date");
+--映射编号
+--drop index IF EXISTS idx_c1_permission_mapper_mapper_code;
+--create index IF NOT EXISTS idx_c1_permission_mapper_mapper_code ON c1_permission_mapper ("mapper_code" varchar_pattern_ops);
+--排序
+--drop index IF EXISTS idx_c1_permission_mapper_order_by_;
+--create index IF NOT EXISTS idx_c1_permission_mapper_order_by_ ON c1_permission_mapper ("order_by_");
+--组织编号
+--drop index IF EXISTS idx_c1_permission_mapper_org_code;
+--create index IF NOT EXISTS idx_c1_permission_mapper_org_code ON c1_permission_mapper ("org_code" varchar_pattern_ops);
+--许可编号
+--drop index IF EXISTS idx_c1_permission_mapper_permission_code;
+--create index IF NOT EXISTS idx_c1_permission_mapper_permission_code ON c1_permission_mapper ("permission_code" varchar_pattern_ops);
+--许可标识
+--drop index IF EXISTS idx_c1_permission_mapper_permission_id;
+--create index IF NOT EXISTS idx_c1_permission_mapper_permission_id ON c1_permission_mapper ("permission_id" varchar_pattern_ops);
+--许可映射标识
+--drop index IF EXISTS idx_c1_permission_mapper_permission_mapper_id;
+--create index IF NOT EXISTS idx_c1_permission_mapper_permission_mapper_id ON c1_permission_mapper ("permission_mapper_id" varchar_pattern_ops);
+--个人编号
+--drop index IF EXISTS idx_c1_permission_mapper_personal_code;
+--create index IF NOT EXISTS idx_c1_permission_mapper_personal_code ON c1_permission_mapper ("personal_code" varchar_pattern_ops);
+--个人标识
+--drop index IF EXISTS idx_c1_permission_mapper_personal_id;
+--create index IF NOT EXISTS idx_c1_permission_mapper_personal_id ON c1_permission_mapper ("personal_id" varchar_pattern_ops);
+--站点编号
+--drop index IF EXISTS idx_c1_permission_mapper_site_code;
+--create index IF NOT EXISTS idx_c1_permission_mapper_site_code ON c1_permission_mapper ("site_code" varchar_pattern_ops);
+--状态编号(数据字典)
+--drop index IF EXISTS idx_c1_permission_mapper_state_code;
+--create index IF NOT EXISTS idx_c1_permission_mapper_state_code ON c1_permission_mapper ("state_code" varchar_pattern_ops);
+--系统信息编号
+--drop index IF EXISTS idx_c1_permission_mapper_system_info_code;
+--create index IF NOT EXISTS idx_c1_permission_mapper_system_info_code ON c1_permission_mapper ("system_info_code" varchar_pattern_ops);
+--类别编号(数据字典)
+--drop index IF EXISTS idx_c1_permission_mapper_type_code;
+--create index IF NOT EXISTS idx_c1_permission_mapper_type_code ON c1_permission_mapper ("type_code" varchar_pattern_ops);
+
 -- 角色（c1_role）
 
 --业务代码
@@ -902,6 +980,10 @@ ALTER TABLE "c1_user_role" ALTER COLUMN "json_data" TYPE jsonb;
 --- sql end ---
 
 ALTER TABLE "c1_permission" ALTER COLUMN "json_data" TYPE jsonb;
+
+--- sql end ---
+
+ALTER TABLE "c1_permission_mapper" ALTER COLUMN "json_data" TYPE jsonb;
 
 --- sql end ---
 

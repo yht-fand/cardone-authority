@@ -1,0 +1,14 @@
+{
+  "validation": {
+    "rules": {
+      "permissionMapperIds": {
+        "required": true
+      }
+    },
+    "messages": {
+      "permissionMapperIds": {
+        "required": "许可映射标识集合必填"
+      }
+    }
+  }
+}
