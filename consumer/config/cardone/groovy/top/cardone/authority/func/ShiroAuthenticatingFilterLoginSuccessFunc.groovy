@@ -45,7 +45,7 @@ class ShiroAuthenticatingFilterLoginSuccessFunc implements Func4<Boolean, Authen
         ApplicationContextHolder.getBean(TaskExecutor.class, "slowTaskExecutor").execute(TaskUtils.decorateTaskWithErrorHandler({
             Date dbLastModifyDate = ApplicationContextHolder.getBean(NavigationService.class).
                     readOneByFuncIdCache(Date.class, "top/cardone/authority/userGroup/func/ReadOneMaxChangeDateFunc",
-                            ["userCode": token.getPrincipal()])
+                            ["userCode": authenticationToken.getPrincipal()])
 
             Thread.sleep(10)
 
@@ -60,10 +60,10 @@ class ShiroAuthenticatingFilterLoginSuccessFunc implements Func4<Boolean, Authen
             ApplicationContextHolder.getBean(Cache.class, cacheBeanName).put(
                     ShiroAuthenticatingFilterLoginSuccessFunc.class.getName(),
                     1,
-                    token.getPrincipal(),
+                    authenticationToken.getPrincipal(),
                     System.currentTimeMillis())
 
-            ApplicationContextHolder.getBean(Action1.class, "top/cardone/usercenter/action/EvictUserCacheAction").action(token.getPrincipal())
+            ApplicationContextHolder.getBean(Action1.class, "top/cardone/usercenter/action/EvictUserCacheAction").action(authenticationToken.getPrincipal())
         }, null, true))
 
         return true
