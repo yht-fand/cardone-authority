@@ -1,0 +1,2 @@
+DELETE FROM C1_USER_GROUP_USER WHERE
+INSTR(','||:userGroupUserIds||',', ','||USER_GROUP_USER_ID||',') > 0

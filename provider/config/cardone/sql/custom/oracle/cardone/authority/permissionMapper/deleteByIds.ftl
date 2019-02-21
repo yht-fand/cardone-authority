@@ -1,0 +1,2 @@
+DELETE FROM C1_PERMISSION_MAPPER WHERE
+INSTR(','||:permissionMapperIds||',', ','||PERMISSION_MAPPER_ID||',') > 0

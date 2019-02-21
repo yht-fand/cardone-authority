@@ -1,0 +1,2 @@
+DELETE FROM C1_ROLE_PERMISSION WHERE
+INSTR(','||:rolePermissionIds||',', ','||ROLE_PERMISSION_ID||',') > 0

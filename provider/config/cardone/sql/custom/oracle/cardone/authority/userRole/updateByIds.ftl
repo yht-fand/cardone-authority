@@ -1,0 +1,2 @@
+UPDATE C1_USER_ROLE SET END_DATE = SYSDATE, DATA_STATE_CODE = '0' WHERE
+INSTR(','||:userRoleIds||',', ','||USER_ROLE_ID||',') > 0

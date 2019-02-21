@@ -1,0 +1,2 @@
+DELETE FROM C1_USER_PERMISSION WHERE
+INSTR(','||:userPermissionIds||',', ','||USER_PERMISSION_ID||',') > 0
