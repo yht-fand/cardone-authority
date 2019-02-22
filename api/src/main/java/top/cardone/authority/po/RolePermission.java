@@ -113,7 +113,7 @@ public class RolePermission implements java.io.Serializable {
      */
     @lombok.Getter
     @lombok.Setter
-    protected Long orderBy;
+    protected Integer orderBy;
 
     /**
      * 组织编号

@@ -25,7 +25,7 @@ JSON_DATA|YES|Object(4000)|json数据
 LAST_MODIFIED_BY_CODE|YES|String(64)|最后修改人编号
 LAST_MODIFIED_BY_ID|YES|String(64)|最后修改人标识
 LAST_MODIFIED_DATE|YES|Date(11)|最后修改日期
-ORDER_BY_|YES|Long(0)|排序
+ORDER_BY_|YES|Integer(38)|排序
 ORG_CODE|YES|String(64)|组织编号
 PERMISSION_CODE|YES|String(256)|许可编号
 PERMISSION_ID|YES|String(255)|许可标识
@@ -57,7 +57,7 @@ JSON_DATA|YES|Object(4000)|json数据
 LAST_MODIFIED_BY_CODE|YES|String(64)|最后修改人编号
 LAST_MODIFIED_BY_ID|YES|String(64)|最后修改人标识
 LAST_MODIFIED_DATE|YES|Date(11)|最后修改日期
-ORDER_BY_|YES|Long(0)|排序
+ORDER_BY_|YES|Integer(38)|排序
 ORG_CODE|YES|String(64)|组织编号
 PERSONAL_CODE|YES|String(64)|个人编号
 PERSONAL_ID|YES|String(64)|个人标识
@@ -90,7 +90,7 @@ LAST_MODIFIED_BY_CODE|YES|String(64)|最后修改人编号
 LAST_MODIFIED_BY_ID|YES|String(64)|最后修改人标识
 LAST_MODIFIED_DATE|YES|Date(11)|最后修改日期
 NAME|YES|String(128)|名称
-ORDER_BY_|YES|Long(0)|排序
+ORDER_BY_|YES|Integer(38)|排序
 ORG_CODE|YES|String(64)|组织编号
 PARENT_CODE|YES|String(64)|父级编号
 PARENT_ID|YES|String(64)|父级标识
@@ -126,7 +126,7 @@ LAST_MODIFIED_BY_CODE|YES|String(64)|最后修改人编号
 LAST_MODIFIED_BY_ID|YES|String(64)|最后修改人标识
 LAST_MODIFIED_DATE|YES|Date(11)|最后修改日期
 MAPPER_CODE|YES|String(256)|映射编号
-ORDER_BY_|YES|Long(0)|排序
+ORDER_BY_|YES|Integer(38)|排序
 ORG_CODE|YES|String(64)|组织编号
 PERMISSION_CODE|YES|String(256)|许可编号
 PERMISSION_ID|YES|String(255)|许可标识
@@ -158,7 +158,7 @@ LAST_MODIFIED_BY_CODE|YES|String(64)|最后修改人编号
 LAST_MODIFIED_BY_ID|YES|String(64)|最后修改人标识
 LAST_MODIFIED_DATE|YES|Date(11)|最后修改日期
 NAME|YES|String(128)|名称
-ORDER_BY_|YES|Long(0)|排序
+ORDER_BY_|YES|Integer(38)|排序
 ORG_CODE|YES|String(64)|组织编号
 PARENT_CODE|YES|String(64)|父级编号
 PARENT_ID|YES|String(64)|父级标识
@@ -193,7 +193,7 @@ JSON_DATA|YES|Object(4000)|json数据
 LAST_MODIFIED_BY_CODE|YES|String(64)|最后修改人编号
 LAST_MODIFIED_BY_ID|YES|String(64)|最后修改人标识
 LAST_MODIFIED_DATE|YES|Date(11)|最后修改日期
-ORDER_BY_|YES|Long(0)|排序
+ORDER_BY_|YES|Integer(38)|排序
 ORG_CODE|YES|String(64)|组织编号
 PERMISSION_CODE|YES|String(256)|许可编号
 PERMISSION_ID|YES|String(255)|许可标识
@@ -226,7 +226,7 @@ LAST_MODIFIED_BY_CODE|YES|String(64)|最后修改人编号
 LAST_MODIFIED_BY_ID|YES|String(64)|最后修改人标识
 LAST_MODIFIED_DATE|YES|Date(11)|最后修改日期
 NAME|YES|String(128)|名称
-ORDER_BY_|YES|Long(0)|排序
+ORDER_BY_|YES|Integer(38)|排序
 ORG_CODE|YES|String(64)|组织编号
 PARENT_CODE|YES|String(64)|父级编号
 PARENT_ID|YES|String(64)|父级标识
@@ -261,7 +261,7 @@ JSON_DATA|YES|Object(4000)|json数据
 LAST_MODIFIED_BY_CODE|YES|String(64)|最后修改人编号
 LAST_MODIFIED_BY_ID|YES|String(64)|最后修改人标识
 LAST_MODIFIED_DATE|YES|Date(11)|最后修改日期
-ORDER_BY_|YES|Long(0)|排序
+ORDER_BY_|YES|Integer(38)|排序
 ORG_CODE|YES|String(64)|组织编号
 PERMISSION_CODE|YES|String(256)|许可编号
 PERMISSION_ID|YES|String(255)|许可标识
@@ -293,7 +293,7 @@ JSON_DATA|YES|Object(4000)|json数据
 LAST_MODIFIED_BY_CODE|YES|String(64)|最后修改人编号
 LAST_MODIFIED_BY_ID|YES|String(64)|最后修改人标识
 LAST_MODIFIED_DATE|YES|Date(11)|最后修改日期
-ORDER_BY_|YES|Long(0)|排序
+ORDER_BY_|YES|Integer(38)|排序
 ORG_CODE|YES|String(64)|组织编号
 PERSONAL_CODE|YES|String(64)|个人编号
 PERSONAL_ID|YES|String(64)|个人标识
@@ -325,7 +325,7 @@ JSON_DATA|YES|Object(4000)|json数据
 LAST_MODIFIED_BY_CODE|YES|String(64)|最后修改人编号
 LAST_MODIFIED_BY_ID|YES|String(64)|最后修改人标识
 LAST_MODIFIED_DATE|YES|Date(11)|最后修改日期
-ORDER_BY_|YES|Long(0)|排序
+ORDER_BY_|YES|Integer(38)|排序
 ORG_CODE|YES|String(64)|组织编号
 PERSONAL_CODE|YES|String(64)|个人编号
 PERSONAL_ID|YES|String(64)|个人标识
@@ -359,7 +359,7 @@ LAST_MODIFIED_BY_CODE|YES|String(64)|最后修改人编号
 LAST_MODIFIED_BY_ID|YES|String(64)|最后修改人标识
 LAST_MODIFIED_DATE|YES|Date(11)|最后修改日期
 OAUTH_CONSUMER_ID|NO|String(255)|授权消费标识
-ORDER_BY_|YES|Long(0)|排序
+ORDER_BY_|YES|Integer(38)|排序
 ORG_CODE|YES|String(64)|组织编号
 PERSONAL_CODE|YES|String(64)|个人编号
 PERSONAL_ID|YES|String(64)|个人标识
@@ -387,7 +387,7 @@ JSON_DATA|YES|Object(4000)|json数据
 LAST_MODIFIED_BY_CODE|YES|String(64)|最后修改人编号
 LAST_MODIFIED_BY_ID|YES|String(64)|最后修改人标识
 LAST_MODIFIED_DATE|YES|Date(11)|最后修改日期
-ORDER_BY_|YES|Long(0)|排序
+ORDER_BY_|YES|Integer(38)|排序
 ORG_CODE|YES|String(64)|组织编号
 PERSONAL_CODE|YES|String(64)|个人编号
 PERSONAL_ID|YES|String(64)|个人标识
