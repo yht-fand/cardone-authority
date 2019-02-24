@@ -3,7 +3,7 @@ package top.cardone.func.v1.authority.userGroup;
 import com.google.common.base.Charsets;
 import com.google.common.collect.Maps;
 import com.google.gson.Gson;
-import top.cardone.ConsumerApplication;
+import top.cardone.CardoneConsumerApplication;
 import lombok.extern.log4j.Log4j2;
 import lombok.val;
 import org.apache.commons.io.FileUtils;
@@ -24,7 +24,7 @@ import java.util.Map;
 
 @Log4j2
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringBootTest(classes = ConsumerApplication.class, value = {"spring.profiles.active=test"}, webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
+@SpringBootTest(classes = CardoneConsumerApplication.class, value = {"spring.profiles.active=test"}, webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
 public class D0001FuncTest {
     @Value("http://localhost:${server.port:8765}${server.servlet.context-path:}/v1/authority/userGroup/d0001.json")
     private String funcUrl;

@@ -221,7 +221,7 @@ ${prefixName?string('  ', ', ')}:insert_systemInfoCode_value
 ${prefixName?string('  ', ', ')}:insert_version_value
 <#assign prefixName = false>
 </#if>
-WHERE NOT EXISTS (SELECT 1 FROM C1_ROLE_PERMISSION E
+FROM DUAL WHERE NOT EXISTS (SELECT 1 FROM C1_ROLE_PERMISSION E
 <#assign prefixName = true>
 <#if (where_and_eq_batchNo??)>
 <#if (where_and_eq_batchNo_value??)>
