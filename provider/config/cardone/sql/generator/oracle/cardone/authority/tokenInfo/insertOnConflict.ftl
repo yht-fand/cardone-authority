@@ -2,115 +2,115 @@ MERGE INTO C1_TOKEN_INFO A USING
 (SELECT
 <#assign prefixName = true>
 <#if (index_batchNo??)>
-${prefixName?string('', ', ')} :index_batchNo_value AS BATCH_NO
+${prefixName?string('', 'AND ')} :index_batchNo_value AS BATCH_NO
 <#assign prefixName = false>
 </#if>
 <#if (index_beginDate??)>
-${prefixName?string('', ', ')} :index_beginDate_value AS BEGIN_DATE
+${prefixName?string('', 'AND ')} :index_beginDate_value AS BEGIN_DATE
 <#assign prefixName = false>
 </#if>
 <#if (index_clientId??)>
-${prefixName?string('', ', ')} :index_clientId_value AS CLIENT_ID
+${prefixName?string('', 'AND ')} :index_clientId_value AS CLIENT_ID
 <#assign prefixName = false>
 </#if>
 <#if (index_createdByCode??)>
-${prefixName?string('', ', ')} :index_createdByCode_value AS CREATED_BY_CODE
+${prefixName?string('', 'AND ')} :index_createdByCode_value AS CREATED_BY_CODE
 <#assign prefixName = false>
 </#if>
 <#if (index_createdById??)>
-${prefixName?string('', ', ')} :index_createdById_value AS CREATED_BY_ID
+${prefixName?string('', 'AND ')} :index_createdById_value AS CREATED_BY_ID
 <#assign prefixName = false>
 </#if>
 <#if (index_createdDate??)>
-${prefixName?string('', ', ')} :index_createdDate_value AS CREATED_DATE
+${prefixName?string('', 'AND ')} :index_createdDate_value AS CREATED_DATE
 <#assign prefixName = false>
 </#if>
 <#if (index_dataStateCode??)>
-${prefixName?string('', ', ')} :index_dataStateCode_value AS DATA_STATE_CODE
+${prefixName?string('', 'AND ')} :index_dataStateCode_value AS DATA_STATE_CODE
 <#assign prefixName = false>
 </#if>
 <#if (index_departmentCode??)>
-${prefixName?string('', ', ')} :index_departmentCode_value AS DEPARTMENT_CODE
+${prefixName?string('', 'AND ')} :index_departmentCode_value AS DEPARTMENT_CODE
 <#assign prefixName = false>
 </#if>
 <#if (index_endDate??)>
-${prefixName?string('', ', ')} :index_endDate_value AS END_DATE
+${prefixName?string('', 'AND ')} :index_endDate_value AS END_DATE
 <#assign prefixName = false>
 </#if>
 <#if (index_flagCode??)>
-${prefixName?string('', ', ')} :index_flagCode_value AS FLAG_CODE
+${prefixName?string('', 'AND ')} :index_flagCode_value AS FLAG_CODE
 <#assign prefixName = false>
 </#if>
 <#if (index_flagObjectCode??)>
-${prefixName?string('', ', ')} :index_flagObjectCode_value AS FLAG_OBJECT_CODE
+${prefixName?string('', 'AND ')} :index_flagObjectCode_value AS FLAG_OBJECT_CODE
 <#assign prefixName = false>
 </#if>
 <#if (index_jsonData??)>
-${prefixName?string('', ', ')} :index_jsonData_value AS JSON_DATA
+${prefixName?string('', 'AND ')} :index_jsonData_value AS JSON_DATA
 <#assign prefixName = false>
 </#if>
 <#if (index_lastModifiedByCode??)>
-${prefixName?string('', ', ')} :index_lastModifiedByCode_value AS LAST_MODIFIED_BY_CODE
+${prefixName?string('', 'AND ')} :index_lastModifiedByCode_value AS LAST_MODIFIED_BY_CODE
 <#assign prefixName = false>
 </#if>
 <#if (index_lastModifiedById??)>
-${prefixName?string('', ', ')} :index_lastModifiedById_value AS LAST_MODIFIED_BY_ID
+${prefixName?string('', 'AND ')} :index_lastModifiedById_value AS LAST_MODIFIED_BY_ID
 <#assign prefixName = false>
 </#if>
 <#if (index_lastModifiedDate??)>
-${prefixName?string('', ', ')} :index_lastModifiedDate_value AS LAST_MODIFIED_DATE
+${prefixName?string('', 'AND ')} :index_lastModifiedDate_value AS LAST_MODIFIED_DATE
 <#assign prefixName = false>
 </#if>
 <#if (index_orderBy??)>
-${prefixName?string('', ', ')} :index_orderBy_value AS ORDER_BY_
+${prefixName?string('', 'AND ')} :index_orderBy_value AS ORDER_BY_
 <#assign prefixName = false>
 </#if>
 <#if (index_orgCode??)>
-${prefixName?string('', ', ')} :index_orgCode_value AS ORG_CODE
+${prefixName?string('', 'AND ')} :index_orgCode_value AS ORG_CODE
 <#assign prefixName = false>
 </#if>
 <#if (index_personalCode??)>
-${prefixName?string('', ', ')} :index_personalCode_value AS PERSONAL_CODE
+${prefixName?string('', 'AND ')} :index_personalCode_value AS PERSONAL_CODE
 <#assign prefixName = false>
 </#if>
 <#if (index_personalId??)>
-${prefixName?string('', ', ')} :index_personalId_value AS PERSONAL_ID
+${prefixName?string('', 'AND ')} :index_personalId_value AS PERSONAL_ID
 <#assign prefixName = false>
 </#if>
 <#if (index_scope??)>
-${prefixName?string('', ', ')} :index_scope_value AS SCOPE
+${prefixName?string('', 'AND ')} :index_scope_value AS SCOPE
 <#assign prefixName = false>
 </#if>
 <#if (index_siteCode??)>
-${prefixName?string('', ', ')} :index_siteCode_value AS SITE_CODE
+${prefixName?string('', 'AND ')} :index_siteCode_value AS SITE_CODE
 <#assign prefixName = false>
 </#if>
 <#if (index_stateCode??)>
-${prefixName?string('', ', ')} :index_stateCode_value AS STATE_CODE
+${prefixName?string('', 'AND ')} :index_stateCode_value AS STATE_CODE
 <#assign prefixName = false>
 </#if>
 <#if (index_systemInfoCode??)>
-${prefixName?string('', ', ')} :index_systemInfoCode_value AS SYSTEM_INFO_CODE
+${prefixName?string('', 'AND ')} :index_systemInfoCode_value AS SYSTEM_INFO_CODE
 <#assign prefixName = false>
 </#if>
 <#if (index_tokenInfoCode??)>
-${prefixName?string('', ', ')} :index_tokenInfoCode_value AS TOKEN_INFO_CODE
+${prefixName?string('', 'AND ')} :index_tokenInfoCode_value AS TOKEN_INFO_CODE
 <#assign prefixName = false>
 </#if>
 <#if (index_tokenInfoId??)>
-${prefixName?string('', ', ')} :index_tokenInfoId_value AS TOKEN_INFO_ID
+${prefixName?string('', 'AND ')} :index_tokenInfoId_value AS TOKEN_INFO_ID
 <#assign prefixName = false>
 </#if>
 <#if (index_userCode??)>
-${prefixName?string('', ', ')} :index_userCode_value AS USER_CODE
+${prefixName?string('', 'AND ')} :index_userCode_value AS USER_CODE
 <#assign prefixName = false>
 </#if>
 <#if (index_userId??)>
-${prefixName?string('', ', ')} :index_userId_value AS USER_ID
+${prefixName?string('', 'AND ')} :index_userId_value AS USER_ID
 <#assign prefixName = false>
 </#if>
 <#if (index_version??)>
-${prefixName?string('', ', ')} :index_version_value AS VERSION_
+${prefixName?string('', 'AND ')} :index_version_value AS VERSION_
 <#assign prefixName = false>
 </#if>
  FROM DUAL) B
