@@ -1,5 +1,6 @@
 MERGE INTO C1_PERMISSION_MAPPER A USING
-(<#assign prefixName = true>
+(SELECT
+<#assign prefixName = true>
 <#if (index_batchNo??)>
 ${prefixName?string('', ', ')} :index_batchNo_value AS BATCH_NO
 <#assign prefixName = false>
@@ -108,7 +109,7 @@ ${prefixName?string('', ', ')} :index_typeCode_value AS TYPE_CODE
 ${prefixName?string('', ', ')} :index_version_value AS VERSION_
 <#assign prefixName = false>
 </#if>
- from dual)B
+ FROM DUAL) B
 ON (
 <#assign prefixName = true>
 <#if (index_batchNo??)>
@@ -220,115 +221,226 @@ ${prefixName?string('', ', ')}A.VERSION_ = B.VERSION_
 <#assign prefixName = false>
 </#if>
 )
-WHEN MATCHED THEN
-UPDATE SET
-<#assign prefixName = true>
-<#if (update_batchNo??)>
-${prefixName?string('', ', ')}A.BATCH_NO = :update_batchNo_value
+WHEN NOT MATCHED THEN
+(<#assign prefixName = true>
+<#if (insert_batchNo??) && (insert_batchNo_value??)>
+${prefixName?string('  ', ', ')}A.BATCH_NO
 <#assign prefixName = false>
 </#if>
-<#if (update_beginDate??)>
-${prefixName?string('', ', ')}A.BEGIN_DATE = :update_beginDate_value
+<#if (insert_beginDate??) && (insert_beginDate_value??)>
+${prefixName?string('  ', ', ')}A.BEGIN_DATE
 <#assign prefixName = false>
 </#if>
-<#if (update_createdByCode??)>
-${prefixName?string('', ', ')}A.CREATED_BY_CODE = :update_createdByCode_value
+<#if (insert_createdByCode??) && (insert_createdByCode_value??)>
+${prefixName?string('  ', ', ')}A.CREATED_BY_CODE
 <#assign prefixName = false>
 </#if>
-<#if (update_createdById??)>
-${prefixName?string('', ', ')}A.CREATED_BY_ID = :update_createdById_value
+<#if (insert_createdById??) && (insert_createdById_value??)>
+${prefixName?string('  ', ', ')}A.CREATED_BY_ID
 <#assign prefixName = false>
 </#if>
-<#if (update_createdDate??)>
-${prefixName?string('', ', ')}A.CREATED_DATE = :update_createdDate_value
+<#if (insert_createdDate??) && (insert_createdDate_value??)>
+${prefixName?string('  ', ', ')}A.CREATED_DATE
 <#assign prefixName = false>
 </#if>
-<#if (update_dataStateCode??)>
-${prefixName?string('', ', ')}A.DATA_STATE_CODE = :update_dataStateCode_value
+<#if (insert_dataStateCode??) && (insert_dataStateCode_value??)>
+${prefixName?string('  ', ', ')}A.DATA_STATE_CODE
 <#assign prefixName = false>
 </#if>
-<#if (update_departmentCode??)>
-${prefixName?string('', ', ')}A.DEPARTMENT_CODE = :update_departmentCode_value
+<#if (insert_departmentCode??) && (insert_departmentCode_value??)>
+${prefixName?string('  ', ', ')}A.DEPARTMENT_CODE
 <#assign prefixName = false>
 </#if>
-<#if (update_endDate??)>
-${prefixName?string('', ', ')}A.END_DATE = :update_endDate_value
+<#if (insert_endDate??) && (insert_endDate_value??)>
+${prefixName?string('  ', ', ')}A.END_DATE
 <#assign prefixName = false>
 </#if>
-<#if (update_flagCode??)>
-${prefixName?string('', ', ')}A.FLAG_CODE = :update_flagCode_value
+<#if (insert_flagCode??) && (insert_flagCode_value??)>
+${prefixName?string('  ', ', ')}A.FLAG_CODE
 <#assign prefixName = false>
 </#if>
-<#if (update_flagObjectCode??)>
-${prefixName?string('', ', ')}A.FLAG_OBJECT_CODE = :update_flagObjectCode_value
+<#if (insert_flagObjectCode??) && (insert_flagObjectCode_value??)>
+${prefixName?string('  ', ', ')}A.FLAG_OBJECT_CODE
 <#assign prefixName = false>
 </#if>
-<#if (update_jsonData??)>
-${prefixName?string('', ', ')}A.JSON_DATA = :update_jsonData_value
+<#if (insert_jsonData??) && (insert_jsonData_value??)>
+${prefixName?string('  ', ', ')}A.JSON_DATA
 <#assign prefixName = false>
 </#if>
-<#if (update_lastModifiedByCode??)>
-${prefixName?string('', ', ')}A.LAST_MODIFIED_BY_CODE = :update_lastModifiedByCode_value
+<#if (insert_lastModifiedByCode??) && (insert_lastModifiedByCode_value??)>
+${prefixName?string('  ', ', ')}A.LAST_MODIFIED_BY_CODE
 <#assign prefixName = false>
 </#if>
-<#if (update_lastModifiedById??)>
-${prefixName?string('', ', ')}A.LAST_MODIFIED_BY_ID = :update_lastModifiedById_value
+<#if (insert_lastModifiedById??) && (insert_lastModifiedById_value??)>
+${prefixName?string('  ', ', ')}A.LAST_MODIFIED_BY_ID
 <#assign prefixName = false>
 </#if>
-<#if (update_lastModifiedDate??)>
-${prefixName?string('', ', ')}A.LAST_MODIFIED_DATE = :update_lastModifiedDate_value
+<#if (insert_lastModifiedDate??) && (insert_lastModifiedDate_value??)>
+${prefixName?string('  ', ', ')}A.LAST_MODIFIED_DATE
 <#assign prefixName = false>
 </#if>
-<#if (update_mapperCode??)>
-${prefixName?string('', ', ')}A.MAPPER_CODE = :update_mapperCode_value
+<#if (insert_mapperCode??) && (insert_mapperCode_value??)>
+${prefixName?string('  ', ', ')}A.MAPPER_CODE
 <#assign prefixName = false>
 </#if>
-<#if (update_orderBy??)>
-${prefixName?string('', ', ')}A.ORDER_BY_ = :update_orderBy_value
+<#if (insert_orderBy??) && (insert_orderBy_value??)>
+${prefixName?string('  ', ', ')}A.ORDER_BY_
 <#assign prefixName = false>
 </#if>
-<#if (update_orgCode??)>
-${prefixName?string('', ', ')}A.ORG_CODE = :update_orgCode_value
+<#if (insert_orgCode??) && (insert_orgCode_value??)>
+${prefixName?string('  ', ', ')}A.ORG_CODE
 <#assign prefixName = false>
 </#if>
-<#if (update_permissionCode??)>
-${prefixName?string('', ', ')}A.PERMISSION_CODE = :update_permissionCode_value
+<#if (insert_permissionCode??) && (insert_permissionCode_value??)>
+${prefixName?string('  ', ', ')}A.PERMISSION_CODE
 <#assign prefixName = false>
 </#if>
-<#if (update_permissionId??)>
-${prefixName?string('', ', ')}A.PERMISSION_ID = :update_permissionId_value
+<#if (insert_permissionId??) && (insert_permissionId_value??)>
+${prefixName?string('  ', ', ')}A.PERMISSION_ID
 <#assign prefixName = false>
 </#if>
-<#if (update_permissionMapperId??)>
-${prefixName?string('', ', ')}A.PERMISSION_MAPPER_ID = :update_permissionMapperId_value
+<#if (insert_permissionMapperId??) && (insert_permissionMapperId_value??)>
+${prefixName?string('  ', ', ')}A.PERMISSION_MAPPER_ID
 <#assign prefixName = false>
 </#if>
-<#if (update_personalCode??)>
-${prefixName?string('', ', ')}A.PERSONAL_CODE = :update_personalCode_value
+<#if (insert_personalCode??) && (insert_personalCode_value??)>
+${prefixName?string('  ', ', ')}A.PERSONAL_CODE
 <#assign prefixName = false>
 </#if>
-<#if (update_personalId??)>
-${prefixName?string('', ', ')}A.PERSONAL_ID = :update_personalId_value
+<#if (insert_personalId??) && (insert_personalId_value??)>
+${prefixName?string('  ', ', ')}A.PERSONAL_ID
 <#assign prefixName = false>
 </#if>
-<#if (update_siteCode??)>
-${prefixName?string('', ', ')}A.SITE_CODE = :update_siteCode_value
+<#if (insert_siteCode??) && (insert_siteCode_value??)>
+${prefixName?string('  ', ', ')}A.SITE_CODE
 <#assign prefixName = false>
 </#if>
-<#if (update_stateCode??)>
-${prefixName?string('', ', ')}A.STATE_CODE = :update_stateCode_value
+<#if (insert_stateCode??) && (insert_stateCode_value??)>
+${prefixName?string('  ', ', ')}A.STATE_CODE
 <#assign prefixName = false>
 </#if>
-<#if (update_systemInfoCode??)>
-${prefixName?string('', ', ')}A.SYSTEM_INFO_CODE = :update_systemInfoCode_value
+<#if (insert_systemInfoCode??) && (insert_systemInfoCode_value??)>
+${prefixName?string('  ', ', ')}A.SYSTEM_INFO_CODE
 <#assign prefixName = false>
 </#if>
-<#if (update_typeCode??)>
-${prefixName?string('', ', ')}A.TYPE_CODE = :update_typeCode_value
+<#if (insert_typeCode??) && (insert_typeCode_value??)>
+${prefixName?string('  ', ', ')}A.TYPE_CODE
 <#assign prefixName = false>
 </#if>
-<#if (update_version??)>
-${prefixName?string('', ', ')}A.VERSION_ = :update_version_value
+<#if (insert_version??) && (insert_version_value??)>
+${prefixName?string('  ', ', ')}A.VERSION_
 <#assign prefixName = false>
 </#if>
+)
+VALUES
+(<#assign prefixName = true>
+<#if (insert_batchNo??) && (insert_batchNo_value??)>
+${prefixName?string('  ', ', ')}:insert_batchNo_value
+<#assign prefixName = false>
+</#if>
+<#if (insert_beginDate??) && (insert_beginDate_value??)>
+${prefixName?string('  ', ', ')}:insert_beginDate_value
+<#assign prefixName = false>
+</#if>
+<#if (insert_createdByCode??) && (insert_createdByCode_value??)>
+${prefixName?string('  ', ', ')}:insert_createdByCode_value
+<#assign prefixName = false>
+</#if>
+<#if (insert_createdById??) && (insert_createdById_value??)>
+${prefixName?string('  ', ', ')}:insert_createdById_value
+<#assign prefixName = false>
+</#if>
+<#if (insert_createdDate??) && (insert_createdDate_value??)>
+${prefixName?string('  ', ', ')}:insert_createdDate_value
+<#assign prefixName = false>
+</#if>
+<#if (insert_dataStateCode??) && (insert_dataStateCode_value??)>
+${prefixName?string('  ', ', ')}:insert_dataStateCode_value
+<#assign prefixName = false>
+</#if>
+<#if (insert_departmentCode??) && (insert_departmentCode_value??)>
+${prefixName?string('  ', ', ')}:insert_departmentCode_value
+<#assign prefixName = false>
+</#if>
+<#if (insert_endDate??) && (insert_endDate_value??)>
+${prefixName?string('  ', ', ')}:insert_endDate_value
+<#assign prefixName = false>
+</#if>
+<#if (insert_flagCode??) && (insert_flagCode_value??)>
+${prefixName?string('  ', ', ')}:insert_flagCode_value
+<#assign prefixName = false>
+</#if>
+<#if (insert_flagObjectCode??) && (insert_flagObjectCode_value??)>
+${prefixName?string('  ', ', ')}:insert_flagObjectCode_value
+<#assign prefixName = false>
+</#if>
+<#if (insert_jsonData??) && (insert_jsonData_value??)>
+${prefixName?string('  ', ', ')}:insert_jsonData_value
+<#assign prefixName = false>
+</#if>
+<#if (insert_lastModifiedByCode??) && (insert_lastModifiedByCode_value??)>
+${prefixName?string('  ', ', ')}:insert_lastModifiedByCode_value
+<#assign prefixName = false>
+</#if>
+<#if (insert_lastModifiedById??) && (insert_lastModifiedById_value??)>
+${prefixName?string('  ', ', ')}:insert_lastModifiedById_value
+<#assign prefixName = false>
+</#if>
+<#if (insert_lastModifiedDate??) && (insert_lastModifiedDate_value??)>
+${prefixName?string('  ', ', ')}:insert_lastModifiedDate_value
+<#assign prefixName = false>
+</#if>
+<#if (insert_mapperCode??) && (insert_mapperCode_value??)>
+${prefixName?string('  ', ', ')}:insert_mapperCode_value
+<#assign prefixName = false>
+</#if>
+<#if (insert_orderBy??) && (insert_orderBy_value??)>
+${prefixName?string('  ', ', ')}:insert_orderBy_value
+<#assign prefixName = false>
+</#if>
+<#if (insert_orgCode??) && (insert_orgCode_value??)>
+${prefixName?string('  ', ', ')}:insert_orgCode_value
+<#assign prefixName = false>
+</#if>
+<#if (insert_permissionCode??) && (insert_permissionCode_value??)>
+${prefixName?string('  ', ', ')}:insert_permissionCode_value
+<#assign prefixName = false>
+</#if>
+<#if (insert_permissionId??) && (insert_permissionId_value??)>
+${prefixName?string('  ', ', ')}:insert_permissionId_value
+<#assign prefixName = false>
+</#if>
+<#if (insert_permissionMapperId??) && (insert_permissionMapperId_value??)>
+${prefixName?string('  ', ', ')}:insert_permissionMapperId_value
+<#assign prefixName = false>
+</#if>
+<#if (insert_personalCode??) && (insert_personalCode_value??)>
+${prefixName?string('  ', ', ')}:insert_personalCode_value
+<#assign prefixName = false>
+</#if>
+<#if (insert_personalId??) && (insert_personalId_value??)>
+${prefixName?string('  ', ', ')}:insert_personalId_value
+<#assign prefixName = false>
+</#if>
+<#if (insert_siteCode??) && (insert_siteCode_value??)>
+${prefixName?string('  ', ', ')}:insert_siteCode_value
+<#assign prefixName = false>
+</#if>
+<#if (insert_stateCode??) && (insert_stateCode_value??)>
+${prefixName?string('  ', ', ')}:insert_stateCode_value
+<#assign prefixName = false>
+</#if>
+<#if (insert_systemInfoCode??) && (insert_systemInfoCode_value??)>
+${prefixName?string('  ', ', ')}:insert_systemInfoCode_value
+<#assign prefixName = false>
+</#if>
+<#if (insert_typeCode??) && (insert_typeCode_value??)>
+${prefixName?string('  ', ', ')}:insert_typeCode_value
+<#assign prefixName = false>
+</#if>
+<#if (insert_version??) && (insert_version_value??)>
+${prefixName?string('  ', ', ')}:insert_version_value
+<#assign prefixName = false>
+</#if>
+)
 
